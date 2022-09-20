@@ -8,6 +8,8 @@ type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
 
+
+
 new entry "Blue_BuffRunes_Slot0_Bow00_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -130,7 +132,7 @@ data "AttackAPCost" "0"
 
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot00_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB00_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -141,7 +143,7 @@ data "AccuracyBoost" "0"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot01_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB01_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -152,7 +154,7 @@ data "AccuracyBoost" "4"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot02_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB02_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -163,7 +165,7 @@ data "AccuracyBoost" "8"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot03_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB03_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -174,7 +176,7 @@ data "AccuracyBoost" "12"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot04_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB04_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -185,7 +187,7 @@ data "AccuracyBoost" "16"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot05_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB05_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -196,7 +198,7 @@ data "AccuracyBoost" "20"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot06_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB06_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -207,7 +209,7 @@ data "AccuracyBoost" "24"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot07_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB07_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -218,7 +220,7 @@ data "AccuracyBoost" "28"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot08_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB08_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -229,7 +231,7 @@ data "AccuracyBoost" "32"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot09_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB09_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -240,7 +242,7 @@ data "AccuracyBoost" "36"
 data "AttackAPCost" "0"
 
 
-new entry "Blue_BuffRunes_Slot0_CBPinningShot10_Weapon"
+new entry "Blue_BuffRunes_Slot0_CB10_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
 data "Act part" "10"
@@ -1009,6 +1011,7 @@ data "AccuracyBoost" "20"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_BowPrecision01_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1019,6 +1022,7 @@ data "DamageBoost" "10"
 data "AccuracyBoost" "24"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_BowPrecision02_Weapon"
 type "Weapon"
@@ -1031,6 +1035,7 @@ data "AccuracyBoost" "28"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_BowPrecision03_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1041,6 +1046,7 @@ data "DamageBoost" "30"
 data "AccuracyBoost" "32"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_BowPrecision04_Weapon"
 type "Weapon"
@@ -1053,6 +1059,7 @@ data "AccuracyBoost" "36"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_BowPrecision05_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1063,6 +1070,7 @@ data "DamageBoost" "50"
 data "AccuracyBoost" "40"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_BowPrecision06_Weapon"
 type "Weapon"
@@ -1075,6 +1083,7 @@ data "AccuracyBoost" "44"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_BowPrecision07_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1085,6 +1094,7 @@ data "DamageBoost" "70"
 data "AccuracyBoost" "48"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_BowPrecision08_Weapon"
 type "Weapon"
@@ -1097,6 +1107,7 @@ data "AccuracyBoost" "52"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_BowPrecision09_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1107,6 +1118,7 @@ data "DamageBoost" "90"
 data "AccuracyBoost" "56"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_BowPrecision10_Weapon"
 type "Weapon"
@@ -1120,6 +1132,7 @@ data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot00_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1130,6 +1143,7 @@ data "DamageBoost" "0"
 data "AccuracyBoost" "20"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot01_Weapon"
 type "Weapon"
@@ -1142,6 +1156,7 @@ data "AccuracyBoost" "24"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot02_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1152,6 +1167,7 @@ data "DamageBoost" "20"
 data "AccuracyBoost" "28"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot03_Weapon"
 type "Weapon"
@@ -1164,6 +1180,7 @@ data "AccuracyBoost" "32"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot04_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1174,6 +1191,7 @@ data "DamageBoost" "40"
 data "AccuracyBoost" "36"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot05_Weapon"
 type "Weapon"
@@ -1186,6 +1204,7 @@ data "AccuracyBoost" "40"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot06_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1196,6 +1215,7 @@ data "DamageBoost" "60"
 data "AccuracyBoost" "44"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot07_Weapon"
 type "Weapon"
@@ -1208,6 +1228,7 @@ data "AccuracyBoost" "48"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot08_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1218,6 +1239,7 @@ data "DamageBoost" "80"
 data "AccuracyBoost" "52"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
 
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot09_Weapon"
 type "Weapon"
@@ -1230,6 +1252,7 @@ data "AccuracyBoost" "56"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
 
+
 new entry "Blue_BuffRunes_Slot0_CBPrecisionPinningShot10_Weapon"
 type "Weapon"
 using "_BOOSTS_Weapon"
@@ -1240,6 +1263,8 @@ data "DamageBoost" "100"
 data "AccuracyBoost" "60"
 data "AttackAPCost" "0"
 data "WeaponRange" "400"
+
+
 
 
 new entry "Blue_BuffRunes_Slot0_Twohanded00_Weapon"
