@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Dart" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidDart_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Dart (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidDart_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw an acidic dart at the target, dealing [1] and applying Acid (3) in a 1m radius.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidDart_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fossil Strike" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FossilStrike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fossil Strike (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FossilStrike_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Lob a giant rock filled with sticky oil that will deals [1] and creates a 2m oil surface.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 4&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FossilStrike_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw Dust" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ThrowDust_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw Dust (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ThrowDust_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw dust at the target location, dealing [1] and applying Blind (2) to enemies in the radius and clearing surfaces." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ThrowDust_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Blob" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_OilBlob_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Blob (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_OilBlob_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw an Oil Blob at target location, consuming Oil surfaces around it to grow in power, gaining up to +100% vitality and damage, and dealing [1] in a 4m radius on impact.&lt;br&gt;&lt;i&gt;Active summons reduce the summoner's AP by 1.&lt;/i&gt;&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_OilBlob_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tremor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tremor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tremor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tremor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fracture the earth in front of you, knocking back and applying Staggered (2) to those in your wake, clearing surfaces and dealing [1].&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tremor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Spray" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpray_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Spray (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpray_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Spray acid in a cone in front of you, dealing [1] and corroding afflicted's armor and leaving acid on the ground." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpray_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create Oil" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CreateOil_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create Oil (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CreateOil_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Summon forth oil to the target location, seeping in from the earth below.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 5, 7&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CreateOil_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fortify" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortify_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fortify (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortify_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Applies Fortified (4), giving [1]. Fortified protects against Bleeding, Decaying, Acid, Sundered, Burning, Staggered, and Petrified for 2 turns.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortify_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impalement" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Impalement_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impalement (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Impalement_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Spikes impale all characters in a 3m radius, dealing [1] and applying Crippled [3].&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Impalement_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrifying Gaze" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingGaze_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrifying Gaze (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingGaze_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrify those caught in your sight and deal [1].&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 10&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingGaze_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Living Wall" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Living_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Living Wall (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Living_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vines grow into a wall at the target location up to 5m long, blocking passage for 2 turns.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Living_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Spores" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpores_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Spores (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpores_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shoot 5 spores full of corrosive acid, dealing [1] each, applying Acid (2), and creating a 2m poison surface.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 10&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AcidSpores_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pyroclastic Eruption" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PyroclasticEruption_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pyroclastic Eruption (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PyroclasticEruption_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oil-filled rocks are sent at all enemies in the area, dealing [1] damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PyroclasticEruption_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mountain Aegis" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_StalwartDefense_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mountain Aegis (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_StalwartDefense_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="The Earth moves to defend you and your allies within 6m. Gain [1], add [2] to your attacks, gain Might and Physique, and gain immunity to Staggered and Petrified.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_StalwartDefense_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Earthquake" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Earthquake_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Earthquake (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Earthquake_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="The Earth trembles before you, dealing [1] to everyone, applying Staggered (8), and creating pools of oil.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 99&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Earthquake_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vineyard" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Vineyard_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vineyard (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Vineyard_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vines attack those in a 3m radius, dealing [1], applying Entangled and Poisoned (2). Entangled causes the target to take damage and become Staggered the first time they move.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Vineyard_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw Rocks" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Devastate_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw Rocks (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Devastate_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Six giant rocks fall from the sky in the target location. Each rock deals [1] and creates a 2m oil surface.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Devastate_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sand Coffin" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SandCoffin_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sand Coffin (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SandCoffin_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Envelope and crush the target with earth, dealing [1] and applying Crippled (5). Deal additional percentage damage equal to your Aptitude, up to 40% of their current health.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SandCoffin_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sludge" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sludge_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sludge (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sludge_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restrict the target's movement by create oil at their feet and applying strong Slow.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sludge_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invulnerability" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Invulnerability_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invulnerability (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Invulnerability_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increase the target's resistances by 150% and resistance caps to 100%.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Invulnerability_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrifying Touch" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingTouch_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrifying Touch (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingTouch_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Attempt to turn someone into stone by touch, dealing [1] and applying moderate Petrify.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PetrifyingTouch_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Reactive Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ReactiveArmor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Reactive Armor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ReactiveArmor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1], based on your current Armor, in a wave of metal spikes to everyone in the area (Including Yourself)&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ReactiveArmor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corrosive Touch" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorrosiveTouch_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corrosive Touch (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorrosiveTouch_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corrode armor with an acidic touch, dealing [1] and applying strong Acid.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorrosiveTouch_Description" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

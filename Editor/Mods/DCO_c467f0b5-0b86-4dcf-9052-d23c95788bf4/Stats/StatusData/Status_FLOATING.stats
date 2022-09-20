@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="7cb6ed42-2771-4b09-ae91-765941cf3839">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WINGS" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Wings" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character has Wings|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Polymorph_Wings" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Floating" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Back" />
+        <field name="StackPriority" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Projectile_Flight" />
+        <field name="Items" type="StringStatObjectFieldDefinition" value="ARM_Wings" />
+        <field name="OnlyWhileMoving" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

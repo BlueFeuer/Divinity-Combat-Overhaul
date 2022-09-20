@@ -1,0 +1,1040 @@
+EVENTS
+/*
+EVENT Blue_Talent_OnTurn
+VARS
+	CHARACTER:_Character
+ON
+	OnTurn(_Character, _)
+ACTIONS
+	ClearTag(_Character, "Blue_Methodical_Triggered")
+*/
+
+	
+EVENT Blue_Talent_ItemEquipped
+VARS
+	ITEM:_Item
+	CHARACTER:_Character
+ON
+	OnItemEquipped(_Character, _Item)
+ACTIONS
+	//CharacterEvent(_Character, "Blue_Talent_Add_Sidewinder")
+	IF "c1&!c2&!c3&c4"
+		CharacterIsInParty(_Character)
+		CharacterIsSummon(_Character)
+		IsTagged(_Character, "Blue_Methodical_Triggered")
+		CharacterHasTalent(_Character, TALENT:Ambidextrous)
+	THEN
+		//SetTag(_Character, "Blue_Methodical_Triggered")
+		CharacterAddActionPoints(_Character, INT:1)
+		DisplayCombatInfoText(_Character, "+1 AP from Methodical", FLOAT:0)
+		DisplayText(_Character, "", FLOAT:0)
+	ENDIF
+
+EVENT Blue_Talent_EquipmentChanged
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Blue_EquipmentChanged")
+ACTIONS
+	IF "c1"
+		CharacterHasTalent(_Character, ViolentMagic)
+	THEN
+		CharacterEvent(_Character, "Talent_Refresh_ViolentMagic")
+	ENDIF
+
+//Executioner Close
+EVENT Blue_Talent_Executioner_Close
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterStatusAttempt(_Character, Blue_Talent_Executioner_Close)
+ACTIONS
+	CharacterAddActionPoints(_Character, INT:1)
+	
+
+EVENT Blue_DieHardPrevention
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterStatusAttempt(_Character, RESURRECT)
+ACTIONS
+	IF "c1"
+		IsTagged(_Character, "Blue_DieHard_Flag_1")
+	THEN
+		ClearTag(_Character, "Blue_DieHard_Flag_1")
+	ENDIF
+	/*
+	IF "c1"
+		IsTagged(_Character, "Blue_DieHard_Flag_2")
+	THEN
+		ClearTag(_Character, "Blue_DieHard_Flag_2")
+	ENDIF
+	*/
+	
+EVENT Blue_DisableFlanking
+VARS
+	CHARACTER:_Character
+ON
+	FetchCharacterApplyStatusData(_Character, FLANKED)
+ACTIONS
+	RETURN(null, null, null)
+	
+
+EVENT Blue_Scroll_AddAptitudeBonus
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	FLOAT:_AptitudeBonus
+ON
+	FetchCharacterApplyStatusData(_Character, POSTIER_SCROLL)
+ACTIONS
+	IF "c1&c2"
+		CharacterHasStatus(_Character, PRETIER)
+		CharacterGetStatusSourceCharacter(_Character, PRETIER, _Source)
+	THEN
+		SetVar(_Character, "LastAttacker", _Source)
+	ENDIF
+	IF "c1"
+		GetVar(_Source, _Character, "LastAttacker")
+	THEN
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Source, TALENT:RangerLoreArrowRecover)
+	THEN
+		IF "c1"
+			GetVar(_AptitudeBonus, _Character, "AptitudeBonus")
+		THEN
+			Add(_AptitudeBonus, FLOAT:0.25)
+			SetVar(_Character, "AptitudeBonus", FLOAT:_AptitudeBonus)
+		ENDIF
+	ENDIF
+	RETURN(null, null, null)
+	
+
+EVENT Blue_Talent_OnSkillCast
+VARS
+	SKILL:_Skill
+	CHARACTER:_Character
+	INT:_Yee
+ON
+	OnSkillCast(_Character, _Skill)
+ACTIONS
+	//Blue_Remove_Damage_Buff_Event
+	Set(_Yee, INT:0)
+	IF "c1"
+		IsEqual(_Skill, Projectile_Grenade_ArmorPiercing)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Nailbomb)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Flashbang)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Molotov)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_CursedMolotov)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_ChemicalWarfare)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Terror)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_BlessedIce)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Ice)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Holy)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Tremor)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Taser)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_WaterBlessedBalloon)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_SmokeBomb)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_WaterBalloon)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_MustardGas)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_OilFlask)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_BlessedOilFlask)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_PoisonFlask)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_CursedPoisonFlask)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_Love)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, Projectile_Grenade_MindMaggot)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, ProjectileStrike_Grenade_ClusterBomb)
+	THEN
+		Set(_Yee, INT:1)
+	ELIF "c1"
+		IsEqual(_Skill, ProjectileStrike_Grenade_CursedClusterBomb)
+	THEN
+		Set(_Yee, INT:1)
+	ENDIF
+	IF "c1"
+		IsEqual(_Yee, INT:1)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Grenade_Damage_Buff, 1)
+		CharacterEvent(_Character, "Blue_Remove_Damage_Buff_Event")
+	ELSE
+		IF "c1"
+			CharacterHasStatus(_Character, Blue_Grenade_Damage_Buff)
+		THEN
+			CharacterRemoveStatus(_Character, Blue_Grenade_Damage_Buff)
+		ENDIF
+	ENDIF
+	
+
+EVENT Blue_Refresh_Talents
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Blue_Refresh_Talents")
+ACTIONS
+	IF "c1"
+		CharacterHasTalent(_Character, Demon)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Demon, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Demon)
+	THEN
+		CharacterApplyStatus(_Character, SPIRIT_VISION, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, NoAttackOfOpportunity)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_DuckDuckGoose, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Raistlin)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_GlassCannon, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, WhatARush)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_WhatARush_Damage, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Leech)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Leech, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, DualWieldingDodging)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_ParryMaster, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Unstable)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Retribution, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Memory)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Physician, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Perfectionist)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_ImposingPresence, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, WarriorLoreGrenadeRange)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Haymaker, -1)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, ResurrectToFullHealth)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_TwinSouls, -1)
+	ENDIF
+	IF "!c1"
+		CharacterHasTalent(_Character, ElementalRanger)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Elementalist_Remove, 0)
+		CharacterApplyStatus(_Character, Blue_Talent_Elementalist_Melee_Remove, 0)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Stench)
+	THEN
+		CharacterCharacterEvent(_Character, _Character, "SourcePointCorrecter")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, WarriorLoreNaturalHealth)
+	THEN
+		CharacterEvent(_Character, "Talent_Added_WarriorLoreNaturalHealth")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, ViolentMagic)
+	THEN
+		CharacterEvent(_Character, "Talent_Added_ViolentMagic")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, WarriorLoreNaturalHealth)
+	THEN
+		CharacterEvent(_Character, "Talent_Added_WarriorLoreNaturalHealth")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Quest_TradeSecrets)
+	THEN
+		CharacterEvent(_Character, "Talent_Added_Quest_TradeSecrets")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Human_Civil)
+	THEN
+		CharacterEvent(_Character, "Talent_Added_Human_Civil")
+	ENDIF
+
+EVENT Blue_CharacterCreationClear_Talents
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterCreationStarted(_Character, _)
+ACTIONS
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Demon)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Demon)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_DuckDuckGoose)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_DuckDuckGoose)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_GlassCannon)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_GlassCannon)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_ImposingPresence)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_ImposingPresence)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Physician)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Physician)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Leech)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Leech)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_ParryMaster)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_ParryMaster)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_WhatARush_Damage)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_WhatARush_Damage)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Retribution)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Retribution)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, Torturer)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Advantage_Remove, 0)
+	ENDIF
+	IF "c1"
+		IsTagged(_Character, "Blue_PictureOfHealth_Tag")
+	THEN
+		ClearTag(_Character, "Blue_PictureOfHealth_Tag")
+		CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_Remove, 0)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Haymaker)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Haymaker)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_TwinSouls)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_TwinSouls)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, SPIRIT_VISION)
+	THEN
+		CharacterRemoveStatus(_Character, SPIRIT_VISION)
+	ENDIF
+	IF "c1"
+		IsTagged(_Character, "Blue_Ghastly_Applied")
+	THEN
+		ClearTag(_Character, "Blue_Ghastly_Applied")
+		CharacterApplyStatus(_Character, Blue_Talent_Ghastly_Remove, 0)
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, WarriorLoreNaturalHealth)
+	THEN
+		CharacterEvent(_Character, "Talent_Removed_WarriorLoreNaturalHealth")
+	ENDIF
+	IF "c1"
+		CharacterHasTalent(_Character, ViolentMagic)
+	THEN
+		CharacterEvent(_Character, "Talent_Removed_ViolentMagic")
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(_Character, Talent_Added_Human_Civil)
+	THEN
+		CharacterRemoveStatus(_Character, Talent_Added_Human_Civil)
+	ENDIF
+
+//Demon
+EVENT Talent_Added_Demon
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Demon")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Demon, -1)
+	ENDIF
+
+EVENT Talent_Removed_Demon
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Demon")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Demon)
+	ENDIF
+
+//DuckDuckGoose
+EVENT Talent_Added_NoAttackOfOpportunity
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_NoAttackOfOpportunity")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_DuckDuckGoose, -1)
+	ENDIF
+
+EVENT Talent_Removed_NoAttackOfOpportunity
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_NoAttackOfOpportunity")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_DuckDuckGoose)
+	ENDIF
+
+//Ghastly
+EVENT Talent_Added_Stench
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Stench")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, SPIRIT_VISION, -1)
+		CharacterCharacterEvent(_Character, _Character, "SourcePointCorrecter")
+	ENDIF
+
+EVENT Talent_Removed_Stench
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Stench")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, SPIRIT_VISION)
+		IF "c1"
+			IsTagged(_Character, "Blue_Ghastly_Applied")
+		THEN
+			ClearTag(_Character, "Blue_Ghastly_Applied")
+			CharacterApplyStatus(_Character, Blue_Talent_Ghastly_Remove, 0)
+		ENDIF
+	ENDIF
+
+//GlassCannon
+EVENT Talent_Added_Raistlin
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Raistlin")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_GlassCannon, -1)
+	ENDIF
+
+EVENT Talent_Removed_Raistlin
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Raistlin")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_GlassCannon)
+	ENDIF
+
+//Haymaker
+EVENT Talent_Added_WarriorLoreGrenadeRange
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_WarriorLoreGrenadeRange")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Haymaker, -1)
+	ENDIF
+
+EVENT Talent_Removed_WarriorLoreGrenadeRange
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_WarriorLoreGrenadeRange")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Haymaker)
+	ENDIF
+	
+//Quest talent, adds +1 to barter which is replaced with grit, needs removed.
+// Todo: Add new reward.
+EVENT Talent_Added_Quest_TradeSecrets
+VARS
+	CHARACTER:_Character
+	FLOAT:_CurrHealth
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Quest_TradeSecrets")
+ACTIONS
+	CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Quest_TradeSecrets")
+	
+	
+EVENT Talent_Added_Human_Civil
+VARS
+	CHARACTER:_Character
+	FLOAT:_CurrHealth
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Human_Civil")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Stats_Talent_Thrifty, -1)
+	ENDIF
+	
+EVENT Talent_Removed_Human_Civil
+VARS
+	CHARACTER:_Character
+	FLOAT:_CurrHealth
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Human_Civil")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Stats_Talent_Thrifty, -1)
+	ENDIF
+	
+
+//Picture of Health
+EVENT Talent_Added_WarriorLoreNaturalHealth
+VARS
+	CHARACTER:_Character
+	FLOAT:_CurrHealth
+ON
+	OnCharacterEvent(_Character, "Talent_Added_WarriorLoreNaturalHealth")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		IF "c1"
+			CharacterGetStat(_CurrHealth, _Character, Vitality)
+		THEN
+		ENDIF
+		IF "c1&!c2"
+			IsGreaterThen(_CurrHealth, FLOAT:0.9)
+			IsTagged(_Character, "Blue_PictureOfHealth_Tag")
+		THEN
+			SetTag(_Character, "Blue_PictureOfHealth_Tag")
+		ENDIF
+		IF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.99)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_10, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.98)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_9, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.97)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_8, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.96)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_7, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.95)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_6, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.94)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_5, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.93)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_4, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.92)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_3, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.91)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_2, -1)
+		ELIF "c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0.9)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_1, -1)
+		ENDIF
+	ENDIF
+
+EVENT Talent_Removed_WarriorLoreNaturalHealth
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_WarriorLoreNaturalHealth")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		IF "c1"
+			IsTagged(_Character, "Blue_PictureOfHealth_Tag")
+		THEN
+			ClearTag(_Character, "Blue_PictureOfHealth_Tag")
+			CharacterApplyStatus(_Character, Blue_Talent_PictureOfHealth_Remove, 0)
+		ENDIF
+	ENDIF
+
+//Imposing Presence
+EVENT Talent_Added_Perfectionist
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Perfectionist")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_ImposingPresence, -1)
+	ENDIF
+
+EVENT Talent_Removed_Perfectionist
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Perfectionist")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_ImposingPresence)
+	ENDIF
+
+//Physician
+EVENT Talent_Added_Memory
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Memory")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Physician, -1)
+	ENDIF
+
+EVENT Talent_Removed_Memory
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Memory")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Physician)
+	ENDIF
+
+//Retribution
+EVENT Talent_Added_Unstable
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Unstable")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Retribution, -1)
+	ENDIF
+
+EVENT Talent_Removed_Unstable
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Unstable")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Retribution)
+	ENDIF
+
+//What A Rush
+EVENT Talent_Added_WhatARush
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_WhatARush")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_WhatARush_Damage, -1)
+	ENDIF
+
+EVENT Talent_Removed_WhatARush
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_WhatARush")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_WhatARush_Damage)
+	ENDIF
+
+//Parry Master
+EVENT Talent_Added_DualWieldingDodging
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_DualWieldingDodging")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_ParryMaster, -1)
+	ENDIF
+
+EVENT Talent_Removed_DualWieldingDodging
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_DualWieldingDodging")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_ParryMaster)
+	ENDIF
+
+//Leech
+EVENT Talent_Added_Leech
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_Leech")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Leech, -1)
+	ENDIF
+
+EVENT Talent_Removed_Leech
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Leech")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_Leech)
+	ENDIF
+
+//Advantage
+EVENT Talent_Removed_Torturer
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_Torturer")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Advantage_Remove, 0)
+	ENDIF
+
+//Malevolent Mojo
+EVENT Talent_Added_ViolentMagic
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_ViolentMagic")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_MalevolentMojo, -1)
+		CharacterEvent(_Character, "Talent_Refresh_ViolentMagic")
+	ENDIF
+
+EVENT Talent_Removed_ViolentMagic
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_ViolentMagic")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_MalevolentMojo)
+		IF "c1"
+			CharacterHasStatus(_Character, Blue_Talent_MalevolentMojo_Debuff)
+		THEN
+			CharacterRemoveStatus(_Character, Blue_Talent_MalevolentMojo_Debuff)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(_Character, Blue_Talent_MalevolentMojo_Buff)
+		THEN
+			CharacterRemoveStatus(_Character, Blue_Talent_MalevolentMojo_Buff)
+		ENDIF
+	ENDIF
+
+EVENT Talent_Refresh_ViolentMagic
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Refresh_ViolentMagic")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		IF "c1|c2"
+			CharacterHasWeaponType(_Character, Staff, 1)
+			CharacterHasWeaponType(_Character, Wand, 1)
+		THEN
+			IF "!c1"
+				CharacterHasStatus(_Character, Blue_Talent_MalevolentMojo_Buff)
+			THEN
+				CharacterApplyStatus(_Character, Blue_Talent_MalevolentMojo_Buff, -1)
+			ENDIF
+		ELSE
+			IF "!c1"
+				CharacterHasStatus(_Character, Blue_Talent_MalevolentMojo_Debuff)
+			THEN
+				CharacterApplyStatus(_Character, Blue_Talent_MalevolentMojo_Debuff, -1)
+			ENDIF
+		ENDIF
+	ENDIF
+
+//Elementalist
+EVENT Talent_Added_ElementalRanger
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_ElementalRanger")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		//SetVar(_Character, "SurfaceCache", SURFACE:null)
+		CharacterEvent(_Character, "BlueCheckElementalist")
+	ENDIF
+	
+EVENT Talent_Removed_ElementalRanger
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_ElementalRanger")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Elementalist_Remove, 0)
+		CharacterApplyStatus(_Character, Blue_Talent_Elementalist_Melee_Remove, 0)
+	ENDIF
+
+//Twin Souls
+EVENT Talent_Added_ResurrectToFullHealth
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Added_ResurrectToFullHealth")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_TwinSouls, -1)
+	ENDIF
+	
+EVENT Talent_Removed_ResurrectToFullHealth
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_ResurrectToFullHealth")
+ACTIONS
+	IF "!c1"
+		CharacterInCreation(_Character)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_Talent_TwinSouls)
+	ENDIF
+	
+//Picture of Health
+EVENT Talent_Added_WarriorLoreNaturalHealth
+VARS
+	CHARACTER:_Character
+	INT:_AbilCheck
+ON
+	OnCharacterEvent(_Character, "Talent_Added_WarriorLoreNaturalHealth")
+ACTIONS
+	IF "c1"
+		CharacterGetAbility(_AbilCheck, _Character, Perseverance)
+	THEN
+	ENDIF
+	IF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_1)
+		IsEqual(_AbilCheck, INT:1)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_1, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_2)
+		IsEqual(_AbilCheck, INT:2)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_2, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_3)
+		IsEqual(_AbilCheck, INT:3)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_3, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_4)
+		IsEqual(_AbilCheck, INT:4)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_4, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_5)
+		IsEqual(_AbilCheck, INT:5)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_5, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_6)
+		IsEqual(_AbilCheck, INT:6)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_6, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_7)
+		IsEqual(_AbilCheck, INT:7)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_7, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_8)
+		IsEqual(_AbilCheck, INT:8)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_8, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_9)
+		IsEqual(_AbilCheck, INT:9)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_9, -1)
+	ELIF "!c1&c2"
+		CharacterHasStatus(_Character, Blue_Talent_Kingsman_10)
+		IsGreaterThen(_AbilCheck, INT:9)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Kingsman_10, -1)
+	ENDIF
+
+EVENT Talent_Removed_WarriorLoreNaturalHealth
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Talent_Removed_WarriorLoreNaturalHealth")
+ACTIONS
+	CharacterApplyStatus(_Character, Blue_Talent_Kingsman_Remove, 0)
+	
+
+

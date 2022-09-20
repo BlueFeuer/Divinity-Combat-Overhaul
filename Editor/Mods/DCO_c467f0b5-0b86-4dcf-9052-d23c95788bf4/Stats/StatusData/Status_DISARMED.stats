@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="04859b5c-766c-48e5-8f36-f71e00421194">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DISARMED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Disarmed|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character is disarmed|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Disarmed" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Disarmed_01:Dummy_L_HandFX;RS3_FX_GP_Status_Disarmed_01:Dummy_R_HandFX" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="33" enumeration_type_name="SavingThrow" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Disarmed" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="b02b3719-f0ee-4439-ac17-87079ea7453e">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="HEALING" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Healing" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Heals [1] health points per turn." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="HealAmount" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Healing" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="FormatStringColor" />
+        <field name="HealingEvent" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="StatusEvent" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="SkipInitialEffect" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="HealEffectId" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Heal_Impact_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="REGENERATION" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Regenerating" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Heals [1] health points per turn." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="HealAmount" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Regenerate" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Regenerating_01" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="39" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Regenerating" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Regenerating" />
+        <field name="HealingEvent" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="StatusEvent" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="75" />
+        <field name="SkipInitialEffect" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="HealEffectId" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Heal_Impact_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FROST_AURA" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Frost Aura|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Restoring [1] Magic Armour each turn.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="HealAmount" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Water_SoothingCold" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="FormatStringColor" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_FrostAura" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_FrostAura" />
+        <field name="HealingEvent" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="StatusEvent" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="30" />
+        <field name="SkipInitialEffect" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_0" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Healing" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Heals [1] health points per turn." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="HealAmount" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Healing" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="FormatStringColor" />
+        <field name="HealingEvent" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="StatusEvent" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="SkipInitialEffect" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="HealEffectId" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Heal_Impact_01" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="1f0ee045-b98a-4303-b28e-03a27790b3b9" type="22" />
+					<attribute id="Name" value="Blue_InvisibleSkillCaster" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="character" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="6c80cab7-3710-4dad-9eba-eb684062028e" type="22" />
+					<attribute id="PhysicsTemplate" value="" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="Stats" value="BlueIgnore" type="22" />
+					<attribute id="WalkSpeed" value="4" type="6" />
+					<attribute id="ClimbAttachSpeed" value="4" type="6" />
+					<attribute id="ClimbLoopSpeed" value="4" type="6" />
+					<attribute id="ClimbDetachSpeed" value="2.44" type="6" />
+					<attribute id="RunSpeed" value="6" type="6" />
+					<attribute id="CanShootThrough" value="True" type="19" />
+					<attribute id="WalkThrough" value="True" type="19" />
+					<attribute id="HitFX" value="" type="22" />
+					<attribute id="BloodSurfaceType" value="SurfaceBlood" type="22" />
+					<attribute id="Floating" value="True" type="19" />
+					<attribute id="Random" value="18446744073709551103" type="24" />
+					<attribute id="CanFight" value="False" type="19" />
+					<attribute id="CanJoinCombat" value="False" type="19" />
+					<children>
+						<node id="Tags" />
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="2" type="1" />
+							<attribute id="Min" value="-0.25 0 -0.25" type="12" />
+							<attribute id="Max" value="0.25 0.5 0.25" type="12" />
+							<attribute id="Radius" value="0.1" type="6" />
+							<attribute id="Height" value="0.1" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="heee99d71g1f41g4ba2g8adbg98fad94256ca" />
+						</node>
+						<node id="OnDeathActions" />
+						<node id="SkillList" />
+						<node id="ItemList" />
+						<node id="Scripts">
+							<children>
+								<node id="Script">
+									<attribute id="UUID" value="84d5c8c9-446a-479c-a6a6-deafab56cd1c" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Treasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="TradeTreasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterLyingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterSittingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterDeadPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="FootStepInfos" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

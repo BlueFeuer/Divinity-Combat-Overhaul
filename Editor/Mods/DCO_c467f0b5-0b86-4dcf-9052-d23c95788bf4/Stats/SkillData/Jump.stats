@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="0f95f232-1b23-421c-abe5-6c82d95f2bb9">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyTacticalRetreat" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="TacticalRetreat" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="CloakAndDagger" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Rogue_CloakAndDagger" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Cloak And Dagger" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Teleport without breaking sneaking.|" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Rogue_CloakDagger_Prepare_01,Detach:root" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Rogue_CloakDagger_Cast_Overlay_01;RS3_FX_Skills_Rogue_CloakDagger_Cast_01:Dummy_Root:teleport_start;RS3_FX_Skills_Rogue_CloakDagger_Land_01:Dummy_Root:teleport_end" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Void_01" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="RogueLore 2" />
+        <field name="Stealth" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCloakAndDagger" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="CloakAndDagger" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCrocodileJump" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="CloakAndDagger" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Scale-Portation" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Air_FreeFall_Prepare_01" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Animals_Crocodile_A_ScalePortation_Disappear_01;RS3_FX_Char_Animals_Crocodile_A_ScalePortation_Disappear_Overlay_01" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="TacticalRetreat" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="SELF:HASTED,100,1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Ranger_TacticalRetreat" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Tactical Retreat" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Apply Haste to yourself, then teleport away from danger. |" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Air_Wind_Prepare_Hand_01:Dummy_BodyFX;RS3_FX_Skills_Air_Wind_Prepare_Ground_01:Dummy_BodyFX;RS3_FX_Skills_Air_Lightning_Prepare_Hand_01:Dummy_CastFX;RS3_FX_Skills_Air_Lightning_Overlay_Loop_01" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Air_Wind_Cast_Ground_02:root:cast;RS3_FX_Skills_Air_Wind_TakeOff_01:Dummy_Root:teleport_start;RS3_FX_Skills_Air_Wind_Landing_01:Dummy_Root:teleport_end" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Air_01" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="RangerLore 2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyTacticalRetreat_Mordus" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="TacticalRetreat" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="KNOCKED_DOWN,50,1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="Death Type" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Mordus's Hammer" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyTacticalRetreat_Frog" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="TacticalRetreat" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Amphibian Leap" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="IncarnateJump" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="TacticalRetreat" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="CreateSurface,2,,Fire,100,1;" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="5" enumeration_type_name="Death Type" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Warrior_PhoenixDive" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Phoenix Dive" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Become immune to fire for 1 turn and leap toward the target position, dealing fire damage and creating a fire surface upon landing.|" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Fire_Prepare_Fire_Root_01,KeepRot;RS3_FX_Skills_Fire_Prepare_Fire_Hand_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Warrior_PhoenixDive_Cast_01:root:teleport_start" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Fire_01" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Warrior_PhoenixDive_Land_01:root:teleport_end" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="WarriorLore 2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyPhoenixDive" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="AutomatonJetJump" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Jet Jump|" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="TitanDive" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Titan Stride" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DragonDive" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="KNOCKED_DOWN,80,1;" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="25" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Dragon Swoop|" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creature_Dragon_DragonDive_Cast_01:root:teleport_start:root:teleport_start" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creature_Dragon_DragonDive_Land_01:root:teleport_end" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="TentacleDive" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyPhoenixDive" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="CreateSurface,2,,Water,100,1;" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="40" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Glide" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCurseDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="CURSED,100,3;Curse" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="40" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_Phoenix_Dive" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Void Glide" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Enemies_CurseDive_Prepare_Root_01,KeepRot" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Enemies_CurseDive_Cast_Root_01" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Enemies_CurseDive_Landing_Root_01,KeepRot:root:teleport_end" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCursedSmokeDive" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="CURSED,100,2;Curse;CreateSurface,2,,SmokeCloudCursed;" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_Phoenix_Dive" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Void Glide" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Prepare_Void_Root_01,KeepRot" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Overlay_01" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Root_01,KeepRot:root:teleport_end" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCurseDive_Alan" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="CURSED,100,3;Curse" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="40" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_Phoenix_Dive" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Harbinger's Step" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Prepare_Void_Root_01,KeepRot" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Overlay_01" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Alan_Jump_Cast_01,KeepRot:root:cast" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCurseDive_Braccus" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyCurseDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="70" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Prepare_Void_Root_01,KeepRot" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Overlay_01:root" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Root_01,KeepRot:root:cast" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyCurseDive_Kraken" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyCurseDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="70" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Dimensional Dive" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="noprepare" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="noprepare" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Kraken_Air_Teleport_Overlays_01" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Head_Kraken_A_Spawn_VoidSplashEmerge_02, Detach:root:teleport_end" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyDrillwormBurrow" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Damage Multiplier" type="IntegerStatObjectFieldDefinition" value="200" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="KNOCKED_DOWN,100,1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="40" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="Death Type" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_Phoenix_Dive" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Drillworm Burrow" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Root_01:root:cast" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Void_01" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Landing_Root_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="BonePileBurrow" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_BonePile_Jump_BonePileBurrow" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Burrow|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Surprise your enemies by emerging from under ground at target position.|" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Root_01:root:cast" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Landing_Root_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemySpiderBurrow" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="BonePileBurrow" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_BonePile_Jump_BonePileBurrow" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Burrow|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Surprise your enemies by emerging from under ground at target position.|" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_earth_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_earth_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="skill_cast_ground_earth_01_cast" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Root_01:root:cast" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_VoidWoken_Drillworm_A_Teleport_Air_01_Cast_Landing_Root_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyBeetleJump" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Rogue_CloakAndDagger" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Carrion Wing" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Teleport without breaking sneaking.|" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Rogue_CloakDagger_Prepare_01" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Rogue_CloakDagger_Cast_01:root:cast" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Void_01" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Rogue_CloakDagger_Land_01" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyVoidGlide" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="30" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Ranger_TacticalRetreat" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Void Glide" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Apply Haste to yourself, then teleport away from danger. |" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Prepare_Void_Root_01,KeepRot" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Overlay_01:root" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Void_Cast_VoidGlide_Root_01,KeepRot:root:cast" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="CatJump" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="10" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="30" />
+        <field name="Damage On Jump" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_Jump" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Jump |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Jump to higher ground |" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Range: [1]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="TargetRadius" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_air_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_target_air_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_Targeter_03" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!Immobile" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyPhoenixDive_Shambling" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="PhoenixDive" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Death Type" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Running Roots" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_divine_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Prepare_Jump_01:Dummy_Root" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Cast_Jump_01_Start:Dummy_Root:teleport_start" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Impact_Jump_01_End:Dummy_Root:teleport_end" />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Air_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyPhoenixDive_Shambling_Boss" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyPhoenixDive_Shambling" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Damage" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Qualifier" />
+        <field name="DamageType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="Damage Type" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="BLEEDING,50,1" />
+        <field name="HitRadius" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="Death Type" />
+        <field name="Damage On Landing" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Thornfall" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_teleport_divine_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Boss_Prepare_Jump_01:Dummy_Root" />
+        <field name="TeleportTextEvent" type="StringStatObjectFieldDefinition" value="teleport" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Boss_Cast_Jump_01_Start:Dummy_Root:teleport_start " />
+        <field name="PreviewEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_UI_TargetPreviewer_Air_01" />
+        <field name="LandingEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Char_Creatures_Shambling_Boss_Impact_Jump_01_End:Dummy_Root:teleport_end" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

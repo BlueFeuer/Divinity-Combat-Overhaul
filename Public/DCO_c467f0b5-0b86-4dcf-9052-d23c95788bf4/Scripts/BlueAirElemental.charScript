@@ -1,0 +1,276 @@
+INIT
+	CHARACTER:__Me
+	INT:%MaxAPCycle = 0
+	INT:%APSourceCount = 0
+	SKILL:%Skill
+EVENTS
+
+EVENT AirElementalSetAirElemental1
+ON
+	OnInit()
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_AirElemental)
+	CharacterApplyStatus(__Me, Blue_AirElemental, -1)
+	
+EVENT AirElementalSetAirElemental2
+ON
+	OnLoaded(_, _, _, _)
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_AirElemental)
+	CharacterApplyStatus(__Me, Blue_AirElemental, -1)
+	
+EVENT AirElementalSetAirElemental3
+ON
+	OnReadyInCombat(__Me, _, _)
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_AirElemental)
+	CharacterApplyStatus(__Me, Blue_AirElemental, -1)
+	
+EVENT ResistanceCorrecter
+VARS
+	INT:_SourcePoints
+ON
+	OnTimer("MaxAPCycle")
+ACTIONS
+	//If this condition passes, the skill's costs could not be found.
+	IF "c1"
+		IsEqual(%MaxAPCycle, INT:-5)
+	THEN
+		StopTimer("MaxAPCycle")
+		//Maybe put an error message here if you like.
+	//If character has any of these statuses on first cycle, pause cycle for remove
+	ELIF "c1"
+		IsGreaterThen(%MaxAPCycle, INT:99)
+	THEN
+		StopTimer("MaxAPCycle")
+		Subtract(%MaxAPCycle, INT:100)
+		/* 
+		
+			I don't know how you intend to get the source or prevent overlap so modify the below.
+			
+		*/
+		CharacterAddActionPoints(_source, %MaxAPCycle)
+		CharacterAddSourcePoints(_source, %APSourceCount)
+		/*
+		
+		*/
+	ELIF "c1&!c2&!c3&!c4&!c5&!c6&!c7&!c8&!c9"
+		IsEqual(%MaxAPCycle, INT:0)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP1)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP2)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP3)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP4)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP5)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP6)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP7)
+		CharacterHasStatus(__Me, Blue_CheckMaxAP8)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			//Add first AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP1, 100)
+		ENDIF
+	//Remove all statuses if cycle is 0 and the above If failed.
+	ELIF "c1"
+		IsEqual(%MaxAPCycle, INT:0)
+	THEN
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP1, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP1)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP2, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP2)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP3, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP3)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP4, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP4)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP5, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP5)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP6, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP6)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP7, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP7)
+		RemoveStatusInfluence(__Me, Blue_CheckMaxAP8, 100)
+		CharacterRemoveStatus(__Me, Blue_CheckMaxAP8)
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP1)
+		IsEqual(%MaxAPCycle, INT:1)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP1, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP1)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP2, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP2)
+		IsEqual(%MaxAPCycle, INT:2)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP2, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP2)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP3, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP3)
+		IsEqual(%MaxAPCycle, INT:3)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP3, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP3)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP4, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP4)
+		IsEqual(%MaxAPCycle, INT:4)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP4, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP4)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP5, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP5)
+		IsEqual(%MaxAPCycle, INT:5)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP5, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP5)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP6, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP6)
+		IsEqual(%MaxAPCycle, INT:6)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP6, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP6)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP7, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP7)
+		IsEqual(%MaxAPCycle, INT:7)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP7, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP7)
+			//Add next AP buff, will be checked next cycle.
+			Add(%MaxAPCycle, INT:1)
+			AddStatusInfluence(__Me, Blue_CheckMaxAP8, 100)
+		ENDIF
+	ELIF "c1&c2"
+		CharacterHasStatus(__Me, Blue_CheckMaxAP8)
+		IsEqual(%MaxAPCycle, INT:8)
+	THEN
+		//Check if character can cast skill. If so, we're done.
+		IF "c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			Add(%MaxAPCycle, INT:100)
+		ENDIF
+		//But if not, ever onwards.
+		IF "!c1"
+			CharacterCanCast(__Me, %Skill)
+		THEN
+			RemoveStatusInfluence(__Me, Blue_CheckMaxAP8, 100)
+			CharacterRemoveStatus(__Me, Blue_CheckMaxAP8)
+			//... And to the beginning we go. But this time with more source.
+			//But only if they don't have 3 source already.
+			IF "c1&c2"
+				CharacterGetSourcePoints(__Me, _SourcePoints)
+				IsLessThen(_SourcePoints, INT:3)
+			THEN
+				CharacterAddSourcePoints(__Me, 1)
+				Add(%APSourceCount, INT:1)
+				Set(%MaxAPCycle, INT:0)
+			ELIF "c1&!c2"
+				CharacterGetSourcePoints(__Me, _SourcePoints)
+				IsLessThen(_SourcePoints, INT:3)
+			THEN
+				//Code red. This means that the skill's cost couldn't be found.
+				Set(%MaxAPCycle, INT:-5)
+			ENDIF
+		ENDIF
+	ENDIF
+	

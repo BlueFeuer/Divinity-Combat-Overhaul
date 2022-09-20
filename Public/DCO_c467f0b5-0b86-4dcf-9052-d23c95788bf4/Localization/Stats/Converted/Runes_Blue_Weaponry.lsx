@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Forward Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_WrathStanceOffhand" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Forward Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_WrathStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Harrying Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_MartialStanceOffhand" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Harrying Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_MartialStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cleaving Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_CleavingStanceOffhand" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cleaving Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_CleavingStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="No Bonus" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Generic" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="No Bonus" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_Generic" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CB10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Pinning Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPinningShot10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Quickshot Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBBullseye10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Precision Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPrecision10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crossbow, Power Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_CBPower10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Bow10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Pinning Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPinningShot10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Quickshot Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowBullseye10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Precision Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPrecision10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bow, Power Stance, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_BowPower10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Two-Handed, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Twohanded10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Single-Handed, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Singlehanded10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Mainhand, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingMainHand10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dual Wielding, Offhand, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_DualwieldingOffHand10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wand, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Wand10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 0" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff00" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 1" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff01" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 2" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff02" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 3" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff03" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 4" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff04" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 5" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff05" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 6" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff06" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 7" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff07" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 8" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff08" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 9" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff09" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Staff, Weaponry: 10" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot0_Staff10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fire Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_FireArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Explosive Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_ExplosiveArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Freezing Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_FreezingArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Water Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_WaterArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blessed Water Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_BlessedWaterArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cursed Fire Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_CursedFireArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Slowdown Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_SlowdownArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Stunning Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_StunningArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Steam Cloud Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_SteamCloudArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Smokescreen Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_SmokescreenArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Static Cloud Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_StaticCloudArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Witchcrafter's Static Cloud Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_VoodooStaticCloudArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Silver Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_SilverArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Barbed Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_BarbedArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockout Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_KnockoutArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Poison Cloud Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_PoisonCloudArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Charming Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_CharmingArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Poison Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_PoisonArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Acid Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_AcidArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Debuff Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_DebuffArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vampiric Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_VampiricArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cursing Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_CursingArrow" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blessing Arrow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BuffRunes_Slot1_BlessingArrow" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

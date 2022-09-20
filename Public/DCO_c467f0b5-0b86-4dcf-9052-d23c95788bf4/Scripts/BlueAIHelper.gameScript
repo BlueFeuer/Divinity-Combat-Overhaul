@@ -1,0 +1,3666 @@
+EVENTS
+	
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        AI Testing Suite:
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	
+EVENT Blue_AIHelper_Suite_GrantAllSkills //~~
+VARS
+	CHARACTER:_Character
+ON
+	OnSkillActivated(_Character, SKILL:Blue_Target_ToggleSkills) //~~
+ACTIONS
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeBase)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeBazooka)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeBerserker)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeBomber)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeHealer)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeMage)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeMelee)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeRanged)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeRanger)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeRogue)
+	CharacterAddSkill(_Character, Blue_Target_SetArchetypeWarrior)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority10)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority15)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority20)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority25)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority30)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority35)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority40)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority45)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority50)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority60)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority70)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority80)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority90)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority100)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority20OnWater)
+	CharacterAddSkill(_Character, Blue_Target_SetPriority20OffWater)
+
+EVENT Blue_AIHelper_Suite_NotUselessConsumeAttempt
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_NOTUSELESSCONSUME)
+ACTIONS
+	//SetTag(_Character, "IgnoreAIStuff")
+	CharacterApplyStatus(_Character, HEAL)
+
+EVENT Blue_AIHelper_Suite_UselessConsumeAttempt
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_USELESSCONSUME)
+ACTIONS
+	CharacterApplyStatus(_Character, HEAL)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeBase
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEBASE)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:base)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeBazooka
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEBAZOOKA)
+ACTIONS
+	//CharacterSetArchetype(_Character, ARCHETYPE:bazooka)
+	CharacterAddSkill(_Character, Blue_Target_CureWounds_PM)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeBerserker
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEBERSERKER)
+ACTIONS
+	//CharacterSetArchetype(_Character, ARCHETYPE:berserker)
+	CharacterAddSkill(_Character, Blue_Target_HeatMetal_PM)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeBomber
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEBOMBER)
+ACTIONS
+	//CharacterSetArchetype(_Character, ARCHETYPE:bomber)
+	CharacterAddSkill(_Character, Blue_Projectile_Fireball_PM)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeHealer
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEHEALER)
+ACTIONS
+	//CharacterSetArchetype(_Character, ARCHETYPE:healer)
+	CharacterAddSkill(_Character, Blue_Shout_Supernova_PM)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeMage
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEMAGE)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:mage)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeMelee
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEMELEE)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:melee)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeRanged
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPERANGED)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:ranged)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeRanger
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPERANGER)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:ranger)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeRogue
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEROGUE)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:rogue)
+
+EVENT Blue_AIHelper_Suite_SetArchetypeWarrior
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_SETARCHETYPEWARRIOR)
+ACTIONS
+	CharacterSetArchetype(_Character, ARCHETYPE:warrior)
+
+EVENT Blue_AIHelper_Suite_ToggleSkills	
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_TOGGLESKILLS)
+ACTIONS
+	IF "!c1"
+		CharacterHasSkill(_Character, Blue_Target_GenericSkill1)
+	THEN
+		CharacterAddSkill(_Character, Blue_Target_GenericSkill1)
+		CharacterAddSkill(_Character, Blue_Target_GenericSkill2)
+		CharacterAddSkill(_Character, Blue_Target_GenericSkill3)
+		//CharacterAddSkill(_Character, Blue_Target_CureWounds_PM)
+	ELSE
+		CharacterRemoveSkill(_Character, Blue_Target_GenericSkill1)
+		CharacterRemoveSkill(_Character, Blue_Target_GenericSkill2)
+		CharacterRemoveSkill(_Character, Blue_Target_GenericSkill3)
+		//CharacterRemoveSkill(_Character, Blue_Target_CureWounds_PM)
+	ENDIF
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        AIDE - AI Damage Equivalent
+//        You might be wondering what AIDE is.
+//        Essentially it's a way to add fake 'damage' to a skill that only the AI sees.
+//        Or healing/buffing for the inverse.
+//
+//        Anyways - AIDE isn't actually equivalent to 1 damage.
+//        It's actually a bit weird but the simplest version is that it takes;
+//        ~1.6 AIDE per Skill Damage to get an AI to switch targets. (Assuming the 
+//         current target gets no AIDE and the new one gets full AIDE.)
+//        ~1.6 AIDE per Skill Damage lower than another identical skill (with higher 
+//         damage) to get the AI to change what skill they opt to use.
+//
+//        Why is it like this? I don't know. It is what it is.
+//        After the AIDE is calculated, it's then multiplied by the AP cost of the 
+//        skill and finalized.
+//        If you want to add your own AIDEs, you can copy one of the ones below.
+//        And you'll of course need to structure your skills correctly.
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EVENT Blue_AIHelper_IgnoreAIDE
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_1AP)
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_2AP)
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_3AP)
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_4AP)
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_5AP)
+	OnCharacterStatusAttempt(_Character, BLUE_AIDE_6AP)
+ACTIONS
+	//StatusAttempt happens before FetchCharacterApplyStatusData, but not when it's being run for AI calculation.
+	//This flag makes the fetch get ignored/return null.
+	//Thus, I can make the AI think a status does something during AI calculation it actually doesn't.
+	SetTag(_Character, "IgnoreAIStuff")
+	
+EVENT Blue_AIHelper_FIRSTAIDE //Deprecated
+VARS
+	CHARACTER:_Character
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_FIRSTAIDE)
+ACTIONS
+	//This status literally only exists to reset this global var.
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(null,null,INT:1)
+	
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        Beneficial (Negative) AIDEs:
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EVENT Blue_AIHelper_OverrideInvisible //5000
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, OverrideInvisible)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilFortify //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilFortify)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BleedingA)
+		CharacterHasStatus(_Character, BleedingB)
+		CharacterHasStatus(_Character, BleedingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BleedingD)
+		CharacterHasStatus(_Character, BleedingE)
+		CharacterHasStatus(_Character, BleedingF)
+		CharacterHasStatus(_Character, BleedingG)
+		CharacterHasStatus(_Character, BleedingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, DecayingA)
+		CharacterHasStatus(_Character, DecayingB)
+		CharacterHasStatus(_Character, DecayingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, DecayingD)
+		CharacterHasStatus(_Character, DecayingE)
+		CharacterHasStatus(_Character, DecayingF)
+		CharacterHasStatus(_Character, DecayingG)
+		CharacterHasStatus(_Character, DecayingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, AcidA)
+		CharacterHasStatus(_Character, AcidB)
+		CharacterHasStatus(_Character, AcidC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, AcidD)
+		CharacterHasStatus(_Character, AcidE)
+		CharacterHasStatus(_Character, AcidF)
+		CharacterHasStatus(_Character, AcidG)
+		CharacterHasStatus(_Character, AcidH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SunderedA)
+		CharacterHasStatus(_Character, SunderedB)
+		CharacterHasStatus(_Character, SunderedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SunderedD)
+		CharacterHasStatus(_Character, SunderedE)
+		CharacterHasStatus(_Character, SunderedF)
+		CharacterHasStatus(_Character, SunderedG)
+		CharacterHasStatus(_Character, SunderedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BurningA)
+		CharacterHasStatus(_Character, BurningB)
+		CharacterHasStatus(_Character, BurningC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BurningD)
+		CharacterHasStatus(_Character, BurningE)
+		CharacterHasStatus(_Character, BurningF)
+		CharacterHasStatus(_Character, BurningG)
+		CharacterHasStatus(_Character, BurningH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, StaggeredA)
+		CharacterHasStatus(_Character, StaggeredB)
+		CharacterHasStatus(_Character, StaggeredC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, StaggeredD)
+		CharacterHasStatus(_Character, StaggeredE)
+		CharacterHasStatus(_Character, StaggeredF)
+		CharacterHasStatus(_Character, StaggeredG)
+		CharacterHasStatus(_Character, StaggeredH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, PetrifiedA)
+		CharacterHasStatus(_Character, PetrifiedB)
+		CharacterHasStatus(_Character, PetrifiedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, PetrifiedD)
+		CharacterHasStatus(_Character, PetrifiedE)
+		CharacterHasStatus(_Character, PetrifiedF)
+		CharacterHasStatus(_Character, PetrifiedG)
+		CharacterHasStatus(_Character, PetrifiedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilClearMinded //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilClearMinded)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BlindA)
+		CharacterHasStatus(_Character, BlindB)
+		CharacterHasStatus(_Character, BlindC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BlindD)
+		CharacterHasStatus(_Character, BlindE)
+		CharacterHasStatus(_Character, BlindF)
+		CharacterHasStatus(_Character, BlindG)
+		CharacterHasStatus(_Character, BlindH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SleepingA)
+		CharacterHasStatus(_Character, SleepingB)
+		CharacterHasStatus(_Character, SleepingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SleepingD)
+		CharacterHasStatus(_Character, SleepingE)
+		CharacterHasStatus(_Character, SleepingF)
+		CharacterHasStatus(_Character, SleepingG)
+		CharacterHasStatus(_Character, SleepingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, DrainWillpowerA)
+		CharacterHasStatus(_Character, DrainWillpowerB)
+		CharacterHasStatus(_Character, DrainWillpowerC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, DrainWillpowerD)
+		CharacterHasStatus(_Character, DrainWillpowerE)
+		CharacterHasStatus(_Character, DrainWillpowerF)
+		CharacterHasStatus(_Character, DrainWillpowerG)
+		CharacterHasStatus(_Character, DrainWillpowerH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, FearA)
+		CharacterHasStatus(_Character, FearB)
+		CharacterHasStatus(_Character, FearC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, FearD)
+		CharacterHasStatus(_Character, FearE)
+		CharacterHasStatus(_Character, FearF)
+		CharacterHasStatus(_Character, FearG)
+		CharacterHasStatus(_Character, FearH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, MadA)
+		CharacterHasStatus(_Character, MadB)
+		CharacterHasStatus(_Character, MadC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, MadD)
+		CharacterHasStatus(_Character, MadE)
+		CharacterHasStatus(_Character, MadF)
+		CharacterHasStatus(_Character, MadG)
+		CharacterHasStatus(_Character, MadH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, HebetudinousA)
+		CharacterHasStatus(_Character, HebetudinousB)
+		CharacterHasStatus(_Character, HebetudinousC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, HebetudinousD)
+		CharacterHasStatus(_Character, HebetudinousE)
+		CharacterHasStatus(_Character, HebetudinousF)
+		CharacterHasStatus(_Character, HebetudinousG)
+		CharacterHasStatus(_Character, HebetudinousH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilRested //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilRested)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BlindA)
+		CharacterHasStatus(_Character, BlindB)
+		CharacterHasStatus(_Character, BlindC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BlindD)
+		CharacterHasStatus(_Character, BlindE)
+		CharacterHasStatus(_Character, BlindF)
+		CharacterHasStatus(_Character, BlindG)
+		CharacterHasStatus(_Character, BlindH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, CrippledA)
+		CharacterHasStatus(_Character, CrippledB)
+		CharacterHasStatus(_Character, CrippledC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, CrippledD)
+		CharacterHasStatus(_Character, CrippledE)
+		CharacterHasStatus(_Character, CrippledF)
+		CharacterHasStatus(_Character, CrippledG)
+		CharacterHasStatus(_Character, CrippledH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, DiseasedA)
+		CharacterHasStatus(_Character, DiseasedB)
+		CharacterHasStatus(_Character, DiseasedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, DiseasedD)
+		CharacterHasStatus(_Character, DiseasedE)
+		CharacterHasStatus(_Character, DiseasedF)
+		CharacterHasStatus(_Character, DiseasedG)
+		CharacterHasStatus(_Character, DiseasedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SleepingA)
+		CharacterHasStatus(_Character, SleepingB)
+		CharacterHasStatus(_Character, SleepingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SleepingD)
+		CharacterHasStatus(_Character, SleepingE)
+		CharacterHasStatus(_Character, SleepingF)
+		CharacterHasStatus(_Character, SleepingG)
+		CharacterHasStatus(_Character, SleepingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BleedingA)
+		CharacterHasStatus(_Character, BleedingB)
+		CharacterHasStatus(_Character, BleedingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BleedingD)
+		CharacterHasStatus(_Character, BleedingE)
+		CharacterHasStatus(_Character, BleedingF)
+		CharacterHasStatus(_Character, BleedingG)
+		CharacterHasStatus(_Character, BleedingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilStrong //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilStrong)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, WeakA)
+		CharacterHasStatus(_Character, WeakB)
+		CharacterHasStatus(_Character, WeakC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, WeakD)
+		CharacterHasStatus(_Character, WeakE)
+		CharacterHasStatus(_Character, WeakF)
+		CharacterHasStatus(_Character, WeakG)
+		CharacterHasStatus(_Character, WeakH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, AtrophyA)
+		CharacterHasStatus(_Character, AtrophyB)
+		CharacterHasStatus(_Character, AtrophyC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, AtrophyD)
+		CharacterHasStatus(_Character, AtrophyE)
+		CharacterHasStatus(_Character, AtrophyF)
+		CharacterHasStatus(_Character, AtrophyG)
+		CharacterHasStatus(_Character, AtrophyH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilRemedy //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilRemedy)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, PoisonedA)
+		CharacterHasStatus(_Character, PoisonedB)
+		CharacterHasStatus(_Character, PoisonedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, PoisonedD)
+		CharacterHasStatus(_Character, PoisonedE)
+		CharacterHasStatus(_Character, PoisonedF)
+		CharacterHasStatus(_Character, PoisonedG)
+		CharacterHasStatus(_Character, PoisonedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, DiseasedA)
+		CharacterHasStatus(_Character, DiseasedB)
+		CharacterHasStatus(_Character, DiseasedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, DiseasedD)
+		CharacterHasStatus(_Character, DiseasedE)
+		CharacterHasStatus(_Character, DiseasedF)
+		CharacterHasStatus(_Character, DiseasedG)
+		CharacterHasStatus(_Character, DiseasedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, DecayingA)
+		CharacterHasStatus(_Character, DecayingB)
+		CharacterHasStatus(_Character, DecayingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, DecayingD)
+		CharacterHasStatus(_Character, DecayingE)
+		CharacterHasStatus(_Character, DecayingF)
+		CharacterHasStatus(_Character, DecayingG)
+		CharacterHasStatus(_Character, DecayingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, AtrophyA)
+		CharacterHasStatus(_Character, AtrophyB)
+		CharacterHasStatus(_Character, AtrophyC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, AtrophyD)
+		CharacterHasStatus(_Character, AtrophyE)
+		CharacterHasStatus(_Character, AtrophyF)
+		CharacterHasStatus(_Character, AtrophyG)
+		CharacterHasStatus(_Character, AtrophyH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilBolster //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilBolster)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, ChilledA)
+		CharacterHasStatus(_Character, ChilledB)
+		CharacterHasStatus(_Character, ChilledC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, ChilledD)
+		CharacterHasStatus(_Character, ChilledE)
+		CharacterHasStatus(_Character, ChilledF)
+		CharacterHasStatus(_Character, ChilledG)
+		CharacterHasStatus(_Character, ChilledH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, StaggeredA)
+		CharacterHasStatus(_Character, StaggeredB)
+		CharacterHasStatus(_Character, StaggeredC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, StaggeredD)
+		CharacterHasStatus(_Character, StaggeredE)
+		CharacterHasStatus(_Character, StaggeredF)
+		CharacterHasStatus(_Character, StaggeredG)
+		CharacterHasStatus(_Character, StaggeredH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, ShockedA)
+		CharacterHasStatus(_Character, ShockedB)
+		CharacterHasStatus(_Character, ShockedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, ShockedD)
+		CharacterHasStatus(_Character, ShockedE)
+		CharacterHasStatus(_Character, ShockedF)
+		CharacterHasStatus(_Character, ShockedG)
+		CharacterHasStatus(_Character, ShockedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, FearA)
+		CharacterHasStatus(_Character, FearB)
+		CharacterHasStatus(_Character, FearC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, FearD)
+		CharacterHasStatus(_Character, FearE)
+		CharacterHasStatus(_Character, FearF)
+		CharacterHasStatus(_Character, FearG)
+		CharacterHasStatus(_Character, FearH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, MadA)
+		CharacterHasStatus(_Character, MadB)
+		CharacterHasStatus(_Character, MadC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, MadD)
+		CharacterHasStatus(_Character, MadE)
+		CharacterHasStatus(_Character, MadF)
+		CharacterHasStatus(_Character, MadG)
+		CharacterHasStatus(_Character, MadH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilMagicShell //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilMagicShell)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SlowedA)
+		CharacterHasStatus(_Character, SlowedB)
+		CharacterHasStatus(_Character, SlowedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SlowedD)
+		CharacterHasStatus(_Character, SlowedE)
+		CharacterHasStatus(_Character, SlowedF)
+		CharacterHasStatus(_Character, SlowedG)
+		CharacterHasStatus(_Character, SlowedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, ShockedA)
+		CharacterHasStatus(_Character, ShockedB)
+		CharacterHasStatus(_Character, ShockedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, ShockedD)
+		CharacterHasStatus(_Character, ShockedE)
+		CharacterHasStatus(_Character, ShockedF)
+		CharacterHasStatus(_Character, ShockedG)
+		CharacterHasStatus(_Character, ShockedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, LoweredResistancesA)
+		CharacterHasStatus(_Character, LoweredResistancesB)
+		CharacterHasStatus(_Character, LoweredResistancesC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, LoweredResistancesD)
+		CharacterHasStatus(_Character, LoweredResistancesE)
+		CharacterHasStatus(_Character, LoweredResistancesF)
+		CharacterHasStatus(_Character, LoweredResistancesG)
+		CharacterHasStatus(_Character, LoweredResistancesH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, ChilledA)
+		CharacterHasStatus(_Character, ChilledB)
+		CharacterHasStatus(_Character, ChilledC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, ChilledD)
+		CharacterHasStatus(_Character, ChilledE)
+		CharacterHasStatus(_Character, ChilledF)
+		CharacterHasStatus(_Character, ChilledG)
+		CharacterHasStatus(_Character, ChilledH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BurningA)
+		CharacterHasStatus(_Character, BurningB)
+		CharacterHasStatus(_Character, BurningC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BurningD)
+		CharacterHasStatus(_Character, BurningE)
+		CharacterHasStatus(_Character, BurningF)
+		CharacterHasStatus(_Character, BurningG)
+		CharacterHasStatus(_Character, BurningH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, MutedA)
+		CharacterHasStatus(_Character, MutedB)
+		CharacterHasStatus(_Character, MutedC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ENDIF
+	IF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, MutedD)
+		CharacterHasStatus(_Character, MutedE)
+		CharacterHasStatus(_Character, MutedF)
+		CharacterHasStatus(_Character, MutedG)
+		CharacterHasStatus(_Character, MutedH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ENDIF
+	IF "c1"
+		IsLessThen(_AIDEToBeAdded, INT:-60)
+	THEN
+		Set(_AIDEToBeAdded, INT:-60)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_PosBuff //30
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, PosBuff)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	Add(_AIDEToBeAdded, INT:-30)
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+// I prefer to let the AI take over healing on this one, but a small amount of AIDE is applied for 2 reasons:
+// 1. To help healing compete with other AIDE-boosted skills (in the AI's eyes)
+// 2. I am COMPLETELY okay with the AI sometimes doing stupid shit, I.E. healing decaying allies.
+// It's purely beneficial to the player, they can get some value out of decaying, and maybe a laugh.
+// Except on undead. That would fall under too stupid to allow.
+// There's also a huge malus AIDE on healing characters over 70% health.
+// This was because the AI was casting First Aid at full health for the Rested buff.
+EVENT Blue_AIHelper_PosHeal //60
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+ON 
+	FetchCharacterApplyStatusData(_Character, PosHeal)
+ACTIONS
+	IF "c1"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Vitality)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0.70)
+		THEN
+			IF "c1"
+				CharacterIsEnemy(_Character, _Source)
+			THEN
+				Set(_AIDEToBeAdded, INT:-100)
+			ENDIF
+		ELSE
+			Subtract(_StatCheck, FLOAT:1)
+			Multiply(_StatCheck, FLOAT:60)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				CharacterHasTalent(_Character, Zombie)
+			THEN
+				Set(_AIDEToBeAdded, INT:0)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_PosBuffSelf //60
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, PosBuffSelf)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	Add(_AIDEToBeAdded, INT:-30)
+	IF "c1"
+		IsEqual(_Source, _Character)
+	THEN
+		Add(_AIDEToBeAdded, INT:-30)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_PosHealSelf //112
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+ON 
+	FetchCharacterApplyStatusData(_Character, PosHealSelf)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Vitality)
+	THEN
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:70)
+		IF "c1"
+			IsEqual(_Source, _Character)
+		THEN
+			Multiply(_StatCheck, FLOAT:1.6)
+		ENDIF
+		Cast(_AIDEToBeAdded, _StatCheck)
+		IF "c1"
+			CharacterHasTalent(_Character, Zombie)
+		THEN
+			Set(_AIDEToBeAdded, INT:0)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+	
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        Elemental AIDEs:
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EVENT Blue_AIHelper_UtilOil //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	CHARACTER:_Source
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilOil)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, FireResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing fossil strikes at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			// It's basically a slightly flattened exponential curve.
+			// But I may swap to a more extreme formula if the AI ignores 30-60 Res characters too much: =(Res*Res)*-0.006
+			// Or may swap to a completely different formula if I decide I don't want the AI to de-prioritize high resistance at all.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.6)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//Informs the AI this skill is effective on burning targets.
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BurningA)
+		CharacterHasStatus(_Character, BurningB)
+		CharacterHasStatus(_Character, BurningC)
+	THEN
+		Add(_AIDEToBeAdded, INT:5)
+	ELIF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BurningD)
+		CharacterHasStatus(_Character, BurningE)
+		CharacterHasStatus(_Character, BurningF)
+		CharacterHasStatus(_Character, BurningG)
+		CharacterHasStatus(_Character, BurningH)
+	THEN
+		Add(_AIDEToBeAdded, INT:30)
+	ELSE
+		Add(_AIDEToBeAdded, INT:0)
+	ENDIF
+	//Informs the AI this skill is more effective on targets standing near fire.
+	IF "c1|c2|c3|c4"
+		ContainsSurface(_Character, FLOAT:2, SURFACE:SurfaceFire)
+		ContainsSurface(_Character, FLOAT:2, SURFACE:SurfaceFireCursed)
+		ContainsSurface(_Character, FLOAT:2, SURFACE:SurfaceFireCloud)
+		ContainsSurface(_Character, FLOAT:2, SURFACE:SurfaceFireCloudCursed)
+	THEN
+		Add(_AIDEToBeAdded, INT:15)
+	ENDIF
+	IF "c1|c2|c3|c4"
+		ContainsSurface(_Character, FLOAT:3, SURFACE:SurfaceFire)
+		ContainsSurface(_Character, FLOAT:3, SURFACE:SurfaceFireCursed)
+		ContainsSurface(_Character, FLOAT:3, SURFACE:SurfaceFireCloud)
+		ContainsSurface(_Character, FLOAT:3, SURFACE:SurfaceFireCloudCursed)
+	THEN
+		Add(_AIDEToBeAdded, INT:15)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Elemental AIHelpers are so the AI doesn't try and use ineffective skills on high resistance targets.
+EVENT Blue_AIHelper_UtilFire //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	CHARACTER:_Source
+	//STRING:_Str
+	//FIXEDSTRING:_Text
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilFire)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, FireResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing fireballs at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			// It's basically a slightly flattened exponential curve.
+			// But I may swap to a more extreme formula if the AI ignores 30-60 Res characters too much: =(Res*Res)*-0.006
+			// Or may swap to a completely different formula if I decide I don't want the AI to de-prioritize high resistance at all.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.6)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//Informs the AI this will remove Chilled statuses. Kind of. Technically it just tells them it does less damage.
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, ChilledA)
+		CharacterHasStatus(_Character, ChilledB)
+		CharacterHasStatus(_Character, ChilledC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ELIF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, ChilledD)
+		CharacterHasStatus(_Character, ChilledE)
+		CharacterHasStatus(_Character, ChilledF)
+		CharacterHasStatus(_Character, ChilledG)
+		CharacterHasStatus(_Character, ChilledH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ELSE
+		Add(_AIDEToBeAdded, INT:0)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilWater //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	CHARACTER:_Source
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilWater)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, WaterResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing fireballs at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.6)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//Informs the AI this will remove Chilled statuses. Kind of. Technically it just tells them it does less damage.
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, BurningA)
+		CharacterHasStatus(_Character, BurningB)
+		CharacterHasStatus(_Character, BurningC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-20)
+	ELIF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, BurningD)
+		CharacterHasStatus(_Character, BurningE)
+		CharacterHasStatus(_Character, BurningF)
+		CharacterHasStatus(_Character, BurningG)
+		CharacterHasStatus(_Character, BurningH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-40)
+	ELSE
+		Add(_AIDEToBeAdded, INT:0)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilPoison //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	CHARACTER:_Source
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilPoison)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, PoisonResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing acid darts at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.6)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_UtilAir //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	CHARACTER:_Source
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilAir)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, AirResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing chain lightning at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.6)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Both Bludgeoning and Physical resistance are included as part of Physical.
+EVENT Blue_AIHelper_UtilPhysical //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+	CHARACTER:_Source
+ON 
+	FetchCharacterApplyStatusData(_Character, UtilPhysical)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, EarthResistance)
+		//Checking if the target is an ally of the source.
+		//Negative AIDE makes the AI think the skill applies a buff, and I don't want the AI throwing rocks at eachother if their resistances are on the upper end of the spectrum.
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.3) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:-0.25)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.66)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:-15)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        Hostile (Positive) AIDEs:
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//Applied to every damaging skill in the game.
+EVENT Blue_AIHelper_HostileDamage //20
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	CHARACTER:_Source
+	FLOAT:_StatCheck
+	INT:_HelperInt
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileDamage)
+ACTIONS
+	IF "c1&c2&c3"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetDistance(_StatCheck, _Source, _Character)
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Kingsman prioritization
+	IF "c1"
+		CharacterHasTalent(_Character, Perfectionist)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:10)
+		THEN
+			Add(_AIDEToBeAdded, INT:20)
+		ELSE
+			Multiply(_StatCheck, FLOAT:-2)
+			Cast(_HelperInt, _StatCheck)
+			Add(_AIDEToBeAdded, _HelperInt)
+			Add(_AIDEToBeAdded, INT:40)
+		ENDIF
+	ENDIF
+	//Sleeping de-prioritization
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SleepingA)
+		CharacterHasStatus(_Character, SleepingB)
+		CharacterHasStatus(_Character, SleepingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-50)
+	ELIF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SleepingD)
+		CharacterHasStatus(_Character, SleepingE)
+		CharacterHasStatus(_Character, SleepingF)
+		CharacterHasStatus(_Character, SleepingG)
+		CharacterHasStatus(_Character, SleepingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-100)
+	ELSE
+		Add(_AIDEToBeAdded, INT:0)
+	ENDIF
+	//Add AIDE based on distance, closer targets get slightly higher priority
+	IF "!c1"
+		//Ghastly de-prioritization
+		CharacterHasTalent(_Character, Demon)
+	THEN
+		IF "c1"
+			GetDistance(_StatCheck, _Source, _Character)
+		THEN
+			IF "c1"
+				IsLessThen(_StatCheck, FLOAT:3)
+			THEN
+				Add(_AIDEToBeAdded, INT:30)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:4)
+			THEN
+				Add(_AIDEToBeAdded, INT:28)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:5)
+			THEN
+				Add(_AIDEToBeAdded, INT:26)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:6)
+			THEN
+				Add(_AIDEToBeAdded, INT:24)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:7)
+			THEN
+				Add(_AIDEToBeAdded, INT:22)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:8)
+			THEN
+				Add(_AIDEToBeAdded, INT:20)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:9)
+			THEN
+				Add(_AIDEToBeAdded, INT:18)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:10)
+			THEN
+				Add(_AIDEToBeAdded, INT:16)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:11)
+			THEN
+				Add(_AIDEToBeAdded, INT:14)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:12)
+			ELIF "!c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:10)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Used when no other modifiers are used.
+EVENT Blue_AIHelper_ExHostileDamage //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileDamage)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Kingsman prioritization
+	IF "c1"
+		CharacterHasTalent(_Character, Perfectionist)
+	THEN
+		Add(_AIDEToBeAdded, INT:30)
+	ENDIF
+	//Sleeping de-prioritization
+	IF "c1|c2|c3"
+		CharacterHasStatus(_Character, SleepingA)
+		CharacterHasStatus(_Character, SleepingB)
+		CharacterHasStatus(_Character, SleepingC)
+	THEN
+		Add(_AIDEToBeAdded, INT:-50)
+	ELIF "c1|c2|c3|c4|c5"
+		CharacterHasStatus(_Character, SleepingD)
+		CharacterHasStatus(_Character, SleepingE)
+		CharacterHasStatus(_Character, SleepingF)
+		CharacterHasStatus(_Character, SleepingG)
+		CharacterHasStatus(_Character, SleepingH)
+	THEN
+		Add(_AIDEToBeAdded, INT:-100)
+	ELSE
+		Add(_AIDEToBeAdded, INT:0)
+	ENDIF
+	Add(_AIDEToBeAdded, INT:40)
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Bullies prioritize low-health and low-armor targets.
+EVENT Blue_AIHelper_HostileBully //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileBully)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Vitality)
+	THEN
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:-40)
+		Cast(_AIDEToBeAdded, _StatCheck)
+	ENDIF
+	//
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.7)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:-25)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Openers prioritize high health targets.
+EVENT Blue_AIHelper_HostileOpener //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileOpener)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, VitalityPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,150,150,180,215,250,285,325,360,400,435,475,520,560,605,650,695,740,790,840,895,950)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 1005,1065,1125,1190,1255,1325,1400,1475,1555,1635,1725,1815,1910,2015,2120)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:1.0)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:20)
+		IF "c1"
+			CharacterGetStat(_FloatHelp, _Character, Vitality)
+		THEN
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Anti-Armor skills prioritize those with high armor.
+EVENT Blue_AIHelper_HostileArmored //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileArmored)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.7)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:30)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Melee skills prioritize those closer to the caster.
+EVENT Blue_AIHelper_HostileMelee //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	CHARACTER:_Source
+	FLOAT:_StatCheck
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileMelee)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Ghastly de-prioritization. This is applied in addition to the generic hostile AIDE.
+	//Characters with Ghastly also don't get any AIDE from being close to melee skills, so this is doubly effective.
+	IF "c1"
+		CharacterHasTalent(_Character, Demon)
+	THEN
+		Add(_AIDEToBeAdded, INT:-10)
+	ELSE
+		IF "c1"
+			GetDistance(_StatCheck, _Source, _Character)
+		THEN
+			IF "c1"
+				IsLessThen(_StatCheck, FLOAT:3)
+			THEN
+				Add(_AIDEToBeAdded, INT:50)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:4)
+			THEN
+				Add(_AIDEToBeAdded, INT:40)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:5)
+			THEN
+				Add(_AIDEToBeAdded, INT:30)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:6)
+			THEN
+				Add(_AIDEToBeAdded, INT:20)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:7)
+			THEN
+				Add(_AIDEToBeAdded, INT:10)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:8)
+			THEN
+				Add(_AIDEToBeAdded, INT:0)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:9)
+			THEN
+				Add(_AIDEToBeAdded, INT:-5)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:10)
+			THEN
+				Add(_AIDEToBeAdded, INT:-10)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:11)
+			THEN
+				Add(_AIDEToBeAdded, INT:-15)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:-20)
+			ELIF "!c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:-25)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Ranged skills prioritize those who are further away, levelling out at 8 meters.
+EVENT Blue_AIHelper_HostileRanged //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	CHARACTER:_Source
+	FLOAT:_StatCheck
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileRanged)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		GetDistance(_StatCheck, _Source, _Character)
+	THEN
+		IF "c1"
+			IsLessThen(_StatCheck, FLOAT:3)
+		THEN
+			Add(_AIDEToBeAdded, INT:-20)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:4)
+		THEN
+			Add(_AIDEToBeAdded, INT:-10)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:5)
+		THEN
+			Add(_AIDEToBeAdded, INT:0)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:6)
+		THEN
+			Add(_AIDEToBeAdded, INT:10)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:7)
+		THEN
+			Add(_AIDEToBeAdded, INT:20)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:8)
+		THEN
+			Add(_AIDEToBeAdded, INT:30)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:9)
+		THEN
+			Add(_AIDEToBeAdded, INT:31)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:10)
+		THEN
+			Add(_AIDEToBeAdded, INT:32)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:11)
+		THEN
+			Add(_AIDEToBeAdded, INT:33)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:12)
+		THEN
+			Add(_AIDEToBeAdded, INT:34)
+		ELIF "!c1"
+			IsLessThen(_StatCheck, FLOAT:12)
+		THEN
+			Add(_AIDEToBeAdded, INT:35)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+EVENT Blue_AIHelper_HostileDebuff //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileDebuff)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_FloatHelp, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		GetVar(_StatCheck, _Character, "DamageDealtThisTurn")
+	THEN
+		//Gets a level-corrected 'average' damage (LCD for short):
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,38,38,47,58,70,82,96,109,125,139,156,175,193,214,235,257,280,306,332,361,392)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 423,457,492,530,569,612,658,706,757,809,868,928,992,1064,1136)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:1.0)
+		//Compares the LCD to the damage the character has dealt:
+		Divide(_StatCheck, _FloatHelp)
+		//If you do less than the LCD, your AIDE is lowered (up to a maximum of the multiplier at 0 damage).
+		//If you do more, then your AIDE is raised up to a maximum of 90 at 400% LCD dealt.
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:30)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+		IF "c1"
+			IsGreaterThen(_AIDEToBeAdded, INT:90)
+		THEN
+			Set(_AIDEToBeAdded, INT:90)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Armored but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileArmored //40
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileArmored)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.7)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:60)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Bully but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileBully //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileBully)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Vitality)
+	THEN
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:-50)
+		Cast(_AIDEToBeAdded, _StatCheck)
+	ENDIF
+	//
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.7)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:-50)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Opener but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileOpener //50
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileOpener)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, VitalityPoints)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,150,150,180,215,250,285,325,360,400,435,475,520,560,605,650,695,740,790,840,895,950)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 1005,1065,1125,1190,1255,1325,1400,1475,1555,1635,1725,1815,1910,2015,2120)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:1.0)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:40)
+		IF "c1"
+			CharacterGetStat(_FloatHelp, _Character, Vitality)
+		THEN
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Melee but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileMelee //60
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileMelee)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Ghastly de-prioritization. This is applied in addition to the generic hostile AIDE.
+	//Characters with Ghastly also don't get any AIDE from being close to melee skills, so this is doubly effective.
+	IF "c1"
+		CharacterHasTalent(_Character, Demon)
+	THEN
+		Add(_AIDEToBeAdded, INT:-10)
+	ELSE
+		IF "c1"
+			GetDistance(_StatCheck, _Source, _Character)
+		THEN
+			IF "c1"
+				IsLessThen(_StatCheck, FLOAT:3)
+			THEN
+				Add(_AIDEToBeAdded, INT:100)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:4)
+			THEN
+				Add(_AIDEToBeAdded, INT:80)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:5)
+			THEN
+				Add(_AIDEToBeAdded, INT:60)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:6)
+			THEN
+				Add(_AIDEToBeAdded, INT:40)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:7)
+			THEN
+				Add(_AIDEToBeAdded, INT:20)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:8)
+			THEN
+				Add(_AIDEToBeAdded, INT:0)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:9)
+			THEN
+				Add(_AIDEToBeAdded, INT:-10)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:10)
+			THEN
+				Add(_AIDEToBeAdded, INT:-20)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:11)
+			THEN
+				Add(_AIDEToBeAdded, INT:-30)
+			ELIF "c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:-40)
+			ELIF "!c1"
+				IsLessThen(_StatCheck, FLOAT:12)
+			THEN
+				Add(_AIDEToBeAdded, INT:-50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Ranged but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileRanged //60
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileRanged)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		GetDistance(_StatCheck, _Source, _Character)
+	THEN
+		IF "c1"
+			IsLessThen(_StatCheck, FLOAT:3)
+		THEN
+			Add(_AIDEToBeAdded, INT:-40)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:4)
+		THEN
+			Add(_AIDEToBeAdded, INT:-20)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:5)
+		THEN
+			Add(_AIDEToBeAdded, INT:0)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:6)
+		THEN
+			Add(_AIDEToBeAdded, INT:20)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:7)
+		THEN
+			Add(_AIDEToBeAdded, INT:40)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:8)
+		THEN
+			Add(_AIDEToBeAdded, INT:50)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:9)
+		THEN
+			Add(_AIDEToBeAdded, INT:60)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:10)
+		THEN
+			Add(_AIDEToBeAdded, INT:70)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:11)
+		THEN
+			Add(_AIDEToBeAdded, INT:80)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:12)
+		THEN
+			Add(_AIDEToBeAdded, INT:90)
+		ELIF "!c1"
+			IsLessThen(_StatCheck, FLOAT:12)
+		THEN
+			Add(_AIDEToBeAdded, INT:100)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//This is identical to Debuff but with the values raised to the Extreme.
+EVENT Blue_AIHelper_ExHostileDebuff //60
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, ExHostileDebuff)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1"
+		GetVar(_StatCheck, _Character, "DamageDealtThisTurn")
+	THEN
+		//Gets a level-corrected 'average' damage (LCD for short):
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,38,38,47,58,70,82,96,109,125,139,156,175,193,214,235,257,280,306,332,361,392)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 423,457,492,530,569,612,658,706,757,809,868,928,992,1064,1136)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:1.0)
+		//Compares the LCD to the damage the character has dealt:
+		Divide(_StatCheck, _FloatHelp)
+		//If you do less than the LCD, your AIDE is lowered (up to a maximum of the multiplier at 0 damage).
+		//If you do more, then your AIDE is raised up to a maximum of 180 at 400% LCD dealt.
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:60)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+		IF "c1"
+			IsGreaterThen(_AIDEToBeAdded, INT:180)
+		THEN
+			Set(_AIDEToBeAdded, INT:90)
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Deprecated for now, temporarily used as a testing AIDE.
+EVENT Blue_AIHelper_HostileTank //30
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileTank)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Prioritize healing Knife-wielders
+	IF "c1"
+		CharacterHasWeaponType(_Character, Knife, INT:1)
+	THEN
+		Set(_AIDEToBeAdded, INT:5000)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Deprecated for now, temporarily used as a testing AIDE.
+EVENT Blue_AIHelper_HostileArmed //30
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+	INT:_IntHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileArmed)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Prioritize heat metalling high armor
+	IF "c1"
+		CharacterGetStat(_StatCheck, _Character, Level)
+	THEN
+		Cast(_IntHelp, _StatCheck)
+	ENDIF
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, PhysicalArmorPoints)
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsLessThen(_IntHelp, INT:21)
+		THEN
+			GetElement(_FloatHelp, INT:_IntHelp,24,24,31,40,49,60,73,86,101,116,133,153,173,195,219,244,270,299,330,364,399)
+		ENDIF
+		IF "!c1&c2"
+			IsLessThen(_IntHelp, INT:21)
+			IsLessThen(_IntHelp, INT:35)
+		THEN
+			Subtract(_IntHelp, INT:21)
+			GetElement(_FloatHelp, INT:_IntHelp, 437,478,520,567,615,668,726,785,850,916,991,1068,1150,1242,1336)
+		ENDIF
+		Multiply(_FloatHelp, FLOAT:0.7)
+		Divide(_StatCheck, _FloatHelp)
+		Subtract(_StatCheck, FLOAT:1)
+		Multiply(_StatCheck, FLOAT:5000)
+		Cast(_IntHelp, _StatCheck)
+		Add(_AIDEToBeAdded, _IntHelp)
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Deprecated for now, temporarily used as a testing AIDE.
+EVENT Blue_AIHelper_HostileMage //30
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Source
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileMage)
+ACTIONS
+	IF "c1&c2"
+		GetVar(_Source, _Character, "BLUEAIDECHARACTER")
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Prioritize fireballing high fire resistance characters
+	IF "c1&c2"
+		CharacterGetStat(_StatCheck, _Character, FireResistance)
+		CharacterIsEnemy(_Character, _Source)
+	THEN
+		IF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:100)
+		THEN
+			Set(_AIDEToBeAdded, INT:-100)
+		ELIF "c1"
+			IsGreaterThen(_StatCheck, FLOAT:0)
+		THEN
+			// Formula enacted here is: =(Res*-0.6) * (0.5 + (Res*0.006))
+			// Which probably seems odd, can plug it into a graphing calculator for values 1-100 and see what you get.
+			// It's basically a slightly flattened exponential curve.
+			// But I may swap to a more extreme formula if the AI ignores 30-60 Res characters too much: =(Res*Res)*-0.006
+			// Or may swap to a completely different formula if I decide I don't want the AI to de-prioritize high resistance at all.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:0.006)
+			Add(_FloatHelp, FLOAT:0.5)
+			Multiply(_StatCheck, FLOAT:5000)
+			Multiply(_StatCheck, _FloatHelp)
+			Cast(_AIDEToBeAdded, _StatCheck)
+		ELIF "c1"
+			IsLessThen(_StatCheck, FLOAT:0)
+		THEN
+			Multiply(_StatCheck, FLOAT:-0.5)
+			Cast(_AIDEToBeAdded, _StatCheck)
+			IF "c1"
+				IsGreaterThen(_StatCheck, FLOAT:50)
+			THEN
+				Set(_AIDEToBeAdded, INT:50)
+			ENDIF
+		ENDIF
+	ENDIF
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+
+//Deprecated for now, temporarily used as a testing AIDE.
+EVENT Blue_AIHelper_HostileRogue //30
+VARS
+	CHARACTER:_Character
+	INT:_AIDE
+	INT:_AIDEToBeAdded
+ON 
+	FetchCharacterApplyStatusData(_Character, HostileRogue)
+ACTIONS
+	IF "c1"
+		GetVar(_AIDE, _Character, "BLUESAVEAIDE")
+	THEN
+	ENDIF
+	Set(_AIDEToBeAdded, INT:0)
+	//~~
+	//Supernova allies
+	Set(_AIDEToBeAdded, INT:-5000)
+	//~~
+	IF "c1|c2"
+		IsLessThen(_AIDE, INT:-1000000)
+		IsEqual(_AIDE, null)
+	THEN
+		Set(_AIDE, INT:0)
+	ENDIF
+	Add(_AIDE, _AIDEToBeAdded)
+	SetVar(_Character, "BLUESAVEAIDE", _AIDE)
+	RETURN(null,null,INT:1)
+	
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+//        Finalize AIDEs:
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// AIDE, 1 AP
+EVENT Blue_AIHelper_AIDE_1AP
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+	//STRING:_Str
+	//FIXEDSTRING:_Text
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_1AP)
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		//DisplayCombatInfoText(_Character, "Testerest", 5)
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:0.5)
+		//Print(_Str, "[1]", _AIDE)
+		//Cast(_Text, _Str)
+		//DisplayCombatInfoText(_Character, _Text, 5.0)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+			//DisplayCombatInfoText(_Character, "testesT", 5.0)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+
+
+// AIDE, 2 AP //~~
+EVENT Blue_AIHelper_AIDE_2AP //~~
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_2AP) //~~
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:1)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+	
+// AIDE, 3 AP //~~
+EVENT Blue_AIHelper_AIDE_3AP //~~
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_3AP) //~~
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:1.5)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+	
+// AIDE, 4 AP //~~
+EVENT Blue_AIHelper_AIDE_4AP //~~
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_4AP) //~~
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:2)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+	
+// AIDE, 5 AP //~~
+EVENT Blue_AIHelper_AIDE_5AP //~~
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_5AP) //~~
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:2.5)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+	
+// AIDE, 6 AP //~~
+EVENT Blue_AIHelper_AIDE_6AP //~~
+VARS
+	CHARACTER:_Character
+	LIST<STATUS>:_RemoveList
+	STATUS:_Result
+	FLOAT:_AIDE
+	INT:_IntAIDE
+ON 
+	FetchCharacterApplyStatusData(_Character, BLUE_AIDE_6AP) //~~
+ACTIONS
+	ListClear(_RemoveList)
+	IF "!c1"
+		IsTagged(_Character, "IgnoreAIStuff")
+	THEN
+		Set(_IntAIDE, INT:0)
+		IF "c1"
+			GetVar(_IntAIDE, _Character, "BLUESAVEAIDE")
+		THEN
+		ENDIF
+		Cast(_AIDE, _IntAIDE)
+		Multiply(_AIDE, FLOAT:3)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ After the AIDE of the status has been ascertained, it is finally time to apply the appropriate AIDE status.
+		// ~~ Due to reasons unknown, statuses that don't preexist in the vanilla game don't seem to work for this.
+		// ~~ So, I've overridden a bunch of vanilla statuses for this purpose. (That can be reinstated under a new name if needed.)
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// ~~ Negative scores (Healing/buffs):
+		IF "c1"
+			IsLessThen(_AIDE, FLOAT:-500)
+		THEN
+			Set(_Result, STATUS:INF_WATER_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-200)
+		THEN
+			Set(_Result, STATUS:INF_POISON_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-160)
+		THEN
+			Set(_Result, STATUS:INF_OIL_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-130)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-100)
+		THEN
+			Set(_Result, STATUS:INF_FIRE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-75)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-55)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-35)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE_G)
+		ELIF "!c1"
+			IsGreaterThen(_AIDE, FLOAT:-10)
+		THEN
+			Set(_Result, STATUS:INF_ACID_G)
+		// ~~ Positive scores (Damage/Debuffs):
+		ELIF "c1"
+			IsGreaterThen(_AIDE, FLOAT:600)
+		THEN
+			Set(_Result, STATUS:INF_WATER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:300)
+		THEN
+			Set(_Result, STATUS:INF_WARP)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:260)
+		THEN
+			Set(_Result, STATUS:INF_SHADOW)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:230)
+		THEN
+			Set(_Result, STATUS:INF_RANGED)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:200)
+		THEN
+			Set(_Result, STATUS:INF_POWER)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:170)
+		THEN
+			Set(_Result, STATUS:INF_POISON)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:140)
+		THEN
+			Set(_Result, STATUS:INF_OIL)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:110)
+		THEN
+			Set(_Result, STATUS:INF_NECROFIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:80)
+		THEN
+			Set(_Result, STATUS:INF_FIRE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:60)
+		THEN
+			Set(_Result, STATUS:INF_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:40)
+		THEN
+			Set(_Result, STATUS:INF_CURSED_ELECTRIC)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:30)
+		THEN
+			Set(_Result, STATUS:INF_BLOOD)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:20)
+		THEN
+			Set(_Result, STATUS:INF_BLESSED_ICE)
+		ELIF "!c1"
+			IsLessThen(_AIDE, FLOAT:10)
+		THEN
+			Set(_Result, STATUS:INF_ACID)
+		ENDIF
+	ELSE
+		ClearTag(_Character, "IgnoreAIStuff")
+		Set(_Result, null)
+	ENDIF
+	SetVar(_Character, "BLUESAVEAIDE", INT:0)
+	RETURN(_RemoveList,_Result,INT:1)
+	

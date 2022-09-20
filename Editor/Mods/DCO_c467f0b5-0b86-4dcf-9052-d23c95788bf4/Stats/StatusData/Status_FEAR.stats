@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="1d8c865f-bfa7-4f37-b0e4-2bdc12ecf6be">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FEAR" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Terrified" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Fear has gripped this character. It cannot be controlled and will automatically try to run away. Cured by Clear-Minded, Enraged.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Frightened" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Fear_02:Dummy_StatusFX" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Fear" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Fear" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_0" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Terrified" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Fear has gripped this character. It cannot be controlled and will automatically try to run away. Cured by Clear-Minded, Enraged.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Frightened" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Fear_02:Dummy_StatusFX" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Fear" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Fear" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

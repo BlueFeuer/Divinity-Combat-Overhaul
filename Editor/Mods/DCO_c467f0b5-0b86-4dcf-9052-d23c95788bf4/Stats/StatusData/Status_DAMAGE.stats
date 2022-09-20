@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="83b6cb1d-ada3-422f-893b-da1abd4adae3">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="POISONED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Poisoned" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Deals [1] damage each turn." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Damage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Poison" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="20" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Poisoned_01:Dummy_StatusFX" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_Poisoned_01" />
+        <field name="StatusEffectOnTurn" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Poisoned_DoT_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Poisoned" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Poisoned" />
+        <field name="DamageEvent" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusEvent" />
+        <field name="DamageStats" type="StringStatObjectFieldDefinition" value="Damage_Poisoned" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="Death Type" />
+        <field name="DamageCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageItems" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DamageTorches" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="PermanentOnTorch" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SpawnBlood" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SUFFOCATING" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Suffocating" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Destroys [1] each turn.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Damage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Suffocating" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="19" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Suffocating_01:Dummy_StatusFX" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="38" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Suffocating" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Suffocating" />
+        <field name="DamageEvent" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="StatusEvent" />
+        <field name="DamageStats" type="StringStatObjectFieldDefinition" value="Damage_Suffocating" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Death Type" />
+        <field name="DamageCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageItems" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DamageTorches" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="PermanentOnTorch" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SpawnBlood" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="QUEST_PAIN" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Alice Alisceon's Pain" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|The pain of Alice Alisceon pierces your soul, damaging you for [1] every turn.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Damage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Pain" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Pain_Subject_01:Dummy_StatusFX" />
+        <field name="Material" type="StringStatObjectFieldDefinition" value="f46b1af8-500b-4a04-a852-674c4a44a14b" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Quest_PainStatus" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Quest_PainStatus" />
+        <field name="DamageEvent" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="StatusEvent" />
+        <field name="DamageStats" type="StringStatObjectFieldDefinition" value="Damage_Pain" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Death Type" />
+        <field name="DamageCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageItems" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DamageTorches" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="PermanentOnTorch" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SpawnBlood" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DEATH_WISH" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Death Wish|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|The character receives bonus damage depending on missing Vitality. Deals [1] damage each turn.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Damage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Decay_DeathWish" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_DeathWish_01:Dummy_BodyFX;RS3_FX_GP_Status_DeathWish_StatusFX_01,KeepRot:Dummy_OverheadFX" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_DeathWish" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_DeathWish" />
+        <field name="DamageEvent" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="StatusEvent" />
+        <field name="DamageStats" type="StringStatObjectFieldDefinition" value="Damage_DeathWish" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Death Type" />
+        <field name="DamageCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageItems" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DamageTorches" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="PermanentOnTorch" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SpawnBlood" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="ScaleWithVitality" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="NECROFIRE" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Necrofire" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Deals [1] damage each turn. Cannot be extinguished." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Damage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_NecroFire" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="24" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Necrofire_01:Dummy_BodyFX" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_Necrofire_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialFadeAmount" type="IntegerStatObjectFieldDefinition" value="2000" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Necrofire" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Necrofire" />
+        <field name="SurfaceChange" type="StringStatObjectFieldDefinition" value="Ignite" />
+        <field name="DamageEvent" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusEvent" />
+        <field name="DamageStats" type="StringStatObjectFieldDefinition" value="Damage_Necrofire" />
+        <field name="DeathType" type="EnumerationStatObjectFieldDefinition" value="5" enumeration_type_name="Death Type" />
+        <field name="DamageCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DamageTorches" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="PermanentOnTorch" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SpawnBlood" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

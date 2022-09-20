@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="92051e4d-6ecc-4be9-a36c-fe8f8899b32d">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="CircleOfProtection" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="AIFlags" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="AIFlags" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE_INITIAL" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Ally;!Dead" />
+        <field name="AuraSelf" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE" />
+        <field name="AuraAllies" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_CircleOfProtection" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Dome Of Protection |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Create a magic field that restores Magic and Physical Armour on allies in an area.  |" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_weapon_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_weapon_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Prepare_CircleOfProtection_Root_01,KeepRot:Dummy_Root;RS3_FX_Skills_Divine_Prepare_Weapon_CircleOfProtection_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_attack_round_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Attack_Round_CircleOfProtection_Root_01:Dummy_Root:cast" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DomeEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Protective_Dome_01" />
+        <field name="CycleConditions" type="StringStatObjectFieldDefinition" value="Ally;!Dead" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_0" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="AIFlags" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="AIFlags" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE_INITIAL" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Ally;!Dead" />
+        <field name="AuraSelf" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE" />
+        <field name="AuraAllies" type="StringStatObjectFieldDefinition" value="PROTECTION_CIRCLE" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_CircleOfProtection" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Dome Of Protection |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Create a magic field that restores Magic and Physical Armour on allies in an area.  |" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_weapon_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_weapon_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Prepare_CircleOfProtection_Root_01,KeepRot:Dummy_Root;RS3_FX_Skills_Divine_Prepare_Weapon_CircleOfProtection_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_attack_round_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Attack_Round_CircleOfProtection_Root_01:Dummy_Root:cast" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DomeEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Protective_Dome_01" />
+        <field name="CycleConditions" type="StringStatObjectFieldDefinition" value="Ally;!Dead" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

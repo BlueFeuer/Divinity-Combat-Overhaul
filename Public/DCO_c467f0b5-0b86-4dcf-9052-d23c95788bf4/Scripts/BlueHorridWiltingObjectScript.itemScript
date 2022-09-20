@@ -1,0 +1,215 @@
+INIT
+	ITEM:__Me
+BEHAVIOUR
+
+REACTION BlueHorridWiltingClearSurfaceBloodCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloud)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueHorridWiltingClearSurfaceBloodCloudElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudElectrified)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueHorridWiltingClearSurfaceWaterCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloud)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueHorridWiltingClearSurfaceWaterCloudElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudElectrified)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueHorridWiltingClearSurfaceWater, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWater)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueHorridWiltingClearSurfaceWaterFrozen, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterFrozen)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueHorridWiltingClearSurfaceWaterElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterElectrified)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueHorridWiltingClearSurfaceBlood, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBlood)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueHorridWiltingClearSurfaceBloodFrozen, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodFrozen)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueHorridWiltingClearSurfaceBloodElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodElectrified)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		
+REACTION BlueHorridWiltingClearSurfaceDestroyObject, 100
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "!c1&!c2&!c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudElectrified)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudElectrified)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWater)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterFrozen)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterElectrified)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBlood)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodFrozen)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodElectrified)
+	ACTIONS
+		ItemDestroy(__Me)
+		
+EVENTS
+
+EVENT BlueHorridWiltingGetCasterDoExplosion
+VARS
+	CHARACTER:_Owner
+ON
+	OnItemStatus(__Me, Blue_HorridWiltingCast)
+ACTIONS
+	IF "c1"
+		ItemGetStatusSourceCharacter(__Me, PRETIER, _Owner)
+	THEN
+		ExplodeAt(__Me, Blue_Explosion_HorridWilting, -1, _Owner)
+	ENDIF
+/*
+EVENTS
+EVENT BlueHorridWiltingClearSurcacesOnCreation
+ON
+	OnInit()
+ACTIONS
+	ItemEvent(__Me, "HorridWiltingRemoveGroundSurfaces")
+
+
+EVENT BlueHorridWiltingClearSurfaceCheck
+VARS
+	FLOAT3:_Vtarget
+	STRING:_Str
+	FIXEDSTRING:_Text
+	INT:_Tally
+	FLOAT:_Radius
+ON
+	OnItemEvent(__Me, "HorridWiltingRemoveGroundSurfaces")
+ACTIONS
+	Set(_Radius, FLOAT:4.5)
+	Set(_Tally, INT:0)
+	/*
+		Print(_Str, "[1]", _Tally)
+		Cast(_Text, _Str)
+		DisplayCombatInfoText(__Me, _Text, 5.0)
+	
+	IF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceWater)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceBloodCloud)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceBloodCloudElectrified)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceWaterCloud)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceWaterCloudElectrified)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceWaterFrozen)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceWaterElectrified)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceBlood)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceBloodFrozen)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ELIF "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, _Radius, SurfaceBloodElectrified)
+	THEN
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		Set(_Tally, INT:1)
+	ENDIF
+	/*
+		Print(_Str, "[1]", _Vtarget)
+		Cast(_Text, _Str)
+		DisplayCombatInfoText(__Me, _Text, 5.0)
+	
+	IF "c1"
+		IsGreaterThen(_Tally, INT:0)
+	THEN
+		ItemEvent(__Me, "HorridWiltingRemoveGroundSurfaces")
+	ELSE
+		ItemDestroy(__Me)
+	ENDIF
+*/

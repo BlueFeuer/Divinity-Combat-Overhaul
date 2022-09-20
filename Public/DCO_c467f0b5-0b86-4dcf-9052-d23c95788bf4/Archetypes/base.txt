@@ -1,0 +1,284 @@
+//////////////////////////////////////////////////////////////////////////
+// General Score mods
+
+// Remaps all scores - where a score of SCORE_MOD is the average dmg of this character.
+SCORE_MOD										100.0 //	A general modifier that you probably shouldn't change, but you're welcome to try
+
+//////////////////////////////////////////////////////////////////////////
+// Archetype modifiers
+//BlueExplanation: Everything here works IDENTICALLY, but after everything is calculated the score is inverted on allies (a multiplier much further down). Thus, positive damage on self or allies is inverted and positive damage on enemies stays positive.
+MULTIPLIER_DAMAGE_SELF_POS						1.0 //Damage score on self that's considered positive (e.g. when removing the Burning status, which 'removes' damage)
+MULTIPLIER_DAMAGE_SELF_NEG						1.5 //Damage score on self that's considered negative (this is just damage) //BlueOverride, default 1.0
+MULTIPLIER_DAMAGE_ENEMY_POS						1.3 //Same as MULTIPLIER_DAMAGE_SELF_POS, but for enemies (this is just damage) //BlueOverride, default 1.0
+MULTIPLIER_DAMAGE_ENEMY_NEG						1.0 //Same as MULTIPLIER_DAMAGE_SELF_NEG, but for enemies (e.g. when removing the Burning status, which 'removes' damage)
+MULTIPLIER_DAMAGE_ALLY_POS						1.0 //Same as MULTIPLIER_DAMAGE_SELF_POS, but for allies
+MULTIPLIER_DAMAGE_ALLY_NEG						1.5 //Same as MULTIPLIER_DAMAGE_SELF_NEG, but for allies //Damaging allies looks pretty stupid.
+MULTIPLIER_DAMAGE_NEUTRAL_POS					1.0 //Same as MULTIPLIER_DAMAGE_SELF_POS, but for neutrals
+MULTIPLIER_DAMAGE_NEUTRAL_NEG					1.0 //Same as MULTIPLIER_DAMAGE_SELF_NEG, but for neutrals
+
+MULTIPLIER_HEAL_SELF_POS						1.0 //Healing score on self that's considered positive (this is just healing)
+MULTIPLIER_HEAL_SELF_NEG						1.0 //Healing score on self that's considered negative (e.g. when removing the Restoration status, which 'removes' healing)
+MULTIPLIER_HEAL_ENEMY_POS						1.0 //Same as MULTIPLIER_HEAL_SELF_POS, but for enemies (e.g. when removing the Restoration status, which 'removes' healing)
+MULTIPLIER_HEAL_ENEMY_NEG						1.0 //Same as MULTIPLIER_HEAL_SELF_NEG, but for enemies (this is just healing)
+MULTIPLIER_HEAL_ALLY_POS						1.0 //Same as MULTIPLIER_HEAL_SELF_POS, but for allies
+MULTIPLIER_HEAL_ALLY_NEG						1.0 //Same as MULTIPLIER_HEAL_SELF_NEG, but for allies
+MULTIPLIER_HEAL_NEUTRAL_POS						1.0 //Same as MULTIPLIER_HEAL_SELF_POS, but for neutrals
+MULTIPLIER_HEAL_NEUTRAL_NEG						1.0 //Same as MULTIPLIER_HEAL_SELF_NEG, but for neutrals
+
+MULTIPLIER_DOT_SELF_POS							1.0 //Same as MULTIPLIER_DAMAGE_SELF_POS, but for damage over time
+MULTIPLIER_DOT_SELF_NEG							1.0 //Same as MULTIPLIER_DAMAGE_SELF_NEG, but for damage over time
+MULTIPLIER_DOT_ENEMY_POS						1.0 //Same as MULTIPLIER_DAMAGE_ENEMY_POS, but for damage over time
+MULTIPLIER_DOT_ENEMY_NEG						1.0 //Same as MULTIPLIER_DAMAGE_ENEMY_NEG, but for damage over time
+MULTIPLIER_DOT_ALLY_POS		 					1.0 //Same as MULTIPLIER_DAMAGE_ALLY_POS, but for damage over time
+MULTIPLIER_DOT_ALLY_NEG		 					1.0 //Same as MULTIPLIER_DAMAGE_ALLY_NEG, but for damage over time
+MULTIPLIER_DOT_NEUTRAL_POS		 				1.0 //Same as MULTIPLIER_DAMAGE_NEUTRAL_POS, but for damage over time
+MULTIPLIER_DOT_NEUTRAL_NEG		 				1.0 //Same as MULTIPLIER_DAMAGE_NEUTRAL_NEG, but for damage over time
+
+MULTIPLIER_HOT_SELF_POS							1.0 //Same as MULTIPLIER_HEAL_SELF_POS, but for healing over time
+MULTIPLIER_HOT_SELF_NEG							1.0 //Same as MULTIPLIER_HEAL_SELF_NEG, but for healing over time
+MULTIPLIER_HOT_ENEMY_POS						1.0 //Same as MULTIPLIER_HEAL_ENEMY_POS, but for healing over time
+MULTIPLIER_HOT_ENEMY_NEG						1.0 //Same as MULTIPLIER_HEAL_ENEMY_NEG, but for healing over time
+MULTIPLIER_HOT_ALLY_POS		 					1.0 //Same as MULTIPLIER_HEAL_ALLY_POS, but for healing over time
+MULTIPLIER_HOT_ALLY_NEG		 					1.0 //Same as MULTIPLIER_HEAL_ALLY_NEG, but for healing over time
+MULTIPLIER_HOT_NEUTRAL_POS		 				1.0 //Same as MULTIPLIER_HEAL_NEUTRAL_POS, but for healing over time
+MULTIPLIER_HOT_NEUTRAL_NEG		 				1.0 //Same as MULTIPLIER_HEAL_NEUTRAL_NEG, but for healing over time
+
+MULTIPLIER_CONTROL_SELF_POS		 				1.0 //Control score on self that's considered positive. Control score comes from the statuses KnockedDown, Blind, ShacklesOfPain, Fear, Charmed, Incapacitated, and any Consume status that makes you lose control. (e.g. removing KnockedDown)
+MULTIPLIER_CONTROL_SELF_NEG		 				2.0 //Control score on self that's considered negative. (e.g. applying KnockedDown) // Knocking yourself down or similar always looks stupid. 
+MULTIPLIER_CONTROL_ENEMY_POS					1.0 //Same as MULTIPLIER_CONTROL_SELF_POS, but for enemies (e.g. applying KnockedDown)
+MULTIPLIER_CONTROL_ENEMY_NEG					1.0 //Same as MULTIPLIER_CONTROL_SELF_NEG, but for enemies (e.g. removing KnockedDown)
+MULTIPLIER_CONTROL_ALLY_POS		 				1.0 //Same as MULTIPLIER_CONTROL_SELF_POS, but for allies
+MULTIPLIER_CONTROL_ALLY_NEG		 				2.0 //Same as MULTIPLIER_CONTROL_SELF_NEG, but for allies // Knocking down allies is pretty stupid...
+MULTIPLIER_CONTROL_NEUTRAL_POS					1.0 //Same as MULTIPLIER_CONTROL_SELF_POS, but for neutrals
+MULTIPLIER_CONTROL_NEUTRAL_NEG					1.0 //Same as MULTIPLIER_CONTROL_SELF_NEG, but for neutrals
+
+MULTIPLIER_BOOST_SELF_POS		 				1.0 //Boost score on self that's considered positive (e.g. buffs like resistance increase)
+MULTIPLIER_BOOST_SELF_NEG		 				1.0 //Boost score on self that's considered negative (e.g. debuffs like a intelligence penalty)
+MULTIPLIER_BOOST_ENEMY_POS		 				1.0 //Same as MULTIPLIER_BOOST_ENEMY_POS, but for enemies (e.g. debuffs like a intelligence penalty)
+MULTIPLIER_BOOST_ENEMY_NEG		 				1.0 //Same as MULTIPLIER_BOOST_ENEMY_NEG, but for enemies (e.g. buffs like resistance increase)
+MULTIPLIER_BOOST_ALLY_POS		 				1.0 //Same as MULTIPLIER_BOOST_ALLY_POS, but for allies
+MULTIPLIER_BOOST_ALLY_NEG		 				1.0 //Same as MULTIPLIER_BOOST_ALLY_NEG, but for allies
+MULTIPLIER_BOOST_NEUTRAL_POS					1.0 //Same as MULTIPLIER_BOOST_NEUTRAL_POS, but for neutrals
+MULTIPLIER_BOOST_NEUTRAL_NEG					1.0 //Same as MULTIPLIER_BOOST_NEUTRAL_NEG, but for neutrals
+	
+MULTIPLIER_ARMOR_SELF_POS		 				0.25 //Armor (both physical and magical) score on self that's considered positive (e.g. when removing the Acid status, which 'removes' armor damage) //BlueOverride, default 0.75
+MULTIPLIER_ARMOR_SELF_NEG		 				0.25 //Armor score on self that's considered negative (this is just armor damage) //BlueOverride, default 0.75
+MULTIPLIER_ARMOR_ENEMY_POS		 				0.5 //Same as MULTIPLIER_ARMOR_ENEMY_POS, but for enemies (this is just armor damage) //BlueOverride, default 0.75
+MULTIPLIER_ARMOR_ENEMY_NEG		 				0.5 //Same as MULTIPLIER_ARMOR_ENEMY_NEG, but for enemies (e.g. when removing the Acid status, which 'removes' armor damage) //BlueOverride, default 0.75
+MULTIPLIER_ARMOR_ALLY_POS		 				0.75 //Same as MULTIPLIER_ARMOR_ALLY_POS, but for allies //BlueOverride, default 0.75
+MULTIPLIER_ARMOR_ALLY_NEG		 				1.50 //Same as MULTIPLIER_ARMOR_ALLY_NEG, but for allies // Damaging allies looks pretty stupid.
+MULTIPLIER_ARMOR_NEUTRAL_POS					0.75 //Same as MULTIPLIER_ARMOR_NEUTRAL_POS, but for neutrals
+MULTIPLIER_ARMOR_NEUTRAL_NEG					0.75 //Same as MULTIPLIER_ARMOR_NEUTRAL_NEG, but for neutrals
+
+//////////////////////////////////////////////////////////////////////////
+// Final Score MULTIPLIERS       
+// Used for when an action is free (0 AP cost) 
+MULTIPLIER_FREE_ACTION 							0.25 //The 'final' score of an action (combined score of damage, heal, dot, hot, armor, boost, and control) is multiplied by a CostModifier and divided by an ActionCostModifier. If an action is free (meaning 0 AP) the ActionCostModifier will be equal to MULTIPLIER_FREE_ACTION
+MULTIPLIER_ACTION_COST_MULTIPLIER				1.4 //Used in the ActionCostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_ACTION_COST_MULTIPLIER is multiplied with the AP cost of the action itself and added to the ActionCostModifier //BlueOverride, default 1.0
+MULTIPLIER_MOVEMENT_COST_MULTPLIER				5.0  //Used in the ActionCostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_MOVEMENT_COST_MULTIPLIER is multiplied with the AP cost of the movement needed to execute the action and added to the ActionCostModifier //BlueOverride, default 0.9
+MULTIPLIER_INVISIBLE_MOVEMENT_COST_MULTPLIER	0.30 //If the player is sneaking or invisible this modifier is used on top of MULTIPLIER_MOVEMENT_COST_MULTIPLIER
+MULTIPLIER_SOURCE_COST_MULTIPLIER				1.00 //Used in the ActionCostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_SOURCE_COST_MULTIPLIER is multiplied with the SP cost of the action itself and added to the ActionCostModifier
+MULTIPLIER_COOLDOWN_MULTIPLIER					0.01//Used in the CostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_COOLDOWN_MULTIPLIER is used in combination with the cooldown of the action and a higher MULTIPLIER_COOLDOWN_MULTIPLIER results in a lower CostModifier
+MULTIPLIER_LOW_ITEM_AMOUNT_MULTIPLIER			0.45//Used in the CostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_LOW_ITEM_AMOUNT_MULTIPLIER is used in combination with MULTIPLIER_HIGH_ITEM_AMOUNT_MULTIPLIER and we lerp between the LOW and HIGH value based on the health of the source character before multiplying it with the CostModifier. This way we make sure that lower health characters are more likely to use items
+MULTIPLIER_HIGH_ITEM_AMOUNT_MULTIPLIER			1.00 //See MULTIPLIER_LOW_ITEM_AMOUNT_MULTIPLIER
+MULTIPLIER_CANNOT_EXECUTE_THIS_TURN				0.25 //Used in the CostModifier explained in MULTIPLIER_FREE_ACTION. MULTIPLIER_CANNOT_EXECUTE_THIS_TURN is multiplied with the CostModifier if the action can not be executed this turn //BlueOverride, default 0.5
+
+//////////////////////////////////////////////////////////////////////////
+// Target Selection MULTIPLIERS
+
+MULTIPLIER_TARGET_MY_ENEMY						1.50 //Used when the target of the action is attacking the source character
+MULTIPLIER_TARGET_MY_HOSTILE					3.00	//Used when the target of the action is already under attack by the source character //changed by Edouard on 15/06/17
+MULTIPLIER_TARGET_SUMMON						0.35 //Used when the target is a summon
+MULTIPLIER_TARGET_AGGRO_MARKED					5.00 //Used when the target has the status AggroMarked //Status doesn't seem to exist anymore.
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE				0.75 //Used when the target already is under attack by another character
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE		0.5 //Used when the target already is under attack by 2 or more characters
+MULTIPLIER_TARGET_IN_SIGHT						1.2 //Used when the target is in sight from the current position of the source character //BlueOverride, default 1.05
+MULTIPLIER_TARGET_INCAPACITATED					0.4 //Used when the character is incapacitated (e.g. due to Frozen status) //BlueOverride, default 0.2
+MULTIPLIER_TARGET_KNOCKED_DOWN					1.25 //Used when the character has the KnockedDown status. Replaces MULTIPLIER_TARGET_INCAPACITATED (because KnockedDown is also incapacitates)
+MULTIPLIER_TARGET_PREFERRED						20.00 //Used when the target has the AI_PREFERRED_TARGET tag
+MULTIPLIER_TARGET_UNPREFERRED					0.20 //Used when the target has the AI_UNPREFERRED_TARGET tag
+
+//////////////////////////////////////////////////////////////////////////
+// End Position MULTIPLIERS
+ENDPOS_NEARBY_DISTANCE							6.00 //The maximum distance that's considered to be 'nearby'. Is used in combination with several other modifiers
+MULTIPLIER_ENDPOS_ALLIES_NEARBY					0.00 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_ALLIES_NEARBY is multiplied with the amount of allies nearby (defined by ENDPOS_NEARBY_DISTANCE) and added to the PositionScore
+MULTIPLIER_ENDPOS_ENEMIES_NEARBY				0.00 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_ENEMIES_NEARBY is multiplied with the amount of enemies nearby (defined by ENDPOS_NEARBY_DISTANCE) and added to the PositionScore //Does it mean subtracted?!
+MULTIPLIER_ENDPOS_STENCH						0.5 //Used when the target has the Stench talent.
+MULTIPLIER_ENDPOS_FLANKED						0.05 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_FLANKED is multiplied with the amount of characters that would flank the source character and added to the PositionScore.  //Does it mean subtracted?!
+MULTIPLIER_ENDPOS_HEIGHT_DIFFERENCE				0.001 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_HEIGHT_DIFFERENCE is multiplied with the height difference between the current and the new position and added to the PositionScore //BlueOverride, default 0.002
+MULTIPLIER_ENDPOS_TURNED_INVISIBLE				0.01 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_TURNED_INVISIBLE is used when invisible for the difference between the old and new position and substracted from the PositionScore (going invisible and not moving is bad)
+MULTIPLIER_ENDPOS_NOT_IN_AIHINT					0.01 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_NOT_IN_AIHINT is substracted from the PositionScore if it's not in an AiHint (and if it's not forced, because then the action would be completely aborted)
+MULTIPLIER_ENDPOS_NOT_IN_SMOKE					0.00 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_NOT_IN_SMOKE is added to the PositionScore when the position is not inside a smoke surface
+MULTIPLIER_ENDPOS_NOT_IN_DANGEROUS_SURFACE		0.07 //Used when calculating the PositionScore. MULTIPLIER_ENDPOS_NOT_IN_DANGEROUS_SURFACE is added to the PositionScore when the position is inside a dangerous surface that has positive effects (e.g. when you heal from a poison surface) //And subtracted when it does not have positive effects? //BlueOverride, default 0.1
+
+DANGEROUS_ITEM_NEARBY							0.20 //Used when calculating the PositionScore. DANGEROUS_ITEM_NEARBY is multiplied by all dangerous items (e.g. barrels) nearby (defined by ENDPOS_NEARBY_DISTANCE) and added to the PositionScore. //Does it mean subtracted?!
+
+//////////////////////////////////////////////////////////////////////////
+// Fallback Settings
+FALLBACK_ALLIES_NEARBY							0.00 //Replaces MULTIPLIER_ENDPOS_ALLIES_NEARBY when calculating the PositionScore for the fallback action
+FALLBACK_ENEMIES_NEARBY							0.00 //Replaces MULTIPLIER_ENDPOS_ENEMIES_NEARBY when calculating the PositionScore for the fallback action
+FALLBACK_WANTED_ENEMY_DISTANCE					5.00 //The distance the source character will try to create when it has to use its fallback action //What in the ever loving fuck does that even mean? Does it want to be FURTHER than this? Or CLOSER? What?
+
+//////////////////////////////////////////////////////////////////////////
+// Movement Skill MULTIPLIERS
+MOVESKILL_AP_DIFF_REQUIREMENT					2.00 //The minimum amount of AP the source character can save if it uses a jump/teleport skill instead of walking to its target position
+MOVESKILL_ITEM_AP_DIFF_REQUIREMENT				3.00 //The minimum amount of AP the source character can save if it uses a jump/teleport skill by item instead of walking to its target position
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+// General score multipliers
+MULTIPLIER_SCORE_ON_NEUTRAL						-0.1 //The target multiplier for neutral targets
+MULTIPLIER_SCORE_ON_ALLY						-1.1 //The target multiplier for allied targets
+MULTIPLIER_SCORE_OUT_OF_COMBAT					0.25 //The target multiplier for targets that are not part of the source character's combat
+
+// General max. score on a neutral target: we really don't care about healing that neutral person
+MAX_SCORE_ON_NEUTRAL							0.00
+
+// Used for healing
+MAX_HEAL_MULTIPLIER								0.50  // Must be between 0 and 1, the closer to 1, the more it demands healing when someone is close to dying
+MAX_HEAL_SELF_MULTIPLIER						1.00  // Must be between 0 and 1, the closer to 1, the more it demands healing when you are close to dying
+
+// Used for vitality/damage/armor boosts
+MULTIPLIER_VITALITYBOOST						0.50
+MULTIPLIER_DAMAGEBOOST							0.50
+MULTIPLIER_BONUS_WEAPON_BOOST					0.50
+MULTIPLIER_ARMORBOOST							0.8 //BlueOverride, default 0.5
+
+// Simple multipliers when damage results in a kill
+MULTIPLIER_KILL_ENEMY							2.50	//changed by Edouard on 15/06/17
+MULTIPLIER_KILL_ENEMY_SUMMON					1.10
+MULTIPLIER_KILL_ALLY							1.50
+MULTIPLIER_KILL_ALLY_SUMMON						1.10
+
+// Used for the distance multiplier in explosions. The multiplier scales from MIN to 1.0f.
+MULTIPLIER_EXPLOSION_DISTANCE_MIN				0.50 //I really have no idea what this means.
+
+// Used for status that are applied by surfaces on movement
+MULTIPLIER_SURFACE_STATUS_ON_MOVE				0.75 //Multiplier used by scores that are caused by surfaces, but only if a character moves
+SURFACE_DAMAGE_MAX_TURNS						2.00
+
+//////////////////////////////////////////////////////////////////////////
+// Status MULTIPLIERS	
+MULTIPLIER_STATUS_REMOVE						1.00 // Used when a status is removed (on top of status-specific score calculation on removal)
+MULTIPLIER_STATUS_FAILED						0.50 // Used when a status has failed to be set, for the minimumscore
+MULTIPLIER_STATUS_CANCEL_INVISIBILITY			0.50 // The score of the Invisibility status is calculated and multiplied with MULTIPLIER_STATUS_CANCEL_INVISIBILITY
+MULTIPLIER_STATUS_CANCEL_SLEEPING				0.50 // Used when we do an action that causes SLEEPING to break
+MULTIPLIER_STATUS_OVERWRITE						0.50 // Used when a status is overwritten, for the minimumscore
+
+MULTIPLIER_LOSE_CONTROL							1.00
+MULTIPLIER_INCAPACITATE							1.25
+MULTIPLIER_KNOCKDOWN							1.75
+MULTIPLIER_CHARMED								2.50
+MULTIPLIER_FEAR									1.00
+MULTIPLIER_BLIND								0.80
+MULTIPLIER_INVISIBLE							0.20
+MULTIPLIER_MUTE									0.80
+MULTIPLIER_SOURCE_MUTE							4.00
+MULTIPLIER_SHACKLES_OF_PAIN						0.50
+MULTIPLIER_HEAL_SHARING							0.50
+MULTIPLIER_DECAYING_TOUCH						0.75
+MULTIPLIER_DISARMED								0.80
+MULTIPLIER_WINDWALKER							0.50
+MULTIPLIER_GUARDIAN_ANGEL						0.20
+MULTIPLIER_ACTIVE_DEFENSE						1.00
+MULTIPLIER_SPARK								0.40
+
+MULTIPLIER_DAMAGE_ON_MOVE						10.00
+MULTIPLIER_DEATH_RESIST							4.00
+MULTIPLIER_RESURRECT							4.00
+
+//////////////////////////////////////////////////////////////////////////
+// Skill MULTIPLIERS
+SKILL_JUMP_MINIMUM_DISTANCE						5.00 //Minimum distance a character has to jump to use the skill //BlueOverride, default 8.0
+SKILL_TELEPORT_MINIMUM_DISTANCE					4.00 //Minimum distance an object has to be teleported to use the skill //BlueOverride, default 6.0
+
+// Used when adding or removing armor completely
+MULTIPLIER_ADD_ARMOR							0.1 //BlueOverride, default 0.5 //Multiplier that's removed from the boost score if we're trying to add physical armor when it's already full
+MULTIPLIER_ADD_MAGIC_ARMOR						0.1 //BlueOverride, default 0.5 //Multiplier that's removed from the boost score if we're trying to add magical armor when it's already full
+MULTIPLIER_REMOVE_ARMOR							0.1 //BlueOverride, default 0.5 //Multiplier that's added to the boost score if we're completely removing physical armor
+MULTIPLIER_REMOVE_MAGIC_ARMOR					0.1 //BlueOverride, default 0.5 //Multiplier that's added to the boost score if we're completely removing magical armor
+
+// Used when a surface is removed 
+MULTIPLIER_SURFACE_REMOVE						0.35
+// Used for destroying interesting items.
+MULTIPLIER_DESTROY_INTERESTING_ITEM				0.3 //Multiplier added to the score when destroying an interesting item (e.g. an oil barrel) //BlueOverride, default 0.5
+// How important critical strikes are for this character
+MULTIPLIER_CRITICAL								1.00
+// How important accuracy & chance to hit are for this character
+MULTIPLIER_ACC_BOOST							0.25
+// How important dodging is for this character
+MULTIPLIER_DODGE_BOOST							0.05 //BlueOverride, default 0.15
+// How important movement boosts are for this character
+MULTIPLIER_MOVEMENT_BOOST						0.30
+// How important resistance boosts are for this character
+MULTIPLIER_RESISTANCE							0.80 
+// How important max AP and AP recovery are for this character.
+MULTIPLIER_AP_RECOVERY							1.20	//changed by Edouard & Rick on 21/06/17	
+MULTIPLIER_AP_BOOST								0.60
+MULTIPLIER_AP_MAX								0.10
+MULTIPLIER_AP_COSTBOOST							2.00
+// How important a source point is for this character.
+MULTIPLIER_SOURCE_POINT							0.75
+MULTIPLIER_SP_COSTBOOST							2.00
+// How important boosting attributes are
+MULTIPLIER_MAIN_ATTRIB							1.00
+MULTIPLIER_SECONDARY_ATTRIB						0.50
+// How important contact boosts are
+MULTIPLIER_CONTACT_BOOST						0.50
+// The minimum amount of turns worth of score for a status that is already applied (e.g. a fire surface is
+// worth something even when the character already has a BURNING status)
+MIN_TURNS_SCORE_EXISTING_STATUS					1
+
+// Used to represent the amount of turns left for an infinite surface, status, or summon
+TURNS_REPLACEMENT_INFINITE						5
+
+// Multiplier for the 'radius' when creating a puddle (is random, thus radius is guesstimated)
+MULTIPLIER_PUDDLE_RADIUS						1.00
+
+// Modifier used for possible combo score
+MULTIPLIER_COMBO_SCORE_INTERACTION				0.90 //Multiplier used for possible surface interaction scores (we place water -> could be electrified)
+MULTIPLIER_COMBO_SCORE_POSITIONING				0.00 //Same as MULTIPLIER_COMBO_SCORE_INTERACTION, but for calculating the PositionScore
+
+// Modifier used for jump and teleportation skills for the position score of the position we're leaving
+MULTIPLIER_POSITION_LEAVE						-1.0 //Modifier used for jump and teleportation skills for the PositionScore of the position we're leaving
+
+// How important grounding someone is. 
+MULTIPLIER_GROUNDED								-0.05
+// How important deflecting projectiles is.
+MULTIPLIER_DEFLECT_PROJECTILES					0.2
+// Used for the path influences cost for summons
+MULTIPLIER_SUMMON_PATH_INFLUENCES				0.04 //Used when calculate the score of a summon position (e.g. when a summon has doesn't like fire surfaces due to path influences)
+
+// Distance based buffs
+// Prevent buffing allies that are far away from the action. 
+// lerp between 100% and 0%, when you are between BUFF_DIST_MIN and BUFF_DIST_MAX from your closet enemy. Everything before DIST_MIN is going to be at 100%.
+BUFF_DIST_MAX									24.0 //BlueOverride, default 30
+BUFF_DIST_MIN									9.0 //BlueOverride, default 10
+
+// Multiplier for positive surface scores on allies that are secondary. E.g. blessed surface on an ally that's caused by a placed fire surface that's connected to a blessed surface
+MULTIPLIER_POS_SECONDARY_SURFACE				0.25
+
+// If != 0 the active defense status can be used offensively by Ai instead of only defensively
+ENABLE_ACTIVE_DEFENSE_OFFENSIVE_USE				0 //When != 0 Ai will use the ActiveDefense skill in an offensive way (e.g. just target it in the middle of a group of enemies)
+
+// If != 0 the character will try to save/optimize action points for the next turn, if his chosen action is not executable this turn. 
+ENABLE_SAVING_ACTION_POINTS						0 //When != 0 Ai will move less to save AP if it can't execute an attack anyways //BlueOverride, default 1
+
+// Multiplier for how much the Shield Block has influence over the entire AI calculation
+// Normal ranges are between 0 and 1 inclusive: 
+// - 0 being the AI doesn't care if a character has shield block
+// - 1 being the AI cares a normalised amount about a character with shield block
+MULTIPLIER_SHIELD_BLOCK							0.0 //BlueOverride, default 1.0
+// A general multiplier for all reflected damage
+MULTIPLIER_REFLECT_DAMAGE						0.1
+// How important turning sulfuric damage into magical damage is. 
+MULTIPLIER_MAGICAL_SULFUR						0.1
+// How important turning sulfuric damage into magical damage is when the target is already receiving sulfuric damage 
+MULTIPLIER_MAGICAL_SULFUR_CURRENTLY_DAMAGED		0.3
+// The maximum amount of consumables a charmed character can use per turn
+CHARMED_MAX_CONSUMABLES_PER_TURN				0 //BlueOverride, default 1
+// Multiplier for buffs as the first action
+MULTIPLIER_FIRST_ACTION_BUFF					1.5 //BlueOverride, default 2.0

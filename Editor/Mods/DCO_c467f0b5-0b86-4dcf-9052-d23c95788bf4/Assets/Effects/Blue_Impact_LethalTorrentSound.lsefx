@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<effect version="0.0" effectversion="1.0.0" id="b511a751-9dc8-4eb5-a81c-a68651358a1e">
+  <phases>
+    <object class="FxStudio.DataModel.Phase" classid="3ccdb160-6b29-351f-ab7e-53fbc5ee0def" assembly="DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <data id="375d5c64-517f-4461-b58b-d9d63935d275" duration="2.58" playcount="1" definitionid="fc34bad5-e4a8-4855-bdd1-ece88d327719" />
+    </object>
+    <object class="FxStudio.DataModel.Phase" classid="3ccdb160-6b29-351f-ab7e-53fbc5ee0def" assembly="DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <data id="1dbfb3a3-a18c-4193-87bc-f4b974fe9337" duration="4.5" playcount="1" definitionid="fc8e9f77-827a-433f-a58d-ad1007605399" />
+    </object>
+  </phases>
+  <colors>
+    <color>6652058</color>
+    <color>5466754</color>
+    <color>5466754</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>3293262</color>
+    <color>5466754</color>
+    <color>5466754</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+    <color>2441306</color>
+  </colors>
+  <trackgroups>
+    <trackgroup name="Sound">
+      <ids>
+        <id value="14" />
+      </ids>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None">
+        <component class="Sound" start="0" end="8" instancename="507b6f1c-ec96-4f92-8e02-076ce7e44280">
+          <properties>
+            <property id="ef1d7d1e-02b6-4548-80d9-5ef2fbcda237">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="Sound" />
+              </data>
+            </property>
+            <property id="035b5248-d0ca-44b7-853f-3acb84110e67">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0,8" />
+              </data>
+            </property>
+            <property id="d9c8f8f4-03ef-4a81-afcc-9979213be536">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="Skill_Air_Tornado_Impact &lt;26248de6-90a4-46df-bd7a-cc48dd993c8d&gt;" />
+              </data>
+            </property>
+            <property id="83f4fce2-68bb-41eb-b2fe-9082b8fc9147">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="" />
+              </data>
+            </property>
+            <property id="d44a643d-e831-4fc6-b8ab-c13e52162f34">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0" />
+              </data>
+            </property>
+            <property id="d719a367-01a3-44b3-a94d-830503c01095">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="-1" />
+              </data>
+            </property>
+            <propertygroup id="d637f93c-c266-432a-853c-643f6cfd7555" name="Property Group" collapsed="False" />
+          </properties>
+          <modules>
+            <module id="286df729-035e-4bb8-a210-c836ddbbbacc" muted="False" index="0" />
+          </modules>
+        </component>
+      </track>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None">
+        <component class="CameraShake" start="0.1951597" end="3.090028" instancename="3832781b-cad0-4be6-be7c-7859523edb9c">
+          <properties>
+            <property id="ef1d7d1e-02b6-4548-80d9-5ef2fbcda237">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="CameraShake" />
+              </data>
+            </property>
+            <property id="035b5248-d0ca-44b7-853f-3acb84110e67">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0.1951597,3.090028" />
+              </data>
+            </property>
+            <property id="fccc0d26-14c5-4e35-881b-e47aa6b6716a">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="20,100" />
+              </data>
+            </property>
+            <property id="cd5bbe05-d87d-41c2-b7ea-a2bcc0f3ffce">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000">
+                  <rampchanneldata>
+                    <rampchannel type="Linear" id="861e7c7c-5229-4b3f-8455-b0f310d3cb9b" selected="True">
+                      <keyframes>
+                        <keyframe time="0" value="20" />
+                        <keyframe time="1" value="20" />
+                      </keyframes>
+                    </rampchannel>
+                  </rampchanneldata>
+                </datum>
+              </data>
+              <platformmetadata platform="00000000-0000-0000-0000-000000000000" expanded="True" />
+            </property>
+            <property id="e711fd92-9e77-4e28-b5e0-2acccbcd3ac1">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000">
+                  <rampchanneldata>
+                    <rampchannel type="Linear" id="310af034-3310-478c-8635-bd7592ed19a1" selected="True">
+                      <keyframes>
+                        <keyframe time="0" value="25" />
+                        <keyframe time="1" value="25" />
+                      </keyframes>
+                    </rampchannel>
+                  </rampchanneldata>
+                </datum>
+              </data>
+              <platformmetadata platform="00000000-0000-0000-0000-000000000000" expanded="True" />
+            </property>
+            <propertygroup id="8b5cf808-d74d-4cec-a224-b56e4ecc6ddd" name="Property Group" collapsed="False" />
+          </properties>
+          <modules>
+            <module id="286df729-035e-4bb8-a210-c836ddbbbacc" muted="False" index="0" />
+          </modules>
+        </component>
+      </track>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+    </trackgroup>
+  </trackgroups>
+</effect>

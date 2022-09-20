@@ -1,0 +1,331 @@
+INIT
+	ITEM:__Me
+	CHARACTER:%Owner
+	INT:%Tally
+BEHAVIOUR
+
+
+REACTION BluePressureSpikeClearSurfaceBloodCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceBloodCloudBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceBloodCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceBloodCloudElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrified)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceBloodCloudElectrifiedBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrifiedBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceBloodCloudElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrifiedCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceDeathfogCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceDeathfogCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceExplosionCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceExplosionCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceFireCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceFireCloudBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloudBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceFireCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloudCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceFrostCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFrostCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfacePoisonCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfacePoisonCloudBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloudBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfacePoisonCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloudCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceSmokeCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceSmokeCloudBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloudBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceSmokeCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloudCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloud, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloud)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloudBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloudElectrified, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrified)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloudElectrifiedBlessed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrifiedBlessed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BluePressureSpikeClearSurfaceWaterCloudElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrifiedCursed)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+
+		
+REACTION BluePressureSpikeClearSurfaceDestroyObject, 100
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "!c1&!c2&!c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&!c11&!c12&!c13&!c14&!c15&!c16&!c17&!c18&!c19&!c20&!c21&!c22&!c23&!c24"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrified)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrifiedBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceBloodCloudElectrifiedCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceDeathfogCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceExplosionCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloudBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFireCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceFrostCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloudBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfacePoisonCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloudBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceSmokeCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloud)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrified)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrifiedBlessed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:2.5, SurfaceWaterCloudElectrifiedCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(__Me, INT:1, 3)
+		IF "c1"
+			IsEqual(%Tally, INT:0)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeA, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:1)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeB, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:2)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeC, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:3)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeD, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:4)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeE, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:5)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeF, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:6)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeG, -1, %Owner)
+		ELIF "c1"
+			IsEqual(%Tally, INT:7)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeH, -1, %Owner)
+		ELIF "c1"
+			IsGreaterThen(%Tally, INT:7)
+		THEN
+			ExplodeAt(__Me, Blue_Explosion_PressureSpikeI, -1, %Owner)
+		ENDIF
+		ItemDestroy(__Me)
+		
+EVENTS
+
+EVENT BluePressureSpikeGetCasterDoExplosion
+ON
+	OnItemStatus(__Me, Blue_PressureSpikeCast)
+ACTIONS
+	Set(%Tally, INT:0)
+	IF "c1"
+		ItemGetStatusSourceCharacter(__Me, PRETIER, %Owner)
+	THEN
+	ENDIF
+	

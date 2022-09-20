@@ -1,0 +1,2370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blessed" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Blessed" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Source Empower" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_SourceEmpower" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Source Empower" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SourceEmpower_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Select a skill from your skillbook to Empower or Unempower. Must have enough slots available and Source to spend to Empower." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SourceEmpower_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Hasted" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Hasted_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Hasted" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Hasted" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is Hasted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Hasted_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immolate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Immolate" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immolate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Immolate_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is Immolated, increasing fire resistance." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Immolate_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sparking Swings" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_SparkingSwings" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sparking Swings" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SparkingSwings_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Melee attacks create sparks that deal damage to a nearby enemy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SparkingSwings_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soul Burned" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_SoulFire" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soul Burned" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SoulFire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character's soul is seared with enchanted flames. Immune to soul sapping effects." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_SoulFire_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dragonhide" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DragonHide_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dragonhide" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_BlueDragonHide" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases fire resistance by 25% and increases your armor by [1] for 2 turns." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DragonHide_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invulnerability" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Invulnerability" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invulnerability" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Invulnerability" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character's resistance caps increased to 100%." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Invulnerability_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="High Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cyclone" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="High Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cyclone_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Reduced Dodge and Accuracy while in the cyclone's area." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cyclone_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Give the target 20% movement speed and 70% deflection while they are within 11m of you and you are not disabled or Blind." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FavourableWindAura_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character's speed and deflection increased while they are within 11m of the caster." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FavourableWind_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guiding Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GuidingWindsSource" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guiding Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FavourableWindSource" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guiding Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FavourableWindAura_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Winds Guided" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FavourableWind_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Winds Guided" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FavourableWind" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invisible" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Invisible_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Invisible" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Invisible" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is invisible. Removed by Wet, damage, attacking, or using a skill." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Invisible_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Lurking" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_InvisibleLurk_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Lurking" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_InvisibleLurk" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is invisible. Removed by Wet, damage, attacking, or using a skill. Damage increased for your next action. Removed at the start of your next turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_InvisibleLurk_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protection Bubble" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ProtectionBubble_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protection Bubble" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ProtectionBubble" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Providing Elemental protection, immunity to surfaces, and immunity to silence." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ProtectionBubble_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Withering" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Wither_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Withering" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Wither" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Attributes lowered. Debuff grows every turn. Spreads to nearby characters." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Wither_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Howling Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HowlingArmor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Howling Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_HowlingArmor" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Melee attackers are thrown back. Targets in melee range are more likely to target you." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HowlingArmor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Regenerating" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Regeneration_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Regenerating" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Regenerate" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restores [1] per turn, healing the living and dealing physical damage to the undead." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Regeneration_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mass Healing" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MassHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mass Healing" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_MassHeal" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restores [1] per turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MassHeal_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heat Metal" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HeatMetal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Infectious Flame" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_InfectiousFlame_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Boil" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Boil_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal Fire and Physical damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlameStrike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#078EC7'&gt;&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Stealth_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cauterize" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cauterize_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage is increased depending on surfaces cleared." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PressureSpike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Zone of Sweet Air" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ZoneOfSweetAir_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Arcane Stitch" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ArcaneStitch_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Drain moisture from the area." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HorridWilting_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Diseased (3) - Grit Save&lt;br&gt;Apply Weak (3) - Grit Save&lt;br&gt;Drain moisture from the area." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HorridWiltingCast_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal up to 3x damage depending on surface cleared." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PressureSpikeCast_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restore health to the target." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HealingRitual_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consume target to gain health." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CannibalizeHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consumes blood surfaces to restore Vitality." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BloodSucker_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vampirism" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Vampirism_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vampirism" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Vampirism" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Healing for 25% damage dealt to Vitality." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Vampirism_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vampiric Aura" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_VampirismAura_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Vampiric Aura" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Vampirism" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Providing Vampirism to nearby allies, increasing life steal." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_VampirismAura_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Remorse" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Remorse_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Remorse" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Remorse" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is hurt for 50% of any damage they deal." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Remorse_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Necroplague will spread to nearby characters under 50% health." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Necroplague_Fake_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Necroplague will spread to nearby characters under 50% health." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Necroplague_Fake" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Necroplague" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Necroplague_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Necroplague" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Necroplague" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deals up to [1] based on missing health and infects any nearby characters below 50% health. Curable by Bless." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Necroplague_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Failed)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWishDamage_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Failed)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DeathWishDamage" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has failed to fulfill the conditions of the Oath." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWishDamage_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Unfulfilled)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWish_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Unfulfilled)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DeathWish" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage bonus will be reversed for 1 turn if they fail to get a kill before the status ends." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWish_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Fulfilled)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWishFulfilled_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration (Fulfilled)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DeathWishFulfilled" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has fulfilled their oath." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWishFulfilled_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oath of Desecration" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeathWishDamage_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Last Rites" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_LastRites_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Last Rites" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_LastRites" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character will take 50% of their missing health as Piercing when the status expires." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_LastRites_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Take damage if their health is lower than yours." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HeartSeeker_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Light Feet" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_LightFeet_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Light Feet" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_LightFeet" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is immune to surface effects, as if floating." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_LightFeet_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Premeditate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PremeditateActive_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Premeditate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PremeditateActive" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="When this status ends, reset all cooldowns." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PremeditateActive_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Premeditate (Inactive)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PremeditateInactive_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Premeditate (Inactive)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PremeditateInactive" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Providing +100% Critical Damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PremeditateInactive_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Ghost Form" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_GhostForm_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Ghost Form" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_GhostForm" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Physical Resistance, Deflection, and Speed increased at the cost of Damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_GhostForm_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="First Aid" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FirstAid_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Glitter Dust" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_GlitterDust_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Glitter Dust" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_GlitterDust" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has been marked." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_GlitterDust_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pinning Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PinningStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pinning Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PinningStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your attacks apply Crippled (1) and deal 25% more damage but take 1 extra action point to fire." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PinningStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Precision Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PrecisionStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Precision Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PrecisionStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your attacks gain +4 Range, +20% Accuracy, and +12% Critical Chance." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PrecisionStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Harrying Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MartialStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Harrying Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_MartialStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your weapon gains 15% Damage and apply low strength Bleed (NYI)." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MartialStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Defensive Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CleavingStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Defensive Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_CleavingStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your weapon gains 20% Accuracy, 0.5m range, and 10% deflection." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CleavingStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Forward Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WrathStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Forward Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_WrathStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your weapon gains 15% Critical Chance and 50% Critical Damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WrathStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Power Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PowerStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Power Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PowerStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Your attacks gain +50% Critical Damage and +40% Damage, but have -50% Accuracy and cost 1 extra AP." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PowerStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Quickshot Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BullseyeStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Quickshot Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_BullseyeStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Weapon attack uses 1 less AP, but deals 50% reduced damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BullseyeStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Arrowhead Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ArrowheadStance_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Arrowhead Stance" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ArrowheadStance" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="While active, arrow consumeables are no longer removed when attacking." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ArrowheadStance_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cure Wounds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CureWounds_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental Bastion" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ElementalBastion_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental Bastion" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ElementalBastion" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental resistances raised at the cost of movement." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ElementalBastion_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflective Shield" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeflectiveShield_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflective Shield" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DeflectiveShield" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Projectiles targeted at or near this character are sent back where they came from. Gain 50% melee damage reflection." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DeflectiveShield_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impenetrable Barrier" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ImpenetrableBarrier_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impenetrable Barrier" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ImpenetrableBarrier" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="While active, Shields Up to only lose 33% deflection on successful deflections." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ImpenetrableBarrier_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Protect_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Protect" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="100% of damage taken is being redirected." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Protect_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protecting" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ProtectCaster_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protecting" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ProtectCaster" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="This character is protecting another character." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ProtectCaster_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heal Allies" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CleanseHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage Enemies" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CleanseDamage_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Divine Light" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DivineLight_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Divine Light" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DivineLight" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character's Armor, Grit, and Willpower is lowered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DivineLight_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Condemn" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Condemn_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Condemn" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Condemn" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is being held with chains of Source." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Condemn_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consecrate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ConsecrateHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consecrate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ConsecrateHeal" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is an ally of the caster. Restore [1] every turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ConsecrateHeal_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consecrate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Consecrate_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Consecrate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ConsecrateDamage" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is an enemy of the caster. Dealing [1] every turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Consecrate_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heal Allies" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HolyBoltHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage Enemies" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HolyBoltDamage_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Well of Life" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WellOfLife_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Well of Life" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_WellOfLife" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restore [1] to nearby allies of the caster when damaged." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WellOfLife_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Well of Life" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WellOfLifeHeal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Divine Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DivineArmor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Divine Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_DivineArmor" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character will restore 25% of max health in place of death at the cost of Source." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DivineArmor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Divine Favor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DivineFavor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blessed Earth" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BlessedEarth_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Barkskin" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Barkskin_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Barkskin" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Barkskin" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Armor increased at the cost of fire resistance." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Barkskin_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Worms" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WormTremor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Worms" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_WormTremor" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taking [1] per turn. Removed by burning." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_WormTremor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Poisonous Skin" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PoisonousSkin_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Poisonous Skin" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_PoisonousSkin" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Skin is turned to poison. Character will bleed poison." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PoisonousSkin_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dispel" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Dispel_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Webbed" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Enwebbed_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Webbed" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Enwebbed" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is stuck." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Enwebbed_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Insects" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Insects_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Insects" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Insects" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Insects are applying Atrophy and Bleeding to this target. Removed by Burning." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Insects_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Druidic Restoration" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_DruidicRestoration_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Anticipation" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Automatically attack the first enemy to enter your range." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tackle" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Tackle_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Enraged" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Enraged_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Enraged" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Enraged" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is Enraged and cannot use non-weapon skills." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Enraged_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Iron Hide" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_IronHide_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Iron Hide" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_IronHide" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has increased health and immunity to Staggered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_IronHide_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thick of the Fight" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ThickOfTheFight_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thick of the Fight" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_ThickOfTheFight" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage is being increased depending on nearby characters." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_ThickOfTheFight_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crush" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Crush_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Inspired" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Inspire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Inspired" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Inspire" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is inspired." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Inspire_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Safeguard" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Safeguard_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Safeguard" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Safeguard" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has received armor." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Safeguard_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FlamingCrescendo" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character will explode when this status reaches 1 turn left, increased by 1 for every tier of burning on the character." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo1_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FlamingCrescendo1" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dep" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo1_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo2_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FlamingCrescendo2" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dep" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo2_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo3_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FlamingCrescendo3" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dep" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo3_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo4_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_FlamingCrescendo4" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dep" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_FlamingCrescendo4_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Purifying Fire" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_PurifyingFire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback1_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback2_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback3_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback4_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback5_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (6)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback6_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (7)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback7_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Knockback (8)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Knockback8_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="All within 8 meters are pulled closer." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_CyclonePull_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provoked" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunted_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provoked" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Potion_Taunted" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is provoked. A provoked character will always attempt to attack the provoker." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunted_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunted" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunt_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunted" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Potion_Taunt" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is taunted. A Taunted character will only be able to see characters who have cast Taunt. A character who has cast Taunt will be visible to everyone, including those Taunted by someone else and those that are blinded." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunt_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunter" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunter_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunter" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Potion_Taunter" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character has initiated a Taunt. A Taunted character will only be able to see characters who have cast Taunt. A character who has cast Taunt will be visible to everyone, including those Taunted by someone else and those that are blinded." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Taunter_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mountain Aegis" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MountainAegis_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Mountain Aegis" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_MountainAegis" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Add damage to your attacks, gain Might and Constitution, and immunity to Staggered and Petrified." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MountainAegis_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soothing Cold" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Soothe_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soothing Cold" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Soothe" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Restoring [1] each turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Soothe_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Teleport and attack targets at random." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BladestormTargetting_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Targets can be hit multiple times." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BladestormTargetted_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cleanse Burning, Staggered, Fear, Bleeding" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_HelpingHand_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cleanse Burning, Staggered, Fear, Bleeding" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_HelpingHand" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_C1_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_C2_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_C3_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_C4_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_C5_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Anticipation_C1" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Anticipation_C2" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Anticipation_C3" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Anticipation_C4" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Anticipation (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Anticipation_C5" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character will attack characters who enter their range." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Anticipation_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heal target depending on number of characters afflicted with Diseased." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MonaxVitaeImpactDummy_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Diseased (3) - Grit Save" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_MonaxVitaeExplode_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply a random negative status effect and curse those in the area." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BlightCurseCaster_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blight Curse" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BlightCurse_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is getting Cursed and one of the following is applied every turn:&lt;br&gt;Weak (4) - Grit Save&lt;br&gt;Atrophy (4) - Grit Save&lt;br&gt;Decaying (4) - Grit Save&lt;br&gt;Fear (4) - Willpower Save&lt;br&gt;Slowed (4) - Willpower Save&lt;br&gt;Mad (4) - Willpower Save" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_BlightCurse_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Brainrot Scroll" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="SCROLL_Target_Charm" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Entangled" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Entangled_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Entangled" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Entangled" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character will take [1] and have Staggered (4) attempted if they try to move, removing this status." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Entangled_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff1_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff1" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff2_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff2" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff3_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff3" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff4_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff4" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff5_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff5" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (6)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff6_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (6)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff6" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (7)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff7_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (7)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff7" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (8)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff8_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (8)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff8" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (9)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff9_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (9)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff9" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (10)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff10_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oily Buff (10)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_OilyBlobBuff10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oil Blob has absorbed Oil, making it more powerful." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobBuff_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Oil Blob absorbs Oil on impact." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_OilyBlobCast_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty1_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (1)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty1" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty2_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (2)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty2" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty3_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (3)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty3" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty4_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (4)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty4" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty5_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (5)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty5" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (6)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty6_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (6)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty6" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (7)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty7_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (7)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty7" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (8)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty8_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (8)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty8" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (9)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty9_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (9)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty9" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (10)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty10_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty (10)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty10" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cruelty" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Potion_Cruelty" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character's Physical, Piercing, and Bludgeoning Resistances are reduced by 10% for every critical hit against them up to 100%." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Cruelty_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Fear (2) - Willpower Save to Enemies within 11m&lt;br&gt;Heal allies within 11m" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="BlueStatus_Crucify_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Maddening Song" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_MaddeningSong_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Mad (8) to characters in the target 2m radius." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_MaddeningSong_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Blinding Squall" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_Squall_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] and apply Blind (8) to characters in the target 4m radius." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_Squall_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Petrifying Touch" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_PetrifyingTouch_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] and apply Petrified (2) to the target." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_PetrifyingTouch_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Demonic Possession" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Target_DemonicStare_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Charmed (8) to the target." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DemonicStare_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Break The Shackles" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shout_BreakTheShackles_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cleanse Bleeding, Slowed, Diseased, Crippled, Chilled, Weak, Decaying, Acid, Atrophy, Blind, Staggered, Muted, Burning, Necrofire, Petrified, Poisoned, Shocked, Lowered Resistances, Drain Willpower, Sundered, Torpid, Mad, Soul Sap, and Charmed from self." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shout_BreakTheShackles_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dome of Protection" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Dome_CircleOfProtection_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create a magical 3m field that provides allies inside with [1] and 25% Resistance to Air, Fire, Water, Poison, and Bludgeoning damage for 5 turns." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Dome_CircleOfProtection_Description" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

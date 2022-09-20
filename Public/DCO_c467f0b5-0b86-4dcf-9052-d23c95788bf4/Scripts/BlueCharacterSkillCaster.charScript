@@ -1,0 +1,75 @@
+INIT
+	CHARACTER:__Me
+	CHARACTER:%SkillCharacter
+	FLOAT3:%SkillLocation
+	INT:%SkillToCast
+EVENTS
+
+EVENT Blue_SkillCast_Throw
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterCharacterEvent(__Me, _Character, "Blue_SkillCast_Throw")
+ACTIONS
+	SetVisible(__Me, 0)
+	Set(%SkillCharacter, _Character)
+	Set(%SkillToCast, INT:1)
+	StartTimer("BlueCasterTimeout", FLOAT:3, -1)
+
+EVENT Blue_SkillCast_Timeout
+ON
+	OnTimer("BlueCasterTimeout")
+ACTIONS
+	CharacterDie(__Me)
+	CharacterDestroy(__Me)
+/*	
+EVENT StopAllStatusesBeingAppliedToThis
+VARS
+	STATUS:_Status
+ON
+	FetchCharacterApplyStatusData(__Me, _Status)
+ACTIONS
+	RETURN(null,null,null)
+*/
+
+BEHAVIOUR
+
+REACTION Blue_ThrowToPrepare,20000
+USAGE ALL
+CHECK "c1"
+	IsEqual(%SkillToCast, 1)
+ACTIONS
+	IF "c1&!c2&!c3"
+		GetPosition(__Me, %SkillLocation)
+		IsEqual(%SkillLocation, null)
+		IsEqual(%SkillLocation, FLOAT3:{0;0;0})
+	THEN
+		//TeleportTo(__Me, FLOAT3:{1;1;1})
+		Set(%SkillToCast, 2)
+	ENDIF 
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_ThrowToSkillCast,20000
+USAGE ALL
+CHECK "c1"
+	IsEqual(%SkillToCast, 2)
+ACTIONS
+	//DisplayCombatInfoText(%SkillCharacter, "TestestSC", 5.0)
+	CharacterUseSkill(SKILL:Blue_Teleportation_Knockback, %SkillCharacter, %SkillLocation, null, INT:1)
+	Set(%SkillToCast, 69)
+INTERRUPT
+ACTIONS
+	Reset()
+/*
+REACTION Blue_DeleteAfterCast,19000
+USAGE ALL
+CHECK "c1"
+	IsEqual(%SkillToCast, 69)
+ACTIONS
+	StartTimer("BlueCasterTimeout", FLOAT:0.5, -1)
+INTERRUPT
+ACTIONS
+	Reset()
+*/

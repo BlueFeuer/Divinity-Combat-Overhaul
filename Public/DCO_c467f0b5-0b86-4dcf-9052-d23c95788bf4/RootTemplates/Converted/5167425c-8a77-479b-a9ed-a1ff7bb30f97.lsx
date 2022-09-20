@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="5167425c-8a77-479b-a9ed-a1ff7bb30f97" type="22" />
+					<attribute id="Name" value="Summons_GiantRock_A" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="item" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="31bbcd78-9da9-417f-a6f0-3f22741ee9f9" type="22" />
+					<attribute id="PhysicsTemplate" value="54a3b554-a7f5-4725-ab44-72767aa989f6" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="| Living Wall |" type="28" handle="ResStr_39d34751" />
+					<attribute id="Icon" value="Portrait_Summons_LivingWall" type="22" />
+					<attribute id="Stats" value="CONT_Crate" type="22" />
+					<attribute id="DefaultState" value="idle" type="22" />
+					<attribute id="CoverAmount" value="0" type="1" />
+					<attribute id="Tooltip" value="1" type="1" />
+					<attribute id="BloodSurfaceType" value="SurfaceNone" type="22" />
+					<attribute id="MeshProxy" value="" type="22" />
+					<attribute id="Alignment" value="Neutral NPC" type="22" />
+					<attribute id="IsInspector" value="True" type="19" />
+					<attribute id="StartCombatRange" value="13" type="6" />
+					<children>
+						<node id="Tags" />
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="1" type="1" />
+							<attribute id="Min" value="-0.438079 -0.592868 -0.45876" type="12" />
+							<attribute id="Max" value="0.438079 0.619457 0.45876" type="12" />
+							<attribute id="Radius" value="0.438693" type="6" />
+							<attribute id="Height" value="1.21233" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="hd7b5625fgac24g454fgbdbbgc04b07d020a1" />
+						</node>
+						<node id="OnUsePeaceActions" />
+						<node id="OnDestroyActions" />
+						<node id="Equipment" />
+						<node id="InventoryList">
+							<children>
+								<node id="Inventorys">
+									<attribute id="InventoryItem" value="Empty" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="Scripts" />
+						<node id="ItemList" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

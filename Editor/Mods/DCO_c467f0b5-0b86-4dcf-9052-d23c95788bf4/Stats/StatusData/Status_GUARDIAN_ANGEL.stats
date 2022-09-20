@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="869d0cd5-ab2a-4664-a8cc-cd68930a5548">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="GUARDIAN_ANGEL" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Guardian Angel" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|[1]% of incoming damage is redirected to a nearby Ally.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="DamagePercentage" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Warrior_GuardianAngel" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_GuardianAngel_Subject_01" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Guardian_Angel" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_GuardianAngel" />
+        <field name="StackPriority" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="DamagePercentage" type="IntegerStatObjectFieldDefinition" value="50" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

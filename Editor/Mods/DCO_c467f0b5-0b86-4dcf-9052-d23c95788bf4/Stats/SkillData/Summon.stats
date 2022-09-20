@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="81d21913-ef1d-4fd8-bc01-1dcee5d3e4eb">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="TotemFromSurface" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="10" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="SummonLevel" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="Summoning 1" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Template" type="StringStatObjectFieldDefinition" value="98be4473-a55a-495a-adac-0bda6dc69343" />
+        <field name="TemplateOverride" type="StringStatObjectFieldDefinition" value="Summon" />
+        <field name="Totem" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="SummonCount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_TotemFromSurface" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Elemental Totem|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Summon a totem that matches the element of surface under it. The totem will shoot a projectile at nearest enemy in sight each turn.|" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Prepare_Totem_Root_01_Nebula,KeepRot,Detach" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_summon_totem_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Cast_Summon_Totem_Root_01:Dummy_Root" />
+        <field name="CastEffectTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TargetCastEffect" type="StringStatObjectFieldDefinition" value="{TargetSurfaceType}[None]RS3_FX_Skills_Totem_Impact_Summon_Default_01 [Blood]RS3_FX_Skills_Totem_Impact_Summon_Blood_01 [Water]RS3_FX_Skills_Totem_Impact_Summon_Ice_01 [WaterElectrified]RS3_FX_Skills_Totem_Impact_Summon_Lightning_01 [BloodElectrified]RS3_FX_Skills_Totem_Impact_Summon_Lightning_01 [Fire]RS3_FX_Skills_Totem_Impact_Summon_Fire_01 [Oil]RS3_FX_Skills_Totem_Impact_Summon_Oil_01 [Poison]RS3_FX_Skills_Totem_Impact_Summon_Poison_01" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Target_Nebula_01" />
+        <field name="AiCalculationSkillOverride" type="StringStatObjectFieldDefinition" value="Target_DummyTargetSkill" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="PlanarGateway" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="10" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="AIFlags" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="AIFlags" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="SummonLevel" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="Summoning 3" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Template" type="StringStatObjectFieldDefinition" value="29bc7b40-03b3-4582-89db-4d6849a12f59" />
+        <field name="Totem" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="LinkTeleports" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="SummonCount" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_PlanarGateway" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Planar Gateway |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Conjure two linked gateways that allow any character to instantly travel between them. |" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Prepare_Totem_Root_Crystals_01,KeepRot,Detach;RS3_FX_Skills_Totem_Prepare_Totem_Root_Void_01,KeepRot,Detach" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_summon_totem_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Cast_Target_Totem_Void_Root_02:root" />
+        <field name="CastEffectTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TargetCastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Impact_Summon_Void_01" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_VoidTotem_Preview_Target_01" />
+        <field name="TeleportsUseCount" type="IntegerStatObjectFieldDefinition" value="4" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SoulWolf" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="SummonLevel" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Template" type="StringStatObjectFieldDefinition" value="53f49a2d-36a1-4c47-8cef-91c0f3ae0ef9" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="SummonCount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Origins_SoulWolf" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Summon Soul Wolf |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Ifan summons his trusty Soul Wolf, that can howl and bite enemies.|" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Prepare_Totem_Root_01,KeepRot,Detach;RS3_FX_Skills_Totem_Prepare_Totem_Wolf_01:Dummy_OverheadFX;RS3_FX_Skills_Totem_Prepare_Totem_Dummy_01:Dummy_OverheadFX;RS3_FX_Skills_Totem_Prepare_Totem_Hand_01:Dummy_R_HandFX;RS3_FX_Skills_Totem_Prepare_Totem_Hand_01:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_summon_totem_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Cast_Summon_Totem_Root_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Summon_Totem_Wolf_01:Dummy_OverheadFX;RS3_FX_Skills_Totem_Cast_Self_Totem_Root_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Self_Totem_Dummy_01:Dummy_OverheadFX" />
+        <field name="CastEffectTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TargetCastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Impact_Summon_Ancestral_01" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Target_Ancestral_01" />
+        <field name="AiCalculationSkillOverride" type="StringStatObjectFieldDefinition" value="Target_DummyTargetSkill" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="DEAF" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Incarnate" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="10" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="AIFlags" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="AIFlags" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="SummonLevel" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="Summoning 1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="DEAF" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Template" type="StringStatObjectFieldDefinition" value="118d7359-b7d5-41ea-8c55-86ce27afceba" />
+        <field name="TemplateAdvanced" type="StringStatObjectFieldDefinition" value="13f9314d-e744-4dc5-acf2-c6bf77a04892" />
+        <field name="TemplateOverride" type="StringStatObjectFieldDefinition" value="13f9314d-e744-4dc5-acf2-c6bf77a04892" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="SummonCount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Summoning_SummonIncarnate" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="| Summon Incarnate |" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="| Summon your personal demon that you can upgrade with Infusions.|" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Prepare_Totem_Root_01_Nebula,KeepRot,Detach" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_summon_totem_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Cast_Summon_Totem_Root_01_Nebula:Dummy_Root" />
+        <field name="CastEffectTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="TargetCastEffect" type="StringStatObjectFieldDefinition" value="{TargetSurfaceType}[None]RS3_FX_Skills_Totem_Impact_Summon_Default_01 [Blood]RS3_FX_Skills_Totem_Impact_Summon_Blood_01 [Water]RS3_FX_Skills_Totem_Impact_Summon_Ice_01 [WaterElectrified]RS3_FX_Skills_Totem_Impact_Summon_Lightning_01 [BloodElectrified]RS3_FX_Skills_Totem_Impact_Summon_Lightning_01 [Fire]RS3_FX_Skills_Totem_Impact_Summon_Fire_01 [Oil]RS3_FX_Skills_Totem_Impact_Summon_Oil_01 [Poison]RS3_FX_Skills_Totem_Impact_Summon_Poison_01" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Totem_Target_Nebula_01" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

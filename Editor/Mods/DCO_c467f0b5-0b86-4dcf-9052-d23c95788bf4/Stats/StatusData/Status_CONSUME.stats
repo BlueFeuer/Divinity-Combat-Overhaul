@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="e2a8d59b-0e34-4a7c-bf5f-db7a2bb34cde">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SLOWED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Oiled" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Movement speed reduced. Far more susceptible to Burning statuses." />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="Stats:Stats_Slowed:MovementSpeedBoost" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Slowed" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Slowed_01" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="17" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Slowed" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Slowed" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WET" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Wet" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="More vulnerable to electric and ice attacks." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Wet" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="23" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Wet_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialFadeAmount" type="IntegerStatObjectFieldDefinition" value="3000" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="11" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Wet" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Wet" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="TAUNTED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Taunted" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Enemy will prefer attacking [1]. Cured by Clear-Minded, Enraged.|" />
+        <field name="DescriptionParams" type="StringStatObjectFieldDefinition" value="StatusCause" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Taunted" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Taunted_01,KeepRot:Dummy_StatusFX" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="35" enumeration_type_name="AttributeFlag" />
+        <field name="IsChanneled" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Taunted" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Taunted" />
+        <field name="LoseControl" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DRUNK" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Drunk" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Character is drunk." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Drunk" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Drunk_01:Dummy_StatusFX" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="21" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Drunk" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Drunk" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="BLESSED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Blessed" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Increased resistances, accuracy, dodge." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Blessed" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="15" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Blessed_01:Dummy_BodyFX" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_Blessed_01" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Blessed" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Blessed" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="HOLY_FIRE" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Holy Fire" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Character is healing from fire damage." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_HolyFire" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_HolyFire_01" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_HolyFire_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialFadeAmount" type="IntegerStatObjectFieldDefinition" value="2000" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_HolyFire" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_HolyFire" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="INFESTED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|INFESTED|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|An egg is gestating in this character. On status expiration or death of the character,  the egg will burst, spawning a hostile monster and dealing physical damage to all characters in the area. Cured by statuses Blessed, Regenerating, skills Healing Ritual, Cleanse Wounds.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Rogue_CrawlingInfestation" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Infested_01:Dummy_WingFX" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Infested" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

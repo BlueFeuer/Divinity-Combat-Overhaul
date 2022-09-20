@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="e7b48b26-5726-4393-a6c2-104cf1d0ccaa" type="22" />
+					<attribute id="Name" value="Blue_Character_FireDragon" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="character" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="450c3b31-f37e-4c26-ab0f-8a5bee8b295c" type="22" />
+					<attribute id="PhysicsTemplate" value="2a721007-db47-470a-92ee-66f1f7b24608" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="|Frost Dragon|" type="28" handle="ResStr_49af6458" />
+					<attribute id="Icon" value="Portrait_Creatures_PurgedDragon_A" type="22" />
+					<attribute id="Stats" value="Animals_Frost_Dragon" type="22" />
+					<attribute id="Equipment" value="Creatures_Dragon_A" type="22" />
+					<attribute id="WalkSpeed" value="3.75" type="6" />
+					<attribute id="ClimbAttachSpeed" value="4" type="6" />
+					<attribute id="ClimbLoopSpeed" value="4" type="6" />
+					<attribute id="ClimbDetachSpeed" value="2.44" type="6" />
+					<attribute id="RunSpeed" value="3.75" type="6" />
+					<attribute id="CanClimbLadders" value="False" type="19" />
+					<attribute id="HitFX" value="RS3_FX_GP_Combat_Hit_Blood_01_Large" type="22" />
+					<attribute id="BloodSurfaceType" value="SurfaceWaterFrozen" type="22" />
+					<attribute id="ExplodedResourceID" value="5556a24c-20d1-41f8-945a-dc9bad299864" type="22" />
+					<attribute id="ExplosionFX" value="RS3_FX_GP_Combat_CorpseExplosion_Blood_01_Huge" type="22" />
+					<attribute id="CanOpenDoors" value="False" type="19" />
+					<attribute id="LevelOverride" value="-1" type="4" />
+					<attribute id="CanBeTeleported" value="False" type="19" />
+					<attribute id="IsLootable" value="True" type="19" />
+					<attribute id="Random" value="9223372036854775808" type="24" />
+					<attribute id="Alignment" value="Evil NPC" type="22" />
+					<attribute id="IsBoss" value="True" type="19" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" value="DRAGON" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="2" type="1" />
+							<attribute id="Min" value="-1.00873 -0.00494895 -0.241854" type="12" />
+							<attribute id="Max" value="0.793436 2.00658 0.239053" type="12" />
+							<attribute id="Radius" value="2" type="6" />
+							<attribute id="Height" value="5" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="hfeccb8bbgf99fg4028gb187g607c18c2cbaa" />
+						</node>
+						<node id="OnDeathActions" />
+						<node id="SkillList">
+							<children>
+								<node id="Skill">
+									<attribute id="Skill" value="Target_Terrify" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Shout_EnemyDragonWhirlwind" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="ProjectileStrike_EnemyHailStrike" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="ProjectileStrike_EnemyHailAttack" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Target_EnemyRestoration" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Rain_EnemyWater" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Cone_EnemyGroundSmash" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Cone_EnemyDragonBreath_Ice" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Projectile_DragonFlight" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="ItemList" />
+						<node id="Scripts">
+							<children>
+								<node id="Script">
+									<attribute id="UUID" value="5bc80992-a7f6-4da6-83e2-3d276384d8f7" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="AiHint" type="22" />
+													<attribute id="Type" value="4" type="4" />
+													<attribute id="Value" value="0xbaadf00d" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="Archetype" type="22" />
+													<attribute id="Type" value="30" type="4" />
+													<attribute id="Value" value="base" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="FleeFromDangerousSurface" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="StayInAiHints" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanChickenFlee" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanCower" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanFleeWhileCowering" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CombatFallbackAD" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Treasures">
+							<attribute id="TreasureItem" value="RewardBig" type="22" />
+						</node>
+						<node id="TradeTreasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterLyingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterSittingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterDeadPicking" type="22" />
+							<attribute id="MapValue" value="c61f0bab-2be0-4b3c-891a-b889a1009ded" type="22" />
+						</node>
+						<node id="FootStepInfos">
+							<children>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Front_Left" type="23" />
+									<attribute id="FootPrintEffectName" value="" type="23" />
+									<attribute id="FootSmearEffectName" value="" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Hand_FL_Bone" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Front_Right" type="23" />
+									<attribute id="FootPrintEffectName" value="" type="23" />
+									<attribute id="FootSmearEffectName" value="" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Hand_FR_Bone" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Back_Left" type="23" />
+									<attribute id="FootPrintEffectName" value="" type="23" />
+									<attribute id="FootSmearEffectName" value="" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Toe_BL_Bone" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Back_Right" type="23" />
+									<attribute id="FootPrintEffectName" value="" type="23" />
+									<attribute id="FootSmearEffectName" value="" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Toe_BR_Bone" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

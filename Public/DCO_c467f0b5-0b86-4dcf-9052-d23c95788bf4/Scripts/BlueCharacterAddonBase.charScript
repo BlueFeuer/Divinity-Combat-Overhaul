@@ -1,0 +1,5071 @@
+#INCLUDE BlueCharacterAddonMovement
+INIT
+	USING SHARED BlueCharacterAddonMovement
+	CHARACTER:__Me
+	FLOAT:%CurrVitality=1.0
+	FLOAT3:%StoredLocation
+	INT:%Initialized=0
+	FLOAT:%DamageDealtThisTurn=0
+	STRING:%CheckDisabledEvent
+	STRING:%SearchAreaEvent
+	FLOAT:%SearchAreaRadius
+	INT:%CurrBlacksmithing=0
+	INT:%CurrRanged=0
+	FLOAT:%CurrWits
+	FLOAT:%CurrWisdom
+	FLOAT:%CurrConstitution
+	FLOAT:%CurrDexterity
+	FLOAT:%CurrMight
+	FLOAT3:%CurrPosition
+	INT:%CurrSource
+	INT:%CurrWeaponry
+	INT:%CurrArmorSpec
+	INT:%CurrWeal
+	INT:%CurrLeadership
+	INT:%CurrTotalAbilityPoints
+	FLOAT:%CurrLevel
+	SKILL:%CurrentSubrace
+	SKILL:%CurrentTotem
+	FLOAT:%DamageToDeal
+	FLOAT:%AptitudeBonus=1 //Special variable. Status strength is multiplied by this on next POSTIER (and reset to 0 on PRETIER failsafe)
+	SURFACE:%SurfaceCache
+	CHARACTERSTAT:%CurrResistanceCorrecting
+	FLOAT:%ResistanceCap
+	FLOAT:%HelperFloat
+	INT:%ArbiterCycle=-10
+	CHARACTER:%LastAttacker
+	FLOAT:%Var
+	INT:%HelperVar
+	SKILL:%AbilityID
+	LIST<SKILL>:%AbilityIDList
+	INT:%WealBuffBinaryTurnA
+	//INT:%WealBuffBinaryTurnB
+	//INT:%WealBuffBinaryTurnC
+	INT:%WealBuffBinaryTurnD
+	//Rune stuff:
+	ITEM:%CurrentWeaponR
+	ITEM:%CurrentWeaponL
+	ITEM:%TestItem
+	ITEM:%TestItemNR
+	INT:%HasShield
+	INT:%HasRunesL
+	INT:%HasRunesR
+	INT:%EnableEquips
+	FLOAT3:%AttackTargetPos
+	INT:%RespondToTimer
+	INT:%CurrentWeaponType
+	/*
+	1 = Single
+	2 = Dual
+	3 = Twohanded
+	4 = Wand
+	5 = Staff
+	6 = Crossbow
+	7 = Bow
+	*/
+EVENTS
+
+/*	~~~~~~~~~~~~~~~~~~~~~
+	
+	This whole script is kinda a mess. A big big mess. I'm not fixing it.
+	Half of the relevant stuff (Technically more like 3/4ths) is in "BlueCharacterExtensions.gameScript".
+	This was due to the discovery that the bigger a charscript is, the longer it takes for the game to load.
+	Moving 12,000 lines out of this script reduced the load time by ~12 seconds.
+	
+*///~~~~~~~~~~~~~~~~~~~~~
+	
+
+EVENT PlayerExitsCharacterCreation
+ON
+	OnCharacterCreationStopped(__Me)
+ACTIONS
+	//This ensures the game recalculates the skills when leaving the mirror.
+	Set(%CurrTotalAbilityPoints, INT:0)
+
+
+EVENT PlayerInitialization
+ON
+	OnInit()
+	//OnLoaded(_, _, _, _)
+	//OnActivate()
+	OnCharacterCreationStopped(__Me)
+	OnReadyInCombat(__Me, _, _)
+	OnCharacterEvent(__Me, "Blue_Character_AddedToParty")
+ACTIONS
+	Set(%AptitudeBonus, FLOAT:1)
+	IF "!c1|c2"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+	THEN
+		//Versioning - Initialized variable determines if a character needs to be updated.
+		//NPCs are ALWAYS ODD
+		//Players are ALWAYS EVEN
+		//If characters need to be reinitialized after an update, change the numbers.
+		IF "!c1"
+			IsEqual(%Initialized, INT:25)
+		THEN
+			Set(%Initialized, INT:25)
+			CharacterEvent(__Me, "GlobalStatsSanityCorrecter")
+			CharacterEvent(__Me, "GlobalConstitutionCorrecter")
+			CharacterEvent(__Me, "GlobalDexterityCorrecter")
+			CharacterEvent(__Me, "GlobalMightCorrecter")
+			CharacterEvent(__Me, "GlobalWisdomCorrecter")
+			CharacterEvent(__Me, "GlobalWitsCorrecter")
+			CharacterEvent(__Me, "Blue_Refresh_Talents")
+			CharacterApplyStatus(__Me, Blue_UniversalBuff, -1)
+			CharacterCharacterEvent(__Me, __Me, "ArbiterCycle7")
+			CharacterApplyStatus(__Me, Blue_Status_AddArmor_Remove, 0)
+			StartTimer("Blue_AddArmor_Timer", 1.0, 0)
+		ENDIF
+	ENDIF
+	IF "c1&!c2"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+	THEN
+		IF "!c1"
+			IsEqual(%Initialized, INT:24)
+		THEN
+			Set(%Initialized, INT:24)
+			IF "!c1"
+				CharacterInCreation(__Me, _)
+			THEN
+				CharacterEvent(__Me, "Blue_Refresh_Talents")
+			ENDIF
+			IF "!c1&c2"
+				CharacterHasSkill(__Me, Blue_Shout_SourceEmpower)
+				CharacterHasSkill(__Me, Target_Bless)
+			THEN
+				CharacterAddSkill(__Me, Blue_Shout_SourceEmpower)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasSkill(__Me, Blue_Shout_SourceEmpower)
+				IsTagged(__Me, "Blue_SourceMastery_Revealed")
+			THEN
+				SetTag(__Me, "Blue_SourceMastery_Revealed")
+				CharacterCharacterEvent(__Me, __Me, "Blue_SourceMastery_Show")
+			ELIF "!c1&!c2"
+				CharacterHasSkill(__Me, Blue_Shout_SourceEmpower)
+				IsTagged(__Me, "Blue_SourceMastery_Revealed")
+			THEN
+				CharacterCharacterEvent(__Me, __Me, "Blue_SourceMastery_Hide")
+			ENDIF
+			CharacterEvent(__Me, "GlobalStatsSanityCorrecter")
+			CharacterEvent(__Me, "GlobalConstitutionCorrecter_Changed")
+			CharacterEvent(__Me, "GlobalDexterityCorrecter_Changed")
+			CharacterEvent(__Me, "GlobalMightCorrecter_Changed")
+			CharacterEvent(__Me, "GlobalWisdomCorrecter_Changed")
+			CharacterEvent(__Me, "GlobalWitsCorrecter_Changed")
+			CharacterCharacterEvent(__Me, __Me, "BlueHideHydrosophist")
+			CharacterApplyStatus(__Me, Blue_UniversalBuff, -1)
+			CharacterApplyStatus(__Me, Blue_Status_AddArmor_Remove, 0)
+			StartTimer("Blue_AddArmor_Timer", 1.0, 0)
+		ENDIF
+		Set(%ArbiterCycle, INT:0)
+		SetTag(__Me, "Blue_ResistanceCycleInactive")
+		CharacterEvent(__Me, "BlueRemovePRETIERFailsafeStartTimer")
+	ENDIF
+	
+EVENT Blue_AddArmor_Timer
+ON
+	OnTimer("Blue_AddArmor_Timer")
+ACTIONS
+	CharacterEvent(__Me, "Blue_AddArmor")
+
+EVENT BlueCharacterRefreshArmorOnAcidRemoval
+ON
+	OnCharacterStatusRemoved(__Me, AcidA)
+	OnCharacterStatusRemoved(__Me, AcidB)
+	OnCharacterStatusRemoved(__Me, AcidC)
+	OnCharacterStatusRemoved(__Me, AcidD)
+	OnCharacterStatusRemoved(__Me, AcidE)
+	OnCharacterStatusRemoved(__Me, AcidF)
+	OnCharacterStatusRemoved(__Me, AcidG)
+	OnCharacterStatusRemoved(__Me, AcidH)
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_Status_ArmorRestore)
+	CharacterRemoveStatus(__Me, Blue_Status_ArmorRestore_Debuff)
+	StartTimer("DamageTakenRestoreArmorTimer", FLOAT:0.05, INT:0)
+
+EVENT BlueCharacterWasResurrected
+ON
+	OnCharacterStatusRemoved(__Me, DYING)
+ACTIONS
+	//StartTimer("Blue_AddArmor_Timer", 0.1, 0)
+	IF "c1&!c2"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+	THEN
+		CharacterEvent(__Me, "Blue_Refresh_Talents")
+		CharacterEvent(__Me, "GlobalConstitutionCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalDexterityCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalMightCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalWisdomCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalWitsCorrecter_Changed")
+		CharacterCharacterEvent(__Me, __Me, "BlueHideHydrosophist")
+		Set(%ArbiterCycle, INT:0)
+		SetTag(__Me, "Blue_ResistanceCycleInactive")
+	ENDIF
+	IF "!c1|c2"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+	THEN
+		CharacterEvent(__Me, "Blue_Refresh_Talents")
+		CharacterEvent(__Me, "GlobalConstitutionCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalDexterityCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalMightCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalWisdomCorrecter_Changed")
+		CharacterEvent(__Me, "GlobalWitsCorrecter_Changed")
+		CharacterCharacterEvent(__Me, __Me, "ArbiterCycle7")
+	ENDIF
+	IF "!c1"
+		CharacterHasTalent(__Me, ResurrectToFullHealth)
+	THEN
+		CharacterApplyStatus(__Me, Blue_RecentlyResurrected, INT:1)
+		CharacterEvent(__Me, "Blue_AnimationController")
+	ENDIF
+	Set(%AptitudeBonus, FLOAT:1)
+	CharacterEvent(__Me, "BlueRemovePRETIERFailsafeStartTimer")
+	CharacterApplyStatus(__Me, Blue_UniversalBuff, -1)
+	CharacterRemoveStatus(__Me, Blue_Status_ArmorRestore)
+	CharacterApplyStatus(__Me, Blue_Status_ArmorRestore_Debuff, INT:-1)
+	StartTimer("DamageTakenRestoreArmorTimer", FLOAT:0.1, INT:0)
+	Set(%SurfaceCache, null)
+	
+/*
+EVENT ArbiterCannotDoStuffTimer
+ON
+	OnTimer("ArbiterCannotDoStuffTimer")
+ACTIONS
+	IF "c1&c2"
+		IsTagged(__Me, "ArbiterCannotDoStuff")
+	THEN
+		StopTimer("ArbiterCannotDoStuffTimer")
+		ClearTag(__Me, "ArbiterCannotDoStuff")
+		ClearTag(__Me, "ArbiterCannotDoStuffCooldown")
+		Set(%CurrTotalAbilityPoints, INT:0)
+	ENDIF
+*/
+	
+EVENT Blue_ArbiterTrigger
+//
+VARS
+	FIXEDSTRING:_Text
+	STRING:_Str
+//
+ON
+	OnCharacterEvent(__Me, "Blue_ArbiterTrigger")
+ACTIONS
+		//StatusText(__Me, "arbiter_timer_testest")
+	IF "!c1"
+		CharacterIsSummon(__Me)
+	THEN
+		//Run Arbiter for players.
+		//Anticipation originally operated on the positional awareness system, but that was too unresponsive and delayed.
+		IF "!c1&c2&c3"
+			IsInActiveTurn(__Me)
+			IsTagged(__Me, "Blue_CharacterIsAnticipating")
+			IsInCombat(__Me)
+		THEN
+			IterateCharactersNear(__Me, FLOAT:6, "Blue_Iterate_GetAnticipation")
+		ENDIF
+		//Skills get added to the player from this list
+		IF "c1&c2"
+			ListGetSize(%AbilityIDList, %HelperVar)
+			IsGreaterThen(%HelperVar, INT:0)
+		THEN
+			IF "c1"
+				ListGet(%AbilityIDList, INT:1, %AbilityID)
+			THEN
+				ListRemove(%AbilityIDList, INT:1)
+				CharacterAddSkill(__Me, %AbilityID)
+			ENDIF
+		ENDIF
+		IF "(c1|c2|c3)&!c4"
+			GameIsLoading()
+			GameIsSaving()
+			CharacterInCreation(__Me)
+			IsTagged(__Me, "ArbiterCannotDoStuff")
+		THEN
+			SetTag(__Me, "ArbiterCannotDoStuff")
+		ENDIF
+		IF "!c1"
+			IsTagged(__Me, "ArbiterCannotDoStuff")
+		THEN
+			//Arbiter cycles through 8 different things.
+			//1 = Fire Resistance Calculation, Dexterity Calculation.
+			//2 = Water Resistance Calculation, Wits Calculation.
+			//3 = Earth Resistance Calculation, Constitution Calculation.
+			//4 = Poison Resistance Calculation, Wisdom Calculation.
+			//5 = Piercing Resistance Calculation, SourceMastery, Persuasion Calculation.
+			//6 = Air Resistance Calculation, Might Calculation.
+			//7 = Magic Shell/Fortify removal, CurrArmor.
+			//8 = Armor Specialist, Weaponry, Ability Adding.
+			Add(%ArbiterCycle, INT:1)
+			IF "c1"
+				IsGreaterThen(%ArbiterCycle, INT:8)
+			THEN
+				Set(%ArbiterCycle, INT:1)
+			ENDIF
+			IF "c1"
+				IsLessThen(%ArbiterCycle, INT:9)
+			THEN
+				//StatusText(__Me, "test_cycle")
+				//
+				//Print(_Str, "Blue_Test_[1]", %ArbiterCycle)
+				//Cast(_Text, _Str)
+				//StatusText(__Me, _Text)
+				//
+				IF "c1"
+					IsEqual(%ArbiterCycle, INT:1)
+				THEN
+					//FIRE RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Fire")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle1")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:2)
+				THEN
+					//WATER RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Water")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle2")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:3)
+				THEN
+					//EARTH RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Earth")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle3")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:4)
+				THEN
+					//POISON RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Poison")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle4")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:5)
+				THEN
+					//PIERCING RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Piercing")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle5")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:6)
+				THEN
+					//AIR RESISTANCE
+					Set(%ResistanceCap, FLOAT:70)
+					CharacterEvent(__Me, "Blue_Resistances_Air")
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle6")
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:7)
+				THEN
+					// Cycle 7 is run separately on everyone in combat and handles a wide variety of checks.
+					IF "!c1"
+						IsInCombat(__Me)
+					THEN
+						CharacterCharacterEvent(__Me, __Me, "ArbiterCycle7")
+					ENDIF
+				ELIF "c1"
+					IsEqual(%ArbiterCycle, INT:8)
+				THEN
+					CharacterCharacterEvent(__Me, __Me, "ArbiterCycle8")
+				ENDIF
+			ENDIF
+		ENDIF
+		IF "c1"
+			IsTagged(__Me, "ArbiterCannotDoStuff")
+		THEN
+			IF "!c1&!c2&!c3"
+				GameIsLoading()
+				GameIsSaving()
+				CharacterInCreation(__Me)
+			THEN
+				ClearTag(__Me, "ArbiterCannotDoStuff")
+			ENDIF
+		ENDIF
+	ENDIF
+	
+EVENT Blue_ArbiterTurnTrigger
+ON
+	OnCharacterEvent(__Me, "Blue_ArbiterTurnTrigger")
+ACTIONS
+	IF "c1"
+		IsInActiveTurn(__Me)
+	THEN
+		//StatusText(__Me, "is_turn_test")
+		// Position checks, operates on a very quick timer for the current turn holder.
+		IF "c1&!c2"
+			GetPosition(__Me, _Position)
+			// Check if character moved since last poll.
+			IsEqual(%CurrPosition, _Position)
+		THEN
+			IF "!c1"
+				// Make sure the movement was real.
+				IsEqual(%CurrPosition, FLOAT3:{-1;-1;-1})
+			THEN
+				// If the movement was real, make the system think everyone else fake moved.
+				IF "c1"
+					IsInCombat(__Me)
+				THEN
+					IterateCharactersInCombat(__Me, "Blue_CheckNearbyCharacters_Iterate")
+					IterateCharactersNear(__Me, FLOAT:13, "Blue_CheckNearbyCharacters_Iterate")
+				ELSE
+					IterateCharactersNear(__Me, FLOAT:13, "Blue_CheckNearbyCharacters_Iterate")
+				ENDIF
+				// Some extra checks added to real movement
+				CharacterEvent(__Me, BlueCheckPosition)
+			ENDIF
+			Set(%CurrPosition, _Position)
+			// The real checks are here. When one character moves, the system is told to check everyone's position.
+			CharacterEvent(__Me, BlueCheckNearbyCharacters)
+		ENDIF
+	ENDIF
+	
+EVENT Blue_ArbiterCombatTrigger
+ON
+	OnCharacterEvent(__Me, "Blue_ArbiterCombatTrigger")
+ACTIONS
+    //StatusText(__Me, "combatant_test")
+	//PRETIER needs to be cleared vindictively, as if PRETIER is applied to a character with PRETIER already applied then the original's Source is carried over, which can lead to faulty indicators of the source of a status.
+	IF "c1"
+		CharacterHasStatus(__Me, PRETIER)
+	THEN
+		CharacterApplyStatus(__Me, PRETIER_Remove, 0)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, PRETIERArrow)
+	THEN
+		CharacterApplyStatus(__Me, PRETIERArrow_Remove, 0)
+	ENDIF
+	CharacterCharacterEvent(__Me, __Me, "ArbiterCycle7")
+	ClearTag(__Me, "Blue_ForceEnableArbiter")
+	IF "!c1"
+		IsInActiveTurn(__Me)
+	THEN
+		// Position checks, operates on the slower timer for non-turnholders.
+		IF "c1&!c2"
+			GetPosition(__Me, _Position)
+			// Check if character moved since last poll.
+			IsEqual(%CurrPosition, _Position)
+		THEN
+			IF "!c1"
+				// Make sure the movement was real.
+				IsEqual(%CurrPosition, FLOAT3:{-1;-1;-1})
+			THEN
+				// If the movement was real, make the system think everyone else fake moved.
+				IF "c1"
+					IsInCombat(__Me)
+				THEN
+					IterateCharactersInCombat(__Me, "Blue_CheckNearbyCharacters_Iterate")
+					IterateCharactersNear(__Me, FLOAT:13, "Blue_CheckNearbyCharacters_Iterate")
+				ELSE
+					IterateCharactersNear(__Me, FLOAT:13, "Blue_CheckNearbyCharacters_Iterate")
+				ENDIF
+				// Some extra checks added to real movement
+				CharacterEvent(__Me, BlueCheckPosition)
+			ENDIF
+			Set(%CurrPosition, _Position)
+			// The real checks are here. When one character moves, the system is told to check everyone's position.
+			CharacterEvent(__Me, BlueCheckNearbyCharacters)
+		ENDIF
+	ENDIF
+	
+//Fire Resistance Calculation, Dexterity Calculation.
+EVENT ArbiterCycle1
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle1)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "testarbitercycle1", FLOAT:5)
+	IF "c1&c2"
+		CharacterGetStat(%Var, __Me, FireResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, FireResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, FireDebuff128)
+				CharacterHasStatus(__Me, FireDebuff64)
+				CharacterHasStatus(__Me, FireDebuff32)
+				CharacterHasStatus(__Me, FireDebuff16)
+				CharacterHasStatus(__Me, FireDebuff8)
+				CharacterHasStatus(__Me, FireDebuff4)
+				CharacterHasStatus(__Me, FireDebuff2)
+				CharacterHasStatus(__Me, FireDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	CharacterEvent(__Me, "GlobalDexterityCorrecter")
+
+//Water Resistance Calculation, Wits Calculation.
+EVENT ArbiterCycle2
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle2)
+ACTIONS
+	IF "c1&c2"
+		CharacterGetStat(%Var, __Me, WaterResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, WaterResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, WaterDebuff128)
+				CharacterHasStatus(__Me, WaterDebuff64)
+				CharacterHasStatus(__Me, WaterDebuff32)
+				CharacterHasStatus(__Me, WaterDebuff16)
+				CharacterHasStatus(__Me, WaterDebuff8)
+				CharacterHasStatus(__Me, WaterDebuff4)
+				CharacterHasStatus(__Me, WaterDebuff2)
+				CharacterHasStatus(__Me, WaterDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	CharacterEvent(__Me, "GlobalWitsCorrecter")
+	
+//Physical Resistance Calculation, Constitution Calculation.
+EVENT ArbiterCycle3
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle3)
+ACTIONS
+	IF "c1&c2"
+		CharacterGetStat(%Var, __Me, EarthResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, EarthResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, EarthDebuff128)
+				CharacterHasStatus(__Me, EarthDebuff64)
+				CharacterHasStatus(__Me, EarthDebuff32)
+				CharacterHasStatus(__Me, EarthDebuff16)
+				CharacterHasStatus(__Me, EarthDebuff8)
+				CharacterHasStatus(__Me, EarthDebuff4)
+				CharacterHasStatus(__Me, EarthDebuff2)
+				CharacterHasStatus(__Me, EarthDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	CharacterEvent(__Me, "GlobalConstitutionCorrecter")
+
+//Poison Resistance Calculation, Wisdom Calculation.
+EVENT ArbiterCycle4
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle4)
+ACTIONS
+	IF "!c1&c2&c3"
+		CharacterHasTalent(__Me, Zombie)
+		CharacterGetStat(%Var, __Me, PoisonResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, PoisonResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, PoisonDebuff128)
+				CharacterHasStatus(__Me, PoisonDebuff64)
+				CharacterHasStatus(__Me, PoisonDebuff32)
+				CharacterHasStatus(__Me, PoisonDebuff16)
+				CharacterHasStatus(__Me, PoisonDebuff8)
+				CharacterHasStatus(__Me, PoisonDebuff4)
+				CharacterHasStatus(__Me, PoisonDebuff2)
+				CharacterHasStatus(__Me, PoisonDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	CharacterEvent(__Me, "GlobalWisdomCorrecter")
+
+//Piercing Resistance Calculation, SourceMastery, Persuasion Calculation.
+EVENT ArbiterCycle5
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle5)
+ACTIONS
+	IF "c1&c2"
+		CharacterGetStat(%Var, __Me, PiercingResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, PiercingResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, PiercingDebuff128)
+				CharacterHasStatus(__Me, PiercingDebuff64)
+				CharacterHasStatus(__Me, PiercingDebuff32)
+				CharacterHasStatus(__Me, PiercingDebuff16)
+				CharacterHasStatus(__Me, PiercingDebuff8)
+				CharacterHasStatus(__Me, PiercingDebuff4)
+				CharacterHasStatus(__Me, PiercingDebuff2)
+				CharacterHasStatus(__Me, PiercingDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	IF "c1&!c2"
+		CharacterGetSourcePoints(__Me, %HelperVar)
+		IsEqual(%HelperVar, %CurrSource)
+	THEN
+		CharacterEvent(__Me, "SourcePointCorrecter")
+		Set(%CurrSource, %HelperVar)
+	ENDIF
+	IF "c1&!c2"
+		CharacterGetStat(%Var, __Me, Level)
+		IsEqual(%Var, %CurrLevel)
+	THEN
+		CharacterEvent(__Me, "LevelCorrecter")
+		Set(%CurrLevel, %Var)
+	ENDIF
+	
+//Air Resistance Calculation, Might Calculation.
+EVENT ArbiterCycle6
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle6)
+ACTIONS
+	IF "c1&c2"
+		CharacterGetStat(%Var, __Me, AirResistance)
+		IsTagged(__Me, "Blue_ResistanceCycleInactive")
+	THEN
+		Set(%CurrResistanceCorrecting, AirResistance)
+		IF "c1"													
+			IsGreaterThen(%Var, %ResistanceCap)
+		THEN
+			StartTimer("ResistanceCorrecter", 0.01, -1)
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"													
+			IsLessThen(%Var, %ResistanceCap)
+		THEN
+			IF "c1|c2|c3|c4|c5|c6|c7|c8"
+				CharacterHasStatus(__Me, AirDebuff128)
+				CharacterHasStatus(__Me, AirDebuff64)
+				CharacterHasStatus(__Me, AirDebuff32)
+				CharacterHasStatus(__Me, AirDebuff16)
+				CharacterHasStatus(__Me, AirDebuff8)
+				CharacterHasStatus(__Me, AirDebuff4)
+				CharacterHasStatus(__Me, AirDebuff2)
+				CharacterHasStatus(__Me, AirDebuff1)
+			THEN
+				StartTimer("ResistanceCorrecter", 0.01, -1)
+				ClearTag(__Me, "Blue_ResistanceCycleInactive")
+			ENDIF
+		ENDIF
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Talent_MalevolentMojo_Debuff)
+	THEN
+		IF "!c1"
+			CharacterHasStatus(__Me, MutedH)
+		THEN
+			CharacterApplyStatus(__Me, MutedH, -1)
+		ENDIF
+	ENDIF
+	CharacterEvent(__Me, "GlobalMightCorrecter")
+	
+EVENT ArbiterCycle7
+VARS
+	CHARACTER:_Target
+	FLOAT:_StatCheck
+	FLOAT3:_Position
+	INT:_AbilCheck
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle7)
+ACTIONS
+	// If it's ever detected that a character doesn't have the universal buff, then run initialization on the character entirely.
+	// (Assuming they're not dead.)
+	IF "!c1&!c2&!c3&!c4&!c5&!c6"
+		CharacterHasStatus(__Me, Blue_UniversalBuff)
+		CharacterIsDead(__Me)
+		IsTagged(__Me, "GOD_ICON")
+		CharacterHasStatus(__Me, GALVANISED)
+		CharacterHasStatus(__Me, INVULNERABLE)
+		CharacterHasStatus(__Me, STORY_ENCHAINED)
+	THEN
+		Set(%Initialized, INT:0)
+		CharacterEvent(__Me, "Blue_Character_AddedToParty")
+	ENDIF
+	//Disabled check
+	CharacterEvent(__Me, "Blue_CheckDisabled_Periodic")
+	// Misc checks (in extensions)
+	// Handles some AI stuff.
+	CharacterEvent(__Me, "Blue_ArbiterCycle7_Misc")
+	// Damage and Movement Speed Reduction
+	CharacterEvent(__Me, GlobalBlacksmithingCorrecter)
+	CharacterEvent(__Me, GlobalMovementCorrecter)
+	//Guiding Winds
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_GuidingWindsSource)
+	THEN
+		//DisplayCombatInfoText(__Me, "Tersting", FLOAT:5)
+		IF "c1&c2&c3&!c4&!c5&!c6&!c7&!c8&!c9&c10"
+			CharacterGetStatusSourceCharacter(__Me, Blue_GuidingWindsSource, _Target)
+			GetDistance2D(_StatCheck, __Me, _Target)
+			IsLessThen(_StatCheck, FLOAT:11.5)
+			IsTagged(__Me, "Blue_CharacterIsDisabled")
+			CharacterHasStatus(__Me, BlindD)
+			CharacterHasStatus(__Me, BlindE)
+			CharacterHasStatus(__Me, BlindF)
+			CharacterHasStatus(__Me, BlindG)
+			CharacterHasStatus(__Me, BlindH)
+			CharacterHasStatus(_Target, Blue_GuidingWinds)
+		THEN
+			//nothing happens
+			//DisplayCombatInfoText(__Me, "Terstingesfg", FLOAT:5)
+		ELSE
+			CharacterRemoveStatus(__Me, Blue_GuidingWindsSource)
+			CharacterRemoveStatus(_Target, Blue_GuidingWinds)
+			//DisplayCombatInfoText(__Me, "Tersse", FLOAT:5)
+			//DisplayCombatInfoText(_Target, "Terssede", FLOAT:5)
+		ENDIF
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_GuidingWinds)
+	THEN
+		Set(_Target, null)
+		IF "c1"
+			CharacterGetStatusSourceCharacter(__Me, Blue_GuidingWinds, _Target)
+		THEN
+		ENDIF
+		IF "!c1|c2"
+			CharacterHasStatus(_Target, Blue_GuidingWindsSource)
+			IsEqual(_Target, null)
+		THEN
+			CharacterRemoveStatus(__Me, Blue_GuidingWinds)
+		ENDIF
+	ENDIF
+	//Status tag polling
+	CharacterEvent(__Me, "Blue_Poll_Status_Tags")
+	//Animation Controller
+	CharacterEvent(__Me, "Blue_AnimationController")
+
+EVENT ArbiterCycle8
+VARS
+ON
+	OnCharacterCharacterEvent(__Me, __Me, ArbiterCycle8)
+ACTIONS
+	IF "c1&c2"
+		CharacterHasStatus(__Me, Blue_SourceEmpowered)
+		IsInCombat(__Me)
+	THEN
+		CharacterRemoveStatus(__Me, Blue_SourceEmpowered)
+	ENDIF
+	IF "c1&!c2"
+		CharacterGetAbility(%HelperVar, __Me, SingleHanded)
+		IsEqual(%HelperVar, %CurrWeaponry)
+	THEN
+		CharacterEvent(__Me, "WeaponryCorrecter")
+		Set(%CurrWeaponry, %HelperVar)
+	ENDIF
+	IF "c1&!c2"
+		CharacterGetAbility(%HelperVar, __Me, TwoHanded)
+		IsEqual(%HelperVar, %CurrWeal)
+	THEN
+		CharacterEvent(__Me, "WealCorrecter")
+		Set(%CurrWeal, %HelperVar)
+	ENDIF
+	IF "c1&!c2"
+		CharacterGetAbility(%HelperVar, __Me, DualWielding)
+		IsEqual(%HelperVar, %CurrLeadership)
+	THEN
+		CharacterEvent(__Me, "LeadershipCorrecter")
+		Set(%CurrLeadership, %HelperVar)
+	ENDIF
+	IF "!c1&!c2&!c3&!c4&c5&!c6&!c7"
+		IsInCombat(__Me)
+		GameIsLoading()
+		GameIsSaving()
+		CharacterIsPolymorphInteractionDisabled(__Me)
+		IsActive(__Me)
+		CharacterIsDead(__Me)
+		CharacterInCreation(__Me)
+	THEN
+		Set(%ArbiterCycle, INT:0)
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, WarriorLore)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Reflection)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, RangerLore)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, RogueLore)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, FireSpecialist)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, WaterSpecialist)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, AirSpecialist)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, EarthSpecialist)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Necromancy)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Polymorph)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Leadership)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Summoning)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(%HelperVar, __Me, Perseverance)
+		THEN
+			Add(%ArbiterCycle, %HelperVar)
+		ENDIF
+		Set(%HelperVar, %ArbiterCycle)
+		Set(%ArbiterCycle, INT:8)
+		IF "!c1"
+			IsEqual(%HelperVar, %CurrTotalAbilityPoints)
+		THEN
+			Set(%CurrTotalAbilityPoints, %HelperVar)
+			CharacterCharacterEvent(__Me, __Me, "AbilityCorrecter")
+		ENDIF
+	ENDIF
+
+EVENT BlueCharacterEntersCombat
+ON
+	OnReadyInCombat(__Me, _, _)
+ACTIONS
+	CharacterEvent(__Me, "BlueCharacterEntersCombatEvent")
+
+EVENT BlueTurnEnded
+ON
+	OnTurnEnded(__Me, _)
+ACTIONS
+	IF "!c1&!c2&!c3&!c4"
+		IsTagged(__Me, "GOD_ICON")
+		CharacterHasStatus(__Me, GALVANISED)
+		CharacterHasStatus(__Me, INVULNERABLE)
+		CharacterHasStatus(__Me, STORY_ENCHAINED)
+	THEN
+		CharacterEvent(__Me, BlueTurnEndedEvent)
+		IterateCharactersInCombat(__Me, "BlueTurnEndedIterate")
+	ENDIF
+
+EVENT BlueCharacterHasTurn
+ON
+	OnTurn(__Me, _)
+ACTIONS
+	IF "!c1&!c2&!c3&!c4"
+		IsTagged(__Me, "GOD_ICON")
+		CharacterHasStatus(__Me, GALVANISED)
+		CharacterHasStatus(__Me, INVULNERABLE)
+		CharacterHasStatus(__Me, STORY_ENCHAINED)
+	THEN
+		CharacterEvent(__Me, "BlueTurnStartedEvent")
+		//Recheck Armaments for validity. Not strictly required but does help some edge cases (E.G. if a player dies with an Armaments buff active, the rune buff may stay on the weapon.)
+		CharacterEvent(__Me, "WeaponryCorrecter")
+		IF "c1&!c2"
+			CharacterIsInParty(__Me)
+			CharacterIsSummon(__Me)
+		THEN
+			CharacterEvent(__Me, "WealDoStuff")
+		ENDIF
+		IterateCharactersInCombat(__Me, "BlueTurnStartedIterate")
+		IterateCharactersNear(__Me, FLOAT:6, "Blue_Iterate_GetAnticipation_Pre")
+	ENDIF
+
+EVENT ResistanceCorrecter
+VARS
+	FLOAT:_Resistance
+ON
+	OnTimer("ResistanceCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+	THEN
+		IF "c1"
+			//Fire
+			IsEqual(%CurrResistanceCorrecting, FireResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterFire")
+		ELIF "c1"
+			//Air
+			IsEqual(%CurrResistanceCorrecting, AirResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterAir")
+		ELIF "c1"
+			//Earth
+			IsEqual(%CurrResistanceCorrecting, EarthResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterEarth")
+		ELIF "c1"
+			//Water
+			IsEqual(%CurrResistanceCorrecting, WaterResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterWater")
+		ELIF "c1"
+			//Poison
+			IsEqual(%CurrResistanceCorrecting, PoisonResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterPoison")
+		ELIF "c1"
+			//Piercing
+			IsEqual(%CurrResistanceCorrecting, PiercingResistance)
+		THEN
+			CharacterEvent(__Me, "ResistanceCorrecterPiercing")
+		ENDIF
+		IF "c1"
+			IsTagged(__Me, "Blue_StopResistanceCorrecterTimer")
+		THEN
+			ClearTag(__Me, "Blue_StopResistanceCorrecterTimer")
+			StopTimer("ResistanceCorrecter")
+			SetTag(__Me, "Blue_ResistanceCycleInactive")
+		ELIF "c1"
+			IsTagged(__Me, "Blue_StopResistanceCorrecterTimer")
+		THEN
+			ClearTag(__Me, "Blue_ResistanceCycleInactive")
+		ENDIF
+	ENDIF
+
+EVENT BlueItemUnEquipped
+VARS
+	ITEM:_Item
+	ITEM:_ItemProxy
+ON
+	OnItemUnequipped(__Me, _Item)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		StartTimer("Blue_EquipmentChanged_Timer", FLOAT:0.1, INT:0)
+		//DisplayCombatInfoText(__Me, "Unequip", FLOAT:5)
+		CharacterItemEvent(__Me, _Item, "Test")
+		IF "c1|c2"
+			IsEqual(_Item, %CurrentWeaponR)
+			IsEqual(_Item, %CurrentWeaponL)
+		THEN
+			CharacterEvent(__Me, "Blue_RemoveStances")
+		ENDIF
+		IF "c1"
+			IsEqual(_Item, %CurrentWeaponR)
+		THEN
+			Set(%CurrentWeaponR, null)
+			Set(_ItemProxy, %CurrentWeaponL)
+			IF "c1"
+				IsEqual(%HasRunesR, INT:1)
+			THEN
+				Set(%HasRunesR, INT:0)
+				SetTag(__Me, "DeleteRemovedRune0R")
+				SetTag(__Me, "DeleteRemovedRune1R")
+				CharacterItemEvent(__Me, _Item, "TestClearRunes")
+			ENDIF
+			IF "c1&c2"
+				ItemIsInCharacterInventory(%CurrentWeaponL, __Me)
+				IsEqual(%HasRunesL, INT:1)
+			THEN
+				//CharacterItemEvent(__Me, _ItemProxy, "TestCheckEquipL")
+				Set(%RespondToTimer, INT:1)
+				StartTimer("TestCheckEquipmentTimer", FLOAT:0.1, INT:1)
+			ENDIF
+		ENDIF
+		IF "c1"
+			IsEqual(_Item, %CurrentWeaponL)
+		THEN
+			IF "c1"
+				IsEqual(%HasShield, INT:1)
+			THEN
+				Set(%HasShield, INT:0)
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_1)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_1, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_1)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_2)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_2, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_2)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_3)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_3, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_3)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_4)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_4, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_4)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_5)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_5, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_5)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_6)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_6, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_6)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_7)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_7, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_7)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_8)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_8, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_8)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_9)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_9, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_9)
+				ENDIF
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_10)
+				THEN
+					RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_10, 100)
+					CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_10)
+				ENDIF
+			ENDIF
+			Set(%CurrentWeaponL, null)
+			Set(_ItemProxy, %CurrentWeaponR)
+			IF "c1"
+				IsEqual(%HasRunesL, INT:1)
+			THEN
+				Set(%HasRunesL, INT:0)
+				SetTag(__Me, "DeleteRemovedRune0L")
+				SetTag(__Me, "DeleteRemovedRune1L")
+				CharacterItemEvent(__Me, _Item, "TestClearRunes")
+			ENDIF
+			IF "c1&c2"
+				ItemIsInCharacterInventory(%CurrentWeaponR, __Me)
+				IsEqual(%HasRunesR, INT:1)
+			THEN
+				//CharacterItemEvent(__Me, _ItemProxy, "TestCheckEquipR")
+				Set(%RespondToTimer, INT:1)
+				StartTimer("TestCheckEquipmentTimer", FLOAT:0.1, INT:1)
+			ENDIF
+		ENDIF
+		IF "!c1"
+			IsEqual(%EnableEquips, INT:1)
+		THEN
+			Set(%EnableEquips, INT:1)
+		ENDIF		
+		//IF "!c1"
+		//	CharacterHasSkill(__Me, Shout_RecoverArmour)
+		//THEN
+		
+		//ENDIF
+	ENDIF
+
+EVENT BlueRuneInserted0
+VARS
+	ITEM:_Item
+ON
+	OnRuneInserted(__Me, _Item, _, INT:0)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		ItemAddDeltaModifier(_Item, "Blue_Test_DeltaBoost")
+		IF "c1"
+			ItemHasDeltaModifier(_Item, "Blue_Test_DeltaBoost")
+		THEN
+			IF "!c1&!c2"
+				IsEqual(_Item, %CurrentWeaponL)
+				IsEqual(_Item, %CurrentWeaponR)
+			THEN
+				//SetTag(__Me, "DontDeleteRemovedRune")
+				CharacterItemEvent(__Me, _Item, "ClearRune0")
+			ENDIF
+		ENDIF
+	ENDIF
+	
+EVENT BlueRuneInserted1
+VARS
+	ITEM:_Item
+ON
+	OnRuneInserted(__Me, _Item, _, INT:1)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		ItemAddDeltaModifier(_Item, "Blue_Test_DeltaBoost")
+		IF "c1"
+			ItemHasDeltaModifier(_Item, "Blue_Test_DeltaBoost")
+		THEN
+			IF "!c1&!c2"
+				IsEqual(_Item, %CurrentWeaponL)
+				IsEqual(_Item, %CurrentWeaponR)
+			THEN
+				//SetTag(__Me, "DontDeleteRemovedRune")
+				CharacterItemEvent(__Me, _Item, "ClearRune1")
+			ENDIF
+		ENDIF
+	ENDIF
+	
+EVENT BlueRuneExtracted0
+VARS
+	ITEM:_Item
+	ITEM:_Rune
+ON
+	OnRuneRemoved(__Me, _Item, _Rune, INT:0)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		IF "c1"
+			IsTagged(__Me, "DeleteRemovedRune0R")
+		THEN
+			ClearTag(__Me, "DeleteRemovedRune0R")
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ELIF "c1"
+			IsTagged(__Me, "DeleteRemovedRune0L")
+		THEN
+			ClearTag(__Me, "DeleteRemovedRune0L")
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ENDIF
+		IF "c1|c2"
+			IsEqual(_Item, %CurrentWeaponL)
+			IsEqual(_Item, %CurrentWeaponR)
+		THEN
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ENDIF
+		IF "c1"
+			IsEqual(_Item, %CurrentWeaponL)
+		THEN
+			CharacterItemEvent(__Me, %CurrentWeaponL, "InsertProperRune0L")
+		ELIF "c1"
+			IsEqual(_Item, %CurrentWeaponR)
+		THEN
+			CharacterItemEvent(__Me, %CurrentWeaponR, "InsertProperRune0R")
+		ENDIF
+	ENDIF
+		
+EVENT BlueRuneExtracted1
+VARS
+	ITEM:_Item
+	ITEM:_Rune
+ON
+	OnRuneRemoved(__Me, _Item, _Rune, INT:1)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		IF "c1"
+			IsTagged(__Me, "DeleteRemovedRune1R")
+		THEN
+			ClearTag(__Me, "DeleteRemovedRune1R")
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ELIF "c1"
+			IsTagged(__Me, "DeleteRemovedRune1L")
+		THEN
+			ClearTag(__Me, "DeleteRemovedRune1L")
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ENDIF
+		IF "c1|c2"
+			IsEqual(_Item, %CurrentWeaponL)
+			IsEqual(_Item, %CurrentWeaponR)
+		THEN
+			CharacterItemEvent(__Me, _Rune, "DeleteRemovedRunes")
+		ENDIF
+		IF "c1"
+			IsEqual(_Item, %CurrentWeaponL)
+		THEN
+			CharacterItemEvent(__Me, %CurrentWeaponL, "InsertProperRune1L")
+		ELIF "c1"
+			IsEqual(_Item, %CurrentWeaponR)
+		THEN
+			CharacterItemEvent(__Me, %CurrentWeaponR, "InsertProperRune1R")
+		ENDIF
+	ENDIF
+
+EVENT BlueItemEquipped
+VARS
+	ITEM:_Item
+ON
+	OnItemEquipped(__Me, _Item)
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		StartTimer("Blue_EquipmentChanged_Timer", FLOAT:0.1, INT:0)
+		SetVar(__Me, "CurrPosition", FLOAT3:{-2;-2;-2})
+		//DisplayCombatInfoText(__Me, "Equip", FLOAT:5)
+		IF "c1"
+			IsEqual(%EnableEquips, INT:1)
+		THEN
+			Set(%TestItem, _Item)
+			Set(%RespondToTimer, INT:1)
+			StartTimer("TestCheckEquipmentTimer", FLOAT:0.1, INT:1)
+			//CharacterItemEvent(__Me, %TestItem, "TestCheckEquipR")
+			//CharacterItemEvent(__Me, %TestItem, "TestCheckEquipL")
+		ENDIF
+	ENDIF
+	
+EVENT BlueItemEquippedTimer
+ON
+	OnTimer("TestCheckEquipmentTimer")
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		IF "c1"
+			IsEqual(%RespondToTimer, INT:1)
+		THEN
+			CharacterItemEvent(__Me, %TestItem, "TestCheckEquipR")
+			CharacterItemEvent(__Me, %TestItem, "TestCheckEquipL")
+			CharacterEvent(__Me, "Blue_WeaponsChanged")
+			Set(%RespondToTimer, INT:0)
+		ENDIF
+	ENDIF
+	
+EVENT Blue_EquipmentChanged_Timer
+ON
+	OnTimer("Blue_EquipmentChanged_Timer")
+ACTIONS
+	CharacterEvent(__Me, "Blue_EquipmentChanged")
+
+EVENT BlueItemTestR
+VARS
+	FIXEDSTRING:_Text
+	ITEM:_ItemR
+	ITEM:_ItemProxy
+	INT:_StatCheck
+ON
+	OnCharacterItemEvent(__Me, _ItemR, "TestSendEquipR")
+ACTIONS
+	IF "!c1"
+		IsEqual(%CurrentWeaponR, _ItemR)
+	THEN
+		Set(%HasShield, INT:0)
+		Set(%HasRunesR, INT:1)
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_HeavyAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:3)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Bow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:7)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Crossbow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:6)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Staff, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:5)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		Set(%CurrentWeaponR, _ItemR)
+		CharacterItemEvent(__Me, _ItemR, "InsertProperRune0R")
+		CharacterItemEvent(__Me, _ItemR, "InsertProperRune1R")
+	ELIF "c1"
+		IsEqual(%CurrentWeaponR, _ItemR)
+	THEN
+		Set(%HasShield, INT:0)
+		Set(%HasRunesR, INT:1)
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_HeavyAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:3)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Bow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:7)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Crossbow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:6)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Staff, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:5)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		SetTag(__Me, "DeleteRemovedRune0R")
+		SetTag(__Me, "DeleteRemovedRune1R")
+		CharacterItemEvent(__Me, _ItemR, "TestClearRunes")
+	ENDIF
+	
+EVENT BlueItemTestL
+VARS
+	FIXEDSTRING:_Text
+	ITEM:_ItemL
+	ITEM:_ItemProxy
+	INT:_StatCheck
+ON
+	OnCharacterItemEvent(__Me, _ItemL, "TestSendEquipL")
+ACTIONS
+	IF "!c1"
+		IsEqual(%CurrentWeaponL, _ItemL)
+	THEN
+		Set(%HasShield, INT:0)
+		Set(%HasRunesL, INT:1)
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		Set(%CurrentWeaponL, _ItemL)
+		CharacterItemEvent(__Me, _ItemL, "InsertProperRune0L")
+		CharacterItemEvent(__Me, _ItemL, "InsertProperRune1L")
+	ELIF "c1"
+		IsEqual(%CurrentWeaponL, _ItemL)
+	THEN
+		Set(%HasShield, INT:0)
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		SetTag(__Me, "DeleteRemovedRune0L")
+		SetTag(__Me, "DeleteRemovedRune1L")
+		CharacterItemEvent(__Me, _ItemL, "TestClearRunes")
+	ENDIF
+
+EVENT BlueItemTestNoResetR
+VARS
+	FIXEDSTRING:_Text
+	ITEM:_ItemR
+	ITEM:_ItemProxy
+	INT:_StatCheck
+ON
+	OnCharacterItemEvent(__Me, _ItemR, "TestSendNREquipR")
+ACTIONS
+	IF "c1"
+		IsEqual(%TestItemNR, _ItemR)
+	THEN
+		Set(%HasShield, INT:0)
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+			//CharacterItemEvent(__Me, %CurrentWeaponL, "TestClearRunes")
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_HeavyAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:3)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Bow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:7)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Crossbow, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:6)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Staff, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:5)
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		Set(%CurrentWeaponR, %TestItemNR)
+		CharacterItemEvent(__Me, _ItemR, "InsertProperRune0R")
+		CharacterItemEvent(__Me, _ItemR, "InsertProperRune1R")
+		Set(%HasRunesR, INT:1)
+	ENDIF
+	
+EVENT BlueItemTestNoResetL
+VARS
+	FIXEDSTRING:_Text
+	ITEM:_ItemL
+	INT:_StatCheck
+ON
+	OnCharacterItemEvent(__Me, _ItemL, "TestSendNREquipL")
+ACTIONS
+	IF "c1"
+		IsEqual(%TestItemNR, _ItemL)
+	THEN
+		IF "c1&!c2"
+			CharacterHasSkill(__Me, Target_SingleHandedAttack)
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:1)
+		ELIF "c1"
+			CharacterHasSkill(__Me, Target_DualWieldingAttack)
+		THEN
+			Set(%CurrentWeaponType, INT:2)
+			//CharacterItemEvent(__Me, %CurrentWeaponR, "TestClearRunes")
+		ELIF "c1"
+			CharacterHasSkill(__Me, Shout_RecoverArmour)
+		THEN
+			Set(%HasShield, INT:1)
+			IF "c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:4)
+			ELIF "!c1"
+				CharacterHasWeaponType(__Me, Wand, INT:1)
+			THEN
+				Set(%CurrentWeaponType, INT:1)
+			ENDIF
+		ELIF "c1"
+			CharacterHasWeaponType(__Me, Wand, INT:1)
+		THEN
+			Set(%CurrentWeaponType, INT:4)
+		ENDIF
+		Set(%CurrentWeaponL, %TestItemNR)
+		CharacterItemEvent(__Me, _ItemL, "InsertProperRune0L")
+		CharacterItemEvent(__Me, _ItemL, "InsertProperRune1L")
+		Set(%HasRunesL, INT:1)
+	ENDIF
+	
+//Cleanse the Blue_AddSkillToList list.
+EVENT Blue_ClearSkillsFromList
+ON
+	OnCharacterCharacterEvent(__Me, __Me, "Blue_ClearSkillsFromList")
+ACTIONS
+	ListClear(%AbilityIDList)
+	
+//Add to the Blue_AddSkillToList list.
+EVENT Blue_AddSkillToList
+ON
+	OnCharacterEvent(__Me, "Blue_AddSkillToList")
+ACTIONS
+	ListAdd(%AbilityIDList, %AbilityID)
+	
+EVENT WeaponryCorrector
+VARS
+	INT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "WeaponryCorrecter")
+ACTIONS
+	IF "c1&!c2&!c3"
+		CharacterIsInParty(__Me)
+		CharacterIsSummon(__Me)
+		GameIsLoading()
+	THEN
+		IF "c1&c2&c3"
+			ItemIsInCharacterInventory(%CurrentWeaponL, __Me)
+			IsEqual(%HasRunesL, INT:1)
+			IsEqual(%HasShield, INT:0)
+		THEN
+			SetTag(__Me, "DeleteRemovedRune0L")
+			SetTag(__Me, "DeleteRemovedRune1L")
+			CharacterItemEvent(__Me, %CurrentWeaponL, "TestClearRunes")
+		ELIF "c1"
+			IsEqual(%HasShield, INT:1)
+		THEN
+			IF "c1"
+				CharacterGetAbility(_StatCheck, __Me, SingleHanded)
+			THEN
+				IF "c1"
+					IsGreaterThen(_StatCheck, INT:10)
+				THEN
+					Set(_StatCheck, INT:10)
+				ENDIF
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_1)
+				IsEqual(_StatCheck, INT:1)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_1, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_1)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_2)
+				IsEqual(_StatCheck, INT:2)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_2, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_2)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_3)
+				IsEqual(_StatCheck, INT:3)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_3, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_3)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_4)
+				IsEqual(_StatCheck, INT:4)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_4, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_4)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_5)
+				IsEqual(_StatCheck, INT:5)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_5, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_5)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_6)
+				IsEqual(_StatCheck, INT:6)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_6, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_6)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_7)
+				IsEqual(_StatCheck, INT:7)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_7, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_7)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_8)
+				IsEqual(_StatCheck, INT:8)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_8, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_8)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_9)
+				IsEqual(_StatCheck, INT:9)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_9, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_9)
+			ENDIF
+			IF "c1&!c2"
+				CharacterHasStatus(__Me, Blue_Weaponry_Shield_10)
+				IsEqual(_StatCheck, INT:10)
+			THEN
+				RemoveStatusInfluence(__Me, Blue_Weaponry_Shield_10, 100)
+				CharacterRemoveStatus(__Me, Blue_Weaponry_Shield_10)
+			ENDIF
+			IF "c1"
+				IsGreaterThen(_StatCheck, INT:0)
+			THEN
+				IF "c1&!c2"
+					IsEqual(_StatCheck, INT:1)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_1)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_1, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:2)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_2)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_2, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:3)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_3)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_3, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:4)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_4)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_4, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:5)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_5)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_5, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:6)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_6)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_6, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:7)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_7)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_7, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:8)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_8)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_8, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:9)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_9)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_9, 100)
+				ELIF "c1&!c2"
+					IsEqual(_StatCheck, INT:10)
+					CharacterHasStatus(__Me, Blue_Weaponry_Shield_10)
+				THEN
+					AddStatusInfluence(__Me, Blue_Weaponry_Shield_10, 100)
+				ENDIF
+			ENDIF
+		ENDIF
+		IF "c1&c2"
+			ItemIsInCharacterInventory(%CurrentWeaponR, __Me)
+			IsEqual(%HasRunesR, INT:1)
+		THEN
+			SetTag(__Me, "DeleteRemovedRune0R")
+			SetTag(__Me, "DeleteRemovedRune1R")
+			CharacterItemEvent(__Me, %CurrentWeaponR, "TestClearRunes")
+		ENDIF
+	ENDIF
+	
+EVENT BlueCharacterAttacks
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterStartAttackObject(_Character, _, _, __Me)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "CharacterAttacks", 5)
+	SetTag(__Me, "Blue_CharacterUsedBasicAttack_Tag")
+	StartTimer("Blue_CharacterUsedBasicAttack_Timer", FLOAT:3, INT:0)
+	StartTimer("ClearInvisibilityTimer", FLOAT:2, INT:0)
+	
+EVENT Blue_CharacterUsedBasicAttack_Timer
+ON
+	OnTimer("Blue_CharacterUsedBasicAttack_Timer")
+ACTIONS
+	IF "c1"
+		IsTagged(__Me, "Blue_CharacterUsedBasicAttack_Tag")
+	THEN
+		ClearTag(__Me, "Blue_CharacterUsedBasicAttack_Tag")
+	ENDIF
+
+EVENT BlueVitalityChanged
+VARS
+	FLOAT:_VitalityChange
+	FLOAT:_CurrHealth
+	INT:_HelperInt
+	FLOAT:_StatCheck
+	FLOAT:_FloatHelp2
+	FLOAT:_FloatHelp
+	LIST<INT>:_TypeList
+	FIXEDSTRING:_Text
+	STRING:_Str
+ON
+	OnCharacterVitalityChanged(__Me, _VitalityChange)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "VitalityChanged", 5)
+	IF "c1"
+		IsEqual(%CurrVitality, null)
+	THEN
+		Set(%CurrVitality, 1.0)
+	ENDIF
+	IF "!c1|(c1&!c2&!c3&!c4&!c5&!c6&!c7&!c8)"
+		IsGreaterThen(_VitalityChange, %CurrVitality)
+		CharacterHasStatus(__Me, DecayingB)
+		CharacterHasStatus(__Me, DecayingC)
+		CharacterHasStatus(__Me, DecayingD)
+		CharacterHasStatus(__Me, DecayingE)
+		CharacterHasStatus(__Me, DecayingF)
+		CharacterHasStatus(__Me, DecayingG)
+		CharacterHasStatus(__Me, DecayingH)
+	THEN
+		Subtract(_VitalityChange, %CurrVitality)
+		IF "c1"
+			CharacterGetStat(_CurrHealth, __Me, Vitality)
+		THEN
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_CurrHealth, FLOAT:0)
+		THEN
+			IF "c1"
+				CharacterHasTalent(__Me, TALENT:ResistDead)
+			THEN
+				SetTag(__Me, "Blue_DieHard_Flag_1")
+				//DisplayCombatInfoText(__Me, "DieHard Check", FLOAT:5)
+				StartTimer("Blue_DieHard_Timer", FLOAT:0.1, INT:0)
+			ENDIF
+		ENDIF
+		Set(%CurrVitality, _CurrHealth)
+		IF "c1"
+			CharacterHasTalent(__Me, WarriorLoreNaturalHealth)
+		THEN
+			IF "!c1&c2"
+				IsGreaterThen(_CurrHealth, FLOAT:0.9)
+				IsTagged(__Me, "Blue_PictureOfHealth_Tag")
+			THEN
+				ClearTag(__Me, "Blue_PictureOfHealth_Tag")
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_Remove, 0)
+			ELIF "c1&!c2"
+				IsGreaterThen(_CurrHealth, FLOAT:0.9)
+				IsTagged(__Me, "Blue_PictureOfHealth_Tag")
+			THEN
+				SetTag(__Me, "Blue_PictureOfHealth_Tag")
+			ENDIF
+			IF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.99)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_10, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.98)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_9, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.97)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_8, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.96)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_7, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.95)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_6, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.94)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_5, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.93)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_4, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.92)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_3, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.91)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_2, -1)
+			ELIF "c1"
+				IsGreaterThen(_CurrHealth, FLOAT:0.9)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_PictureOfHealth_1, -1)
+			ENDIF
+		ENDIF
+		IF "c1"
+			CharacterHasTalent(__Me, WhatARush)
+		THEN
+			IF "c1&!c2"
+				IsLessThen(_CurrHealth, FLOAT:0.34)
+				CharacterHasStatus(__Me, Blue_Talent_WhatARush_AP)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_WhatARush_AP, -1)
+			ELIF "!c1&c2"
+				IsLessThen(_CurrHealth, FLOAT:0.34)
+				CharacterHasStatus(__Me, Blue_Talent_WhatARush_AP)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_WhatARush_Remove, 0)
+			ENDIF
+		ENDIF
+		IF "c1&c2"
+			CharacterHasTalent(__Me, LivingArmor)
+			IsGreaterThen(_VitalityChange, FLOAT:0)
+		THEN
+			//Maaaaath
+			//This gets the amount of health that was restored as a percentage of the maximum that could be restored.
+			//E.g. if a character restores 20% health to a character with 60% remaining, then it returns 0.5 (20% / 40%).
+			Set(_StatCheck, FLOAT:1)
+			Set(_FloatHelp2, FLOAT:1)
+			Subtract(_StatCheck, _CurrHealth)
+			Add(_StatCheck, _VitalityChange)
+			Divide(_StatCheck, _VitalityChange)
+			Divide(_FloatHelp2, _StatCheck)
+			//Air
+			//First need to check that the character took air damage in the first place.
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Air_1")
+				IsTagged(__Me, "Blue_LivingArmor_Air_2")
+				IsTagged(__Me, "Blue_LivingArmor_Air_3")
+				IsTagged(__Me, "Blue_LivingArmor_Air_4")
+				IsTagged(__Me, "Blue_LivingArmor_Air_5")
+			THEN
+				//This decodes the air damage, relegated to a function for my ease of readability.
+				CharacterEvent(__Me, "Blue_LivingArmor_Air_Decode")
+				//The result is cast to a float and multiplied against the previously acquired value.
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				//The new value is then cast back to an int and the int is subtracted from it to get the chance.
+				//To try and simplify; 4.75 turns into the int 4 and the float 0.75.
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				//The float is then used as the chance for +1, so it becomes 4 with a 75% chance for 5.
+				//..In theory the second and third condition are unnecessary, but they're there anyways.
+				//This does add RNG to the mix, but the possible variation is only 1%, and it will never impact the
+				//total possible resistance that can be acquired if/when a character is restored to full health.
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				//Now that the final values are calculated, the new is subtracted from the old and re-encoded.
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Air_Encode")
+				ENDIF
+				//And then the new value is used to apply the correct status.
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Air_Status")
+			ENDIF
+			//Fire
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Fire_1")
+				IsTagged(__Me, "Blue_LivingArmor_Fire_2")
+				IsTagged(__Me, "Blue_LivingArmor_Fire_3")
+				IsTagged(__Me, "Blue_LivingArmor_Fire_4")
+				IsTagged(__Me, "Blue_LivingArmor_Fire_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Fire_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Fire_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Fire_Status")
+			ENDIF
+			//Water
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Water_1")
+				IsTagged(__Me, "Blue_LivingArmor_Water_2")
+				IsTagged(__Me, "Blue_LivingArmor_Water_3")
+				IsTagged(__Me, "Blue_LivingArmor_Water_4")
+				IsTagged(__Me, "Blue_LivingArmor_Water_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Water_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Water_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Water_Status")
+			ENDIF
+			//Poison
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Poison_1")
+				IsTagged(__Me, "Blue_LivingArmor_Poison_2")
+				IsTagged(__Me, "Blue_LivingArmor_Poison_3")
+				IsTagged(__Me, "Blue_LivingArmor_Poison_4")
+				IsTagged(__Me, "Blue_LivingArmor_Poison_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Poison_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Poison_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Poison_Status")
+			ENDIF
+			//Earth
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Earth_1")
+				IsTagged(__Me, "Blue_LivingArmor_Earth_2")
+				IsTagged(__Me, "Blue_LivingArmor_Earth_3")
+				IsTagged(__Me, "Blue_LivingArmor_Earth_4")
+				IsTagged(__Me, "Blue_LivingArmor_Earth_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Earth_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Earth_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Earth_Status")
+			ENDIF
+			//Piercing
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Piercing_1")
+				IsTagged(__Me, "Blue_LivingArmor_Piercing_2")
+				IsTagged(__Me, "Blue_LivingArmor_Piercing_3")
+				IsTagged(__Me, "Blue_LivingArmor_Piercing_4")
+				IsTagged(__Me, "Blue_LivingArmor_Piercing_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Piercing_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Piercing_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Piercing_Status")
+			ENDIF
+			//Physical
+			IF "c1|c2|c3|c4|c5"
+				IsTagged(__Me, "Blue_LivingArmor_Physical_1")
+				IsTagged(__Me, "Blue_LivingArmor_Physical_2")
+				IsTagged(__Me, "Blue_LivingArmor_Physical_3")
+				IsTagged(__Me, "Blue_LivingArmor_Physical_4")
+				IsTagged(__Me, "Blue_LivingArmor_Physical_5")
+			THEN
+				CharacterEvent(__Me, "Blue_LivingArmor_Physical_Decode")
+				Cast(_FloatHelp, %HelperVar)
+				Multiply(_FloatHelp, _StatCheck)
+				Cast(_HelperInt, _FloatHelp)
+				Cast(_FloatHelp2, _HelperInt)
+				Subtract(_FloatHelp, _FloatHelp2)
+				IF "c1|(!c2&c3)"
+					IsRandom(_FloatHelp)
+					IsLessThen(_CurrHealth, FLOAT:1)
+					IsGreaterThen(_FloatHelp, FLOAT:0)
+				THEN
+					Add(_HelperInt, INT:1)
+				ENDIF
+				Subtract(%HelperVar, _HelperInt)
+				IF "c1"
+					IsGreaterThen(%HelperVar, INT:0)
+				THEN
+					CharacterEvent(__Me, "Blue_LivingArmor_Physical_Encode")
+				ENDIF
+				Set(%HelperVar, _HelperInt)
+				CharacterEvent(__Me, "Blue_LivingArmor_Physical_Status")
+			ENDIF
+		ENDIF
+	ELSE
+		Set(%CurrVitality, _VitalityChange)
+		SetHealth(__Me, %CurrVitality)
+	ENDIF
+
+
+EVENT Blue_DieHard_Timer
+VARS
+	FLOAT:_CurrHealth
+ON
+	OnTimer("Blue_DieHard_Timer")
+ACTIONS
+	IF "c1&c2&c3&c4"
+		//If this flag is cleared before the timer, die hard won't trigger. Currently only happens when Resurrected.
+		IsTagged(__Me, "Blue_DieHard_Flag_1")
+		//Checking if the vitality is above 1.5 points, a.k.a the character was healed and not by a death preventing status.
+		CharacterGetStat(_CurrHealth, __Me, VitalityPoints)
+		IsGreaterThen(_CurrHealth, FLOAT:1.5)
+		//Checking that the character actually has the talent.
+		CharacterHasTalent(__Me, TALENT:ResistDead)
+	THEN
+		CharacterApplyStatus(__Me, Blue_Talent_DieHard, 1)
+		//DisplayCombatInfoText(__Me, "DieHard Yes", FLOAT:5)
+	ENDIF
+	ClearTag(__Me, "Blue_DieHard_Flag_1")
+	
+	
+EVENT BlueDamageTaken
+VARS
+	CHARACTER:_Dealer //Source of damage
+	CHARACTER:_Source //Source of statuses, utility variable
+	DAMAGE:_DamageType //Type of damage taken
+	FLOAT:_DamageTaken //Percentage done to health
+	FLOAT:_DamageTakenSave
+	FLOAT:_Strength
+	INT:_AbilCheck
+	FLOAT:_FloatHelp
+	FLOAT:_StatCheck
+	FLOAT:_CurrArmor
+	INT:_Turns
+	STATUS:_Status
+	STRING:_Str
+	FIXEDSTRING:_Text
+ON
+	OnDamage(_DamageType, _DamageTaken, _Dealer, _)
+ACTIONS
+	//DisplayCombatInfoText(_Dealer, "DamageDealt", 5)
+	// ~~~~ This value is used in AI helper (AIDE) related calculations.
+	// ~~~~ Damage is only counted is it's dealt to an enemy.
+	IF "c1&!c2&c3"
+		IsGreaterThen(_DamageTaken, FLOAT:0)
+		IsEqual(_Dealer, __Me)
+		CharacterIsEnemy(__Me, _Dealer)
+	THEN
+		IF "c1"
+			GetVar(_FloatHelp, _Dealer, "DamageDealtThisTurn")
+		THEN
+		ENDIF
+		IF "c1|c2"
+			IsLessThen(_FloatHelp, INT:-1000000)
+			IsEqual(_FloatHelp, null)
+		THEN
+			Set(_FloatHelp, FLOAT:0)
+		ENDIF
+	ENDIF
+	//Clear invisibility.
+	StartTimer("ClearInvisibilityTimer", FLOAT:1, INT:0)
+	//These keep track of the last type of damage that was dealt.
+	ClearTag(__Me, "Blue_Damage_Fire_Tag")
+	ClearTag(__Me, "Blue_Damage_Poison_Tag")
+	ClearTag(__Me, "Blue_Damage_Water_Tag")
+	ClearTag(__Me, "Blue_Damage_Air_Tag")
+	ClearTag(__Me, "Blue_Damage_Earth_Tag")
+	ClearTag(__Me, "Blue_Damage_Physical_Tag")
+	ClearTag(__Me, "Blue_Damage_Piercing_Tag")
+	Print(_Str, "Blue_Damage_[1]_Tag", _DamageType)
+	Cast(_Text, _Str)
+	//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	SetTag(__Me, _Text)
+	Add(_FloatHelp, _DamageTaken)
+	SetVar(_Dealer, "DamageDealtThisTurn", _FloatHelp)
+	// ~~~~ Remorse:
+	IF "c1&c2&!c3"
+		CharacterHasStatus(_Dealer, STATUS:Blue_Remorse)
+		IsGreaterThen(_DamageTaken, FLOAT:0)
+		IsEqual(_Dealer, __Me)
+	THEN
+		Set(_FloatHelp, _DamageTaken)
+		IF "c1"
+			CharacterGetStat(_StatCheck, __Me, VitalityMax)
+		THEN
+			Multiply(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, 0.5)
+			SetVar(_Dealer, "DamageToDeal", _FloatHelp)
+			CharacterCharacterEvent(_Dealer, _Dealer, "Blue_Damage_Piercing_Event")
+		ENDIF
+	ENDIF
+	// ~~~~ Living Armor:
+	IF "c1&c2"
+		CharacterHasTalent(__Me, TALENT:LivingArmor)
+		IsGreaterThen(_DamageTaken, FLOAT:0)
+	THEN
+		IF "c1"
+			CharacterGetStat(_StatCheck, __Me, Vitality)
+		THEN
+			//The math here is weird and I'm not explaining it thoroughly.
+			//But it's purpose is to make it so damage is only 'counted' if it drops their health by a multiple of 4%, aka 0.96, 0.92, 0.88, 0.84, etc.
+			Set(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, FLOAT:25)
+			Cast(_AbilCheck, _FloatHelp)
+			Add(_StatCheck, _DamageTaken)
+			Multiply(_StatCheck, FLOAT:25)
+			Cast(_Turns, _StatCheck)
+			Subtract(_Turns, _AbilCheck)
+			//After the math is done, the value is passed off to a binary counter.
+			//This is so there doesn't need to be an extra 7 variables to keep track.
+			//The binary counter uses %HelperVar and gets the damage type from tags set earlier.
+			Set(%HelperVar, _Turns)
+			CharacterEvent(__Me, "Blue_LivingArmor_Binary")
+		ENDIF
+	ENDIF
+	// ~~~~ Advantage:
+	IF "c1&c2&!c3&c4"
+		CharacterHasTalent(_Dealer, TALENT:Torturer)
+		IsGreaterThen(_DamageTaken, FLOAT:0)
+		IsEqual(_Dealer, __Me)
+		CharacterIsEnemy(__Me, _Dealer)
+	THEN
+		CharacterEvent(_Dealer, "Blue_Advantage_Increment")
+	ENDIF
+	// ~~~~ Elemental Ranger (Elementalist):
+	IF "c1&c2&!c3&c4"
+		CharacterHasTalent(_Dealer, TALENT:ElementalRanger)
+		IsGreaterThen(_DamageTaken, FLOAT:0)
+		IsEqual(_Dealer, __Me)
+		CharacterIsEnemy(__Me, _Dealer)
+	THEN
+		//DisplayCombatInfoText(__Me, "Test", 5)
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		//CLOUD SURFACES:
+		ClearTag(__Me, "Blue_Elementalist_Air_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Earth_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Fire_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Physical_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Piercing_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Poison_Tag")
+		ClearTag(__Me, "Blue_Elementalist_Water_Tag")
+		//Air:
+		IF "c1|c2|c3"
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloudElectrified)
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloudElectrifiedBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloudElectrifiedCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Air_Tag")
+			//DisplayCombatInfoText(__Me, "Air", 5)
+		//Fire:
+		ELIF "c1|c2|c3|c4|c5|c6"
+			IsInSurface(__Me, SURFACE:SurfaceFireCloud)
+			IsInSurface(__Me, SURFACE:SurfaceFireCloudBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceFireCloudCursed)
+			IsInSurface(__Me, SURFACE:SurfaceSmokeCloud)
+			IsInSurface(__Me, SURFACE:SurfaceSmokeCloudBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceSmokeCloudCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Fire_Tag")
+			//DisplayCombatInfoText(__Me, "Fire", 5)
+		//Physical:
+		ELIF "c1|c2|c3|c4"
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloud)
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloudBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodCloudCursed)
+			IsInSurface(__Me, SURFACE:SurfaceDeathfogCloud)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Physical_Tag")
+			//DisplayCombatInfoText(__Me, "Water", 5)
+		//Poison:
+		ELIF "c1|c2|c3"
+			IsInSurface(__Me, SURFACE:SurfacePoisonCloud)
+			IsInSurface(__Me, SURFACE:SurfacePoisonCloudBlessed)
+			IsInSurface(__Me, SURFACE:SurfacePoisonCloudCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Poison_Tag")
+			//DisplayCombatInfoText(__Me, "Poison", 5)
+		//Water:
+		ELIF "c1|c2|c3|c4|c5|c6"
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloud)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloudBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloudCursed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloudElectrified)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloudElectrifiedBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCloudElectrifiedCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Water_Tag")
+			//DisplayCombatInfoText(__Me, "Water", 5)
+		//GROUND SURFACES:
+		//Air:
+		ELIF "c1|c2|c3"
+			IsInSurface(__Me, SURFACE:SurfaceBloodElectrified)
+			IsInSurface(__Me, SURFACE:SurfaceBloodElectrifiedBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodElectrifiedCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Air_Tag")
+			//DisplayCombatInfoText(__Me, "Air", 5)
+		//Earth:
+		ELIF "c1|c2|c3|c4|c5|c6"
+			IsInSurface(__Me, SURFACE:SurfaceOil)
+			IsInSurface(__Me, SURFACE:SurfaceOilBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceOilCursed)
+			IsInSurface(__Me, SURFACE:SurfaceWeb)
+			IsInSurface(__Me, SURFACE:SurfaceWebBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWebCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Earth_Tag")
+			//DisplayCombatInfoText(__Me, "Earth", 5)
+		//Fire:
+		ELIF "c1|c2|c3|c4"
+			IsInSurface(__Me, SURFACE:SurfaceFire)
+			IsInSurface(__Me, SURFACE:SurfaceFireBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceFireCursed)
+			IsInSurface(__Me, SURFACE:SurfaceLava)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Fire_Tag")
+			//DisplayCombatInfoText(__Me, "Fire", 5)
+		//Physical:
+		ELIF "c1|c2|c3|c4|c5|c6"
+			IsInSurface(__Me, SURFACE:SurfaceBlood)
+			IsInSurface(__Me, SURFACE:SurfaceBloodBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodCursed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodFrozen)
+			IsInSurface(__Me, SURFACE:SurfaceBloodFrozenBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceBloodFrozenCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Physical_Tag")
+			//DisplayCombatInfoText(__Me, "Physical", 5)
+		//Piercing:
+		ELIF "c1"
+			IsInSurface(__Me, SURFACE:SurfaceSource)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Piercing_Tag")
+			//DisplayCombatInfoText(__Me, "Piercing", 5)
+		//Poison:
+		ELIF "c1|c2|c3"
+			IsInSurface(__Me, SURFACE:SurfacePoison)
+			IsInSurface(__Me, SURFACE:SurfacePoisonBlessed)
+			IsInSurface(__Me, SURFACE:SurfacePoisonCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Poison_Tag")
+			//DisplayCombatInfoText(__Me, "Poison", 5)
+		//Water:
+		ELIF "c1|c2|c3|c4|c5|c6|c7|c8|c9|c10"
+			IsInSurface(__Me, SURFACE:SurfaceDeepwater)
+			IsInSurface(__Me, SURFACE:SurfaceWater)
+			IsInSurface(__Me, SURFACE:SurfaceWaterBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterCursed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterElectrified)
+			IsInSurface(__Me, SURFACE:SurfaceWaterElectrifiedBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterElectrifiedCursed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterFrozen)
+			IsInSurface(__Me, SURFACE:SurfaceWaterFrozenBlessed)
+			IsInSurface(__Me, SURFACE:SurfaceWaterFrozenCursed)
+		THEN
+			SetTag(__Me, "Blue_Elementalist_Water_Tag")
+			//DisplayCombatInfoText(__Me, "Water", 5)
+		ENDIF
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Set(_FloatHelp, _DamageTaken)
+		IF "c1"
+			CharacterGetStat(_StatCheck, __Me, VitalityMax)
+		THEN
+			Multiply(_FloatHelp, _StatCheck)
+			Multiply(_FloatHelp, 0.2)
+			Set(%DamageToDeal, _FloatHelp)
+			//CharacterCharacterEvent(__Me, __Me, "Blue_Damage_Piercing_Event")
+		ENDIF
+	ENDIF
+	//~~~~~~~~~~~~~~~~~
+	Set(_DamageTakenSave, _DamageTaken)
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(__Me, STATUS:SleepingA)
+		CharacterHasStatus(__Me, STATUS:SleepingB)
+		CharacterHasStatus(__Me, STATUS:SleepingC)
+		CharacterHasStatus(__Me, STATUS:SleepingD)
+		CharacterHasStatus(__Me, STATUS:SleepingE)
+		CharacterHasStatus(__Me, STATUS:SleepingF)
+		CharacterHasStatus(__Me, STATUS:SleepingG)
+		CharacterHasStatus(__Me, STATUS:SleepingH)
+	THEN
+		IF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingA, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingA, _Source)
+		THEN
+			Set(_Strength, FLOAT:1)
+			Set(_Status, SleepingA)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingB, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingB, _Source)
+		THEN
+			Set(_Strength, FLOAT:2)
+			Set(_Status, SleepingB)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingC, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingC, _Source)
+		THEN
+			Set(_Strength, FLOAT:3)
+			Set(_Status, SleepingC)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingD, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingD, _Source)
+		THEN
+			Set(_Strength, FLOAT:4)
+			Set(_Status, SleepingD)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingE, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingE, _Source)
+		THEN
+			Set(_Strength, FLOAT:5)
+			Set(_Status, SleepingE)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingF, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingF, _Source)
+		THEN
+			Set(_Strength, FLOAT:6)
+			Set(_Status, SleepingF)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingG, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingG, _Source)
+		THEN
+			Set(_Strength, FLOAT:7)
+			Set(_Status, SleepingG)
+		ELIF "c1&c2"
+			GetStatusTurns(__Me, STATUS:SleepingH, _Turns)
+			CharacterGetStatusSourceCharacter(__Me, STATUS:SleepingH, _Source)
+		THEN
+			Set(_Strength, FLOAT:8)
+			Set(_Status, SleepingH)
+		ENDIF
+		/*
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, __Me, Telekinesis)
+		THEN
+			Cast(_FloatHelp, _AbilCheck)
+			Multiply(_FloatHelp, FLOAT:0.15)
+			Subtract(_FloatHelp, FLOAT:1)
+			Multiply(_FloatHelp, FLOAT:-1)
+			IF "c1"
+				IsLessThen(_FloatHelp, FLOAT:0)
+			THEN
+				Set(_FloatHelp, FLOAT:0)
+			ENDIF
+			Multiply(_Strength, _FloatHelp)
+		ENDIF
+		*/
+		CharacterRemoveStatus(__Me, _Status)
+		Subtract(_Strength, FLOAT:2)
+		//Apply new status
+		IF "c1"
+			IsEqual(_Strength, FLOAT:1)
+		THEN
+			CharacterApplyStatus(__Me, SleepingA, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:2)
+		THEN
+			CharacterApplyStatus(__Me, SleepingB, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:3)
+		THEN
+			CharacterApplyStatus(__Me, SleepingC, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:4)
+		THEN
+			CharacterApplyStatus(__Me, SleepingD, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:5)
+		THEN
+			CharacterApplyStatus(__Me, SleepingE, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:6)
+		THEN
+			CharacterApplyStatus(__Me, SleepingF, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:7)
+		THEN
+			CharacterApplyStatus(__Me, SleepingG, _Turns, 0, _Source)
+		ELIF "c1"
+			IsEqual(_Strength, FLOAT:8)
+		THEN
+			CharacterApplyStatus(__Me, SleepingH, _Turns, 0, _Source)
+		ENDIF
+	ENDIF
+	IF "c1&!c2&c3"
+		CharacterHasTalent(_Dealer, WarriorLoreGrenadeRange)
+		IsEqual(_Dealer, __Me)
+		CharacterIsEnemy(__Me, _Dealer)
+	THEN
+		IF "c1"
+			IsEqual(_DamageType, Physical)
+		THEN
+			CharacterApplyStatus(__Me, Blue_Wrought, 2)
+		ELIF "c1"
+			IsEqual(_DamageType, Earth)
+		THEN
+			IF "c1"
+				CharacterHasStatus(__Me, Blue_Dazed_1)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Dazed_2, 2)
+			ELIF "c1"
+				CharacterHasStatus(__Me, Blue_Dazed_2)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Dazed_3, 2)
+			ELIF "c1"
+				CharacterHasStatus(__Me, Blue_Dazed_3)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Dazed_4, 2)
+			ELIF "c1|c2"
+				CharacterHasStatus(__Me, Blue_Dazed_4)
+				CharacterHasStatus(__Me, Blue_Dazed_5)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Dazed_5, 2)
+			ELSE
+				CharacterApplyStatus(__Me, Blue_Dazed_1, 2)
+			ENDIF
+		ENDIF
+	ENDIF
+	//CharacterApplyStatus(__Me, Blue_Status_ArmorRestore, INT:2)
+	//CharacterApplyStatus(__Me, Blue_Status_ArmorRestore_Debuff, INT:2)
+	//Print(_Str, "[1]", _DamageTaken)
+	//Cast(_Text, _Str)
+	//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	CharacterRemoveStatus(__Me, Blue_Status_ArmorRestore)
+	CharacterRemoveStatus(__Me, Blue_Status_ArmorRestore_Debuff)
+	StartTimer("DamageTakenRestoreArmorTimer", FLOAT:0.05, INT:0)
+	//CharacterApplyStatus(__Me, Blue_Status_ArmorRestore_Debuff, INT:-1)
+	/*
+	IF "c1"
+		IsEqual(_DamageType, Physical)
+		//IsEqual(INT:1, INT:1)
+	THEN
+		//CharacterApplyStatus(__Me, Blue_Status_ArmorRestore_Debuff, INT:0)
+		//CharacterApplyStatus(__Me, Blue_Status_ArmorRestore, INT:0)
+	ENDIF
+	*/
+	
+EVENT BlueDamageTakenRestoreArmorTimer
+ON
+	OnTimer("DamageTakenRestoreArmorTimer")
+ACTIONS
+	CharacterApplyStatus(__Me, Blue_Status_ArmorRestore_Debuff, INT:-1)
+	CharacterApplyStatus(__Me, Blue_Status_ArmorRestore, INT:-1)
+	
+EVENT BlueRemovePRETIERFailsafeTimer
+ON
+	OnTimer("BlueRemovePRETIERFailsafe")
+ACTIONS
+	CharacterEvent(__Me, GlobalBlacksmithingCorrecter)
+	Set(%AptitudeBonus, FLOAT:1)
+	//If you're looking at this then chances are you're digging into the mod's scripts and might be wondering about all the _Remove statuses.
+	//Their existance is two-fold:
+	//One, CharacterRemoveStatus has a tendency to crash the game if used before a status is initialized, so on statuses that can be applied or removed on a dime it's a risk.
+	//Two, on duplicated/repetitious statuses it's a lot easier to apply one _Remove than to remove every status.
+	IF "c1"
+		CharacterHasStatus(__Me, PRETIER)
+	THEN
+		CharacterApplyStatus(__Me, PRETIER_Remove, 0)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, PRETIERArrow)
+	THEN
+		CharacterApplyStatus(__Me, PRETIERArrow_Remove, 0)
+	ENDIF
+	
+EVENT BlueRemovePRETIERFailsafeStartTimer
+ON
+	OnCharacterEvent(__Me, "BlueRemovePRETIERFailsafeStartTimer")
+ACTIONS
+	StartTimer("BlueRemovePRETIERFailsafe", FLOAT:0.1, INT:0)
+	
+EVENT Blue_Remove_Damage_Buff_Timer
+ON
+	OnTimer("Blue_Remove_Damage_Buff_Timer")
+ACTIONS
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Grenade_Damage_Buff)
+	THEN
+		CharacterRemoveStatus(__Me, Blue_Grenade_Damage_Buff)
+	ENDIF
+	
+EVENT Blue_PlayBlockAnimation_Failsafe
+ON
+	OnCharacterEvent(__Me, "Blue_PlayBlockAnimation_Failsafe")
+ACTIONS
+	StartTimer("Blue_PlayBlockAnimation_Failsafe_Timer", FLOAT:5, INT:0)
+	
+EVENT Blue_PlayBlockAnimation_Failsafe_Timer
+ON
+	OnTimer("Blue_PlayBlockAnimation_Failsafe_Timer")
+ACTIONS
+	IF "c1"
+		IsTagged(__Me, "Blue_PlayBlockAnimation")
+	THEN
+		ClearTag(__Me, "Blue_PlayBlockAnimation")
+	ENDIF
+	
+EVENT Blue_Remove_Damage_Buff_Event
+ON
+	OnCharacterEvent(__Me, "Blue_Remove_Damage_Buff_Event")
+ACTIONS
+	StartTimer("Blue_Remove_Damage_Buff_Timer", FLOAT:3, INT:0)
+
+EVENT BlueCharacterDying
+ON
+	OnCharacterStatusAttempt(__Me, DYING)
+ACTIONS
+	IF "!c1"
+		IsInCombat(__Me)
+	THEN
+		IterateCharactersNear(__Me, FLOAT:13, "Blue_CheckNearbyCharacters_Iterate")
+		IterateParty("Blue_CheckNearbyCharacters_Iterate")
+	ELSE
+		IterateCharactersInCombat(__Me, "Blue_CheckNearbyCharacters_Iterate")
+	ENDIF
+	CharacterEvent(__Me, "BlueTurnStartedEvent")
+
+
+EVENT BlueCharacterIterateBladestormRemoval
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "BladestormRemoveTarget")
+ACTIONS
+	CharacterRemoveStatus(_Character, Blue_BladestormTargetted)
+
+EVENT BlueCharacterIterateTurnStarted
+VARS
+	CHARACTER:_Character
+	FLOAT:_Distance
+ON
+	OnIterateCharacter(_Character, "BlueTurnStartedIterate")
+ACTIONS
+	//Cheap Shot, Character = Attacker, Me = Defender
+	IF "c1&!c2&!c3&c4&c5&!c6"
+		CharacterHasTalent(_Character, Escapist)
+		IsEqual(__Me, _Character)
+		IsTagged(__Me, "Blue_Talent_CheapShot_Tag")
+		CharacterIsEnemy(_Character, __Me)
+		GetDistance(_Distance, _Character, __Me)
+		IsGreaterThen(_Distance, FLOAT:5.0)
+	THEN
+		IF "(c1|c2|c3|c4|c5|c6|c7|c8|c9|c10|c11|c12|c13|c14|c15)&c16&!c17&!c18&!c19&!c20&!c21&!c22&!c23&!c24&!c25&!c26&!c27&!c28&!c29"
+			//Slowed, C1-5
+			CharacterHasStatus(__Me, STATUS:SlowedD)
+			CharacterHasStatus(__Me, STATUS:SlowedE)
+			CharacterHasStatus(__Me, STATUS:SlowedF)
+			CharacterHasStatus(__Me, STATUS:SlowedG)
+			CharacterHasStatus(__Me, STATUS:SlowedH)
+			//Crippled, C6-10
+			CharacterHasStatus(__Me, STATUS:CrippledD)
+			CharacterHasStatus(__Me, STATUS:CrippledE)
+			CharacterHasStatus(__Me, STATUS:CrippledF)
+			CharacterHasStatus(__Me, STATUS:CrippledG)
+			CharacterHasStatus(__Me, STATUS:CrippledH)
+			//Staggered, C11-15
+			CharacterHasStatus(__Me, STATUS:StaggeredD)
+			CharacterHasStatus(__Me, STATUS:StaggeredE)
+			CharacterHasStatus(__Me, STATUS:StaggeredF)
+			CharacterHasStatus(__Me, STATUS:StaggeredG)
+			CharacterHasStatus(__Me, STATUS:StaggeredH)
+			//Other checks, C16-20
+			CharacterInWeaponRange(_Character, __Me)
+			CharacterHasStatus(_Character, INVISIBLE)
+			CharacterHasStatus(_Character, Blue_InvisibleWhite)
+			CharacterHasStatus(_Character, Blue_InvisibleBlue)
+			CharacterHasStatus(_Character, Blue_InvisibleOrange)
+			//Other checks, C21-25
+			CharacterHasStatus(_Character, Blue_InvisibleBlind)
+			CharacterHasStatus(_Character, SNEAKING)
+			IsTagged(_Character, "Blue_CharacterIsDisabled")
+			CharacterHasStatus(__Me, INVISIBLE)
+			CharacterHasStatus(__Me, Blue_InvisibleBlue)
+			//Other checks, C26-29
+			CharacterHasStatus(__Me, Blue_InvisibleOrange)
+			CharacterHasStatus(__Me, Blue_InvisibleWhite)
+			CharacterHasStatus(__Me, SNEAKING)
+			CharacterHasStatus(__Me, Blue_InvisibleBlind)
+		THEN
+			SetTag(_Character, "Blue_Talent_CheapShot_Tag")
+			SetVar(_Character, "AttackOfOpportunity", CHARACTER:__Me)
+		ENDIF
+	ENDIF
+	//AI Helper stuff
+	SetVar(_Character, "BLUEAIDECHARACTER", CHARACTER:__Me)
+
+EVENT BlueCharacterIterateTurnEnded
+VARS
+	CHARACTER:_Character
+	CHARACTER:_AOO
+ON
+	OnIterateCharacter(_Character, "BlueTurnEndedIterate")
+ACTIONS
+	//DisplayCombatInfoText(_Character, "turn ended", 5)
+	IF "c1"
+		CharacterHasStatus(_Character, PRETIER)
+	THEN
+		CharacterApplyStatus(_Character, POSTIER, 0)
+	ENDIF
+	//CharacterRemoveStatus(_Character, PRETIER)
+	CharacterRemoveStatus(_Character, PRETIERArrow)
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_InvisibleBlind)
+	THEN
+		CharacterRemoveStatus(_Character, Blue_InvisibleBlind)
+	ENDIF
+	IF "c1"
+		IsTagged(_Character, "Blue_CharacterAnticipated")
+	THEN
+		ClearTag(_Character, "Blue_CharacterAnticipated")
+	ENDIF
+	IF "c1"
+		IsTagged(_Character, "Blue_Talent_CheapShot_Tag")
+	THEN
+		IF "c1&c2"
+			GetVar(_AOO, _Character, "AttackOfOpportunity")
+			IsEqual(_AOO, __Me)
+		THEN
+			ClearTag(_Character, "Blue_Talent_CheapShot_Tag")
+		ENDIF
+	ENDIF
+	//CharacterEvent(_Character, GlobalBlacksmithingCorrecter)
+	
+	
+EVENT BlueCharacterCastsSkillDoMute
+VARS
+	SKILL:_Skill
+ON
+	OnSkillCast(__Me, _Skill)
+ACTIONS
+	IF "c1&c2"
+		CharacterHasStatus(__Me, Blue_Talent_Ghastly_SP)
+		IsSourceSkill(_Skill)
+	THEN
+		CharacterRemoveStatus(__Me, Blue_Talent_Ghastly_SP)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7"
+		CharacterHasStatus(__Me, MutedA)
+		CharacterHasStatus(__Me, MutedB)
+		CharacterHasStatus(__Me, MutedC)
+		CharacterHasStatus(__Me, MutedD)
+		CharacterHasStatus(__Me, MutedE)
+		CharacterHasStatus(__Me, MutedF)
+		CharacterHasStatus(__Me, MutedG)
+	THEN
+		CharacterApplyStatus(__Me, Blue_MutedKeepDur, -2)
+		CharacterApplyStatus(__Me, PRETIERCLEAR, -2)
+		CharacterApplyStatus(__Me, ApplyMutedB, -2)
+		CharacterApplyStatus(__Me, POSTIER, 0)
+	ENDIF
+	StartTimer("ClearInvisibilityTimer", FLOAT:2, INT:0)
+	
+EVENT ClearInvisibilityTimer
+ON
+	OnTimer("ClearInvisibilityTimer")
+ACTIONS
+	IF "!c1&!c2"
+		IsTagged(__Me, "IgnoreInvisibleCast")
+		IsTagged(__Me, "IgnoreInvisibleCastBlue")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_InvisibleBlue)
+		THEN
+			CharacterRemoveStatus(__Me, Blue_InvisibleBlue)
+		ENDIF
+	ENDIF
+	IF "!c1&!c2"
+		IsTagged(__Me, "IgnoreInvisibleCast")
+		IsTagged(__Me, "IgnoreInvisibleCastOrange")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_InvisibleOrange)
+		THEN
+			CharacterRemoveStatus(__Me, Blue_InvisibleOrange)
+		ENDIF
+	ENDIF
+	IF "!c1&!c2"
+		IsTagged(__Me, "IgnoreInvisibleCast")
+		IsTagged(__Me, "IgnoreInvisibleCastWhite")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_InvisibleWhite)
+		THEN
+			CharacterRemoveStatus(__Me, Blue_InvisibleWhite)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "IgnoreInvisibleCastWhite")
+	THEN
+		ClearTag(__Me, "IgnoreInvisibleCastWhite")
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "IgnoreInvisibleCastOrange")
+	THEN
+		ClearTag(__Me, "IgnoreInvisibleCastOrange")
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "IgnoreInvisibleCastBlue")
+	THEN
+		ClearTag(__Me, "IgnoreInvisibleCastBlue")
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "IgnoreInvisibleCast")
+	THEN
+		ClearTag(__Me, "IgnoreInvisibleCast")
+	ENDIF
+	
+EVENT ClearInvisibilityEvent
+ON
+	OnCharacterEvent(__Me, "ClearInvisibilityEvent")
+ACTIONS
+	StartTimer("ClearInvisibilityTimer", FLOAT:0.5, INT:0)
+	
+EVENT Blue_SearchArea_Combat
+ON
+	OnCharacterEvent(__Me, "Blue_SearchArea_Combat")
+ACTIONS
+	IterateCharactersInCombat(__Me, "Blue_SearchArea_Iterate")
+	
+EVENT Blue_SearchArea
+ON
+	OnCharacterEvent(__Me, "Blue_SearchArea")
+ACTIONS
+	IterateCharactersNear(__Me, %SearchAreaRadius, "Blue_SearchArea_Iterate")
+
+EVENT Blue_SearchArea_Iterate
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_SearchArea_Iterate")
+ACTIONS
+	CharacterCharacterEvent(__Me, _Character, %SearchAreaEvent)
+	
+EVENT Blue_CheckDisabled
+ON
+	OnCharacterEvent(__Me, "Blue_CheckDisabled")
+ACTIONS
+	SetTag(__Me, "Blue_DisableCheckingCooldown")
+	SetTag(__Me, "Blue_CheckDisabled_Tag")
+	StartTimer("Blue_CheckDisabled_Timer", FLOAT:0.25, INT:0)
+	
+EVENT Blue_CheckDisabled_Timer
+ON
+	OnTimer("Blue_CheckDisabled_Timer")
+ACTIONS
+	IF "c1"
+		IsTagged(__Me, "Blue_CheckDisabled_Tag")
+	THEN
+		IF "c1|!c2"
+			IsInActiveTurn(__Me)
+			IsInCombat(__Me)
+		THEN
+			CharacterEvent(__Me, "Blue_CheckDisabled_False")
+		ELSE
+			CharacterEvent(__Me, "Blue_CheckDisabled_True")
+		ENDIF
+	ENDIF
+	
+EVENT BlueCheckStatusesThisTurn
+ON
+	OnCharacterEvent(__Me, "BlueCheckStatusesThisTurn")
+ACTIONS
+	StartTimer("BlueCheckStatusesThisTurnTimer", FLOAT:0.1, INT:0)
+	
+EVENT Blue_CheckDisabled_True
+ON
+	OnCharacterEvent(__Me, "Blue_CheckDisabled_True")
+ACTIONS
+	IF "!c1"
+		IsTagged(__Me, Blue_CharacterIsDisabled)
+	THEN
+		SetTag(__Me, "Blue_CharacterIsDisabled")
+		SetVar(__Me, "CurrPosition", FLOAT3:{-2;-2;-2})
+	ENDIF
+	ClearTag(__Me, "Blue_CheckDisabled_Tag")
+	CharacterEvent(__Me, "CharacterIncapacitatedPeriodicCheck")
+	IF "!c1"
+		IsEqual(%CheckDisabledEvent, null)
+	THEN
+		Print(%CheckDisabledEvent, "[1]_True", %CheckDisabledEvent)
+		CharacterEvent(__Me, %CheckDisabledEvent)
+		Set(%CheckDisabledEvent, null)
+	ENDIF
+	
+EVENT Blue_CheckDisabled_False
+ON
+	OnCharacterEvent(__Me, "Blue_CheckDisabled_False")
+ACTIONS
+	IF "c1"
+		IsTagged(__Me, Blue_CharacterIsDisabled)
+	THEN
+		ClearTag(__Me, "Blue_CharacterIsDisabled")
+		SetVar(__Me, "CurrPosition", FLOAT3:{-2;-2;-2})
+	ENDIF
+	ClearTag(__Me, "Blue_CheckDisabled_Tag")
+	StopTimer("Blue_CheckDisabled_Timer")
+	IF "!c1"
+		IsEqual(%CheckDisabledEvent, null)
+	THEN
+		Print(%CheckDisabledEvent, "[1]_False", %CheckDisabledEvent)
+		CharacterEvent(__Me, %CheckDisabledEvent)
+		Set(%CheckDisabledEvent, null)
+	ENDIF
+	
+EVENT BlueCheckStatusesThisTurnTimer
+ON
+	OnTimer("BlueCheckStatusesThisTurnTimer")
+ACTIONS
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusBleeding")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusSlowed")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusDiseased")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusCrippled")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusChilled")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusWeak")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusDecaying")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusAcid")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusAtrophy")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusBlind")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusFear")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusStaggered")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusMuted")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusBurning")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusPoisoned")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusShocked")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusSleeping")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusLoweredResistances")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusDrainWillpower")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusSundered")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusHebetudinous")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusMad")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusCharmed")
+	CharacterEvent(__Me, "Blue_ReduceTieredStatusSoulSap")
+
+EVENT Blue_BladeStormTargettingSetLocation
+ON
+	OnCharacterStatusApplied(__Me, Blue_BladestormTargetting)
+ACTIONS
+	IF "c1"
+		GetPosition(__Me, %StoredLocation)
+	THEN
+	ENDIF
+	
+EVENT BlueCheckPosition
+VARS
+	INT:_HelperInt
+	//STRING:_Str
+	//FIXEDSTRING:_Text
+	FLOAT3:_Position
+ON
+	OnCharacterEvent(__Me, BlueCheckPosition)
+ACTIONS
+	IF "c1"
+		CharacterHasTalent(__Me, TALENT:ElementalRanger)
+	THEN
+		CharacterEvent(__Me, BlueCheckElementalist)
+	ENDIF
+	
+EVENT BlueCheckNearbyCharacters
+VARS
+	CHARACTER:_Owner
+	INT:_HelperInt
+	FLOAT:_HelperFloat
+ON
+	OnCharacterEvent(__Me, BlueCheckNearbyCharacters)
+ACTIONS
+	//Blinded
+	IF "c1"
+		IsInCombat(__Me)
+	THEN
+		IF "c1&(c2|c3)&!c4&!c5"
+			// BLUEAIDECHARACTER stores the current turnholder.
+			GetVar(_Owner, __Me, "BLUEAIDECHARACTER")
+			// Check if the turnholder is blind.
+			IsTagged(_Owner, "Blue_Blind_Tag")
+			CharacterHasStatus(_Owner, Blue_Taunt)
+			CharacterHasStatus(__Me, Blue_Taunter)
+			IsEqual(_Owner, __Me)
+		THEN
+			// Get distance between the turnholder
+			IF "c1"
+				GetInnerDistance(_HelperFloat, __Me, _Owner)
+			THEN
+			ENDIF
+			IF "c1"
+				CharacterHasStatus(_Owner, Blue_Taunt)
+			THEN
+				IF "!c1"
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					CharacterApplyStatus(__Me, Blue_InvisibleBlind, 1.0)
+				ENDIF
+			ELIF "(c1|c2)&c3"
+				CharacterHasStatus(_Owner, BlindB)
+				CharacterHasStatus(_Owner, BlindC)
+				IsGreaterThen(_HelperFloat, FLOAT:9.0)
+			THEN
+				IF "!c1"
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					CharacterApplyStatus(__Me, Blue_InvisibleBlind, 1.0)
+				ENDIF
+			ELIF "(c1|c2|c3|c4)&c5"
+				CharacterHasStatus(_Owner, BlindD)
+				CharacterHasStatus(_Owner, BlindE)
+				CharacterHasStatus(_Owner, BlindF)
+				CharacterHasStatus(_Owner, BlindG)
+				IsGreaterThen(_HelperFloat, FLOAT:6.0)
+			THEN
+				IF "!c1"
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					CharacterApplyStatus(__Me, Blue_InvisibleBlind, 1.0)
+				ENDIF
+			ELIF "c1&c2"
+				CharacterHasStatus(_Owner, BlindH)
+				IsGreaterThen(_HelperFloat, FLOAT:3.0)
+			THEN
+				IF "!c1"
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					CharacterApplyStatus(__Me, Blue_InvisibleBlind, 1.0)
+				ENDIF
+			ELSE
+				IF "c1"
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					CharacterRemoveStatus(__Me, Blue_InvisibleBlind)
+				ENDIF
+			ENDIF
+		ELSE
+			IF "c1"
+				CharacterHasStatus(__Me, Blue_InvisibleBlind)
+			THEN
+				CharacterRemoveStatus(__Me, Blue_InvisibleBlind)
+			ENDIF
+		ENDIF
+	ELSE
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_InvisibleBlind)
+		THEN
+			CharacterRemoveStatus(__Me, Blue_InvisibleBlind)
+		ENDIF
+	ENDIF
+	//Basically this gets the 'level' of flanking a character has.
+	//Enemies that this character is within the weapon range of that are not disabled or wielding a ranged weapon increase this count by 1, or 2 with Imposing Presence.
+	//Allies within 3 meters reduce this count by 1.
+	//Completely ignored on characters with Imposing Presence.
+	IF "!c1&c2"
+		CharacterHasTalent(__Me, Perfectionist)
+		IsInCombat(__Me)
+	THEN
+		Set(%HelperVar, INT:0)
+		IterateCharactersNear(__Me, FLOAT:6, "Blue_Iterate_GetFlankers")
+		IF "c1"
+			IsLessThen(%HelperVar, INT:2)
+		THEN
+			IF "c1|c2|c3|c4|c5"
+				CharacterHasStatus(__Me, Blue_FlankedA)
+				CharacterHasStatus(__Me, Blue_FlankedB)
+				CharacterHasStatus(__Me, Blue_FlankedC)
+				CharacterHasStatus(__Me, Blue_FlankedD)
+				CharacterHasStatus(__Me, Blue_FlankedE)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Flanked_Remove, 0)
+			ENDIF
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:2)
+			CharacterHasStatus(__Me, Blue_FlankedA)
+		THEN
+			CharacterApplyStatus(__Me, Blue_FlankedA, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:3)
+			CharacterHasStatus(__Me, Blue_FlankedB)
+		THEN
+			CharacterApplyStatus(__Me, Blue_FlankedB, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:4)
+			CharacterHasStatus(__Me, Blue_FlankedC)
+		THEN
+			CharacterApplyStatus(__Me, Blue_FlankedC, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:5)
+			CharacterHasStatus(__Me, Blue_FlankedD)
+		THEN
+			CharacterApplyStatus(__Me, Blue_FlankedD, -1)
+		ELIF "c1&!c2"
+			IsGreaterThen(%HelperVar, INT:5)
+			CharacterHasStatus(__Me, Blue_FlankedE)
+		THEN
+			CharacterApplyStatus(__Me, Blue_FlankedE, -1)
+		ENDIF
+	ELSE
+		IF "c1|c2|c3|c4|c5"
+			CharacterHasStatus(__Me, Blue_FlankedA)
+			CharacterHasStatus(__Me, Blue_FlankedB)
+			CharacterHasStatus(__Me, Blue_FlankedC)
+			CharacterHasStatus(__Me, Blue_FlankedD)
+			CharacterHasStatus(__Me, Blue_FlankedE)
+		THEN
+			CharacterApplyStatus(__Me, Blue_Flanked_Remove, 0)
+		ENDIF
+	ENDIF
+	//Similar to the first, except it requires them to also have Opportunist and doesn't include allies reducing the count.
+	//This just sets a tag that tells the AI not to move and it's logic is handled in DefaultCharacter.charScript with the rest of the AI.
+	IF "!c1&c2"
+		CharacterHasTalent(__Me, NoAttackOfOpportunity)
+		IsInCombat(__Me)
+	THEN
+		//DisplayCombatInfoText(__Me, "Checking opportunists", 5)
+		Set(%HelperVar, INT:0)
+		IterateCharactersNear(__Me, FLOAT:6, "Blue_Iterate_GetOpportunists")
+		IF "c1"
+			IsGreaterThen(%HelperVar, INT:0)
+		THEN
+			IF "!c1"
+				IsTagged(__Me, "Blue_Opportunist_AI_Flag")
+			THEN
+				SetTag(__Me, "Blue_Opportunist_AI_Flag")
+				//DisplayCombatInfoText(__Me, "Flag added", 5)
+			ENDIF
+		ELSE
+			IF "c1"
+				IsTagged(__Me, "Blue_Opportunist_AI_Flag")
+			THEN
+				ClearTag(__Me, "Blue_Opportunist_AI_Flag")
+				//DisplayCombatInfoText(__Me, "Flag removed", 5)
+			ENDIF
+		ENDIF
+	ENDIF
+	//Guerilla
+	//After successfully sneaking, you cannot be spotted while there is an ally within 7 meters of you who is not invisible, sneaking, or incapacitated.
+	IF "c1&c2&c3"
+		CharacterHasTalent(__Me, SurpriseAttack)
+		CharacterHasStatus(__Me, SNEAKING)
+		IsInCombat(__Me)
+	THEN
+		Set(%HelperVar, INT:0)
+		IterateCharactersNear(__Me, FLOAT:7, "Blue_Iterate_GetGuerilla")
+		IF "c1"
+			IsLessThen(%HelperVar, INT:2)
+		THEN
+			IF "!c1"
+				CharacterHasStatus(__Me, Blue_Talent_Guerilla)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_Guerilla, -1)
+			ENDIF
+		ELSE
+			IF "c1"
+				CharacterHasStatus(__Me, Blue_Talent_Guerilla)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_Guerilla_Remove, 0)
+			ENDIF
+		ENDIF
+	ELSE
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_Talent_Guerilla)
+		THEN
+			CharacterApplyStatus(__Me, Blue_Talent_Guerilla_Remove, 0)
+		ENDIF
+	ENDIF
+	//Far Out Man
+	//This check doesn't need a fancy iterate event. :D
+	IF "c1&c2"
+		CharacterHasTalent(__Me, FaroutDude)
+		IsInCombat(__Me)
+	THEN
+		IF "c1&!c2"
+			CharacterCount(_HelperInt, __Me, FLOAT:5, Enemy)
+			IsGreaterThen(_HelperInt, INT:0)
+		THEN
+			IF "!c1"
+				CharacterHasStatus(__Me, Blue_Talent_FarOutMan)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_FarOutMan, -1)
+			ENDIF
+		ELSE
+			IF "c1"
+				CharacterHasStatus(__Me, Blue_Talent_FarOutMan)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Talent_FarOutMan_Remove, 0)
+			ENDIF
+		ENDIF
+	ELSE
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_Talent_FarOutMan)
+		THEN
+			CharacterApplyStatus(__Me, Blue_Talent_FarOutMan_Remove, 0)
+		ENDIF
+	ENDIF
+	//Anticipation
+	//AI get reduced checks on Anticipation. Originally players were handled here too but players need responsiveness.
+	IF "c1|!c2"
+		CharacterIsSummon(__Me)
+		CharacterIsInParty(__Me)
+	THEN
+		IF "!c1&c2&c3"
+			IsInActiveTurn(__Me)
+			IsTagged(__Me, "Blue_CharacterIsAnticipating")
+			IsInCombat(__Me)
+		THEN
+			IterateCharactersNear(__Me, FLOAT:6, "Blue_Iterate_GetAnticipation")
+		ENDIF
+	ENDIF
+	//Leadership
+	IF "c1"
+		CharacterGetAbility(%HelperVar, __Me, DualWielding)
+	THEN
+		IF "c1"
+			CharacterHasTalent(__Me, Human_Civil)
+		THEN
+			Subtract(%HelperVar, INT:2)
+		ELSE
+			Subtract(%HelperVar, INT:3)
+		ENDIF
+		//Twin Souls, summons not covered by the owner's leadership die.
+		IF "c1"
+			CharacterIsSummon(__Me)
+		THEN
+			IF "c1&c2"
+				CharacterGetOwner(_Owner, __Me)
+				CharacterHasTalent(_Owner, ResurrectToFullHealth)
+			THEN
+				ClearTag(__Me, "Blue_Talent_TwinSouls_Safe")
+			ENDIF
+		ENDIF
+		IterateCharactersNear(__Me, FLOAT:20, "Blue_Iterate_GetLeadership")
+		//No really, they die.
+		IF "c1"
+			CharacterIsSummon(__Me)
+		THEN
+			IF "!c1&c2"
+				IsTagged(__Me, "Blue_Talent_TwinSouls_Safe")
+				CharacterHasTalent(_Owner, ResurrectToFullHealth)
+			THEN
+				CharacterApplyStatus(__Me, STATUS:Blue_Status_PiercingDamage7354, 0)
+			ENDIF
+		ENDIF
+		//Everything else:
+		IF "c1&c2"
+			IsLessThen(%HelperVar, INT:1)
+			IsTagged(__Me, "Blue_Leadershipped")
+		THEN
+			ClearTag(__Me, "Blue_Leadershipped")
+			CharacterApplyStatus(__Me, STATUS:Leadership_Remove, 0)
+		ELIF "c1"
+			IsGreaterThen(%HelperVar, INT:0)
+		THEN
+			SetTag(__Me, "Blue_Leadershipped")
+			IF "c1"
+				CharacterIsSummon(__Me)
+			THEN
+				IF "c1&!c2"
+					IsEqual(%HelperVar, INT:1)
+					CharacterHasStatus(__Me, Leadership1_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership1_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:2)
+					CharacterHasStatus(__Me, Leadership2_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership2_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:3)
+					CharacterHasStatus(__Me, Leadership3_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership3_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:4)
+					CharacterHasStatus(__Me, Leadership4_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership4_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:5)
+					CharacterHasStatus(__Me, Leadership5_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership5_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:6)
+					CharacterHasStatus(__Me, Leadership6_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership6_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:7)
+					CharacterHasStatus(__Me, Leadership7_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership7_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:8)
+					CharacterHasStatus(__Me, Leadership8_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership8_Summoning, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:9)
+					CharacterHasStatus(__Me, Leadership9_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership9_Summoning, -1)
+				ELIF "c1&!c2"
+					IsGreaterThen(%HelperVar, INT:9)
+					CharacterHasStatus(__Me, Leadership10_Summoning)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership10_Summoning, -1)
+				ENDIF
+			ELSE
+				IF "c1&!c2"
+					IsEqual(%HelperVar, INT:1)
+					CharacterHasStatus(__Me, Leadership1_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership1_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:2)
+					CharacterHasStatus(__Me, Leadership2_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership2_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:3)
+					CharacterHasStatus(__Me, Leadership3_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership3_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:4)
+					CharacterHasStatus(__Me, Leadership4_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership4_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:5)
+					CharacterHasStatus(__Me, Leadership5_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership5_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:6)
+					CharacterHasStatus(__Me, Leadership6_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership6_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:7)
+					CharacterHasStatus(__Me, Leadership7_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership7_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:8)
+					CharacterHasStatus(__Me, Leadership8_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership8_Other, -1)
+				ELIF "c1&!c2"
+					IsEqual(%HelperVar, INT:9)
+					CharacterHasStatus(__Me, Leadership9_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership9_Other, -1)
+				ELIF "c1&!c2"
+					IsGreaterThen(%HelperVar, INT:9)
+					CharacterHasStatus(__Me, Leadership10_Other)
+				THEN
+					CharacterApplyStatus(__Me, STATUS:Leadership10_Other, -1)
+				ENDIF
+			ENDIF
+		ENDIF
+	ENDIF
+	//Summoner AP Redux
+	//Blue_SummonerAP_Remove
+	IF "!c1&c2"
+		CharacterIsSummon(__Me)
+		CharacterIsInParty(__Me)
+	THEN
+		Set(%HelperVar, INT:0)
+		IF "!c1"
+			IsInCombat(__Me)
+		THEN
+			IterateCharactersNear(__Me, FLOAT:13, "Blue_Iterate_GetSummons")
+		ELSE
+			IterateCharactersInCombat(__Me, "Blue_Iterate_GetSummons")
+		ENDIF
+		IF "c1&c2"
+			IsLessThen(%HelperVar, INT:1)
+			IsTagged(__Me, "Blue_SummonerAP")
+		THEN
+			ClearTag(__Me, "Blue_SummonerAP")
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_Remove, 0)
+		ELIF "c1&!c2"
+			IsGreaterThen(%HelperVar, INT:0)
+			IsTagged(__Me, "Blue_SummonerAP")
+		THEN
+			SetTag(__Me, "Blue_SummonerAP")
+		ENDIF
+		IF "c1&!c2"
+			IsEqual(%HelperVar, INT:1)
+			CharacterHasStatus(__Me, Blue_SummonerAP_1)
+		THEN
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_1, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:2)
+			CharacterHasStatus(__Me, Blue_SummonerAP_2)
+		THEN
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_2, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:3)
+			CharacterHasStatus(__Me, Blue_SummonerAP_3)
+		THEN
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_3, -1)
+		ELIF "c1&!c2"
+			IsEqual(%HelperVar, INT:4)
+			CharacterHasStatus(__Me, Blue_SummonerAP_4)
+		THEN
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_4, -1)
+		ELIF "c1&!c2"
+			IsGreaterThen(%HelperVar, INT:4)
+			CharacterHasStatus(__Me, Blue_SummonerAP_5)
+		THEN
+			CharacterApplyStatus(__Me, STATUS:Blue_SummonerAP_5, -1)
+		ENDIF
+	ENDIF
+	
+EVENT Blue_Iterate_GetSummons
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Owner
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetSummons")
+ACTIONS
+	IF "!c1&c2&c3&!c4&!c5&!c6"
+		IsEqual(_Character, __Me)
+		CharacterIsAlly(_Character, __Me)
+		CharacterIsSummon(_Character)
+		CharacterIsDead(_Character)
+		CharacterHasStatus(_Character, DYING)
+		CharacterIsDead(__Me)
+	THEN
+		IF "c1&c2"
+			CharacterGetOwner(_Owner, _Character)
+			IsEqual(_Owner, __Me)
+		THEN
+			Add(%HelperVar, INT:1)
+		ENDIF
+	ENDIF
+	
+EVENT Blue_Iterate_GetLeadership
+VARS
+	CHARACTER:_Character
+	CHARACTER:_Owner
+	INT:_AbilCheck
+	FLOAT:_Distance
+	FLOAT:_HelperFloat
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetLeadership")
+ACTIONS
+	IF "!c1&!c2&c3&!c4&!c5"
+		IsTagged(_Character, "Blue_CharacterIsDisabled")
+		IsEqual(_Character, __Me)
+		CharacterIsAlly(_Character, __Me)
+		CharacterIsDead(_Character)
+		CharacterIsDead(__Me)
+	THEN
+		IF "c1&c2"
+			GetDistance(_Distance, __Me, _Character)
+			CharacterGetAbility(_AbilCheck, _Character, DualWielding)
+		THEN
+		ENDIF
+		IF "c1"
+			IsGreaterThen(_AbilCheck, INT:0)
+		THEN
+			IF "c1"
+				CharacterHasTalent(__Me, Human_Civil)
+			THEN
+				Add(_AbilCheck, INT:1)
+			ENDIF
+			Cast(_HelperFloat, _AbilCheck)
+			Add(_HelperFloat, FLOAT:9)
+			IF "c1"
+				IsLessThen(_Distance, _HelperFloat)
+			THEN
+				IF "c1"
+					CharacterIsSummon(__Me)
+				THEN
+					//Twin Souls, summons not covered by the owner's leadership die.
+					IF "c1&c2"
+						CharacterGetOwner(_Owner, __Me)
+						CharacterHasTalent(_Owner, ResurrectToFullHealth)
+					THEN
+						SetTag(__Me, "Blue_Talent_TwinSouls_Safe")
+					ENDIF
+				ENDIF
+				IF "c1"
+					IsGreaterThen(_AbilCheck, %HelperVar)
+				THEN
+					Set(%HelperVar, _AbilCheck)
+				ENDIF
+			ENDIF
+		ENDIF
+	ENDIF
+	
+
+	
+EVENT Blue_Iterate_GetAnticipation_Pre
+VARS
+	CHARACTER:_Character
+	FLOAT:_HelperFloat
+	FLOAT:_Distance
+	//STRING:_Str
+	//FIXEDSTRING:_Text
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetAnticipation_Pre")
+ACTIONS
+	//_Character is attacker, __Me is defender
+	IF "c1&c2&c3&!c4"
+		GetInnerDistance(_Distance, __Me, _Character)
+		CharacterGetWeaponRange(_, _HelperFloat, _Character)
+		IsTagged(_Character, "Blue_CharacterIsAnticipating")
+		IsEqual(_Character, __Me)
+	THEN
+			//Print(_Str, "Dist: [1]", _Distance)
+			//Cast(_Text, _Str)
+			//DisplayCombatInfoText(__Me, _Text, 5.0)
+		Subtract(_Distance, _HelperFloat)
+		//A bit of extra fudge room
+		Subtract(_Distance, FLOAT:0.3)
+			//Print(_Str, "PosDist: [1]", _Distance)
+			//Cast(_Text, _Str)
+			//DisplayCombatInfoText(__Me, _Text, 5.0)
+	ENDIF
+	IF "!c1&!c2&!c3&c4&c5"
+		IsTagged(__Me, "Blue_CharacterAnticipated")
+		IsEqual(_Character, __Me)
+		IsTagged(_Character, "BlueImmuneToKnockback")
+		IsLessThen(_Distance, FLOAT:0)
+		IsTagged(_Character, "Blue_CharacterIsAnticipating")
+	THEN
+		SetTag(_Character, "Blue_CharacterAnticipated")
+	ENDIF
+	
+EVENT Blue_Iterate_GetAnticipation
+VARS
+	CHARACTER:_Character
+	CHARACTER:_AOO
+	FLOAT:_HelperFloat
+	FLOAT:_Distance
+	//STRING:_Str
+	//FIXEDSTRING:_Text
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetAnticipation")
+ACTIONS
+	//_Character is defender, __Me is attacker
+	IF "c1&c2&!c3"
+		GetInnerDistance(_Distance, __Me, _Character)
+		CharacterGetWeaponRange(_, _HelperFloat, __Me)
+		IsEqual(_Character, __Me)
+	THEN
+			//Print(_Str, "Dist: [1]", _Distance)
+			//Cast(_Text, _Str)
+			//DisplayCombatInfoText(_Character, _Text, 5.0)
+		Subtract(_Distance, _HelperFloat)
+		//A bit of extra fudge room
+		Subtract(_Distance, FLOAT:0.3)
+			//Print(_Str, "PosDist: [1]", _Distance)
+			//Cast(_Text, _Str)
+			//DisplayCombatInfoText(_Character, _Text, 5.0)
+	ENDIF
+	IF "!c1&!c2&c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&c11&c12&c13&c14&!c15&!c16&!c17"
+		//c1-5
+		IsTagged(__Me, "Blue_CharacterAnticipated")
+		IsEqual(_Character, __Me)
+		CharacterIsEnemy(_Character, __Me)
+		IsTagged(_Character, "BlueImmuneToKnockback")
+		CharacterHasStatus(_Character, INVISIBLE)
+		//c6-10
+		CharacterHasStatus(_Character, Blue_InvisibleBlue)
+		CharacterHasStatus(_Character, Blue_InvisibleOrange)
+		CharacterHasStatus(_Character, Blue_InvisibleWhite)
+		CharacterHasStatus(_Character, SNEAKING)
+		CharacterHasStatus(_Character, Blue_InvisibleBlind)
+		//c11-15
+		IsLessThen(_Distance, FLOAT:0)
+		IsInActiveTurn(_Character)
+		GetVar(_AOO, __Me, "AttackOfOpportunity")
+		IsEqual(_AOO, null)
+		CharacterIsDead(_Character)
+		//c16-17
+		CharacterIsDead(__Me)
+		IsInActiveTurn(__Me)
+	THEN
+		CharacterCharacterEvent(__Me, _Character, "Blue_Event_GetAnticipation")
+	ENDIF
+	
+EVENT Blue_Iterate_GetGuerilla
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetGuerilla")
+ACTIONS
+	IF "!c1&!c2&c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&!c11&!c12"
+		IsTagged(_Character, "Blue_CharacterIsDisabled") //c1
+		IsEqual(_Character, __Me) //c2
+		CharacterIsAlly(_Character, __Me) //c3
+		IsTagged(_Character, "BlueImmuneToKnockback") //c4
+		CharacterHasStatus(_Character, INVISIBLE) //c5
+		CharacterHasStatus(_Character, Blue_InvisibleBlue) //c6
+		CharacterHasStatus(_Character, Blue_InvisibleOrange) //c7
+		CharacterHasStatus(_Character, Blue_InvisibleWhite) //c8
+		CharacterHasStatus(_Character, SNEAKING) //c9
+		CharacterHasStatus(_Character, Blue_InvisibleBlind) //c10
+		CharacterIsDead(_Character)
+		CharacterIsDead(__Me)
+	THEN
+		Subtract(%HelperVar, INT:1)
+	ENDIF
+	IF "!c1&!c2&c3"
+		IsEqual(_Character, __Me)
+		IsTagged(_Character, "BlueImmuneToKnockback")
+		CharacterIsEnemy(_Character, __Me)
+	THEN
+		Add(%HelperVar, INT:1)
+	ENDIF
+	
+EVENT Blue_Iterate_GetFlankers
+VARS
+	CHARACTER:_Character
+	FLOAT:_HelperFloat
+	FLOAT:_Distance
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetFlankers")
+ACTIONS
+	IF "c1&c2&c3&!c4&!c5&!c6"
+		GetDistance2D(_Distance, _Character, __Me)
+		IsLessThen(_Distance, FLOAT:3)
+		CharacterIsAlly(_Character, __Me)
+		IsEqual(_Character, __Me)
+		CharacterIsDead(_Character)
+		CharacterIsDead(__Me)
+	THEN
+		Subtract(%HelperVar, INT:1)
+	ENDIF
+	IF "c1&c2&!c3"
+		GetInnerDistance(_Distance, __Me, _Character)
+		CharacterGetWeaponRange(_, _HelperFloat, _Character)
+		IsEqual(_Character, __Me)
+	THEN
+		Subtract(_Distance, _HelperFloat)
+		//A bit of extra fudge room
+		Subtract(_Distance, FLOAT:0.3)
+	ENDIF
+	IF "c1&!c2&!c3&!c4&c5&!c6&!c7&!c8"
+		IsLessThen(_Distance, FLOAT:0)
+		IsTagged(_Character, "Blue_CharacterIsDisabled")
+		IsEqual(_Character, __Me)
+		CharacterHasRangedWeapon(_Character, INT:0)
+		CharacterIsEnemy(_Character, __Me)
+		IsTagged(_Character, "BlueImmuneToKnockback")
+		CharacterIsDead(_Character)
+		CharacterIsDead(__Me)
+	THEN
+		IF "c1"
+			CharacterHasTalent(_Character, Perfectionist)
+		THEN
+			Add(%HelperVar, INT:2)
+		ELSE
+			Add(%HelperVar, INT:1)
+		ENDIF
+	ENDIF
+	
+EVENT Blue_Iterate_GetOpportunists
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_Iterate_GetOpportunists")
+ACTIONS
+	IF "c1&!c2&!c3&!c4&c5&c6&!c7&c8&!c9&!c10"
+		CharacterInWeaponRange(_Character, __Me)
+		IsTagged(_Character, "Blue_CharacterIsDisabled")
+		IsEqual(_Character, __Me)
+		CharacterHasRangedWeapon(_Character, INT:0)
+		CharacterIsEnemy(_Character, __Me)
+		CharacterHasTalent(_Character, AttackOfOpportunity)
+		IsTagged(_Character, "BlueImmuneToKnockback")
+		CharacterInWeaponRange(__Me, _Character)
+		CharacterIsDead(_Character)
+		CharacterIsDead(__Me)
+	THEN
+		Add(%HelperVar, INT:1)
+	ENDIF
+
+EVENT Blue_CheckNearbyCharacters_Iterate
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_CheckNearbyCharacters_Iterate")
+ACTIONS
+	IF "!c1"
+		IsEqual(__Me, _Character)
+	THEN
+		//DisplayCombatInfoText(_Character, "testtESTst", 5)
+		SetVar(_Character, "CurrPosition", FLOAT3:{-1;-1;-1})
+	ENDIF
+
+EVENT GlobalMightCorrecter
+VARS
+	FLOAT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "GlobalMightCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetStat(_StatCheck, __Me, Strength)
+		IsEqual(_StatCheck, %CurrMight)
+	THEN
+		Set(%CurrMight, _StatCheck)
+		CharacterEvent(__Me, "GlobalMightCorrecter_Changed")
+	ENDIF
+	
+EVENT GlobalDexterityCorrecter
+VARS
+	FLOAT:_StatCheck
+	STRING:_String
+	FIXEDSTRING:_Text
+	FLOAT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "GlobalDexterityCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetStat(_StatCheck, __Me, Finesse)
+		IsEqual(_StatCheck, %CurrDexterity)
+	THEN
+		Set(%CurrDexterity, _StatCheck)
+		CharacterEvent(__Me, "GlobalDexterityCorrecter_Changed")
+	ENDIF
+	/*
+	Cast(_String, _StatCheck)
+	Cast(_Text, _String)
+	StringConcatenate("Current dexterity: ", _String, _String)
+    DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	Cast(_String, %CurrDexterity)
+	Cast(_Text, _String)
+	StringConcatenate("Dexterity read as: ", _String, _String)
+    DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	*/
+	
+EVENT GlobalWisdomCorrecter
+VARS
+	FLOAT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "GlobalWisdomCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetStat(_StatCheck, __Me, Memory)
+		IsEqual(_StatCheck, %CurrWisdom)
+	THEN
+		Set(%CurrWisdom, _StatCheck)
+		CharacterEvent(__Me, "GlobalWisdomCorrecter_Changed")
+	ENDIF
+	
+EVENT GlobalConstitutionCorrecter
+VARS
+	FLOAT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "GlobalConstitutionCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetStat(_StatCheck, __Me, Constitution)
+		IsEqual(_StatCheck, %CurrConstitution)
+	THEN
+		Set(%CurrConstitution, _StatCheck)
+		CharacterEvent(__Me, "GlobalConstitutionCorrecter_Changed")
+	ENDIF
+	
+EVENT GlobalWitsCorrecter
+VARS
+	FLOAT:_StatCheck
+ON
+	OnCharacterEvent(__Me, "GlobalWitsCorrecter")
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetStat(_StatCheck, __Me, Wits)
+		IsEqual(_StatCheck, %CurrWits)
+	THEN
+		Set(%CurrWits, _StatCheck)
+		CharacterEvent(__Me, "GlobalWitsCorrecter_Changed")
+	ENDIF
+	
+EVENT GlobalMovementCorrecter
+VARS
+	FLOAT:_StatCheck
+	INT:_AbilCheck
+	FLOAT:_HelperFloat
+ON
+	OnCharacterEvent(__Me, GlobalMovementCorrecter)
+ACTIONS
+	// MOVEMENT SPEED REDUCTION
+	/*
+	Blue_Talent_DuckDuckGoose ; -50
+	Blue_Talent_ImposingPresence_Slow ; 25
+	Blue_Frost ; 50
+	Blue_Dazed_1 ; 20
+	Blue_Dazed_2 ; 40
+	Blue_Dazed_3 ; 60
+	Blue_Dazed_4 ; 80
+	Blue_Dazed_5 ; 100
+	SlowedA ; 25
+	SlowedB ; 50
+	SlowedC ; 50
+	SlowedD ; 100
+	SlowedE ; 100
+	SlowedF ; 100
+	SlowedG ; 100
+	SlowedH ; 200
+	CrippledA ; 50
+	CrippledB ; 100
+	CrippledC ; 100
+	CrippledD ; 200
+	CrippledE ; 200
+	CrippledF ; 200
+	CrippledG ; 200
+	ChilledA ; 20
+	ChilledB ; 30
+	ChilledC ; 30
+	ChilledD ; 50
+	ChilledE ; 50
+	ChilledF ; 50
+	ChilledG ; 50
+	ChilledH ; 80
+	StaggeredA ; 15
+	StaggeredB ; 25
+	StaggeredC ; 25
+	StaggeredD ; 50
+	StaggeredE ; 50
+	StaggeredF ; 50
+	StaggeredG ; 50
+	PetrifiedA ; 20
+	PetrifiedB ; 30
+	PetrifiedC ; 30
+	PetrifiedD ; 50
+	PetrifiedE ; 50
+	PetrifiedF ; 50
+	PetrifiedG ; 50
+	SleepingA ; 20
+	SleepingB ; 35
+	SleepingC ; 35
+	SleepingD ; 80
+	SleepingE ; 80
+	SleepingF ; 80
+	SleepingG ; 80
+	SLOWED ; 100
+	*/
+	/*
+	  // OLD CODE
+	IF "c1&!c2"
+		CharacterGetAbility(_AbilCheck, __Me, Ranged)
+		IsEqual(_AbilCheck, %CurrRanged)
+	THEN
+		IF "c1"
+			CharacterGetAbility(%CurrRanged, __Me, Ranged)
+		THEN
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, __Me, Ranged)
+		THEN
+		ENDIF
+	*/
+	  // NEW CODE
+	Set(_AbilCheck, INT:0)
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Talent_DuckDuckGoose)
+	THEN
+		Add(_AbilCheck, INT:-50)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Talent_ImposingPresence_Slow)
+	THEN
+		Add(_AbilCheck, INT:25)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Frost)
+	THEN
+		Add(_AbilCheck, INT:50)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Dazed_1)
+	THEN
+		Add(_AbilCheck, INT:20)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Dazed_2)
+	THEN
+		Add(_AbilCheck, INT:40)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Dazed_3)
+	THEN
+		Add(_AbilCheck, INT:60)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Dazed_4)
+	THEN
+		Add(_AbilCheck, INT:80)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Dazed_5)
+	THEN
+		Add(_AbilCheck, INT:100)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me, SLOWED)
+	THEN
+		Add(_AbilCheck, INT:100)
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Slowed_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, SlowedA)
+		THEN
+			Add(_AbilCheck, INT:25)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, SlowedB)
+			CharacterHasStatus(__Me, SlowedC)
+		THEN
+			Add(_AbilCheck, INT:50)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, SlowedD)
+			CharacterHasStatus(__Me, SlowedE)
+			CharacterHasStatus(__Me, SlowedF)
+			CharacterHasStatus(__Me, SlowedG)
+		THEN
+			Add(_AbilCheck, INT:100)
+		ELIF "c1"
+			CharacterHasStatus(__Me, SlowedH)
+		THEN
+			Add(_AbilCheck, INT:200)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Crippled_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, CrippledA)
+		THEN
+			Add(_AbilCheck, INT:50)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, CrippledB)
+			CharacterHasStatus(__Me, CrippledC)
+		THEN
+			Add(_AbilCheck, INT:100)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, CrippledD)
+			CharacterHasStatus(__Me, CrippledE)
+			CharacterHasStatus(__Me, CrippledF)
+			CharacterHasStatus(__Me, CrippledG)
+		THEN
+			Add(_AbilCheck, INT:200)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Chilled_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, ChilledA)
+		THEN
+			Add(_AbilCheck, INT:20)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, ChilledB)
+			CharacterHasStatus(__Me, ChilledC)
+		THEN
+			Add(_AbilCheck, INT:30)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, ChilledD)
+			CharacterHasStatus(__Me, ChilledE)
+			CharacterHasStatus(__Me, ChilledF)
+			CharacterHasStatus(__Me, ChilledG)
+		THEN
+			Add(_AbilCheck, INT:50)
+		ELIF "c1"
+			CharacterHasStatus(__Me, ChilledH)
+		THEN
+			Add(_AbilCheck, INT:80)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Staggered_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, StaggeredA)
+		THEN
+			Add(_AbilCheck, INT:15)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, StaggeredB)
+			CharacterHasStatus(__Me, StaggeredC)
+		THEN
+			Add(_AbilCheck, INT:25)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, StaggeredD)
+			CharacterHasStatus(__Me, StaggeredE)
+			CharacterHasStatus(__Me, StaggeredF)
+			CharacterHasStatus(__Me, StaggeredG)
+		THEN
+			Add(_AbilCheck, INT:50)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Petrified_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, PetrifiedA)
+		THEN
+			Add(_AbilCheck, INT:20)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, PetrifiedB)
+			CharacterHasStatus(__Me, PetrifiedC)
+		THEN
+			Add(_AbilCheck, INT:30)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, PetrifiedD)
+			CharacterHasStatus(__Me, PetrifiedE)
+			CharacterHasStatus(__Me, PetrifiedF)
+			CharacterHasStatus(__Me, PetrifiedG)
+		THEN
+			Add(_AbilCheck, INT:50)
+		ENDIF
+	ENDIF
+	IF "c1"
+		IsTagged(__Me, "Blue_Sleeping_Tag")
+	THEN
+		IF "c1"
+			CharacterHasStatus(__Me, SleepingA)
+		THEN
+			Add(_AbilCheck, INT:20)
+		ELIF "c1|c2"
+			CharacterHasStatus(__Me, SleepingB)
+			CharacterHasStatus(__Me, SleepingC)
+		THEN
+			Add(_AbilCheck, INT:35)
+		ELIF "c1|c3|c3|c4"
+			CharacterHasStatus(__Me, SleepingD)
+			CharacterHasStatus(__Me, SleepingE)
+			CharacterHasStatus(__Me, SleepingF)
+			CharacterHasStatus(__Me, SleepingG)
+		THEN
+			Add(_AbilCheck, INT:80)
+		ENDIF
+	ENDIF
+	// In case I, or anyone, wants to add movement reduction via a gameScript or something:
+	Set(%HelperVar, INT:0)
+	CharacterEvent(__Me, "Blue_CheckMovementReduction_Event")
+	Add(__Me, %HelperVar)
+	IF "c1"
+		IsLessThen(_AbilCheck, INT:0)
+	THEN
+		Set(_AbilCheck, INT:0)
+	ENDIF
+	IF "!c1"
+		IsEqual(_AbilCheck, %CurrRanged)
+	THEN
+		Set(%CurrRanged, _AbilCheck)
+		//Formula for reduction is 100*(-1+(100/(100+Ranged))), where Ranged is a positive integer.
+		Cast(_HelperFloat, _AbilCheck)
+		IF "c1"
+			IsLessThen(_HelperFloat, FLOAT:0)
+		THEN
+			Set(_HelperFloat, FLOAT:0)
+		ENDIF
+		Add(_HelperFloat, FLOAT:100)
+		Set(_StatCheck, FLOAT:100)
+		Divide(_StatCheck, _HelperFloat)
+		Set(_HelperFloat, FLOAT:-1)
+		Add(_HelperFloat, _StatCheck)
+		Multiply(_HelperFloat, FLOAT:100)
+		IF "c1"
+			IsGreaterThen(_HelperFloat, FLOAT:0)
+		THEN
+			Set(_HelperFloat, FLOAT:0)
+		ELIF "c1"
+			IsLessThen(_HelperFloat, FLOAT:0)
+		THEN
+			Subtract(_HelperFloat, FLOAT:0.5)
+		ENDIF
+		Cast(_AbilCheck, _HelperFloat)
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff64)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff64)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff32)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff32)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff16)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff16)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff8)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff8)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff4)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff4)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff2)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff2)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, MovementSpeedReductionDebuff1)
+		THEN
+			CharacterRemoveStatus(__Me, MovementSpeedReductionDebuff1)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-64)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff64, -1)
+			Add(_AbilCheck, 64)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-32)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff32, -1)
+			Add(_AbilCheck, 32)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-16)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff16, -1)
+			Add(_AbilCheck, 16)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-8)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff8, -1)
+			Add(_AbilCheck, 8)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-4)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff4, -1)
+			Add(_AbilCheck, 4)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-2)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff2, -1)
+			Add(_AbilCheck, 2)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-1)
+		THEN
+			CharacterApplyStatus(__Me, MovementSpeedReductionDebuff1, -1)
+			Add(_AbilCheck, 1)
+		ENDIF
+	ENDIF
+	
+//DAMAGE REDUCTION
+EVENT GlobalBlacksmithingCorrecter
+VARS
+	FLOAT:_StatCheck
+	INT:_AbilCheck
+	FLOAT:_HelperFloat
+ON
+	OnCharacterEvent(__Me, GlobalBlacksmithingCorrecter)
+ACTIONS
+	IF "c1&!c2"
+		CharacterGetAbility(_AbilCheck, __Me, Repair)
+		IsEqual(_AbilCheck, %CurrBlacksmithing)
+	THEN
+		IF "c1"
+			CharacterGetAbility(%CurrBlacksmithing, __Me, Repair)
+		THEN
+		ENDIF
+		IF "c1"
+			CharacterGetStat(_StatCheck, __Me, Strength)
+		THEN
+			Subtract(_StatCheck, FLOAT:10)
+			Multiply(_StatCheck, 5)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, __Me, Repair)
+		THEN
+			//Cast(_String, _AbilCheck)
+			//Cast(_Text, _String)
+			//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+			Cast(_HelperFloat, _AbilCheck)
+			Multiply(_HelperFloat, FLOAT:0.01)
+			IF "!c1&c2"
+				CharacterIsInParty(__Me)
+				IsHardcore()
+			THEN
+				Multiply(_HelperFloat, FLOAT:1.5)
+			ENDIF
+			Subtract(_HelperFloat, FLOAT:1)
+			Multiply(_HelperFloat, _StatCheck)
+		//Cast(_String, _HelperFloat)
+		//Cast(_Text, _String)
+		//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+		ENDIF
+		IF "!c1&c2"
+			CharacterIsInParty(__Me)
+			IsHardcore()
+		THEN
+			IF "c1"
+				CharacterGetAbility(_AbilCheck, __Me, Repair)
+			THEN
+				Cast(_StatCheck, _AbilCheck)
+				Multiply(_StatCheck, FLOAT:-0.01)
+				Add(_StatCheck, FLOAT:1)
+				Multiply(_StatCheck, FLOAT:75)
+				Subtract(_HelperFloat, _StatCheck)
+			ENDIF
+		ENDIF
+		IF "c1"
+			IsGreaterThen(_HelperFloat, FLOAT:0)
+		THEN
+			Add(_HelperFloat, FLOAT:0.5)
+		ELIF "c1"
+			IsLessThen(_HelperFloat, FLOAT:0)
+		THEN
+			Subtract(_HelperFloat, FLOAT:0.5)
+		ENDIF
+		//Cast(_String, _HelperFloat)
+		//Cast(_Text, _String)
+		//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+		Cast(_AbilCheck, _HelperFloat)
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff512)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff512)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff256)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff256)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff128)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff128)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff64)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff64)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff32)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff32)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff16)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff16)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff8)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff8)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff4)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff4)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff2)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff2)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageBuff1)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageBuff1)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff512)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff512)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff256)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff256)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff128)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff128)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff64)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff64)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff32)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff32)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff16)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff16)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff8)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff8)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff4)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff4)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff2)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff2)
+		ENDIF
+		IF "c1"
+			CharacterHasStatus(__Me, BlacksmithingDamageDebuff1)
+		THEN
+			CharacterRemoveStatus(__Me, BlacksmithingDamageDebuff1)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:512)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff512, -1)
+			Subtract(_AbilCheck, 512)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:256)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff256, -1)
+			Subtract(_AbilCheck, 256)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:128)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff128, -1)
+			Subtract(_AbilCheck, 128)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:64)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff64, -1)
+			Subtract(_AbilCheck, 64)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:32)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff32, -1)
+			Subtract(_AbilCheck, 32)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:16)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff16, -1)
+			Subtract(_AbilCheck, 16)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:8)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff8, -1)
+			Subtract(_AbilCheck, 8)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:4)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff4, -1)
+			Subtract(_AbilCheck, 4)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:2)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff2, -1)
+			Subtract(_AbilCheck, 2)
+		ENDIF
+		IF "!c1"
+			IsLessThen(_AbilCheck, INT:1)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageBuff1, -1)
+			Subtract(_AbilCheck, 1)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-512)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff512, -1)
+			Add(_AbilCheck, 512)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-256)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff256, -1)
+			Add(_AbilCheck, 256)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-128)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff128, -1)
+			Add(_AbilCheck, 128)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-64)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff64, -1)
+			Add(_AbilCheck, 64)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-32)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff32, -1)
+			Add(_AbilCheck, 32)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-16)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff16, -1)
+			Add(_AbilCheck, 16)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-8)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff8, -1)
+			Add(_AbilCheck, 8)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-4)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff4, -1)
+			Add(_AbilCheck, 4)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-2)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff2, -1)
+			Add(_AbilCheck, 2)
+		ENDIF
+		IF "!c1"
+			IsGreaterThen(_AbilCheck, INT:-1)
+		THEN
+			CharacterApplyStatus(__Me, BlacksmithingDamageDebuff1, -1)
+			Add(_AbilCheck, 1)
+		ENDIF
+	ENDIF
+
+BEHAVIOUR
+
+REACTION Blue_RunAwayInFearNot,20000001
+USAGE COMBAT
+CHECK "c1&c2&c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&!c11"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	IsEqual(INT:2, INT:2)
+	IsEqual(INT:1, INT:1)
+	CharacterHasStatus(__Me, FearA)
+	CharacterHasStatus(__Me, FearB)
+	CharacterHasStatus(__Me, FearC)
+	CharacterHasStatus(__Me, FearD)
+	CharacterHasStatus(__Me, FearE)
+	CharacterHasStatus(__Me, FearF)
+	CharacterHasStatus(__Me, FearG)
+	CharacterHasStatus(__Me, FearH)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest1", 5)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_AttackOthersNot,20000002
+USAGE COMBAT
+CHECK "c1&c2&c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&!c11"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	IsEqual(INT:2, INT:2)
+	IsEqual(INT:1, INT:1)
+	CharacterHasStatus(__Me, MadA)
+	CharacterHasStatus(__Me, MadB)
+	CharacterHasStatus(__Me, MadC)
+	CharacterHasStatus(__Me, MadD)
+	CharacterHasStatus(__Me, MadE)
+	CharacterHasStatus(__Me, MadF)
+	CharacterHasStatus(__Me, MadG)
+	CharacterHasStatus(__Me, MadH)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest2", 5)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_RunAwayInFearA,20000009
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearA)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest3", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,5.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearB,20000010
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearB)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest4", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,7.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearC,20000011
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearC)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest5", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,7.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearD,20000012
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearD)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest6", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,11.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearE,20000013
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearE)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest7", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,11.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearF,20000014
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearF)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest8", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,11.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearG,20000015
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearG)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest9", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,11.0)
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1&c2"
+		CharacterHasStatus(__Me, MadH)
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+    Reset()
+
+REACTION Blue_RunAwayInFearH,20000016
+USAGE COMBAT
+VARS
+	FLOAT:_ActionPoints
+	INT:_ActionPointsInt
+	STRING:_Str
+	FIXEDSTRING:_Text
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyFear)
+	CharacterHasStatus(__Me, FearH)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest10", 5)
+	//DisplayCombatInfoText(__Me, "RunsAway", 5.0)
+	//CharacterApplyStatus(__Me, Blue_DummyFear, 1)
+	CharacterFleeFrom(All,12.0)
+	//CharacterRemoveStatus(__Me, Blue_DummyFear, null, 0)
+	IF "c1"
+		CharacterGetStat(_ActionPoints, __Me, ActionPoints)
+	THEN
+		Cast(_ActionPoints, _ActionPointsInt)
+		CharacterUseActionPoints(__Me, _ActionPointsInt, _ActionPointsInt)
+	ENDIF
+INTERRUPT
+ACTIONS
+    Reset()
+
+REACTION Blue_AttackOthersA,20000019
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+	FLOAT:_RandY
+	FLOAT:_RandX
+	FLOAT3:_Rand
+	FLOAT3:_CurrPosition
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadA)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest11", 5)
+	GetRandomBetween(_RandX, FLOAT:-1.5, FLOAT:1.5)
+	GetRandomBetween(_RandY, FLOAT:-1.5, FLOAT:1.5)
+	SetX(_Rand, _RandX)
+	SetY(_Rand, _RandY)
+	SetZ(_Rand, FLOAT:0)
+	IF "c1"
+		GetPosition(__Me, _CurrPosition)
+	THEN
+		Add(_CurrPosition, _Rand)
+	ENDIF
+	CharacterMoveTo(_CurrPosition, INT:1, INT:0, INT:0, FLOAT:0, FLOAT:2.5)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersB,20000020
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadB)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest12", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersC,20000021
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadC)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest13", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersD,20000022
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadD)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest14", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterAttack(_Character, 0)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersE,20000023
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadE)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest15", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterAttack(_Character, 0)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersF,20000024
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadF)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest16", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterAttack(_Character, 0)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersG,20000025
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadG)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest17", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterAttack(_Character, 0)
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+INTERRUPT
+ACTIONS
+	CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackOthersH,20000026
+USAGE COMBAT
+VARS
+	CHARACTER:_Character
+CHECK "c1&c2"
+	CharacterHasStatus(__Me, Blue_DummyMad)
+	CharacterHasStatus(__Me, MadH)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest18", 5)
+	IF "c1"
+		CharacterGet(_Character, __Me, FLOAT:16, Lowest, Distance, All)
+	THEN
+	ENDIF
+	CharacterMoveInWeaponRange(_Character, 1)
+	CharacterAttack(_Character, 0)
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(__Me, FearA)
+		CharacterHasStatus(__Me, FearB)
+		CharacterHasStatus(__Me, FearC)
+		CharacterHasStatus(__Me, FearD)
+		CharacterHasStatus(__Me, FearE)
+		CharacterHasStatus(__Me, FearF)
+		CharacterHasStatus(__Me, FearG)
+		CharacterHasStatus(__Me, FearH)
+	THEN
+		CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+	ENDIF
+INTERRUPT
+ACTIONS
+	//CharacterRemoveStatus(__Me, Blue_DummyMad, null, 0)
+    Reset()
+
+REACTION Blue_AttackTauntedScript,20000000
+USAGE PEACE
+//USAGE COMBAT
+VARS
+	CHARACTER:_Source
+CHECK "c1"
+	CharacterHasStatus(__Me, Blue_Taunted)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest19", 5)
+	IF "c1"
+		CharacterGetStatusSourceCharacter(__Me, Blue_Taunted, _Source)
+	THEN
+		//DisplayCombatInfoText(__Me, "Test_Attack_Target", 5.0)
+		CharacterMoveInWeaponRange(_Source, 1)
+		CharacterAttack(_Source, 0)
+	ENDIF
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_BladeStormTargettingScript,20000098
+USAGE COMBAT
+VARS
+	CHARACTER:_Target
+	FLOAT:_StatCheck
+CHECK "c1"
+	CharacterHasStatus(__Me, Blue_BladestormTargetting)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest20", 5)
+	Set(_Target, null)
+	IF "c1"
+		CharacterGet(_Target, __Me, FLOAT:20, Random, Distance, All, null, Blue_BladestormTargetted)
+	THEN
+	ENDIF
+	IF "!c1&c2&c3"
+		IsEqual(_Target, null)
+		CharacterGetStat(_StatCheck, __Me, ActionPoints)
+		IsGreaterThen(_StatCheck, FLOAT:0)
+	THEN
+		CharacterUseSkill(Blue_MultiStrike_BladestormJump, _Target, __Me, null, 1)
+	ELSE
+		IF "!c1"
+			IsEqual(%StoredLocation, null)
+		THEN
+			//CharacterUseSkill(Blue_Jump_BladestormReset, %StoredLocation, __Me, null, 1)
+			TeleportTo(__Me, %StoredLocation)
+			Set(%StoredLocation, null)
+		ENDIF
+		CharacterApplyStatus(__Me, Blue_InvisibleBlue, 1)
+		CharacterRemoveStatus(__Me, Blue_BladestormTargetting)
+		IterateCharactersInCombat(__Me, "BladestormRemoveTarget")
+		EndTurn(__Me)
+	ENDIF
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_BladeStormTargettingScriptReturn,20000099
+USAGE WAITING
+USAGE PEACE
+CHECK "c1"
+	CharacterHasStatus(__Me, Blue_BladestormTargetting)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest21", 5)
+	IF "!c1"
+		IsEqual(%StoredLocation, null)
+	THEN
+		TeleportTo(__Me, %StoredLocation)
+		Set(%StoredLocation, null)
+	ENDIF
+	CharacterApplyStatus(__Me, Blue_InvisibleBlue, 1)
+	CharacterRemoveStatus(__Me, Blue_BladestormTargetting)
+	IterateCharactersInCombat(__Me, "BladestormRemoveTarget")
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION Blue_CheckDisabled,10
+USAGE WAITING
+USAGE PEACE
+CHECK "c1"
+	IsTagged(__Me, "Blue_CheckDisabled_Tag")
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testest22", 5)
+	CharacterEvent(__Me, "Blue_CheckDisabled_False")
+INTERRUPT
+ACTIONS
+	Reset()
+
+/*
+REACTION Blue_PlayBlockAnimation,20000099
+USAGE WAITING
+USAGE PEACE
+CHECK "c1"
+	IsTagged(__Me, "Blue_PlayBlockAnimation")
+ACTIONS
+	DisplayCombatInfoText(__Me, "Testesredrsgwsgaiuyragybwueegvurya", 5)
+	CharacterStopAnimation()
+	CharacterPlayEffect(__Me, "Blue_Sound_Block")
+	CharacterSetAnimationSetOverride(__Me, "block")
+	//ExitOnFinish, WaitForCompletion, NoBlend
+	CharacterPlayAnimation("block", INT:1, INT:1, INT:1)
+	CharacterSetAnimationSetOverride(__Me, "")
+	DisplayCombatInfoText(__Me, "Tesbilfwyea", 5)
+	ClearTag(__Me, "Blue_PlayBlockAnimation")
+INTERRUPT
+ACTIONS
+	Reset()
+*/
+	
+	

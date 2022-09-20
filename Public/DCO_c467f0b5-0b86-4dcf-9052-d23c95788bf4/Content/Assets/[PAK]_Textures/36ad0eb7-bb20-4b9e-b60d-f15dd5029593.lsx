@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="6" revision="0" build="0" />
+	<region id="MaterialBank">
+		<node id="MaterialBank">
+			<children>
+				<node id="Resource">
+					<attribute id="ID" value="36ad0eb7-bb20-4b9e-b60d-f15dd5029593" type="22" />
+					<attribute id="Localized" value="False" type="19" />
+					<attribute id="SourceFile" value="Public/Shared/Assets/Materials/Effects/RS3_FX_PBR_Special_VoodooDecal_01.lsb" type="30" />
+					<attribute id="Name" value="RS3_FX_PBR_Special_VoodooDecal_01" type="23" />
+					<attribute id="MaterialName" value="RS3_FX_DS_Sigil_Voodoo_Carved_Blood_04_000" type="22" />
+					<attribute id="MaterialType" value="0" type="1" />
+					<children>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="AlphaFactor" type="22" />
+							<attribute id="UniformName" value="FloatParameter_AlphaFactor" type="22" />
+							<attribute id="GroupName" value="Opacity" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseDistortionScale" type="22" />
+							<attribute id="UniformName" value="FloatParameter_BaseDistortionScale" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="2" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="BaseRoughness" type="22" />
+							<attribute id="UniformName" value="FloatParameter_BaseRoughness" type="22" />
+							<attribute id="GroupName" value="PBR" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.7" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="AlphaClipValueMin" type="22" />
+							<attribute id="UniformName" value="FloatParameter_AlphaClipValueMin" type="22" />
+							<attribute id="GroupName" value="Opacity" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="AlphaClipValue" type="22" />
+							<attribute id="UniformName" value="FloatParameter_AlphaClipValue" type="22" />
+							<attribute id="GroupName" value="Opacity" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="_OpacityFade" type="22" />
+							<attribute id="UniformName" value="_OpacityFade" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="RoughnessInside" type="22" />
+							<attribute id="UniformName" value="FloatParameter_RoughnessInside" type="22" />
+							<attribute id="GroupName" value="PBR" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="CenterBrightness" type="22" />
+							<attribute id="UniformName" value="FloatParameter_CenterBrightness" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.5" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="Metal" type="22" />
+							<attribute id="UniformName" value="FloatParameter_Metal" type="22" />
+							<attribute id="GroupName" value="PBR" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseReflectance" type="22" />
+							<attribute id="UniformName" value="FloatParameter_BaseReflectance" type="22" />
+							<attribute id="GroupName" value="PBR" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.5" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="InteriorReflectance" type="22" />
+							<attribute id="UniformName" value="FloatParameter_InteriorReflectance" type="22" />
+							<attribute id="GroupName" value="PBR" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseDistortionStrength" type="22" />
+							<attribute id="UniformName" value="FloatParameter_BaseDistortionStrength" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseTextureTiling" type="22" />
+							<attribute id="UniformName" value="FloatParameter_BaseTextureTiling" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="1" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="EmissiveMultiplier" type="22" />
+							<attribute id="UniformName" value="FloatParameter_EmissiveMultiplier" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0" type="6" />
+						</node>
+						<node id="ScalarParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="VerticalFadingAngle" type="22" />
+							<attribute id="UniformName" value="FloatParameter_VerticalFadingAngle" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.5" type="6" />
+						</node>
+						<node id="Vector3Parameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="InteriorColor" type="22" />
+							<attribute id="UniformName" value="Vector3Parameter_InteriorColor" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="0.07592612 0 0" type="12" />
+							<attribute id="IsColor" value="True" type="19" />
+						</node>
+						<node id="VectorParameters">
+							<attribute id="Enabled" value="False" type="19" />
+							<attribute id="ParameterName" value="_MeshVertexColor" type="22" />
+							<attribute id="UniformName" value="_MeshVertexColor" type="22" />
+							<attribute id="GroupName" value="" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="Value" value="1 1 1 1" type="13" />
+							<attribute id="IsColor" value="False" type="19" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="CompositeTexture" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_CompositeTexture_DefaultWrapSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="c0cdd7b4-e97a-4732-8815-60bbeb2ebbb7" type="22" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseDistortionTexture" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_BaseDistortionTexture_DefaultWrapSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="9dc5807b-3697-4b8f-ab0f-b9c5c1bd7010" type="22" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseErosionTexture" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_BaseErosionTexture_DefaultClampSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="df017683-d7db-4ec9-98f1-8586825a5e07" type="22" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="Normal" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_Normal_DefaultWrapSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="68dd1707-915e-474e-831e-7539733a1768" type="22" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="BaseTexture" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_BaseTexture_DefaultWrapSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="74430715-ec83-483a-bd4c-340cc51f4310" type="22" />
+						</node>
+						<node id="Texture2DParameters">
+							<attribute id="Enabled" value="True" type="19" />
+							<attribute id="ParameterName" value="InsideErosionTexture" type="22" />
+							<attribute id="UniformName" value="Texture2DParameter_InsideErosionTexture_DefaultClampSampler" type="22" />
+							<attribute id="GroupName" value="Textures" type="22" />
+							<attribute id="ShaderFlags" value="511" type="2" />
+							<attribute id="ID" value="9dc5807b-3697-4b8f-ab0f-b9c5c1bd7010" type="22" />
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="6" build="0" />
+    <region id="Config">
+        <node id="root">
+            <children>
+                <node id="Dependencies">
+                    <children>
+                        <node id="ModuleShortDesc">
+                            <attribute id="Folder" value="Character_Creation_Pack" type="30" />
+                            <attribute id="MD5" value="" type="23" />
+                            <attribute id="Name" value="Character_Creation_Pack" type="22" />
+                            <attribute id="UUID" value="b40e443e-badd-4727-82b3-f88a170c4db7" type="22" />
+                            <attribute id="Version" value="268435456" type="4" />
+                        </node>
+                        <node id="ModuleShortDesc">
+                            <attribute id="Folder" value="Shared_DOS" type="30" />
+                            <attribute id="MD5" value="" type="23" />
+                            <attribute id="Name" value="Shared_DOS" type="22" />
+                            <attribute id="UUID" value="eedf7638-36ff-4f26-a50a-076b87d53ba0" type="22" />
+                            <attribute id="Version" value="268435456" type="4" />
+                        </node>
+                        <node id="ModuleShortDesc">
+                            <attribute id="Folder" value="DivinityOrigins_1301db3d-1f54-4e98-9be5-5094030916e4" type="30" />
+                            <attribute id="MD5" value="" type="23" />
+                            <attribute id="Name" value="Divinity: Original Sin 2" type="22" />
+                            <attribute id="UUID" value="1301db3d-1f54-4e98-9be5-5094030916e4" type="22" />
+                            <attribute id="Version" value="373234071" type="4" />
+                        </node>
+                        <node id="ModuleShortDesc">
+                            <attribute id="Folder" value="ArmorSets" type="30" />
+                            <attribute id="MD5" value="" type="23" />
+                            <attribute id="Name" value="ArmorSets" type="22" />
+                            <attribute id="UUID" value="3da57b9d-8b41-46c7-a33c-afb31eea38a3" type="22" />
+                            <attribute id="Version" value="268435456" type="4" />
+                        </node>
+                    </children>
+                </node>
+                <node id="ModuleInfo">
+                    <attribute id="Author" value="" type="30" />
+                    <attribute id="CharacterCreationLevelName" value="" type="22" />
+                    <attribute id="Description" value="" type="30" />
+                    <attribute id="DescriptionName" value="" handle="ls::TranslatedStringRepository::s_HandleUnknown" type="28" />
+                    <attribute id="DisplayName" value="" handle="ls::TranslatedStringRepository::s_HandleUnknown" type="28" />
+                    <attribute id="Folder" value="DCO_c467f0b5-0b86-4dcf-9052-d23c95788bf4" type="30" />
+                    <attribute id="GMTemplate" value="" type="22" />
+                    <attribute id="LobbyLevelName" value="" type="22" />
+                    <attribute id="MD5" value="" type="23" />
+                    <attribute id="MenuLevelName" value="" type="22" />
+                    <attribute id="Name" value="DCO" type="22" />
+                    <attribute id="NumPlayers" value="2" type="1" />
+                    <attribute id="PhotoBooth" value="" type="22" />
+                    <attribute id="StartupLevelName" value="" type="22" />
+                    <attribute id="Tags" value="" type="30" />
+                    <attribute id="Type" value="Add-on" type="22" />
+                    <attribute id="UUID" value="c467f0b5-0b86-4dcf-9052-d23c95788bf4" type="22" />
+                    <attribute id="Version" value="419430400" type="4" />
+                    <children>
+                        <node id="PublishVersion">
+                            <attribute id="Version" value="909321303" type="4" />
+                        </node>
+                        <node id="Scripts">
+                            <children>
+                                <node id="Script">
+                                    <attribute id="UUID" value="826097c5-9bd7-4ad5-b3ce-9107235f69b8" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="6bbaaf29-b82d-4e73-a606-36fd4233825e" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="1c128227-34f4-4d84-aa1f-972166207b08" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="73032ca3-ff0b-4726-911f-a994a1f1f39b" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="9e0b5e39-072f-4b55-ae2b-e6b44972521f" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="80e3971e-8dbd-49e5-8f72-cc67356533a0" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="65a94541-4da8-47ca-a42d-05fe700db30b" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="2dd58a1d-d166-4bff-b5da-f4073976c466" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                                <node id="Script">
+                                    <attribute id="UUID" value="407c7435-761b-4093-857a-9f6cf7b2d5e5" type="22" />
+                                    <children>
+                                        <node id="Parameters">
+                                            <children>
+                                                <node id="Parameter">
+                                                    <attribute id="MapKey" value="HardcoreOnly" type="22" />
+                                                    <attribute id="Type" value="1" type="4" />
+                                                    <attribute id="Value" value="0" type="23" />
+                                                </node>
+                                            </children>
+                                        </node>
+                                    </children>
+                                </node>
+                            </children>
+                        </node>
+                        <node id="TargetModes">
+                            <children>
+                                <node id="Target">
+                                    <attribute id="Object" value="Story" type="22" />
+                                </node>
+                                <node id="Target">
+                                    <attribute id="Object" value="GM" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

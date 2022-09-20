@@ -1,0 +1,231 @@
+INIT
+	CHARACTER:__Me
+	INT:%SourceEmpoweredCounter
+	INT:%SourceEmpoweredCounterMax
+	SKILL:%AbilityIdentifier
+EVENTS
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	This script has nothing to do with movement. It used to. It does not anymore.
+//  This script is basically for dealing with adding skills to characters as they put points into things.
+//  Most of the heavy lifting is done by generated code in BlueSkillsBase.gameScript.
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+//When a player starts empowering, the current empowered skill count needs to be verified.
+EVENT PlayerSourceEmpowerCounter
+VARS
+	STRING:_Str
+	FIXEDSTRING:_Text
+	INT:_AbilCheck
+ON
+	OnCharacterStatusApplied(__Me, Blue_SourceEmpowered)
+ACTIONS
+	//Clearing cursed source (it cannot be used to empower)
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Source_Cursed)
+	THEN
+		SetTag(__Me, "Blue_Source_Cursed_Ignore")
+		CharacterAddSourcePoints(__Me, -1)
+		CharacterRemoveStatus(__Me, Blue_Source_Cursed)
+	ENDIF
+	Set(%SourceEmpoweredCounter, INT:0)
+	IF "c1"
+		IsTagged(__Me, "Blue_SourceMaximum_3_Tag")
+	THEN
+		Set(%SourceEmpoweredCounterMax, INT:3)
+	ELIF "c1"
+		IsTagged(__Me, "Blue_SourceMaximum_2_Tag")
+	THEN
+		Set(%SourceEmpoweredCounterMax, INT:2)
+	ELSE
+		Set(%SourceEmpoweredCounterMax, INT:1)
+	ENDIF
+	IF "c1"
+		CharacterGetAbility(_AbilCheck, __Me, Polymorph)
+	THEN
+		Add(%SourceEmpoweredCounterMax, _AbilCheck)
+	ENDIF
+	CharacterEvent(__Me, "Generic_Count_Empower")
+	CharacterEvent(__Me, "Pyrokinetic_Count_Empower")
+	CharacterEvent(__Me, "Hydrosophist_Count_Empower")
+	CharacterEvent(__Me, "Geomancer_Count_Empower")
+	CharacterEvent(__Me, "Aerotheurge_Count_Empower")
+	CharacterEvent(__Me, "Witchcraft_Count_Empower")
+	CharacterEvent(__Me, "Divine_Count_Empower")
+	CharacterEvent(__Me, "Rogue_Count_Empower")
+	CharacterEvent(__Me, "Knight_Count_Empower")
+	CharacterEvent(__Me, "Ranger_Count_Empower")
+	CharacterEvent(__Me, "Berserker_Count_Empower")
+	SetTag(__Me, "Blue_Empowering_RemoveOnly")
+	IF "c1"
+		IsLessThen(%SourceEmpoweredCounter, %SourceEmpoweredCounterMax)
+	THEN
+		SetTag(__Me, "Blue_Empowering")
+	ENDIF
+	Print(_Str, "[1]/[2] Empowering Slots used", %SourceEmpoweredCounter, %SourceEmpoweredCounterMax)
+	Cast(_Text, _Str)
+	StatusText(__Me, _Text)
+	
+EVENT PlayerSourceEmpowerRemoval
+ON
+	OnCharacterStatusRemoved(__Me, Blue_SourceEmpowered)
+ACTIONS
+	ClearTag(__Me, "Blue_Empowering_RemoveOnly")
+	ClearTag(__Me, "Blue_Empowering")
+
+//When a skill is unmemorized, the extra charges they unlock need to be unlearned.
+EVENT PlayerChargeCheckingRemove
+VARS
+	INT:_AbilityCheck
+	SKILL:_AbilityID
+ON
+	OnSkillDeactivated(__Me, _AbilityID)
+ACTIONS
+	IF "c1"
+		CharacterIsInParty(__Me)
+	THEN
+		Set(%AbilityIdentifier, _AbilityID)
+		//Generic event - Anything outside of the mod's core classes can hook into this and use the same generated script as below (with some modifications to work as a gamescript).
+		IF "c1"
+			IsTagged(__Me, "Blue_Empowering_RemoveOnly")
+		THEN
+			CharacterEvent(__Me, "Generic_Activate_Empower")
+			CharacterEvent(__Me, "Pyrokinetic_Activate_Empower")
+			CharacterEvent(__Me, "Hydrosophist_Activate_Empower")
+			CharacterEvent(__Me, "Geomancer_Activate_Empower")
+			CharacterEvent(__Me, "Aerotheurge_Activate_Empower")
+			CharacterEvent(__Me, "Witchcraft_Activate_Empower")
+			CharacterEvent(__Me, "Divine_Activate_Empower")
+			CharacterEvent(__Me, "Rogue_Activate_Empower")
+			CharacterEvent(__Me, "Knight_Activate_Empower")
+			CharacterEvent(__Me, "Ranger_Activate_Empower")
+			CharacterEvent(__Me, "Berserker_Activate_Empower")
+			CharacterRemoveStatus(__Me, Blue_SourceEmpowered)
+			IF "c1"
+				CharacterHasSkill(__Me, _AbilityID)
+			THEN
+				CharacterEvent(__Me, "Generic_Remove")
+				CharacterEvent(__Me, "Pyrokinetic_Remove")
+				CharacterEvent(__Me, "Hydrosophist_Remove")
+				CharacterEvent(__Me, "Geomancer_Remove")
+				CharacterEvent(__Me, "Aerotheurge_Remove")
+				CharacterEvent(__Me, "Witchcraft_Remove")
+				CharacterEvent(__Me, "Divine_Remove")
+				CharacterEvent(__Me, "Rogue_Remove")
+				CharacterEvent(__Me, "Knight_Remove")
+				CharacterEvent(__Me, "Ranger_Remove")
+				CharacterEvent(__Me, "Berserker_Remove")
+			ENDIF
+		ELSE
+			CharacterEvent(__Me, "Generic_Remove")
+			CharacterEvent(__Me, "Pyrokinetic_Remove")
+			CharacterEvent(__Me, "Hydrosophist_Remove")
+			CharacterEvent(__Me, "Geomancer_Remove")
+			CharacterEvent(__Me, "Aerotheurge_Remove")
+			CharacterEvent(__Me, "Witchcraft_Remove")
+			CharacterEvent(__Me, "Divine_Remove")
+			CharacterEvent(__Me, "Rogue_Remove")
+			CharacterEvent(__Me, "Knight_Remove")
+			CharacterEvent(__Me, "Ranger_Remove")
+			CharacterEvent(__Me, "Berserker_Remove")
+		ENDIF
+	ENDIF
+
+//When a skill is memorized, the extra charges they unlock need to be added.
+EVENT PlayerChargeCheckingAdd
+VARS
+	INT:_AbilityCheck
+	INT:_SecondAbilityCheck
+	SKILL:_AbilityID
+ON
+	OnSkillActivated(__Me, _AbilityID)
+ACTIONS
+	IF "c1"
+		CharacterIsInParty(__Me)
+	THEN
+		Set(%AbilityIdentifier, _AbilityID)
+		//Generic event - Anything outside of the mod's core classes can hook into this and use the same generated script as below (with some modifications to work as a gamescript).
+		IF "c1"
+			IsTagged(__Me, "Blue_Empowering_RemoveOnly")
+		THEN
+			CharacterEvent(__Me, "Generic_Activate_Empower")
+			CharacterEvent(__Me, "Pyrokinetic_Activate_Empower")
+			CharacterEvent(__Me, "Hydrosophist_Activate_Empower")
+			CharacterEvent(__Me, "Geomancer_Activate_Empower")
+			CharacterEvent(__Me, "Aerotheurge_Activate_Empower")
+			CharacterEvent(__Me, "Witchcraft_Activate_Empower")
+			CharacterEvent(__Me, "Divine_Activate_Empower")
+			CharacterEvent(__Me, "Rogue_Activate_Empower")
+			CharacterEvent(__Me, "Knight_Activate_Empower")
+			CharacterEvent(__Me, "Ranger_Activate_Empower")
+			CharacterEvent(__Me, "Berserker_Activate_Empower")
+			CharacterRemoveStatus(__Me, Blue_SourceEmpowered)
+			IF "c1"
+				CharacterHasSkill(__Me, _AbilityID)
+			THEN
+				CharacterEvent(__Me, "Generic_Activate")
+				CharacterEvent(__Me, "Pyrokinetic_Activate")
+				CharacterEvent(__Me, "Hydrosophist_Activate")
+				CharacterEvent(__Me, "Geomancer_Activate")
+				CharacterEvent(__Me, "Aerotheurge_Activate")
+				CharacterEvent(__Me, "Witchcraft_Activate")
+				CharacterEvent(__Me, "Divine_Activate")
+				CharacterEvent(__Me, "Rogue_Activate")
+				CharacterEvent(__Me, "Knight_Activate")
+				CharacterEvent(__Me, "Ranger_Activate")
+				CharacterEvent(__Me, "Berserker_Activate")
+			ENDIF
+		ELSE
+			CharacterEvent(__Me, "Generic_Activate")
+			CharacterEvent(__Me, "Pyrokinetic_Activate")
+			CharacterEvent(__Me, "Hydrosophist_Activate")
+			CharacterEvent(__Me, "Geomancer_Activate")
+			CharacterEvent(__Me, "Aerotheurge_Activate")
+			CharacterEvent(__Me, "Witchcraft_Activate")
+			CharacterEvent(__Me, "Divine_Activate")
+			CharacterEvent(__Me, "Rogue_Activate")
+			CharacterEvent(__Me, "Knight_Activate")
+			CharacterEvent(__Me, "Ranger_Activate")
+			CharacterEvent(__Me, "Berserker_Activate")
+		ENDIF
+	ENDIF
+
+//When a player puts (or removes) points into (or from) an ability, what skills they currently know need to be validated and added (or removed).
+EVENT PlayerAbilityCorrecter
+VARS
+	INT:_AbilityCheck
+	INT:_SecondAbilityCheck
+ON
+	OnCharacterCharacterEvent(__Me, __Me, "AbilityCorrecter")
+ACTIONS
+	//If the abilities are being corrected, then the player needs to be taken out of the empowering state.
+	//Otherwise a skill added here can get erroneously empowered as there's no distinction between a player adding a skill and the game.
+	IF "c1"
+		IsTagged(__Me, "Blue_Empowering_RemoveOnly")
+	THEN
+		ClearTag(__Me, "Blue_Empowering_RemoveOnly")
+		ClearTag(__Me, "Blue_Empowering")
+		CharacterRemoveStatus(__Me, Blue_SourceEmpowered)
+	ENDIF
+	//If skills are already in the process of getting added, that list needs cleared. Any skills on it will get re-added here anyways.
+	CharacterEvent(__Me, "Blue_ClearSkillsFromList")
+	//Generic event - Anything outside of the mod's core classes can hook into this and use the same generated script as below (with some modifications to work as a gamescript).
+	CharacterEvent(__Me, "Generic_Correcter")
+	CharacterEvent(__Me, "Pyrokinetic_Correcter")
+	CharacterEvent(__Me, "Hydrosophist_Correcter")
+	CharacterEvent(__Me, "Geomancer_Correcter")
+	CharacterEvent(__Me, "Aerotheurge_Correcter")
+	CharacterEvent(__Me, "Witchcraft_Correcter")
+	CharacterEvent(__Me, "Divine_Correcter")
+	CharacterEvent(__Me, "Rogue_Correcter")
+	CharacterEvent(__Me, "Knight_Correcter")
+	CharacterEvent(__Me, "Ranger_Correcter")
+	CharacterEvent(__Me, "Berserker_Correcter")
+	
+
+
+
+

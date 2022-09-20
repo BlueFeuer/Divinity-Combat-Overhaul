@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="0d8fc9d3-3d04-4533-a1f9-d5e3156f2c93">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DEMONIC_TUTELAGE" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Demonic Tutelage|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Approaching hostiles will get smashed by a demon fist.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Familiar_DemonicTutelage" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="FormatStringColor" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_DemonicTutelage" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_DemonicTutelage" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_DemonicTutelage_Target_01" />
+        <field name="Projectile" type="StringStatObjectFieldDefinition" value="Projectile_Status_DemonFist" />
+        <field name="Radius" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Charges" type="IntegerStatObjectFieldDefinition" value="999" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Enemy;NonSelf" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FLAMING_TONGUES" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Flaming Tongues|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Approaching hostiles will be blasted with fire damage.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_FlamingTongues" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_FlamingTongues_01" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_FlamingTongues" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_FlamingTongues" />
+        <field name="TargetEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_FlamingTongues_Target_01" />
+        <field name="Projectile" type="StringStatObjectFieldDefinition" value="Projectile_Status_FlamingTongue" />
+        <field name="Radius" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Charges" type="IntegerStatObjectFieldDefinition" value="999" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Enemy;NonSelf" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

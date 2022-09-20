@@ -1,0 +1,349 @@
+#INCLUDE State_Manager
+#INCLUDE CRIME_HumanReactions
+
+INIT
+	USING State_Manager
+	USING SHARED CRIME_HumanReactions
+	CHARACTER:__Me
+	CHARACTER:%TeleportTarget
+	TRIGGER:%CoveWaitingPoint = S_FTJ_TeleporterNPCCoveWaitingPoint_e8726316-0743-4c3d-96fc-262bb3ae8481
+	TRIGGER:%EntranceWaitingPoint = S_FTJ_TeleporterAtAlcoveEntrance_Point_686dd604-949f-4ed6-bf23-5fb1f3f4c58a
+	INT:%TeleportedToFirstPuzzlePlatform_Once = 0
+
+BEHAVIOUR
+REACTION State_LookingForUsers, 0
+USAGE PEACE
+ACTIONS
+	CharacterWander(FLOAT:3.0,FLOAT:2.0,0,TRIGGER:S_FTJ_TeleportNPCWander_Point_bba084ee-9343-4529-954e-53f0b2d402b8)
+	IterateCharactersNear(__Me,7.0,"FTJ_TeleporterNPCFindUser")
+
+
+//Wait For User at the entrance to the alcove
+REACTION State_WaitingForUserAtEntrance, 0
+VARS
+	INT:_Int
+	FLOAT:_Dist
+USAGE PEACE
+ACTIONS
+	IF "c1"
+		HasGlobalFlag("FTJ_TeleporterLeaveEntrance")
+	THEN
+		DialogStart(_,"FTJ_AD_TeleporterAtAlcoveEntrance",__Me)
+		SetPriority("AutomatedDialog_Interrupt",0)
+		Set(%currentState,"State_WaitingForUserAtCove")
+	ELSE
+		IF "c1&c2"
+			GetDistance(_Dist,__Me,%EntranceWaitingPoint)
+			IsGreaterThen(_Dist,0.1)
+		THEN
+			CharacterMoveTo(%EntranceWaitingPoint,1,1,1)
+			CharacterLookFrom(%EntranceWaitingPoint,1)
+			CharacterEvent(__Me,"ClearCrimeReturnPos")
+		ENDIF
+			IterateCharactersNear(__Me,3.0,"FTJ_FindUserNearEntrance")
+	ENDIF
+
+REACTION State_WaitingForUserAtCove, 0
+VARS
+	INT:_Int
+	FLOAT:_Dist
+USAGE PEACE
+ACTIONS
+	IF "c1&c2"
+		GetDistance(_Dist,__Me,%CoveWaitingPoint)
+		IsGreaterThen(_Dist,0.1)
+	THEN
+		CharacterMoveTo(%CoveWaitingPoint,1,1,1)
+		CharacterSetHasDialog(__Me,1)
+	ENDIF
+		Sleep(5.5)
+		GetRandomBetween(_Int,INT:0,INT:1)
+		IF "c1"
+			IsEqual(_Int,1)
+		THEN
+			DialogStart(_,"FTJ_AD_TeleporterNPC",__Me)
+		ENDIF
+
+
+
+//Try to teleport player to me
+REACTION State_StartTeleportPuzzle, 0
+USAGE PEACE
+ACTIONS
+	Set(%NPCOrgPos,FLOAT3:null)
+	Sleep(1.0)
+	IterateCharactersNear(__Me,16.5,"FTJ_FindTeleportTarget")
+		IF "!c1"
+			IsEqual(%TeleportTarget,null)
+		THEN
+			CharacterLookAt(%TeleportTarget,1,10)
+			CharacterUseSkill(Teleportation_EnemyFreeFall,%TeleportTarget,TRIGGER:S_FTJ_TelepoerterTeleportPlayerTo_Point_6ae7f67a-e72e-43e1-a4c4-866c680d4ec9)
+			Sleep(4.0)
+		ENDIF
+
+
+REACTION State_TeleportPuzzleSecondPhase, 0
+USAGE PEACE
+ACTIONS
+	CharacterMoveTo(TRIGGER:S_FTJ_TeleporterNPCPlatform_Point_6a02879c-70af-47a3-984e-e2e2ecb7c4a1)
+	CharacterLookFrom(TRIGGER:S_FTJ_TeleporterNPCPlatform_Point_6a02879c-70af-47a3-984e-e2e2ecb7c4a1)
+	Sleep(2)
+
+//Once teleported to last platform, kill Teleporter NPC
+REACTION State_FinishPuzzle, 0
+USAGE PEACE
+ACTIONS
+	SetPriority("AutomatedDialog_Interrupt",1700)
+	CharacterLookAt(TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe,0,10)
+	DialogStart(_,"FTJ_AD_TeleporterNPCDeath",__Me) //dialog waiting for 1.0 seconds to finish
+	Sleep(0.5)
+	CharacterSetHasDialog(__Me,0)
+	SetGlobalFlag("FTJ_TeleporterEscaped")
+	//CharacterForceUpdate(1)
+	CharacterMoveTo(TRIGGER:S_FTJ_GawinSwampRunTo_Point_7b8b1b35-de3a-40eb-aac2-c874289e92e3,1,1,1)
+	CharacterMoveTo(TRIGGER:S_FTJ_GawinSwampDeath_Point_656e9d77-6fbe-4425-b8c7-f7f8acb321f3,1,1,1)
+	CharacterDie(CHARACTER:S_FTJ_TeleporterNPC_4e291594-10ec-4c1f-a126-936e45ff875d)
+	CharacterForceUpdate(0)
+
+REACTION State_LeaveThroughCave, 0
+VARS
+	CHARACTER:_Player
+USAGE ALL
+ACTIONS
+	IF "c1"
+		GetClosestPlayer(_Player,__Me)
+	THEN
+		CharacterLookAt(_Player,0,10)
+	ENDIF
+	DialogStart(_,"FTJ_AD_TeleporterBetrayed",__Me)
+	Sleep(4.0)
+	CharacterForceUpdate(1)
+	CharacterMoveTo(ITEM:S_FTJ_CaveEntranceToPrison_e2cbcf37-16ed-420d-ab04-41c1723bd188,1,0,1)
+	TeleportTo(__Me,TRIGGER:S_FTJ_GawinDeath_Point_ed67b0f1-a238-46c0-8e38-03da8e2087e3,1)
+	CharacterDie(__Me)
+	CharacterForceUpdate(0)
+
+REACTION State_TeleportedBackToAlcove, 0
+VARS
+	CHARACTER:_Player
+USAGE ALL
+ACTIONS
+	IF "c1"
+		GetClosestPlayer(_Player,__Me)
+	THEN
+		CharacterLookAt(_Player,0,10)
+	ENDIF
+	SetPriority("AutomatedDialog_Interrupt",1700)
+	DialogStart(_,"FTJ_AD_TeleporterBetrayed",__Me)
+	CharacterForceUpdate(1)
+	CharacterEvent(__Me,"GEN_CharacterDisableAllCrimesBeforeDisappear")
+	CharacterDisappear(180,1)
+	TeleportTo(__Me,TRIGGER:S_FTJ_GawinDeath_Point_ed67b0f1-a238-46c0-8e38-03da8e2087e3,1)
+	CharacterDie(__Me)
+	CharacterForceUpdate(0)
+
+
+EVENTS
+EVENT oninitaddskill
+ON
+	OnInit()
+ACTIONS
+	CharacterAddSkill(__Me, Teleportation_EnemyFreeFall)
+
+
+EVENT RecievedQuestItem
+VARS
+	CHARACTER:_Char
+ON
+	OnCharacterFlagSet("FTJ_TeleporterClosed",_Char)
+ACTIONS
+	IF "!c1"
+		CharacterIsInTrigger(__Me,TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe)
+	THEN
+		CharacterSetHasDialog(__Me,0)
+		SetFlag(__Me,"FTJ_WaitingInAlcove")
+		CharacterEvent(__Me,"ClearCrimeReturnPos")
+		Set(%currentState,"State_WaitingForUserAtEntrance")
+	ENDIF
+
+EVENT IteratorForUncheckedUsers
+VARS
+	CHARACTER:_Char
+ON
+	OnIterateCharacter(_Char,"FTJ_TeleporterNPCFindUser")
+ACTIONS
+	IF "!c1"
+		HasUserFlag(_Char,"FTJ_TeleporterCheckedUser")
+	THEN
+		IF "c1&!c2&c3&!c4&!c5&!c6&!c7&!c8&!c9"
+			CharacterCanSee(__Me,_Char,1)				//c1
+			IsEqual(_Char,__Me)							//!c2
+			CharacterIsPlayer(_Char)					//c3
+			CharacterIsDead(_Char,0)					//!c4
+			IsInCombat(_Char)							//!c5
+			CharacterHasStatus(_Char,"UNSHEATHED")		//!c6
+			CharacterIsSummon(_Char)					//!c7
+			CharacterIsPolymorphInteractionDisabled(_Char) //!c8
+			CharacterIsPartyFollower(_Char)				//!c9
+		THEN
+			SetFlag(_Char,"FTJ_TeleporterNPCAquireNewUser")
+		ENDIF
+	ENDIF
+
+//look for users near the Alcove entrance before going in
+EVENT IteratorForAlcoveEntrance
+VARS
+	CHARACTER:_Char
+ON
+	OnIterateCharacter(_Char,"FTJ_FindUserNearEntrance")
+ACTIONS
+	IF "c1"
+		HasUserFlag(_Char,"FTJ_TeleporterClosed")
+	THEN
+		IF "c1&!c2&c3&!c4&!c5&!c6&!c7&!c8&!c9"
+			CharacterCanSee(__Me,_Char,1)				//c1
+			IsEqual(_Char,__Me)							//!c2
+			CharacterIsPlayer(_Char)					//c3
+			CharacterIsDead(_Char)						//!c4
+			IsInCombat(_Char)							//!c5
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe)//!c6
+			CharacterIsSummon(_Char)					//!c7
+			CharacterIsPolymorphInteractionDisabled(_Char) //!c8
+			CharacterIsPartyFollower(_Char)				//!c9
+		THEN
+			SetGlobalFlag("FTJ_TeleporterLeaveEntrance")
+		ELIF "c1"
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe)
+		THEN
+			Set(%currentState,"State_TeleportPuzzleSecondPhase")
+		ENDIF
+	ENDIF
+
+
+EVENT IteratorForViableTeleportTargets
+VARS
+	CHARACTER:_Char
+ON
+	OnIterateCharacter(_Char,"FTJ_FindTeleportTarget")
+ACTIONS
+		//Blue's edit - The vanilla game only checks for Teleportation_Freefall, which cannot be acquired in this mod.
+		IF "!c1&c2&!c3&!c4&c5&c6&!c8&!c9&!c10&!c11&!c12&(c7|c13|c14|c15)"
+			IsEqual(_Char,__Me)							//!c1
+			CharacterIsPlayer(_Char)					//c2
+			CharacterIsDead(_Char)						//!c3
+			IsInCombat(_Char)							//!c4
+			IsEqual(%TeleportTarget,null)				//c5
+			HasUserFlag(_Char,"FTJ_TeleporterClosed")		//c6
+			CharacterHasSkill(_Char,Teleportation_FreeFall) //c7
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleSecondPlatform_EventTrigger_54ccb11a-7933-492b-ab35-afc8087fb28d) //!c8
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe) //!c9
+			CharacterIsSummon(_Char)					//!c10
+			CharacterIsPolymorphInteractionDisabled(_Char) //!c11
+			CharacterIsPartyFollower(_Char)				//!c12
+			CharacterHasSkill(_Char,Blue_Item_Teleportation_Teleport) //c13
+			CharacterHasSkill(_Char,Blue_Teleportation_Teleport) //c14
+			CharacterHasSkill(_Char,Blue_Teleportation_Teleport_SE) //c15
+		THEN
+			Set(%TeleportTarget,_Char)
+		ELIF "!c1&c2&!c3&!c4&c5&c6&!c8&c9&!c10&!c11&!c12&(c7|c13|c14|c15)"
+			IsEqual(_Char,__Me)							//!c1
+			CharacterIsPlayer(_Char)					//c2
+			CharacterIsDead(_Char)						//!c3
+			IsInCombat(_Char)							//!c4
+			IsEqual(%TeleportTarget,null)				//c5
+			HasUserFlag(_Char,"FTJ_TeleporterClosed")		//c6
+			CharacterHasSkill(_Char,Teleportation_FreeFall) //c7
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleSecondPlatform_EventTrigger_54ccb11a-7933-492b-ab35-afc8087fb28d) //!c8
+			CharacterIsInTrigger(_Char,TRIGGER:S_FTJ_TelportPuzzleFirstPlatform_EventTrigger_1c4d9f18-07fb-41f6-b39b-daece074befe) //!c9
+			CharacterIsSummon(_Char)					//!c10
+			CharacterIsPolymorphInteractionDisabled(_Char) //!c11
+			CharacterIsPartyFollower(_Char)				//!c12
+			CharacterHasSkill(_Char,Blue_Item_Teleportation_Teleport) //c13
+			CharacterHasSkill(_Char,Blue_Teleportation_Teleport) //c14
+			CharacterHasSkill(_Char,Blue_Teleportation_Teleport_SE) //c15
+		THEN
+			Set(%currentState,"State_TeleportPuzzleSecondPhase")
+		ENDIF
+
+
+
+EVENT TeleportedToFirstPuzzlePlatform
+ON
+	OnTriggerEnter(__Me,_,"FTJ_TeleporterNPCOnPlatform")
+ACTIONS
+	IF "c1"
+		IsEqual(%TeleportedToFirstPuzzlePlatform_Once,0)
+	THEN
+		ClearFlag(__Me,"FTJ_WaitingInAlcove")
+		SetGlobalFlag("FTJ_TeleporterOnFirstPlatform")
+		IF "!c1"
+			IsInCombat(__Me)
+		THEN
+			DialogStart(_,"FTJ_AD_TeleporterNPCCasting",__Me)
+		ENDIF
+		SetFlag(__Me,"FTJ_TeleportSecondPhase")
+		Set(%currentState,"State_StartTeleportPuzzle")
+		Set(%TeleportedToFirstPuzzlePlatform_Once,1)
+	ENDIF
+
+
+
+EVENT TeleportedToSecondPuzzlePlatform
+ON
+	OnTriggerEnter(__Me,_,"FTJ_KillTeleporter")
+ACTIONS
+	CallFunction("Function_Leave")
+	Set(%currentState,"State_FinishPuzzle")
+
+//once the player gets onto the platform with him
+EVENT PlayerTeleportedToSecondPuzzlePlatform
+VARS
+	CHARACTER:_Player
+ON
+		OnTriggerEnter(_Player,_,"FTJ_TeleporterNPCOnPlatform")
+ACTIONS
+	IF "!c1&c2&c3&c4&!c5"
+		IsEqual(_Player,null)
+		CharacterIsPlayer(_Player)		//c1
+		CharacterHasSkill(_Player,Teleportation_FreeFall) //c2
+		HasUserFlag(_Player,"FTJ_TeleporterClosed")
+		IsEqual(%currentState,"State_TeleportedBackToAlcove")
+	THEN
+		DialogStart(_,"FTJ_AD_TeleporterNPCOnPlatformWithPlayer",__Me)
+		Set(%currentState,"State_TeleportPuzzleSecondPhase")
+	ENDIF
+
+//If teleported to the river below, run off
+EVENT EnteredRiver
+ON
+	OnTriggerEnter(__Me,_,"FTJ_EnteredRiverBelowTeleporter")
+ACTIONS
+	CallFunction("Function_Leave")
+	Set(%currentState,"State_LeaveThroughCave")
+
+//iff player teleports him back to Alcove
+EVENT TeleportedBackToAlcove
+ON
+	OnTriggerEnter(__Me,_,"FTJ_TeleportBackToAlcove")
+ACTIONS
+	IF "c1"
+		HasGlobalFlag("FTJ_TeleporterOnFirstPlatform")
+	THEN
+		CallFunction("Function_Leave")
+		Set(%currentState,"State_TeleportedBackToAlcove")
+	ENDIF
+
+
+EVENT Function_Leave
+ON
+	OnFunction("Function_Leave")
+ACTIONS
+	IF "c1"
+		IsInDialog(__Me)
+	THEN
+		CharacterEvent(__Me,"ForceStopDialog")
+	ENDIF
+	CharacterEvent(__Me,"ClearPeaceReturn")
+	CharacterEvent(__Me,"ClearCrimeReturnPos")
+	CharacterApplyStatus(__Me,HALL_OF_ECHOES,-1,1)
+	CharacterSetHasDialog(__Me,0)

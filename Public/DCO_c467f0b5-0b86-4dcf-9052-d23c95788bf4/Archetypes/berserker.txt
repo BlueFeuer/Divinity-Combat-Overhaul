@@ -1,0 +1,28 @@
+USING melee
+
+// Beserker doesn't care about flanking
+MULTIPLIER_ENDPOS_FLANKED					0.00
+
+FALLBACK_ALLIES_NEARBY						0.00
+FALLBACK_ENEMIES_NEARBY						0.00
+FALLBACK_WANTED_ENEMY_DISTANCE					0.00
+
+// Beserker doesn't care if an enemy is already being targeted, and cares less if it's so by > 2 enemies
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE				1.00
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE		0.80 //BlueOverride, default 0.6
+
+// Berserker doesn't care much about healing themselves - or others
+MULTIPLIER_HEAL_SELF_POS						0.0
+MULTIPLIER_HEAL_ALLY_POS						0.0
+MULTIPLIER_HEAL_NEUTRAL_POS						0.0
+MULTIPLIER_HOT_SELF_POS							0.0
+MULTIPLIER_HOT_ALLY_POS							0.0
+MULTIPLIER_HOT_NEUTRAL_POS						0.0
+
+// Beserker doesn't save action points, he goes for it as far as he can!
+ENABLE_SAVING_ACTION_POINTS					0
+
+// A general multiplier for all reflected damage
+MULTIPLIER_REFLECT_DAMAGE						0.0
+
+MULTIPLIER_ENDPOS_ENEMIES_NEARBY				0.30 //BlueOverride

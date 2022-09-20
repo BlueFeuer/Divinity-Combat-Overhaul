@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shocking Touch" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShockingTouch_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shocking Touch (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShockingTouch_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target and apply Shocked (3), before bouncing to another target within 7m range.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShockingTouch_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guiding Winds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FavourableWind_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guiding Winds (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FavourableWind_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Give the target 20% movement speed and 70% deflection for 2 turns while they are within 11m of you and you are not disabled or Blind.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FavourableWind_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Electric Discharge" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElectricDischarge_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Electric Discharge (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElectricDischarge_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target and apply Shocked (3).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElectricDischarge_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thunderjump" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderjump_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thunderjump (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderjump_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Jump towards your target and the nearest enemy within 8m, dealing [1] and applying Shocked (2), and land on the other side them.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderjump_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cyclone" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cyclone_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cyclone (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cyclone_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create a 3m circle of high winds for 1 turn. Those inside gain 60% Deflection and lose 40% Accuracy.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cyclone_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Force enemies within 8 meters of you closer.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CycloneOld_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Teleport" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Teleport_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Teleport (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Teleport_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Teleport an item or character to a point of your choosing, dealing [1].&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Teleport_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pressure Spike" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PressureSpike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Pressure Spike (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PressureSpike_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Condense all cloud surfaces in the target 3m radius and douse fire. Deal [1] increasing up to [2] depending on the amount of surface cleared.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 6&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PressureSpike_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dazing Bolt" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DazingBolt_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dazing Bolt (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DazingBolt_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Strike the target 2m radius with lightning, dealing [1] to characters and items in the area and applying Shocked (1) and Torpid (1).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 8&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DazingBolt_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Make Invisible" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MakeInvisible_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Make Invisible (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MakeInvisible_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Make the target invisible. Wet clears invisibility.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 8&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MakeInvisible_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Netherswap" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Netherswap_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Netherswap (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Netherswap_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Make two characters switch places. One of the characters can be you.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Netherswap_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Rending Gale" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_RendingGale_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Rending Gale (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_RendingGale_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Call on a relentless and sharp wind to break down defenses in the target 3m radius, dealing [1], and applying Bleeding (3) and Sundered (2).&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_RendingGale_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tornado" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tornado_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tornado (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tornado_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] and apply Slowed (3) and Chilled (3) to those hit. Clears surfaces from the battlefield.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Tornado_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Superconductor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Superconductor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Superconductor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Superconductor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Send lightning to all within 7m range, dealing [1] and applying Shocked (1) before forking off to all targets within a 7m radius.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Superconductor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Chain Lightning" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ChainLightning_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Chain Lightning (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ChainLightning_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shoot a stunning bolt of lightning that forks up to [2] times within an 8m radius and deals [1] to each target as well as applying Shocked (2).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 10&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ChainLightning_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protection Bubble" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ProtectionBubble_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protection Bubble (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ProtectionBubble_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect the target with a magical bubble, allowing them to ignore cloud surfaces, granting 50% increased resistance to elements, and immunity to Muted for 3 turns.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ProtectionBubble_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thunderstorm" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderstorm_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Thunderstorm (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderstorm_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="A storm rages in the target area, causing random lightning strikes that deal [1] in a 2m radius and apply Shocked (2) every turn for 2 turns.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Thunderstorm_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wither" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Wither_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wither (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Wither_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply a disease to the target that spreads every turn, lowering those afflicted attributes in a steadily growing amount for 3 turns. Removed by Strong or Antidote.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Wither_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Howling Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HowlingArmor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Howling Armor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HowlingArmor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Wind forms into an armor around you, blowing back attackers and taunting those near you.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HowlingArmor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Zone of Sweet Air" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ZoneofSweetAir_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Zone of Sweet Air (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ZoneofSweetAir_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Clear and purify the air, removing all clouds, restoring [1] to your allies, and clearing Suffocating, Poisoned, Diseased, and Decaying on your allies.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ZoneofSweetAir_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Audacity" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Audacity_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Audacity (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Audacity_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Reduce the AP cost of all abilities by 1 for 3 turns.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;br&gt;EMPOWERMENT BONUS&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Audacity_Description" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="ccb60956-ad30-4403-9b59-fa09d1a8f80c">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Oil" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="33" enumeration_type_name="Surface Type" />
+        <field name="SurfaceStatusChance" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="OILED,100,1" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="TotalSurfaceCells" type="IntegerStatObjectFieldDefinition" value="120" />
+        <field name="SurfaceGrowStep" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="SurfaceGrowInterval" type="IntegerStatObjectFieldDefinition" value="150" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Earth_OilRain" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Oil Rain|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Call down an Oil Rain, that sets Oiled on all characters and produces Oil puddles.|" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_aoe_water_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_Oil_01" />
+        <field name="ConsequencesStartTime" type="IntegerStatObjectFieldDefinition" value="1000" />
+        <field name="CycleConditions" type="StringStatObjectFieldDefinition" value="Enemy;!Dead" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Water" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="6" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="SkillTier" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="5" enumeration_type_name="Surface Type" />
+        <field name="SurfaceStatusChance" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="WET,100,1;" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="TotalSurfaceCells" type="IntegerStatObjectFieldDefinition" value="250" />
+        <field name="SurfaceGrowStep" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="SurfaceGrowInterval" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="WaterSpecialist 1" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Water_Rain" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Rain" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Create water surfaces." />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Radius: [1]&lt;br&gt;Duration: [2]&lt;br&gt;Creates water puddles on terrain, douses fires, and makes characters wet. Wet makes target less resistant to air spells but more resistant to fire spells." />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="AreaRadius;Lifetime" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Water_Prepare_Water_Root_01,KeepRot;RS3_FX_Skills_Water_Prepare_Water_Hand_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_aoe_water_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Water_Cast_AoE_Water_Root_01" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_01" />
+        <field name="ConsequencesStartTime" type="IntegerStatObjectFieldDefinition" value="1000" />
+        <field name="CycleConditions" type="StringStatObjectFieldDefinition" value="Character;!Dead" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyWater" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="Water" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyWater_Blessed" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyWater" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="30" enumeration_type_name="Surface Type" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" clear_inherited_value="true" value="" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Sap Rain" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_totem_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Water_Prepare_Divine_Root_01,KeepRot:Dummy_Root" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_HolyPoison_01" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Blood" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="9" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="17" enumeration_type_name="Surface Type" />
+        <field name="SurfaceStatusChance" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="BLEEDING,100,2;Douse" />
+        <field name="TargetRadius" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Enemy" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="TotalSurfaceCells" type="IntegerStatObjectFieldDefinition" value="120" />
+        <field name="SurfaceGrowStep" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="SurfaceGrowInterval" type="IntegerStatObjectFieldDefinition" value="150" />
+        <field name="MemorizationRequirements" type="StringStatObjectFieldDefinition" value="WaterSpecialist 1; Necromancy 1" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Decay_BloodRain" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Rain Of Blood" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Create blood surfaces. Set Bleeding to enemies.|" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Radius: [1]&lt;br&gt;Duration: [2]" />
+        <field name="StatsDescriptionParams" type="StringStatObjectFieldDefinition" value="AreaRadius;Lifetime" />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_water_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Voodoo_Prepare_Voodoo_Blood_Root_01,KeepRot,Detach;RS3_FX_Skills_Voodoo_Prepare_Voodoo_Blood_Hand_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_aoe_water_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Voodoo_Cast_AoE_Water_Root_01" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_Blood_01" />
+        <field name="ConsequencesStartTime" type="IntegerStatObjectFieldDefinition" value="1000" />
+        <field name="CycleConditions" type="StringStatObjectFieldDefinition" value="Enemy;!Dead" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyBlood" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="Blood" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyFire" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="Blood" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="Surface Type" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="BURNING,100,2;" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Rain of Fire" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Create fire surfaces. Set Burning to enemies.|" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Fire_Prepare_Voodoo_Root_01,KeepRot;RS3_FX_Skills_Fire_Prepare_Voodoo_Hand_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Fire_Cast_Aoe_Voodoo_Root_01;RS3_FX_Skills_Fire_Cast_Aoe_Voodoo_Hand_01:Dummy_L_HandFX,Dummy_R_HandFX" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_Fire_01" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="5" enumeration_type_name="SkillAbility" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Fire_MeteorStrike" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyBlood_Windego" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyBlood" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="23" enumeration_type_name="Surface Type" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="BLEEDING,100,2" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="TotalSurfaceCells" type="IntegerStatObjectFieldDefinition" value="300" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Void Rain|" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemySunshine" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyWater" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillAbility" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillTier" />
+        <field name="Requirement" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="SkillRequirement" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="SurfaceType" type="EnumerationStatObjectFieldDefinition" value="75" enumeration_type_name="Surface Type" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="QUEST_SUNSHINE,100,2" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Sunshine" />
+        <field name="RainEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Environment_Rain_Sunshine_01" />
+        <field name="AiCalculationSkillOverride" type="StringStatObjectFieldDefinition" value="Target_DummyTargetSkill_Buff" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Ally;Tagged:ARX_KEMMSGARDEN_WET" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="ConsequencesStartTime" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="ConsequencesDuration" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_shout_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_shout_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Divine_Prepare_Divine_Root_01,KeepRot:Dummy_Root;RS3_FX_Skills_Divine_Prepare_Divine_Hand_01:Dummy_L_HandFX:hand01;RS3_FX_Skills_Divine_Prepare_Divine_Hand_02:Dummy_R_HandFX:hand02" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EnemyRain_Short" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="EnemyWater" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Light Shower" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="IsEnemySkill" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="AiCalculationSkillOverride" type="StringStatObjectFieldDefinition" value="Target_DummyTargetSkill_Buff" />
+        <field name="Lifetime" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="ConsequencesStartTime" type="IntegerStatObjectFieldDefinition" value="1000" />
+        <field name="ConsequencesDuration" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_shout_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_shout_01_loop" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

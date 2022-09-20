@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="513ac14f-aa69-4d58-ad57-03d69aa19771" type="22" />
+					<attribute id="Name" value="Blue_Summons_MechanicalRat" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="character" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="ca3e0664-8853-4d83-b239-44851425d748" type="22" />
+					<attribute id="PhysicsTemplate" value="054af4cb-acdc-4156-b9aa-215eaa951fcf" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="Eternal Protector" type="28" handle="hdd9d4f89g5bd3g4fd3gb80fg303f2870d33e" />
+					<attribute id="Icon" value="Portrait_Creatures_Raanaar_Automaton_A" type="22" />
+					<attribute id="Stats" value="GEN_Automaton" type="22" />
+					<attribute id="Equipment" value="GEN_Automaton" type="22" />
+					<attribute id="WalkSpeed" value="2" type="6" />
+					<attribute id="ClimbAttachSpeed" value="4" type="6" />
+					<attribute id="ClimbLoopSpeed" value="4" type="6" />
+					<attribute id="ClimbDetachSpeed" value="2.44" type="6" />
+					<attribute id="RunSpeed" value="8" type="6" />
+					<attribute id="CanClimbLadders" value="False" type="19" />
+					<attribute id="HitFX" value="RS3_FX_GP_Combat_Hit_Stone_01_Large" type="22" />
+					<attribute id="BloodSurfaceType" value="SurfaceNone" type="22" />
+					<attribute id="ExplodedResourceID" value="de0e7d8e-5db0-4e5a-bbe4-66b9d61de617" type="22" />
+					<attribute id="ExplosionFX" value="RS3_FX_GP_Combat_CorpseExplosion_Automaton_01_Large" type="22" />
+					<attribute id="CanOpenDoors" value="False" type="19" />
+					<attribute id="LevelOverride" value="-1" type="4" />
+					<attribute id="SoundInitEvent" value="6d8be5a3-16cd-4750-b220-84c53d31bb82" type="22" />
+					<attribute id="IsLootable" value="True" type="19" />
+					<attribute id="SpeakerGroup" value="00efc7b5-aa56-44d2-82f2-eff30e451e1e" type="23" />
+					<attribute id="Random" value="9223372036854775808" type="24" />
+					<attribute id="RagdollTemplate" value="a16c345a-508c-4136-a240-b11a93dd33c9" type="22" />
+					<attribute id="Alignment" value="Neutral NPC" type="22" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" value="CONSTRUCT" type="22" />
+								</node>
+								<node id="Tag">
+									<attribute id="Object" value="AUTOMATON" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="2" type="1" />
+							<attribute id="Min" value="-0.376378 0.00100085 -1.06986" type="12" />
+							<attribute id="Max" value="0.376378 1.14233 1.07821" type="12" />
+							<attribute id="Radius" value="0.7" type="6" />
+							<attribute id="Height" value="2.25" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="hd7b5625fgac24g454fgbdbbgc04b07d020a1" />
+						</node>
+						<node id="OnDeathActions" />
+						<node id="SkillList">
+							<children>
+								<node id="Skill">
+									<attribute id="Skill" value="Jump_AutomatonJetJump" type="22" />
+									<attribute id="ScoreModifier" value="1.15" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Shout_EnemyReactiveArmor" type="22" />
+									<attribute id="ScoreModifier" value="1.25" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="Skill" value="Zone_EnemyAutomatonElectricRay" type="22" />
+									<attribute id="ScoreModifier" value="1" type="6" />
+									<attribute id="StartRound" value="0" type="4" />
+									<attribute id="MinimumImpact" value="0" type="4" />
+									<attribute id="CasualExplorer" value="True" type="19" />
+									<attribute id="Classic" value="True" type="19" />
+									<attribute id="TacticianHardcore" value="True" type="19" />
+									<attribute id="HonorHardcore" value="True" type="19" />
+									<attribute id="OnlyCastOnSelf" value="False" type="19" />
+									<attribute id="AIFlags" value="0" type="1" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MinimumHealthPercentage" value="0" type="4" />
+											<attribute id="MaximumHealthPercentage" value="100" type="4" />
+											<attribute id="HasNoPhysicalArmor" value="False" type="19" />
+											<attribute id="HasNoMagicalArmor" value="False" type="19" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="ItemList" />
+						<node id="Scripts">
+							<children>
+								<node id="Script">
+									<attribute id="UUID" value="5bc80992-a7f6-4da6-83e2-3d276384d8f7" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="AiHint" type="22" />
+													<attribute id="Type" value="4" type="4" />
+													<attribute id="Value" value="0xbaadf00d" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="Archetype" type="22" />
+													<attribute id="Type" value="30" type="4" />
+													<attribute id="Value" value="berserker" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="FleeFromDangerousSurface" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="StayInAiHints" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanChickenFlee" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanCower" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanFleeWhileCowering" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CombatFallbackAD" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Script">
+									<attribute id="UUID" value="3cb75402-13e7-4dd2-8bdb-30accf707b1b" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="AnimationToLoop" type="22" />
+													<attribute id="Type" value="4" type="4" />
+													<attribute id="Value" value="" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="CanMoveToDeadAutomaton" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="CancelOverrideOnCombat" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="CreateCapacitor" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Script">
+									<attribute id="UUID" value="8fd9ad7d-3bc4-4252-8e1a-5c22924fe5ce" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Treasures">
+							<attribute id="TreasureItem" value="Automaton_Air" type="22" />
+						</node>
+						<node id="TradeTreasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterLyingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterSittingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterDeadPicking" type="22" />
+							<attribute id="MapValue" value="80e61a14-528e-46a0-8f84-3f0b827ab03f" type="22" />
+						</node>
+						<node id="FootStepInfos" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,190 @@
+requirement "ExtraStatPoints","Level 8"
+
+requirement "ExtraSkillPoints","Level 8"
+
+requirement "Flanking","WarriorLore 5"
+
+requirement "AttackOfOpportunity","SingleHanded 1"
+
+requirement "ResistDead",""
+
+requirement "Carry",""
+
+requirement "Durability",""
+
+requirement "AnimalEmpathy",""
+
+requirement "Escapist","SingleHanded 8"
+
+requirement "StandYourGround",""
+
+requirement "SurpriseAttack",""
+
+requirement "LightStep",""
+
+requirement "ResurrectToFullHealth","DualWielding 5"
+
+requirement "Scientist",""
+
+requirement "Raistlin","Level 8"
+
+requirement "MrKnowItAll",""
+
+requirement "WhatARush",""
+
+requirement "FaroutDude",""
+
+requirement "Leech","!TALENT_Unstable"
+
+requirement "ElementalAffinity",""
+
+requirement "FiveStarRestaurant",""
+
+requirement "Bully",""
+
+requirement "ElementalRanger",""
+
+requirement "LightningRod","AirSpecialist 5"
+
+requirement "Politician",""
+
+requirement "WeatherProof","EarthSpecialist 5"
+
+requirement "LoneWolf",""
+
+requirement "Zombie",""
+
+requirement "Demon","Polymorph 1;!TALENT_IceKing"
+
+requirement "IceKing","Perseverance 1;!TALENT_Demon"
+
+requirement "Courageous","!TALENT_Escapist"
+
+requirement "GoldenMage",""
+
+requirement "WalkItOff",""
+
+requirement "FolkDancer","Sneaking 1"
+
+requirement "SpillNoBlood","SingleHanded 1"
+
+requirement "Stench","Level 8"
+
+requirement "WarriorLoreNaturalArmor","WarriorLore 1"
+
+requirement "WarriorLoreNaturalHealth","WarriorLore 3"
+
+requirement "WarriorLoreNaturalResistance","WarriorLore 5"
+
+requirement "WarriorLoreGrenadeRange","!TALENT_ViolentMagic;!TALENT_Torturer"
+
+requirement "RangerLoreArrowRecover",""
+
+requirement "RangerLoreEvasionBonus","RangerLore 4"
+
+requirement "RangerLoreRangedAPBonus","RangerLore 5"
+
+requirement "Sight","RangerLore 2"
+
+requirement "NoAttackOfOpportunity",""
+
+requirement "RogueLoreDaggerAPBonus","RogueLore 1"
+
+requirement "RogueLoreDaggerBackStab",""
+
+requirement "RogueLoreMovementBonus","RogueLore 2"
+
+requirement "RogueLoreHoldResistance","RogueLore 5"
+
+requirement "RogueLoreGrenadePrecision","RogueLore 1"
+
+requirement "ExtraWandCharge","Wand 1"
+
+requirement "DualWieldingBlock","DualWielding 1"
+
+requirement "BeastMaster","Summoning 2"
+
+requirement "Executioner",""
+
+requirement "QuickStep",""
+
+requirement "Backstab",""
+
+requirement "Trade",""
+
+requirement "Lockpick",""
+
+requirement "ChanceToHitRanged",""
+
+requirement "ChanceToHitMelee",""
+
+requirement "Damage",""
+
+requirement "ActionPoints",""
+
+requirement "ActionPoints2",""
+
+requirement "Criticals",""
+
+requirement "IncreasedArmor",""
+
+requirement "ResistFear",""
+
+requirement "ResistKnockdown",""
+
+requirement "ResistStun",""
+
+requirement "ResistPoison",""
+
+requirement "ResistSilence",""
+
+requirement "ItemMovement",""
+
+requirement "ItemCreation",""
+
+requirement "Throwing",""
+
+requirement "Repair",""
+
+requirement "ExpGain",""
+
+requirement "Awareness",""
+
+requirement "Vitality",""
+
+requirement "FireSpells",""
+
+requirement "WaterSpells",""
+
+requirement "AirSpells",""
+
+requirement "EarthSpells",""
+
+requirement "Charm",""
+
+requirement "Intimidate",""
+
+requirement "Reason",""
+
+requirement "Luck",""
+
+requirement "Initiative",""
+
+requirement "InventoryAccess",""
+
+requirement "AvoidDetection",""
+
+requirement "Kickstarter",""
+
+requirement "ViolentMagic","!TALENT_Torturer;!TALENT_WarriorLoreGrenadeRange"
+
+requirement "Perfectionist","FireSpecialist 5"
+
+requirement "Torturer","SingleHanded 2;!TALENT_ViolentMagic;!TALENT_WarriorLoreGrenadeRange"
+
+requirement "DualWieldingDodging","SingleHanded 5"
+
+requirement "LivingArmor",""
+
+requirement "Unstable","!TALENT_Leech"
+

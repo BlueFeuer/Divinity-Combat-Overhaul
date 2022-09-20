@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="d457b3d6-9108-4583-9ee3-2ea0ed1da59c" type="22" />
+					<attribute id="Name" value="Blue_SurfaceBlood" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="surface" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="" type="22" />
+					<attribute id="PhysicsTemplate" value="" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="BLOODY BLOOD" type="28" handle="ResStr_80855298" />
+					<attribute id="Description" value="testest" type="28" handle="ResStr_73be5f8b" />
+					<attribute id="DecalMaterial" value="4dbf3e9b-7e58-4ec0-b4b7-22c4e47939f6" type="22" />
+					<attribute id="SurfaceGrowTimer" value="0" type="6" />
+					<attribute id="FadeOutSpeed" value="5" type="6" />
+					<attribute id="Summon" value="8921ef15-d694-49c2-9721-95ddf0c6652e" type="22" />
+					<children>
+						<node id="Tags" />
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="InstanceVisual" />
+						<node id="IntroFX" />
+						<node id="FX">
+							<children>
+								<node id="FX">
+									<attribute id="Visual" value="a8ad3a49-c4d3-468c-be98-7032822c79e4" type="22" />
+									<attribute id="Height" value="0 0" type="11" />
+									<attribute id="Rotation" value="0 0" type="8" />
+									<attribute id="Scale" value="1 1" type="11" />
+									<attribute id="GridSize" value="4" type="6" />
+									<attribute id="SpawnCell" value="100" type="4" />
+									<attribute id="RandomPlacement" value="0" type="6" />
+									<attribute id="SurfaceNeeded" value="0" type="6" />
+									<attribute id="SurfaceRadiusMax" value="0" type="6" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusData" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="0fbf4ab2-52e4-4675-99ac-fe64189db212">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="BLIND" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Blinded" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Targeting range and Accuracy reduced." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Blind" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Blind_01:Dummy_StatusFX" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Blind" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Blind" />
+        <field name="StackPriority" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

@@ -1,0 +1,27 @@
+//////////////////////////////////////////////////////////////////////////
+// Tactitian specific base mods
+
+//////////////////////////////////////////////////////////////////////////
+
+// Combos are taking into account when positioning as well
+MULTIPLIER_COMBO_SCORE_INTERACTION				0.80 //BlueOverride, default 0.9
+MULTIPLIER_COMBO_SCORE_POSITIONING				0.20 //BlueOverride, default 0.5
+
+// More agressive on CC enemies
+MULTIPLIER_CONTROL_ENEMY_POS					1.1 //BlueOverride, default 1.5
+MULTIPLIER_CONTROL_ENEMY_NEG					1.1 //BlueOverride, default 1.5
+
+ENABLE_ACTIVE_DEFENSE_OFFENSIVE_USE				1
+
+// Less interested in attacking a character that could block
+MULTIPLIER_SHIELD_BLOCK							0.5 //BlueOverride, default 1.5
+
+// Less prone to disregard targets that are already attacked by 1 or more characters
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE				1.2 //BlueOverride, default 0.75
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE		0.8 //BlueOverride, default 0.5
+
+// More interested in dealing the killing blow
+MULTIPLIER_KILL_ENEMY							2.50 //BlueOverride, default 3.0
+
+// A general multiplier for all reflected damage
+MULTIPLIER_REFLECT_DAMAGE						0.25

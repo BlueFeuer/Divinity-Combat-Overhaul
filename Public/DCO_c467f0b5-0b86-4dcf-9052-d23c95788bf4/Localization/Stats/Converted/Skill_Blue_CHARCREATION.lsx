@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Bear Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Bear_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Bear_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Boar Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Boar_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Boar_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Crab Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Crab_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Crab_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Crocodile Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Crocodile_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Crocodile_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Deer Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Deer_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Deer_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Owl Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Owl_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Owl_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Rat Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Rat_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Rat_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Spider Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Spider_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Spider_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Tiger Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Tiger_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Tiger_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Turtle Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Turtle_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Turtle_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Wolf Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Wolf_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Wolf_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Wyrmling Totem" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Wyrmling_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Totem_Wyrmling_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Blaze" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Fire_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Fire_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Frost" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Frost_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Frost_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Lightning" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Lightning_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Lightning_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Poison" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Poison_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Poison_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Acid" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Acid_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Acid_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Plague Breath" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Plague_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Plague_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Fetid Breath" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_PoisonUnd_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_PoisonUnd_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Death's Breath" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Death_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Death_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Vitriol" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Vitriol_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Vitriol_Description" type="22" />
+                </node>
+
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="Dragon's Putrefaction" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Putrid_DisplayName" type="22" />
+                </node>
+                <node id="TranslatedStringKey">
+                    <attribute id="Content" value="TestDescription" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+                    <attribute id="ExtraData" value="" type="23" />
+                    <attribute id="Speaker" value="" type="22" />
+                    <attribute id="Stub" value="True" type="19" />
+                    <attribute id="UUID" value="Blue_CCreation_Subrace_Putrid_Description" type="22" />
+                </node>
+
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,26 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+//REGION Origin tags
+
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Sebille_c8d55eaf-e4eb-466a-8f0d-6a9447b5b24c,"SEBILLE");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Lohse_bb932b13-8ebf-4ab4-aac0-83e6924e4295,"LOHSE");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Red_Prince_a26a1efb-cdc8-4cf3-a7b2-b2f9544add6f,"RED PRINCE");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Ifan_ad9a3327-4456-42a7-9bf4-7ad60cc9e54f,"IFAN");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Fane_02a77f1f-872b-49ca-91ab-32098c443beb,"FANE");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_Beast_f25ca124-a4d2-427b-af62-df66df41a978,"BEAST");
+
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_GenericOrigin_7b6c1f26-fe4e-40bd-a5d0-e6ff58cef4fe,"GENERIC");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_GenericOrigin2_c451954c-73bf-46ce-a1d1-caa9bbdc3cfd,"GENERIC");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_GenericOrigin3_41a06985-7851-4c29-8a78-398ccb313f39,"GENERIC");
+DB_Origins_OriginTag((CHARACTERGUID)S_Player_GenericOrigin4_41a594ed-b768-4289-9f17-59f701cc6910,"GENERIC");
+
+
+//END_REGION
+
+KBSECTION
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "DOS2ModWrapper"

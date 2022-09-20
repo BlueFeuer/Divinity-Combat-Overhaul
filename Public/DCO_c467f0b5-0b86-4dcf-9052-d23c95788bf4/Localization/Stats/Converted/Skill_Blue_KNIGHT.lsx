@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Helping Hand" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HelpingHand_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Helping Hand (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HelpingHand_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Helping Hand (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HelpingHand_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Lend a helping hand and clear any Burning, Staggered, Fear, or Bleeding procs from them.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 6&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HelpingHand_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Weakening Strike" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_WeakeningStrike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Weakening Strike (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_WeakeningStrike_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Weakening Strike (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_WeakeningStrike_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target and apply moderate Weak.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_WeakeningStrike_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bolster" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bolster (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bolster (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Steel yourself for oncoming attacks, gaining [1] and 25% extra Armor Rating, Bludgeoning Resistance, and Piercing resistance, and protection from Freeze, Knockdown, Stun, Fear, and Mad.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 5&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Battering Ram" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BatteringRam_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Battering Ram (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BatteringRam_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Battering Ram (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BatteringRam_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Rush towards the targetted point, hitting all enemies in your path with [1] and applying moderate Stagger.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BatteringRam_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cure Wounds" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CureWounds_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cure Wounds (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CureWounds_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cure Wounds (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CureWounds_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heal the target for [1].&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CureWounds_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bouncing Shield" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BouncingShield_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bouncing Shield (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BouncingShield_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Bouncing Shield (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BouncingShield_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw your shield at an enemy dealing [1]. Shield can bounce to another enemy within 7m range.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BouncingShield_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunt" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Taunt_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunt (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Taunt_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunt (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Taunt_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Taunt all enemies within the targetted 2m area. No saving throw. A Taunted character will only be able to see characters who have cast Taunt. A character who has cast Taunt will be visible to everyone, including those Taunted by someone else and those that are blinded.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Taunt_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crippling Blow" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CripplingBlow_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crippling Blow (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CripplingBlow_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Crippling Blow (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CripplingBlow_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target and apply moderate Weak.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 7, 9&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CripplingBlow_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental Bastion" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElementalBastion_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental Bastion (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElementalBastion_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Elemental Bastion (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElementalBastion_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Gain +30% resistance to fire, water, and air. Overrides Impenetrable Barrier and Deflective Shield. Recast to cancel.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ElementalBastion_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impenetrable Barrier" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ImpenetrableBarrier_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impenetrable Barrier (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ImpenetrableBarrier_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Impenetrable Barrier (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ImpenetrableBarrier_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Gain [1] and causes Shields Up to only lose 33% deflection on successful deflections. Overrides Elemental Bastion and Deflective Shield. Recast to cancel.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ImpenetrableBarrier_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflective Shield" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DeflectiveShield_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflective Shield (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DeflectiveShield_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflective Shield (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DeflectiveShield_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deflect projectiles that hit you to the caster, gain 50% damage reflection, and regain [1] armor every turn this is active. Overrides Elemental Bastion and Impenetrable Barrier. Recast to cancel.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DeflectiveShield_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guardian Angel" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GuardianAngel_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guardian Angel (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GuardianAngel_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Guardian Angel (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GuardianAngel_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Damage taken by allies within 4m range will have 50% of it redirected to you.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GuardianAngel_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Stifle" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stifle_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Stifle (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stifle_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Stifle (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stifle_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target and apply high strength Silence.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 10&lt;/font&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stifle_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sunder" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sunder_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sunder (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sunder_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sunder (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sunder_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Break the target. Deal [1] and apply max strength Sunder.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sunder_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Protect_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Protect_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Protect (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Protect_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Redirect 100% of any damage the target takes to yourself until your next turn. Armor provides full protection and you gain 50% more while the link is active. Ends if the target takes damage that would kill you." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Protect_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Adaptive Armor" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AdaptiveArmor_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Adaptive Armor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AdaptiveArmor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Adaptive Armor (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AdaptiveArmor_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Root enemies who attack you and gain increased resistance every time you take damage of the type taken for 3 turns.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AdaptiveArmor_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Circle of Health" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CircleOfHealth_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Circle of Health (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CircleOfHealth_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Circle of Health (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CircleOfHealth_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create a circle on the ground. Enemies within the circle lose 3 Constitution, while allies in the circle gain 3 Constitution. Lasts 3 turns.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CircleOfHealth_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shackles of Pain" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShacklesOfPain_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shackles of Pain (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShacklesOfPain_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Shackles of Pain (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShacklesOfPain_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Shackles of Pain to all enemies within 6m range with no saving throw.&lt;br&gt;&lt;n&gt;&lt;br&gt;&lt;n&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;&lt;n&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ShacklesOfPain_Description" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

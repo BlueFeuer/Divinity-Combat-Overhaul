@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="ecd5f910-5971-4281-b82f-6aa70fdfa440">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SPARKING_SWINGS" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Sparkstriker|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Hitting enemies with melee hits will cause fiery sparks to be striken off at nearby enemies.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Skillcrafting_Fire_SparkingSwings" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="FormatStringColor" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_SparkingSwings" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Spark" />
+        <field name="StackPriority" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Projectile" type="StringStatObjectFieldDefinition" value="Projectile_Status_Spark" />
+        <field name="Radius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="Charges" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Enemy;NonSelf" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_0" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="|Sparkstriker|" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Hitting enemies with melee hits will cause fiery sparks to be striken off at nearby enemies.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Skillcrafting_Fire_SparkingSwings" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="8" enumeration_type_name="FormatStringColor" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_SparkingSwings" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Spark" />
+        <field name="StackPriority" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Projectile" type="StringStatObjectFieldDefinition" value="Projectile_Status_Spark" />
+        <field name="Radius" type="IntegerStatObjectFieldDefinition" value="13" />
+        <field name="Charges" type="IntegerStatObjectFieldDefinition" value="-1" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Character;Enemy;NonSelf" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

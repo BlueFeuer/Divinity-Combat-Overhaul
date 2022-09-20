@@ -1,0 +1,113 @@
+INIT
+	CHARACTER:__Me
+	INT:%Tally
+BEHAVIOUR
+
+
+REACTION BlueOilBlobClearSurfaceOil, 10000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1&c2"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOil)
+		CharacterHasStatus(__Me, Blue_OilyBlobCast)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+
+REACTION BlueOilBlobClearSurfaceOilBlessed, 10000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1&c2"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOilBlessed)
+		CharacterHasStatus(__Me, Blue_OilyBlobCast)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+
+REACTION BlueOilBlobClearSurfaceOilCursed, 10000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1&c2"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOilCursed)
+		CharacterHasStatus(__Me, Blue_OilyBlobCast)
+	ACTIONS
+		Add(%Tally, INT:1)
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		
+REACTION BlueOilBlobGiveBuff, 10000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+CHECK "!c1&!c2&!c3&c4"
+	FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOil)
+	FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOilBlessed)
+	FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:3.5, SurfaceOilCursed)
+	CharacterHasStatus(__Me, Blue_OilyBlobCast)
+ACTIONS
+	//ExplodeAt(__Me, Blue_Explosion_PressureSpike, -1, %Owner)
+	//Print(_Str, "[1]", %Tally)
+	//Cast(_Text, _Str)
+	//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	SetVar(__Me, "Surface", SURFACE:SurfaceOil)
+	IF "!c1"
+		IsLessThen(%Tally, INT:36)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff10, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:32)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff9, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:28)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff8, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:24)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff7, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:20)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff6, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:16)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff5, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:12)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff4, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:8)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff3, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:4)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff2, -1)
+	ELIF "!c1"
+		IsLessThen(%Tally, INT:1)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff1, -1)
+	ELIF "c1"
+		IsLessThen(%Tally, INT:1)
+	THEN
+		CharacterApplyStatus(__Me, Blue_OilyBlobBuff0, -1)
+	ENDIF
+		
+EVENTS
+
+EVENT BlueOilyBlobCreation
+ON
+	OnCharacterStatusApplied(__Me, SUMMONING_ABILITY)
+ACTIONS
+	Set(%Tally, INT:0)
+	SetVar(__Me, "Surface", SURFACE:null)
+	CharacterApplyStatus(__Me, Blue_OilyBlobCast, -1)
+		
+	

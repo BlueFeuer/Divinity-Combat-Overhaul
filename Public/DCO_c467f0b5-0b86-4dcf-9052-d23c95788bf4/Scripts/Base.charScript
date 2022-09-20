@@ -1,0 +1,326 @@
+#INCLUDE BlueCharacterAddonBase
+INIT
+	CHARACTER:__Me
+	CHARACTER:%LookAtChar
+	CHARACTER:%AttackOfOpportunity
+	ITEM:%LookAtItem
+	INT:%FearFlee
+	INT:%Following = 0
+	FIXEDSTRING:%PrevIdleAnim = ""
+	FIXEDSTRING:%CrawInfest_Faction = ""
+	EXTERN INT:%FleeFromDangerousSurface=1
+	EXTERN INT:%bool_CanChickenFlee=1
+	
+	USING SHARED BlueCharacterAddonBase
+	
+BEHAVIOUR
+
+REACTION TurnToChar, 100
+USAGE ALL
+CHECK "!c1"
+	IsEqual(%LookAtChar,null)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest1", 5)
+	CharacterLookAt(%LookAtChar,1)
+	Set(%LookAtChar,null)
+
+REACTION TurnToItem, 100
+USAGE ALL
+CHECK "!c1"
+	IsEqual(%LookAtItem,null)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest2", 5)
+	CharacterLookAt(%LookAtItem,1)
+	Set(%LookAtItem,null)
+	
+REACTION AttackOfOpportunity, 20000
+USAGE WAITING
+CHECK "!c1"
+	IsEqual(%AttackOfOpportunity,null)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest3", 5)
+	CharacterAttackWithoutMove(%AttackOfOpportunity)
+	Set(%AttackOfOpportunity,null)
+INTERRUPT 
+ACTIONS
+	Set(%AttackOfOpportunity,null)
+	Reset()
+	
+REACTION AttackOfOpportunityClear, 20001
+USAGE COMBAT
+CHECK "!c1"
+	IsEqual(%AttackOfOpportunity,null)
+ACTIONS
+	Set(%AttackOfOpportunity,null)
+INTERRUPT 
+ACTIONS
+	Set(%AttackOfOpportunity,null)
+	Reset()
+
+REACTION FearFlee, 100001
+USAGE COMBAT
+CHECK "!c1&(c2|(c3&(c4|c5|c6)))"
+	IsEqual(%FearFlee,0)
+	CharacterHasStatus(__Me,FEAR)
+	IsEqual(%bool_CanChickenFlee,1)	
+	CharacterHasStatus(__Me,CHICKEN)
+	CharacterHasStatus(__Me,COW)
+	CharacterHasStatus(__Me,ZOMBIE_CHICKEN)	
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest4", 5)
+	IF "!c1"
+		CharacterHasStatus(__Me, CRIPPLED)
+	THEN
+		CharacterFleeFrom(All,6)
+	ENDIF
+	Set(%FearFlee,0)
+
+REACTION FearCower, 100000
+USAGE ALL
+CHECK "c1"
+	CharacterHasStatus(__Me,FEAR)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest5", 5)
+	CharacterPlayAnimation("cower",0,0)
+	EndTurn(__Me)
+
+REACTION ChickenCowerCombat, 100000
+USAGE COMBAT
+USAGE WAITING
+VARS
+CHECK "c1|c2|c3"
+	CharacterHasStatus(__Me,CHICKEN)
+	CharacterHasStatus(__Me,ZOMBIE_CHICKEN)
+	CharacterHasStatus(__Me,COW)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest6", 5)
+	IF "c1&c2"
+		CharacterHasStatus(__Me,COW)
+		CharacterIsInParty(__Me)
+	THEN
+		CharacterPlayAnimation("emotion_normal")
+	ENDIF
+	EndTurn(__Me)
+	
+REACTION ChickenCower, 100000
+USAGE PEACE
+VARS
+	INT:_Rand
+CHECK "c1|c2"
+	CharacterHasStatus(__Me,CHICKEN)
+	CharacterHasStatus(__Me,COW)
+ACTIONS	
+	//DisplayCombatInfoText(__Me, "Testestest7", 5)
+	IF "c1&c2"
+		CharacterHasStatus(__Me,COW)
+		CharacterIsInParty(__Me)
+	THEN
+		GetRandom(_Rand, 1, 2, 3)
+		IF "c1"
+			IsEqual(_Rand,1)
+		THEN
+			CharacterWander(FLOAT:10.0,4.0)
+		ELIF "c1"
+			IsEqual(_Rand,2)
+		THEN
+			Sleep(3.0)
+		ELSE
+			CharacterPlayAnimation("emotion_normal")
+		ENDIF
+	ELIF "c1"
+		IsEqual(%bool_CanChickenFlee,1)
+	THEN
+		CharacterFleeFrom(All,10)
+	ENDIF
+	CharacterEvent(__Me,"Chicken_CrimeStop")
+	
+REACTION MoveAwayFromSurface,5
+USAGE PEACE
+CHECK "c1&c2&c3"
+	IsEqual(%FleeFromDangerousSurface,1)
+	CharacterCanMove(__Me)
+	IsInDangerousSurface(__Me, null, null, false)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest8", 5)
+	CharacterFleeFromDangerousSurface()
+
+REACTION MoveAwayFromOilSurface,4
+USAGE PEACE
+CHECK "c1&c2&c3"
+	IsEqual(%FleeFromDangerousSurface,1)
+	CharacterCanMove(__Me)
+	IsInSurface(__Me,SurfaceOil)	
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest9", 5)
+	CharacterFleeFromSurface(SurfaceOil)
+
+REACTION StartFollow, 10
+USAGE PEACE
+VARS 
+	CHARACTER:_Owner
+	FLOAT:_Dist
+CHECK "((c1|c2)&c3&c4)&((!c5)|c6)&!c7&!c8&c9"
+	CharacterGetFollow(_Owner,__Me)
+	CharacterGetOwner(_Owner,__Me)
+	GetDistance(_Dist,__Me,_Owner)
+	IsLessThen(_Dist,70)
+	CharacterHasStatus(_Owner, SNEAKING)
+	CharacterHasStatus(__Me, SNEAKING)
+	CharacterHasStatus(_Owner, DYING)
+	IsInCombat(_Owner)
+	IsGameLevel()
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest10", 5)
+	Set(%Following,1)
+	CharacterFollowOwnerOrLeader(-1)
+INTERRUPT
+ACTIONS
+	Set(%Following,0)
+	Reset()
+	
+REACTION StopFollow, 11
+USAGE ALL
+VARS 
+	CHARACTER:_Owner
+	FLOAT:_Dist
+CHECK "c1&(!(((c2|c3)&c4&c5)&((!c6)|c7))|c8|c9|c10)"
+	IsEqual(%Following,1)
+	CharacterGetFollow(_Owner,__Me)
+	CharacterGetOwner(_Owner,__Me)
+	GetDistance(_Dist,__Me,_Owner)
+	IsLessThen(_Dist,70)
+	CharacterHasStatus(_Owner, SNEAKING)
+	CharacterHasStatus(__Me, SNEAKING)
+	CharacterInCreation(_Owner)
+	IsInCombat(__Me)
+	IsInCombat(_Owner)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest11", 5)
+	Set(%Following,0)
+
+REACTION Idle, 4
+USAGE PEACE
+USAGE WAITING
+VARS 
+	FIXEDSTRING:_Animation
+	FLOAT:_SleepTime
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest12", 5)
+	IF "!c1"
+		CharacterHasStatus(__Me, SNEAKING)
+	THEN
+		IF "c1&c2"
+			CharacterGetStillAnimation(__Me,_Animation)
+			IsEqual(_Animation,"still")
+		THEN
+			GetRandom(_SleepTime,2,3.5,6.8,9.3,11)
+			Sleep(_SleepTime)		
+			GetWeightedRandom(_Animation,"still",INT:0,"idle1",INT:10,"idle2",INT:10,"idle3",INT:10)
+			IF "c1"
+				IsEqual(_Animation,%PrevIdleAnim)
+			THEN
+				Goto("Start")
+			ENDIF
+			Set(%PrevIdleAnim,_Animation)
+			CharacterPlayAnimation(_Animation)
+		ENDIF
+	ENDIF
+INTERRUPT
+ACTIONS
+	Reset()
+	
+
+REACTION CombatFallback, 1
+USAGE COMBAT
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest13", 5)
+	EndTurn(__Me)
+
+EVENTS
+
+EVENT AttackOfOpportunity
+VARS
+	CHARACTER:_Enemy
+ON
+	OnAttackOfOpportunity(_Enemy)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest14", 5)
+	// Don't put conditions here, if you do the preview & the execution won't match anymore! 
+	Set(%AttackOfOpportunity,_Enemy)
+	
+EVENT ClearAttackOfOpportunity
+ON
+	OnClearAttackOfOpportunity()
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest15", 5)
+	Interrupt(AttackOfOpportunity)
+	Set(%AttackOfOpportunity,null)	
+	
+EVENT OnAttacked_SetFightMode
+VARS
+	CHARACTER:_Char
+	ITEM:_Item
+ON
+	OnPreBlock(_Char,_Item, __Me, _)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest16", 5)
+	CharacterSetFightMode(__Me, 1, 0)
+
+EVENT TurnToInteraction
+VARS
+	CHARACTER:_Char
+	ITEM:_Item
+ON
+	OnPreBlock(_Char,_Item, __Me, _)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest17", 5)
+	Set(%LookAtChar,_Char)
+	Set(%LookAtItem,_Item)
+
+EVENT StatusFearCleared
+ON
+	OnCharacterStatusRemoved(__Me,FEAR)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testestest18", 5)
+	Interrupt("FearCower")
+	CharacterStopAnimation()
+
+/*
+EVENT ClearTauntedWhenTaunterDies
+VARS
+	CHARACTER:_EventChar=null
+	CHARACTER:_Taunter=null
+ON
+	OnDie(_EventChar,_,_,_)
+	OnCharacterStatusApplied(_EventChar,PLAY_DEAD)
+ACTIONS
+	IF "c1&c2&c3"
+		CharacterHasStatus(__Me,TAUNTED)
+		CharacterGetStatusSourceCharacter(__Me,TAUNTED,_Taunter)
+		IsEqual(_Taunter,_EventChar)
+	THEN
+		CharacterRemoveStatus(__Me,TAUNTED)
+	ENDIF
+	
+EVENT StatusFearChanged
+ON
+	OnCharacterStatusApplied(__Me,FEAR)
+ACTIONS
+	Set(%FearFlee,1)
+	
+EVENT StatusChickenChanged
+ON
+	OnCharacterStatusApplied(__Me,CHICKEN)
+	OnCharacterStatusApplied(__Me,ZOMBIE_CHICKEN)
+ACTIONS
+	Set(%FearFlee,1)
+	
+EVENT StatusChickenRemoved
+ON
+	OnCharacterStatusRemoved(__Me,CHICKEN)
+	OnCharacterStatusRemoved(__Me,CHICKEN)
+ACTIONS
+	Interrupt("ChickenCowerCombat")
+	Interrupt("ChickenCower")
+
+*/

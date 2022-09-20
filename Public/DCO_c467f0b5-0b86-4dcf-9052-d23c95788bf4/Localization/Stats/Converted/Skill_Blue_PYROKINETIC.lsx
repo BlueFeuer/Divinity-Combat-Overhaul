@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Peace of Mind" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PeaceOfMind_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Peace of Mind (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PeaceOfMind_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Target gains Clear-Minded, increasing Aptitude by 4 and Willpower by 1. Protects against Blind, Sleeping, Drain Willpower, Fear, Mad, Torpid, and Charmed.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 5&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PeaceOfMind_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Searing Daggers" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingDaggers_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Searing Daggers (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingDaggers_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Throw three flaming daggers at the targets of your choice, each creating a 1m fire surface, dealing [1], and applying Burning (2).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingDaggers_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heat Metal" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HeatMetal_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Heat Metal (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HeatMetal_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Burn your target from the inside, dealing [1] plus their Armor as damage and applying Burning (3).&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_HeatMetal_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Haste" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Haste_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Haste (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Haste_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Haste and Burning (4) to the target. Haste increases movement speed by 1.5m per AP and gives an additional 2 AP per turn. Protects against Slowed.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Haste_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fireball" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fireball_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fireball (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fireball_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Send a fiery sphere that will explode, dealing [1] and applying Burning (3).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 6&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fireball_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingCrescendo_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flaming Crescendo (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingCrescendo_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cause the target to explode in a 2m radius for [1] after 5 turns, reduced by 1 for every tier of Burning on the target.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FlamingCrescendo_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Firebrand" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Firebrand_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Firebrand (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Firebrand_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Brand the target, reducing their Fire Resistance by 25%." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Firebrand_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Purifying Fire" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PurifyingFire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Purifying Fire (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PurifyingFire_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Purge the target of various statuses, removing all Burning, Chilled, Shocked, Charmed, Petrified, and Healing statuses.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 6&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_PurifyingFire_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Supernova" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Supernova_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Supernova (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Supernova_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Explode, creating fire surfaces, dealing [1], and applying Burning (5) in a 4m radius around you to everyone, including yourself.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Supernova_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immolate" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Immolate_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immolate (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Immolate_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create a fire surface under you and raise your and nearby allies' fire resistance by 25%." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Immolate_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Spontaneous Combustion" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SpontaneousCombustion_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Spontaneous Combustion (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SpontaneousCombustion_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to those in the target 3m radius. On Burning targets, damage is increased up to [2] depending on status strength, removing the status, and applying Staggered of half the strength. Detonates any active Flaming Crescendoes. Reduced damage to Chilled targets, removing the status. No damage on Chilled (4) or above.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SpontaneousCombustion_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Terrible Flame" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_TerribleFlame_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Terrible Flame (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_TerribleFlame_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] in the target 2m radius and create fire. If any targets in the area are below 50% health, create Necrofire instead and apply Fear of strength (3) to (6) depending on how close to death they are.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_TerribleFlame_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Infectious Flame" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_InfectiousFlame_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Infectious Flame (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_InfectiousFlame_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fork a sentient flame onto 4 targets, dealing [1] and applying Infectious Flame. Afflicted explode at the end of their turn, applying the status to all nearby characters and dealing [2].&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_InfectiousFlame_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fire Whip" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FireWhip_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fire Whip (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FireWhip_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Strike the target with a whip of flames, dealing [1] and applying Blind (2) and Burning (4).&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 9, 10&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_FireWhip_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Laser Ray" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LaserRay_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Laser Ray (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LaserRay_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Line of intense heat that deals [1] to characters, applies Burning (3), and leaves a fire surface behind.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LaserRay_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soulfire" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Soulfire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Soulfire (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Soulfire_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1], apply Burning (6), and apply Soul Burned to the target, reducing Grit and Willpower by 2, all resistances by 25%, and has no saving throw. Removes and provides immunity to Soul Sap.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Soulfire_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Meteor Shower" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MeteorShower_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Meteor Shower (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MeteorShower_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="[2] fireballs come crashing from the sky, each dealing [1].&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MeteorShower_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Glass Shards" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GlassShards_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Glass Shards (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GlassShards_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Fire 3 glass shards at the designated targets, dealing [1] and applying low strength bleed.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_GlassShards_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Boil" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Boil_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Boil (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Boil_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to the target character. Damage is increased by 100% if the target is wet or standing in water, and 200% if both.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Boil_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corpse Explosion" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorpseExplosion_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corpse Explosion (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorpseExplosion_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Corpses in the target area explode, dealing [1] in an area around them." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_CorpseExplosion_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Avatar of Fire" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AvatarOfFire_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Avatar of Fire (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AvatarOfFire_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Target gains immunity to burning, 25% fire resistance and resistance cap, and enemies who attack you have medium strength burning applied to them. Water resistance is lowered by 25%." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_AvatarOfFire_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dragonhide" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Dragonhide_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Dragonhide (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Dragonhide_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Apply Dragonhide to yourself, increasing your fire and physical resistance by 25% and increasing your armor by [1] for 2 turns.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Dragonhide_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flamestrike" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Flamestrike_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Flamestrike (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Flamestrike_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] and [2] in the target area, burning those affected.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 3&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Flamestrike_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cauterize" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cauterize_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Cauterize (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cauterize_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Deal [1] to your target, then heal them for [2].&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Cauterize_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sparking Swings" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SparkingSwings_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Sparking Swings (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SparkingSwings_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Receive Sparkstriker status that causes your melee attacks to create a Spark projectile that bounces off the initial target to hit the closest enemy, dealing [1].&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SparkingSwings_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Intensify" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Intensify_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Intensify (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Intensify_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Set enemy characters on fire and ignite all susceptible surfaces around you. Apply Strong to allies.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Intensify_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Smokescreen" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Smokescreen_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Smokescreen (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Smokescreen_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Create a smoke cloud around you and your allies.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Smokescreen_Description" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

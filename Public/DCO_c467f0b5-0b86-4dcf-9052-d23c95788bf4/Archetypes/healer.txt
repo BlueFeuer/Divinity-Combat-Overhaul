@@ -1,0 +1,8 @@
+USING ranged
+
+// Healer will prefer to heal allies.
+MULTIPLIER_HEAL_ALLY_POS						1.8 //BlueOverride, default 1.2
+MULTIPLIER_HOT_ALLY_POS							1.8 //BlueOverride, default 1.2
+MULTIPLIER_BOOST_ALLY_POS		 				1.8 //BlueOverride, default 1.2
+MULTIPLIER_ARMOR_ALLY_POS		 				1.5 //BlueOverride, default 1.0
+ENABLE_SAVING_ACTION_POINTS						1 //BlueOverride, default

@@ -1,0 +1,104 @@
+EVENTS
+/*
+EVENT BlueDamageTaken
+VARS
+	CHARACTER:_Dealer //Source of damage
+	CHARACTER:_Source
+	DAMAGE:_DamageType //Type of damage taken
+	FLOAT:_DamageTaken //Percentage done to health
+	FLOAT:_DamageTakenSave
+	FLOAT:_Strength
+	INT:_AbilCheck
+	FLOAT:_FloatHelp
+	FLOAT:_CurrArmor
+	INT:_Turns
+	STATUS:_Status
+	CHARACTER:_Character
+	STRING:_Str
+	FIXEDSTRING:_Text
+ON
+	OnCharacterCharacterEvent(_Character, _Character, "Test")
+ACTIONS
+			IF "c1&c2"
+				CharacterGetStat(_CurrArmor, _Character, PhysicalArmorMax)
+				CharacterGetStat(_DamageTaken, _Character, VitalityMax)
+			THEN
+			ENDIF
+			Divide(_CurrArmor, _DamageTaken)
+			Set(_DamageTaken, _DamageTakenSave)
+			// ~~~
+				Print(_Str, "DB: [1] A: [2]", _DamageTaken, _CurrArmor)
+				Cast(_Text, _Str)
+				DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+			//
+			Subtract(_DamageTaken, _CurrArmor)
+			// ~~~
+				Print(_Str, "DA: [1]", _DamageTaken)
+				Cast(_Text, _Str)
+				DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+			//
+			Cast(_FloatHelp, _AbilCheck)
+			// ~~~
+				Print(_Str, "AC: [1]", _FloatHelp)
+				Cast(_Text, _Str)
+				DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+			//
+			Multiply(_FloatHelp, FLOAT:0.04)
+			// ~~~
+				Print(_Str, "AM: [1]", _FloatHelp)
+				Cast(_Text, _Str)
+				DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+			//
+			Multiply(_FloatHelp, _DamageTakenSave)
+			// ~~~
+				Print(_Str, "DM: [1] DTS: [2]", _FloatHelp, _DamageTakenSave)
+				Cast(_Text, _Str)
+				DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+			//
+			IF "c1"
+				IsLessThen(_DamageTaken, FLOAT:0)
+			THEN
+				Set(_DamageTaken, FLOAT:0)
+			ENDIF
+			IF "c1"
+				IsLessThen(_DamageTaken, _FloatHelp)
+			THEN
+				Subtract(_FloatHelp, _DamageTaken)
+				// ~~~
+					Print(_Str, "DR: [1]", _FloatHelp)
+					Cast(_Text, _Str)
+					DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+				//
+				IF "c1"
+					CharacterGetStat(_DamageTaken, _Character, Vitality)
+				THEN
+					Subtract(_DamageTaken, _FloatHelp)
+					// ~~~
+						Print(_Str, "V: [1]", _FloatHelp)
+						Cast(_Text, _Str)
+						DisplayCombatInfoText(_Character, _Text, FLOAT:0)
+					//
+					IF "c1"
+						IsLessThen(_DamageTaken, FLOAT:0.005)
+					THEN
+						SetHealth(_Character, FLOAT:0.005)
+					ELSE
+						SetHealth(_Character, _DamageTaken)
+					ENDIF
+				ENDIF
+			ENDIF
+			IF "c1"
+				IsGreaterThen(_AbilCheck, INT:4)
+			THEN
+				Multiply(_DamageTaken, _FloatHelp)
+				Multiply(_DamageTaken, FLOAT:4)
+				GetRandomBetween(_FloatHelp, FLOAT:0, FLOAT:1)
+				IF "c1"
+					IsGreaterThen(_DamageTaken, _FloatHelp)
+				THEN
+					CharacterApplyStatus(_Character, PRETIER, -2, INT:0, _Dealer)
+					CharacterApplyStatus(_Character, ApplyBleedingC, -2, INT:0, _Dealer)
+					CharacterApplyStatus(_Character, POSTIER, 0, INT:0, _Dealer)
+				ENDIF
+			ENDIF
+	*/

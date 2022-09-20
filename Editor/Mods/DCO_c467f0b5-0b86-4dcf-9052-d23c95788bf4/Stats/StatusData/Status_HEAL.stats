@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="c5fef72f-f776-419b-a5a2-a6e9d3e0926c">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="CannibalizeHeal" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="HEAL" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Canibalize" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_NecroHeal_Impact_01" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="5" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="Necromantic" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="BLOOD_BUBBLE" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="HEAL" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="BringIntoCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Blood Bubble" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Consumes blood surfaces to restore Vitality.|" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Bleeding_01:Dummy_BodyFX" />
+        <field name="HealStat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="StatusHealType" />
+        <field name="HealType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="HealValueType" />
+        <field name="HealValue" type="IntegerStatObjectFieldDefinition" value="200" />
+        <field name="AbsorbSurfaceType" type="StringStatObjectFieldDefinition" value="Blood;BloodFrozen;BloodElectrified;BloodCloud;BloodCloudElectrified;BloodBlessed;BloodFrozenBlessed;BloodElectrifiedBlessed;BloodCloudBlessed;BloodCloudElectrifiedBlessed;BloodCursed;BloodFrozenCursed;BloodElectrifiedCursed;BloodCloudCursed;BloodCloudElectrifiedCursed" />
+        <field name="AbsorbSurfaceRange" type="IntegerStatObjectFieldDefinition" value="200" />
+        <field name="Necromantic" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

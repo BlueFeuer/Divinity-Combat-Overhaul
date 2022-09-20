@@ -1,0 +1,29 @@
+// Bazooka archetype is a berserker-ranger that cares little about the well-being of its allies
+
+// Ranged characters like doing stuff without moving
+MULTIPLIER_MOVEMENT_COST_MULTPLIER				6.0 //BlueOverride, default 1.5
+
+// Ranged characters don't like enemies nearby, but dont't mind allies
+MULTIPLIER_ENDPOS_ALLIES_NEARBY					0.00
+MULTIPLIER_ENDPOS_ENEMIES_NEARBY				0.10
+
+// Ranged characters don't like standing in smoke, they can't see their targets!
+MULTIPLIER_ENDPOS_NOT_IN_SMOKE					0.20
+
+// Ranged charactesr don't care about how many are targetting their enemies
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE				0.90 //BlueOverride, default 0.8
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE		0.80 //BlueOverride, default 0.6
+
+// Ranged chracters care a lot about standing on heigher ground
+MULTIPLIER_ENDPOS_HEIGHT_DIFFERENCE				0.05 //BlueOverride, default 0.1
+
+// Ranged characters dont't care about contact boosts
+MULTIPLIER_CONTACT_BOOST						0.05
+
+// Bazooka character doesn't care about hurting allies
+MULTIPLIER_DAMAGE_ALLY_NEG						0.5
+MULTIPLIER_DOT_ALLY_NEG							0.5
+
+FALLBACK_ALLIES_NEARBY							1.00
+FALLBACK_ENEMIES_NEARBY							1.00
+FALLBACK_WANTED_ENEMY_DISTANCE					10.00

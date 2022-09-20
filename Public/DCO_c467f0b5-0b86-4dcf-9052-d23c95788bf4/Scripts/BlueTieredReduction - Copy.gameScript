@@ -1,0 +1,6001 @@
+EVENTS
+
+EVENT BlueCharacterReduceTieredStatuses
+VARS
+	CHARACTER:_Character
+	INT:_Strength
+	INT:_AbilCheck
+	INT:_Turns
+	INT:_RealTurns
+	STATUS:_Status
+	STRING:_Str
+	FIXEDSTRING:_Text
+ON 
+	OnTurnEnded(_Character, _)
+ACTIONS
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:BleedingA)
+		CharacterHasStatus(_Character, STATUS:BleedingB)
+		CharacterHasStatus(_Character, STATUS:BleedingC)
+		CharacterHasStatus(_Character, STATUS:BleedingD)
+		CharacterHasStatus(_Character, STATUS:BleedingE)
+		CharacterHasStatus(_Character, STATUS:BleedingF)
+		CharacterHasStatus(_Character, STATUS:BleedingG)
+		CharacterHasStatus(_Character, STATUS:BleedingH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, BleedingA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, BleedingB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, BleedingC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, BleedingD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, BleedingE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, BleedingF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, BleedingG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BleedingH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, BleedingH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingAApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingCApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingDApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingEApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingFApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingGApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextBleedingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BleedingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BleedingHApply")
+			SetTag(_Character, "Blue_BleedingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:SlowedA)
+		CharacterHasStatus(_Character, STATUS:SlowedB)
+		CharacterHasStatus(_Character, STATUS:SlowedC)
+		CharacterHasStatus(_Character, STATUS:SlowedD)
+		CharacterHasStatus(_Character, STATUS:SlowedE)
+		CharacterHasStatus(_Character, STATUS:SlowedF)
+		CharacterHasStatus(_Character, STATUS:SlowedG)
+		CharacterHasStatus(_Character, STATUS:SlowedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, SlowedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, SlowedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, SlowedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, SlowedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, SlowedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, SlowedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, SlowedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SlowedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, SlowedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedAApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedCApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedDApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedEApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedFApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedGApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextSlowedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SlowedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SlowedHApply")
+			SetTag(_Character, "Blue_SlowedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:DiseasedA)
+		CharacterHasStatus(_Character, STATUS:DiseasedB)
+		CharacterHasStatus(_Character, STATUS:DiseasedC)
+		CharacterHasStatus(_Character, STATUS:DiseasedD)
+		CharacterHasStatus(_Character, STATUS:DiseasedE)
+		CharacterHasStatus(_Character, STATUS:DiseasedF)
+		CharacterHasStatus(_Character, STATUS:DiseasedG)
+		CharacterHasStatus(_Character, STATUS:DiseasedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, DiseasedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, DiseasedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, DiseasedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, DiseasedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, DiseasedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, DiseasedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, DiseasedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DiseasedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, DiseasedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedAApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedCApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedDApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedEApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedFApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedGApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextDiseasedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DiseasedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DiseasedHApply")
+			SetTag(_Character, "Blue_DiseasedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:CrippledA)
+		CharacterHasStatus(_Character, STATUS:CrippledB)
+		CharacterHasStatus(_Character, STATUS:CrippledC)
+		CharacterHasStatus(_Character, STATUS:CrippledD)
+		CharacterHasStatus(_Character, STATUS:CrippledE)
+		CharacterHasStatus(_Character, STATUS:CrippledF)
+		CharacterHasStatus(_Character, STATUS:CrippledG)
+		CharacterHasStatus(_Character, STATUS:CrippledH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, CrippledA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, CrippledB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, CrippledC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, CrippledD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, CrippledE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, CrippledF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, CrippledG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:CrippledH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, CrippledH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledAApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledCApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledDApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledEApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledFApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledGApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextCrippledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_CrippledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_CrippledHApply")
+			SetTag(_Character, "Blue_CrippledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:ChilledA)
+		CharacterHasStatus(_Character, STATUS:ChilledB)
+		CharacterHasStatus(_Character, STATUS:ChilledC)
+		CharacterHasStatus(_Character, STATUS:ChilledD)
+		CharacterHasStatus(_Character, STATUS:ChilledE)
+		CharacterHasStatus(_Character, STATUS:ChilledF)
+		CharacterHasStatus(_Character, STATUS:ChilledG)
+		CharacterHasStatus(_Character, STATUS:ChilledH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, ChilledA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, ChilledB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, ChilledC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, ChilledD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, ChilledE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, ChilledF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, ChilledG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ChilledH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, ChilledH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledAApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledCApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledDApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledEApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledFApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledGApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextChilledProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ChilledTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ChilledHApply")
+			SetTag(_Character, "Blue_ChilledApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:WeakA)
+		CharacterHasStatus(_Character, STATUS:WeakB)
+		CharacterHasStatus(_Character, STATUS:WeakC)
+		CharacterHasStatus(_Character, STATUS:WeakD)
+		CharacterHasStatus(_Character, STATUS:WeakE)
+		CharacterHasStatus(_Character, STATUS:WeakF)
+		CharacterHasStatus(_Character, STATUS:WeakG)
+		CharacterHasStatus(_Character, STATUS:WeakH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:WeakA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, WeakA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, WeakB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, WeakC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, WeakD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, WeakE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, WeakF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, WeakG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:WeakH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, WeakH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakAApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakCApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakDApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakEApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakFApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakGApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextWeakProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_WeakTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_WeakHApply")
+			SetTag(_Character, "Blue_WeakApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:DecayingA)
+		CharacterHasStatus(_Character, STATUS:DecayingB)
+		CharacterHasStatus(_Character, STATUS:DecayingC)
+		CharacterHasStatus(_Character, STATUS:DecayingD)
+		CharacterHasStatus(_Character, STATUS:DecayingE)
+		CharacterHasStatus(_Character, STATUS:DecayingF)
+		CharacterHasStatus(_Character, STATUS:DecayingG)
+		CharacterHasStatus(_Character, STATUS:DecayingH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, DecayingA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, DecayingB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, DecayingC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, DecayingD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, DecayingE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, DecayingF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, DecayingG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DecayingH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, DecayingH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingAApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingCApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingDApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingEApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingFApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingGApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextDecayingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DecayingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DecayingHApply")
+			SetTag(_Character, "Blue_DecayingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:AcidA)
+		CharacterHasStatus(_Character, STATUS:AcidB)
+		CharacterHasStatus(_Character, STATUS:AcidC)
+		CharacterHasStatus(_Character, STATUS:AcidD)
+		CharacterHasStatus(_Character, STATUS:AcidE)
+		CharacterHasStatus(_Character, STATUS:AcidF)
+		CharacterHasStatus(_Character, STATUS:AcidG)
+		CharacterHasStatus(_Character, STATUS:AcidH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:AcidA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, AcidA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, AcidB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, AcidC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, AcidD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, AcidE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, AcidF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, AcidG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AcidH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, AcidH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidAApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidCApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidDApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidEApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidFApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidGApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextAcidProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AcidTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AcidHApply")
+			SetTag(_Character, "Blue_AcidApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:AtrophyA)
+		CharacterHasStatus(_Character, STATUS:AtrophyB)
+		CharacterHasStatus(_Character, STATUS:AtrophyC)
+		CharacterHasStatus(_Character, STATUS:AtrophyD)
+		CharacterHasStatus(_Character, STATUS:AtrophyE)
+		CharacterHasStatus(_Character, STATUS:AtrophyF)
+		CharacterHasStatus(_Character, STATUS:AtrophyG)
+		CharacterHasStatus(_Character, STATUS:AtrophyH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, AtrophyA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, AtrophyB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, AtrophyC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, AtrophyD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, AtrophyE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, AtrophyF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, AtrophyG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:AtrophyH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, AtrophyH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyAApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyCApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyDApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyEApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyFApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyGApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextAtrophyProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_AtrophyTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_AtrophyHApply")
+			SetTag(_Character, "Blue_AtrophyApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:BlindA)
+		CharacterHasStatus(_Character, STATUS:BlindB)
+		CharacterHasStatus(_Character, STATUS:BlindC)
+		CharacterHasStatus(_Character, STATUS:BlindD)
+		CharacterHasStatus(_Character, STATUS:BlindE)
+		CharacterHasStatus(_Character, STATUS:BlindF)
+		CharacterHasStatus(_Character, STATUS:BlindG)
+		CharacterHasStatus(_Character, STATUS:BlindH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:BlindA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, BlindA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, BlindB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, BlindC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, BlindD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, BlindE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, BlindF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, BlindG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BlindH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, BlindH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindAApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindCApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindDApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindEApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindFApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindGApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextBlindProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BlindTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BlindHApply")
+			SetTag(_Character, "Blue_BlindApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:FearA)
+		CharacterHasStatus(_Character, STATUS:FearB)
+		CharacterHasStatus(_Character, STATUS:FearC)
+		CharacterHasStatus(_Character, STATUS:FearD)
+		CharacterHasStatus(_Character, STATUS:FearE)
+		CharacterHasStatus(_Character, STATUS:FearF)
+		CharacterHasStatus(_Character, STATUS:FearG)
+		CharacterHasStatus(_Character, STATUS:FearH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:FearA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, FearA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, FearB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, FearC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, FearD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, FearE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, FearF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, FearG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:FearH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, FearH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearAApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearCApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearDApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearEApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearFApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearGApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextFearProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_FearTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_FearTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_FearTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_FearHApply")
+			SetTag(_Character, "Blue_FearApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:StaggeredA)
+		CharacterHasStatus(_Character, STATUS:StaggeredB)
+		CharacterHasStatus(_Character, STATUS:StaggeredC)
+		CharacterHasStatus(_Character, STATUS:StaggeredD)
+		CharacterHasStatus(_Character, STATUS:StaggeredE)
+		CharacterHasStatus(_Character, STATUS:StaggeredF)
+		CharacterHasStatus(_Character, STATUS:StaggeredG)
+		CharacterHasStatus(_Character, STATUS:StaggeredH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, StaggeredA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, StaggeredB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, StaggeredC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, StaggeredD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, StaggeredE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, StaggeredF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, StaggeredG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:StaggeredH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, StaggeredH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredAApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredCApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredDApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredEApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredFApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredGApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextStaggeredProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_StaggeredTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_StaggeredHApply")
+			SetTag(_Character, "Blue_StaggeredApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:MutedA)
+		CharacterHasStatus(_Character, STATUS:MutedB)
+		CharacterHasStatus(_Character, STATUS:MutedC)
+		CharacterHasStatus(_Character, STATUS:MutedD)
+		CharacterHasStatus(_Character, STATUS:MutedE)
+		CharacterHasStatus(_Character, STATUS:MutedF)
+		CharacterHasStatus(_Character, STATUS:MutedG)
+		CharacterHasStatus(_Character, STATUS:MutedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:MutedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, MutedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, MutedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, MutedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, MutedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, MutedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, MutedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, MutedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MutedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, MutedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedAApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedCApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedDApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedEApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedFApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedGApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextMutedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MutedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MutedHApply")
+			SetTag(_Character, "Blue_MutedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:BurningA)
+		CharacterHasStatus(_Character, STATUS:BurningB)
+		CharacterHasStatus(_Character, STATUS:BurningC)
+		CharacterHasStatus(_Character, STATUS:BurningD)
+		CharacterHasStatus(_Character, STATUS:BurningE)
+		CharacterHasStatus(_Character, STATUS:BurningF)
+		CharacterHasStatus(_Character, STATUS:BurningG)
+		CharacterHasStatus(_Character, STATUS:BurningH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:BurningA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, BurningA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, BurningB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, BurningC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, BurningD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, BurningE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, BurningF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, BurningG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:BurningH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, BurningH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningAApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningCApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningDApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningEApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningFApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningGApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextBurningProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_BurningTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_BurningHApply")
+			SetTag(_Character, "Blue_BurningApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:PoisonedA)
+		CharacterHasStatus(_Character, STATUS:PoisonedB)
+		CharacterHasStatus(_Character, STATUS:PoisonedC)
+		CharacterHasStatus(_Character, STATUS:PoisonedD)
+		CharacterHasStatus(_Character, STATUS:PoisonedE)
+		CharacterHasStatus(_Character, STATUS:PoisonedF)
+		CharacterHasStatus(_Character, STATUS:PoisonedG)
+		CharacterHasStatus(_Character, STATUS:PoisonedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, PoisonedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, PoisonedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, PoisonedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, PoisonedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, PoisonedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, PoisonedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, PoisonedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:PoisonedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, PoisonedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedAApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedCApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedDApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedEApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedFApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedGApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextPoisonedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_PoisonedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_PoisonedHApply")
+			SetTag(_Character, "Blue_PoisonedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:ShockedA)
+		CharacterHasStatus(_Character, STATUS:ShockedB)
+		CharacterHasStatus(_Character, STATUS:ShockedC)
+		CharacterHasStatus(_Character, STATUS:ShockedD)
+		CharacterHasStatus(_Character, STATUS:ShockedE)
+		CharacterHasStatus(_Character, STATUS:ShockedF)
+		CharacterHasStatus(_Character, STATUS:ShockedG)
+		CharacterHasStatus(_Character, STATUS:ShockedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, ShockedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, ShockedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, ShockedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, ShockedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, ShockedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, ShockedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, ShockedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:ShockedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, ShockedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedAApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedCApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedDApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedEApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedFApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedGApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextShockedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_ShockedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_ShockedHApply")
+			SetTag(_Character, "Blue_ShockedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:SleepingA)
+		CharacterHasStatus(_Character, STATUS:SleepingB)
+		CharacterHasStatus(_Character, STATUS:SleepingC)
+		CharacterHasStatus(_Character, STATUS:SleepingD)
+		CharacterHasStatus(_Character, STATUS:SleepingE)
+		CharacterHasStatus(_Character, STATUS:SleepingF)
+		CharacterHasStatus(_Character, STATUS:SleepingG)
+		CharacterHasStatus(_Character, STATUS:SleepingH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, SleepingA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, SleepingB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, SleepingC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, SleepingD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, SleepingE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, SleepingF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, SleepingG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SleepingH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, SleepingH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingAApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingCApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingDApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingEApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingFApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingGApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextSleepingProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SleepingTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SleepingHApply")
+			SetTag(_Character, "Blue_SleepingApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesA)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesB)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesC)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesD)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesE)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesF)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesG)
+		CharacterHasStatus(_Character, STATUS:LoweredResistancesH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, LoweredResistancesA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, LoweredResistancesB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, LoweredResistancesC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, LoweredResistancesD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, LoweredResistancesE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, LoweredResistancesF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, LoweredResistancesG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:LoweredResistancesH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, LoweredResistancesH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesAApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesCApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesDApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesEApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesFApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesGApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextLoweredResistancesProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_LoweredResistancesTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_LoweredResistancesHApply")
+			SetTag(_Character, "Blue_LoweredResistancesApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerA)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerB)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerC)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerD)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerE)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerF)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerG)
+		CharacterHasStatus(_Character, STATUS:DrainWillpowerH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, DrainWillpowerA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, DrainWillpowerB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, DrainWillpowerC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, DrainWillpowerD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, DrainWillpowerE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, DrainWillpowerF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, DrainWillpowerG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:DrainWillpowerH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, DrainWillpowerH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerAApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerCApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerDApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerEApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerFApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerGApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextDrainWillpowerProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_DrainWillpowerTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_DrainWillpowerHApply")
+			SetTag(_Character, "Blue_DrainWillpowerApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:SunderedA)
+		CharacterHasStatus(_Character, STATUS:SunderedB)
+		CharacterHasStatus(_Character, STATUS:SunderedC)
+		CharacterHasStatus(_Character, STATUS:SunderedD)
+		CharacterHasStatus(_Character, STATUS:SunderedE)
+		CharacterHasStatus(_Character, STATUS:SunderedF)
+		CharacterHasStatus(_Character, STATUS:SunderedG)
+		CharacterHasStatus(_Character, STATUS:SunderedH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, SunderedA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, SunderedB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, SunderedC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, SunderedD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, SunderedE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, SunderedF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, SunderedG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SunderedH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, SunderedH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedAApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedCApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedDApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedEApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedFApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedGApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextSunderedProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SunderedTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SunderedHApply")
+			SetTag(_Character, "Blue_SunderedApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:HebetudinousA)
+		CharacterHasStatus(_Character, STATUS:HebetudinousB)
+		CharacterHasStatus(_Character, STATUS:HebetudinousC)
+		CharacterHasStatus(_Character, STATUS:HebetudinousD)
+		CharacterHasStatus(_Character, STATUS:HebetudinousE)
+		CharacterHasStatus(_Character, STATUS:HebetudinousF)
+		CharacterHasStatus(_Character, STATUS:HebetudinousG)
+		CharacterHasStatus(_Character, STATUS:HebetudinousH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, HebetudinousA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, HebetudinousB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, HebetudinousC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, HebetudinousD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, HebetudinousE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, HebetudinousF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, HebetudinousG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:HebetudinousH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, HebetudinousH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousAApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousCApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousDApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousEApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousFApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousGApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextHebetudinousProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_HebetudinousTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_HebetudinousHApply")
+			SetTag(_Character, "Blue_HebetudinousApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:MadA)
+		CharacterHasStatus(_Character, STATUS:MadB)
+		CharacterHasStatus(_Character, STATUS:MadC)
+		CharacterHasStatus(_Character, STATUS:MadD)
+		CharacterHasStatus(_Character, STATUS:MadE)
+		CharacterHasStatus(_Character, STATUS:MadF)
+		CharacterHasStatus(_Character, STATUS:MadG)
+		CharacterHasStatus(_Character, STATUS:MadH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:MadA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, MadA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, MadB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, MadC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, MadD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, MadE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, MadF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, MadG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:MadH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, MadH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadAApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadCApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadDApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadEApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadFApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadGApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextMadProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_MadTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_MadTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_MadTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_MadHApply")
+			SetTag(_Character, "Blue_MadApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	IF "c1|c2|c3|c4|c5|c6|c7|c8"
+		CharacterHasStatus(_Character, STATUS:SoulSapA)
+		CharacterHasStatus(_Character, STATUS:SoulSapB)
+		CharacterHasStatus(_Character, STATUS:SoulSapC)
+		CharacterHasStatus(_Character, STATUS:SoulSapD)
+		CharacterHasStatus(_Character, STATUS:SoulSapE)
+		CharacterHasStatus(_Character, STATUS:SoulSapF)
+		CharacterHasStatus(_Character, STATUS:SoulSapG)
+		CharacterHasStatus(_Character, STATUS:SoulSapH)
+	THEN
+		IF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapA, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:1)
+			Set(_Status, SoulSapA)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapB, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:2)
+			Set(_Status, SoulSapB)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapC, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:3)
+			Set(_Status, SoulSapC)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapD, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:4)
+			Set(_Status, SoulSapD)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapE, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:5)
+			Set(_Status, SoulSapE)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapF, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:6)
+			Set(_Status, SoulSapF)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapG, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:7)
+			Set(_Status, SoulSapG)
+		ELIF "c1"
+			GetStatusTurns(_Character, STATUS:SoulSapH, _Turns)
+		THEN
+			Set(_RealTurns, _Turns)
+			Set(_Strength, INT:8)
+			Set(_Status, SoulSapH)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Barter)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		IF "c1"
+			CharacterGetAbility(_AbilCheck, _Character, Telekinesis)
+		THEN
+			Subtract(_Strength, _AbilCheck)
+		ENDIF
+		//Set tags for new status
+		IF "c1"
+			IsEqual(_Strength, INT:1)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapAApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapCApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:4)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapDApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:5)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapEApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:6)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapFApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:7)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapGApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ELIF "c1"
+			IsEqual(_Strength, INT:8)
+		THEN
+			//SetGlobalFlag("IgnoreNextSoulSapProc")
+			IF "c1"
+				IsLessThen(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn1")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:2)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn2")
+			ELIF "c1"
+				IsEqual(_RealTurns, INT:3)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn3")
+			ELIF "c1"
+			IsEqual(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn4")
+			ELIF "c1"
+				IsGreaterThen(_RealTurns, INT:4)
+			THEN
+				SetTag(_Character, "Blue_SoulSapTurn5")
+			ENDIF
+			SetTag(_Character, "Blue_SoulSapHApply")
+			SetTag(_Character, "Blue_SoulSapApply")
+			SetTag(_Character, "Blue_NewStatusesTag")
+		ENDIF
+		CharacterRemoveStatus(_Character, _Status)
+	ENDIF
+	

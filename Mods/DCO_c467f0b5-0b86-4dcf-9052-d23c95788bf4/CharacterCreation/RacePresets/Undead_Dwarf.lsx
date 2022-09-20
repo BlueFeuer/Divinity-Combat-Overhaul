@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1387205254" />
+    <version major="1" minor="3" revision="0" build="0" />
+    <region id="CharacterCreationManager">
+        <node id="root">
+            <children>
+                <node id="RaceDesc">
+                    <attribute id="RaceDisplayName" value="Undead Dwarf" handle="he2c3d174g9cb2g4a38g8be0g4ce7f1887402" type="28" />
+                    <attribute id="RaceName" value="Undead_Dwarf" type="22" />
+                    <attribute id="RaceDescription" value="The Undead are an abhorred race in Rivellon, considered abominations of the natural order. Those who wish to walk among the living must mask themselves or risk provoking violence." handle="h2a370557g5bcfg4666g9b55g4027bad9fee8" type="28" />
+                    <attribute id="SkillSet" value="Race_Undead_Dwarf" type="22" />
+                    <attribute id="FemaleDefaultHairColor" value="18" type="5" />
+                    <attribute id="FemaleDefaultSkinColor" value="9" type="5" />
+                    <attribute id="MaleDefaultHairColor" value="13" type="5" />
+                    <attribute id="MaleDefaultSkinColor" value="9" type="5" />
+                    <attribute id="AllowBald" value="1" type="19" />
+					
+                    <children>
+						<node id="TagsAdded">
+							<children>
+								<node id="TagAdded">
+									<attribute id="Tag" value="UNDEAD" type="22" />
+								</node>
+								<node id="TagAdded">
+									<attribute id="Tag" value="DWARF" type="22" />
+								</node>
+								<node id="TagAdded">
+									<attribute id="Tag" value="UNDEAD_DWARF" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="TalentsAdded">
+							<children>
+								<node id="TalentAdded">
+									<attribute id="Talent" value="Zombie" type="23" />
+								</node>
+								<node id="TalentAdded">
+									<attribute id="Talent" value="Dwarf_Sturdy" type="23" />
+								</node>
+							</children>
+						</node>
+                        <node id="FemaleDefaultPlayerNames">
+                            <children>
+                                <node id="FemaleDefaultPlayerNames">
+                                    <attribute id="Object" value="Judeline" handle="h488564cdg78b5g424egb1f1g59e844783703" type="28" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="FemaleIcons">
+                            <children>
+                                <node id="FemaleIcons">
+                                    <attribute id="Object" value="PlayerPortrait_Dwarf_Female_A" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="FemaleRootTemplateIDs">
+                            <children>
+                                <node id="FemaleRootTemplateIDs">
+                                    <attribute id="Object" value="373a1966-a54d-4a3e-be70-e779a654c914" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="MaleDefaultPlayerNames">
+                            <children>
+                                <node id="MaleDefaultPlayerNames">
+                                    <attribute id="Object" value="Lorean" handle="hbf238580g175bg4b4fg8172gc62a164a69a6" type="28" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="MaleIcons">
+                            <children>
+                                <node id="MaleIcons">
+                                    <attribute id="Object" value="PlayerPortrait_Dwarf_Male_A" type="22" />
+                                </node>                              
+                            </children>
+                        </node>
+                        <node id="MaleRootTemplateIDs">
+                            <children>
+                                <node id="MaleRootTemplateIDs">
+                                    <attribute id="Object" value="726442a5-6856-4b0d-91ed-5d2f003b8a0c" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="HenchManFemaleIcons">
+                            <children>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_A_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_A_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_B_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_C_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_D_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_D_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_E_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_F_Red" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_G_Black" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_A_White_Hair_G_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_B_White_Hair_D_Black" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_B_White_Hair_E_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_C_White_Hair_B_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_C_White_Hair_C_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_C_White_Hair_J_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_G_Black_Hair_I_Black" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_H_Black_Hair_P" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_H_White_Hair_F_Blond" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_N_Brown_Hair_F_Black" type="22" />
+                                </node>
+                                <node id="HenchManFemaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_F_Face_O_White_Hair_P" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="HenchManFemaleRootTemplateIDs">
+                            <children>
+                                <node id="HenchManFemaleRootTemplateIDs">
+                                    <attribute id="Object" value="3ec36a84-93a1-409f-83d6-4b7b17745df6" type="22" />
+                                </node>
+                            </children>
+                        </node>
+                        <node id="HenchManMaleIcons">
+                            <children>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_A_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_B_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_C_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_D_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_E_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_F_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_A_White_Hair_G_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_B_White_Hair_B_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_B_White_Hair_D_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_E_Brown_Hair_C_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_E_White_Hair_G_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_G_Black_Hair_B_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_K_Brown_Hair_P" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_M_White_Hair_F_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_M_White_Hair_M_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_O_Black_Hair_G_Black" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_P_White_Hair_A_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_P_White_Hair_C_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_P_White_Hair_E_Blond" type="22" />
+                                </node>
+                                <node id="HenchManMaleIcons">
+                                    <attribute id="Object" value="Portrait_PL_M_Face_P_White_Hair_J_Blond" type="22" />
+                                </node>                                     
+                            </children>
+                        </node>
+                        <node id="HenchManMaleRootTemplateIDs">
+                            <children>
+                                <node id="HenchManMaleRootTemplateIDs">
+                                    <attribute id="Object" value="23f3af72-437c-4aff-91ca-914ef6e6ebb7" type="22" />
+                                </node>
+                            </children>
+                        </node>
+
+                                        <node id="ClothColors">
+                    <children>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="0" type="5" />
+                            <attribute id="ColorName" value="Saddle Brown" handle="h186039efgdaa3g49afgb27dg44ea7248f24a" type="28" />
+                            <attribute id="Value" value="4287317267" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="1" type="5" />
+                            <attribute id="ColorName" value="Scarlet" handle="h6b8f121bg161eg42a4g9b55g4e28047be2a7" type="28" />
+                            <attribute id="Value" value="4294910976" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="2" type="5" />
+                            <attribute id="ColorName" value="Dark Orange" handle="h25bdb7a7g82c6g4019g87d0g12509915d94c" type="28" />
+                            <attribute id="Value" value="4294937600" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="3" type="5" />
+                            <attribute id="ColorName" value="Gold" handle="hb24711b2gd507g43bdg9f92g9d188aca8032" type="28" />
+                            <attribute id="Value" value="4294956800" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="4" type="5" />
+                            <attribute id="ColorName" value="Olive" handle="h0c8eea84g0b38g442fga9f7g172be1cf5c0b" type="28" />
+                            <attribute id="Value" value="4286611456" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="5" type="5" />
+                            <attribute id="ColorName" value="Forest Green" handle="hdc3c9ad3g33d6g49e6gb14eg8416a6e231ce" type="28" />
+                            <attribute id="Value" value="4280453922" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="6" type="5" />
+                            <attribute id="ColorName" value="Slate Gray" handle="h8386a4aag7cc4g4e11g981bg57f89680ad32" type="28" />
+                            <attribute id="Value" value="4285563024" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="7" type="5" />
+                            <attribute id="ColorName" value="Royal Blue" handle="ha1b3a0a2g7bb6g45d7gabd2g0f34506aec05" type="28" />
+                            <attribute id="Value" value="4282477025" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="8" type="5" />
+                            <attribute id="ColorName" value="Dark Violet" handle="h9ca714a8g2bf5g4060ga045gd5c6ef86a52f" type="28" />
+                            <attribute id="Value" value="4287889619" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="9" type="5" />
+                            <attribute id="ColorName" value="Orchid" handle="h9befcd75g9138g4cd6g96c8gaae27a044771" type="28" />
+                            <attribute id="Value" value="4292505814" type="5" />
+                        </node>
+                    </children>
+                </node>
+                <node id="HairColors">
+                    <children>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="0" type="5" />
+                            <attribute id="ColorName" value="Wheat" handle="h2439bb66g14b5g48cdg9e04g18b6ccb48813" type="28" />
+                            <attribute id="Value" value="0xffffd291" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="1" type="5" />
+                            <attribute id="ColorName" value="Walnut Cream" handle="hd4b10f24g6332g43d6g8198g02e461d9cfde" type="28" />
+                            <attribute id="Value" value="0xffe1d3bc" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="2" type="5" />
+                            <attribute id="ColorName" value="Peach" handle="hdb883e19g2ef0g43fcgb1c8g30b8ba0b2729" type="28" />
+                            <attribute id="Value" value="0xfff0bb8f" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="3" type="5" />
+                            <attribute id="ColorName" value="Marzipan" handle="h3d49d1b9g70dbg4b16gbf76g13b4d6da6fcc" type="28" />
+                            <attribute id="Value" value="0xffbba88e" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="4" type="5" />
+                            <attribute id="ColorName" value="Caramel" handle="hdeb688b0gdb10g4df9gbf8cgf18bf5987977" type="28" />
+                            <attribute id="Value" value="0xffd4bb93" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="5" type="5" />
+                            <attribute id="ColorName" value="Walnut" handle="h3f9fc395g8304g407bga121g7fea67dadcd9" type="28" />
+                            <attribute id="Value" value="0xff6c5635" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="6" type="5" />
+                            <attribute id="ColorName" value="Toffee" handle="hc3365486g108fg4a2ega932g138c8474861f" type="28" />
+                            <attribute id="Value" value="0xffa4632a" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="7" type="5" />
+                            <attribute id="ColorName" value="Pumpkin Butter" handle="h5ef097ffgd70ag4885gae65gae39f8eeb097" type="28" />
+                            <attribute id="Value" value="0xff6b4828" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="8" type="5" />
+                            <attribute id="ColorName" value="Banana Cream" handle="hb5955f71g1793g4712gb9d1g919f03919a01" type="28" />
+                            <attribute id="Value" value="0xff806a53" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="9" type="5" />
+                            <attribute id="ColorName" value="Bisque" handle="hac1e0b36g6d73g4da5gb3c3g069a76b245a9" type="28" />
+                            <attribute id="Value" value="0xffc96807" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="10" type="5" />
+                            <attribute id="ColorName" value="Chestnut" handle="hc7301682g0a21g4d11gb368g9ad30566a515" type="28" />
+                            <attribute id="Value" value="0xff943322" type="5" />
+                        </node>						
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="11" type="5" />
+                            <attribute id="ColorName" value="Chocolat Cherry" handle="hcbc80889g97f9g4a16gb8f3g5f495ac925c4" type="28" />
+                            <attribute id="Value" value="0xff812033" type="5" />
+                        </node>						
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="12" type="5" />
+                            <attribute id="ColorName" value="Strawberry" handle="hcca06ce1g042eg405egafcfg8aca7a2f4700" type="28" />
+                            <attribute id="Value" value="0xffad0d0d" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="13" type="5" />
+                            <attribute id="ColorName" value="Cinnamon" handle="hbcdf64abgeda6g42d5gae72gf8bb47d2c63b" type="28" />
+                            <attribute id="Value" value="0xff583100" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="14" type="5" />
+                            <attribute id="ColorName" value="Char" handle="h1797e7f2g84adg4b1egae4bg3975a733c814" type="28" />
+                            <attribute id="Value" value="0xff302d32" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="15" type="5" />
+                            <attribute id="ColorName" value="Lava Cake" handle="h248056f5g3fe8g45adgb8c0g648ca7fdcde3" type="28" />
+                            <attribute id="Value" value="0xff1f0f0f" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="16" type="5" />
+                            <attribute id="ColorName" value="Smoke" handle="hd66a3110g30c8g4d8egb133gacd45a29c214" type="28" />
+                            <attribute id="Value" value="0xff6a6767" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="17" type="5" />
+                            <attribute id="ColorName" value="Black Grape" handle="h9768d6b8g3152g42f2g91f8ge15fbcd6ae25" type="28" />
+                            <attribute id="Value" value="0xff482c3d" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="18" type="5" />
+                            <attribute id="ColorName" value="Gray" handle="ha3d98363gd47bg48b2gbd1fg23406022e027" type="28" />
+                            <attribute id="Value" value="0xff848484" type="5" />
+                        </node>							
+                    </children>
+                </node>
+                <node id="SkinColors">
+                    <children>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="0" type="5" />
+                            <attribute id="ColorName" value="Snow" handle="h2cce5e50g5c08g4658gb308g6faf783866c0" type="28" />
+                            <attribute id="Value" value="0xffd2d2d2" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="1" type="5" />
+                            <attribute id="ColorName" value="Pale Rose" handle="hcf688e9cg3671g4c09gbd46ga139b445aa66" type="28" />
+                            <attribute id="Value" value="0xffccbaa8" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="2" type="5" />
+                            <attribute id="ColorName" value="Midnight" handle="h4a4d1ae1g7f3ag4704gbba3g8275576e0390" type="28" />
+                            <attribute id="Value" value="0xffb19e78" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="3" type="5" />
+                            <attribute id="ColorName" value="Decomposed" handle="h146b4cb9gb681g47dfg8c58g516855575d64" type="28" />
+                            <attribute id="Value" value="0xff767b6f" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="4" type="5" />
+                            <attribute id="ColorName" value="Sun-baked" handle="h26666dc7gfd25g4000g9b6cg0c957e2e46a4" type="28" />
+                            <attribute id="Value" value="0xff716059" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="5" type="5" />
+                            <attribute id="ColorName" value="Charred" handle="h5ad7b618g047cg466dgb600gae48a39eda77" type="28" />
+                            <attribute id="Value" value="0xff4a4a4a" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="6" type="5" />
+                            <attribute id="ColorName" value="Algae" handle="hbaba85cdg15feg4966g94f6g202aa348a439" type="28" />
+                            <attribute id="Value" value="0xff606a6c" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="7" type="5" />
+                            <attribute id="ColorName" value="Nutmeg" handle="h950dc209ge92eg46b2g9af0gd557b75594fe" type="28" />
+                            <attribute id="Value" value="0xffb6a074" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="8" type="5" />
+                            <attribute id="ColorName" value="Oasis" handle="h5bd74465ga0bdg4709gbf5fg953eb9e6cc1e" type="28" />
+                            <attribute id="Value" value="0xffbd966f" type="5" />
+                        </node>
+                        <node id="ColorDesc">
+                            <attribute id="ID" value="9" type="5" />
+                            <attribute id="ColorName" value="Ivory" handle="h27262fb8ga3efg4d45gbcb3g00aac475b44c" type="28" />
+                            <attribute id="Value" value="0xffb09a8a" type="5" />
+                       </node>							
+                    </children>
+                </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

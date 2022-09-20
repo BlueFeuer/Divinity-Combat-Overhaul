@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1387205254" />
+    <version major="1" minor="3" revision="0" build="0" />
+    <region id="CharacterCreationClass">
+        <node id="root">
+            <attribute id="ClassDescription" value="|Conjurer class description|" handle="h79a3fea3geea7g42e3ga2e2ga546d0ce2785" type="28" />
+			<attribute id="ClassLongDescription" value="|Conjurer class long description|" handle="hfdb8ec4fg35e1g4960g8eb6g664ff9fbfe2c" type="28" />
+            <attribute id="ClassName" value="Adept Conjurer" handle="hb14ccbafgc850g42a1ga895g30b835960b07" type="28" />
+            <attribute id="ClassType" value="Conjurer_Act2" type="22" />
+            <attribute id="SkillSet" value="Class_Conjurer_Act2" type="22" />
+            <attribute id="Voice" value="2" type="5" />
+			<attribute id="Icon" value="1" type="5" />
+		
+			<attribute id="Price" value="200" type="4" />
+			<attribute id="AreStatsWeighted" value="1" type="19" />
+            
+            <attribute id="NumStartingCombatAbilityPoints" value="3" type="4" />
+            <attribute id="NumStartingCivilAbilityPoints" value="0" type="4" />
+            <attribute id="NumStartingAttributePoints" value="5" type="4" />
+            <attribute id="NumStartingTalentPoints" value="2" type="4" />
+            
+            <children>
+                <node id="EquipmentProperties">
+                    <children>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Human" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Humans" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Dwarf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Dwarves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Elf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Elves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Lizard" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Lizards" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Human" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Humans" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Dwarf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Dwarves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Elf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Elves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Lizard" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Conjurer_Lizards" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Conjurer_Act2" type="22" />
+                        </node>
+                    </children>
+                </node>
+                <node id="AbilityChanges">
+                    <children>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="Summoning" type="23" />
+                            <attribute id="AmountIncreased" value="4" type="4" />
+                        </node>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="Leadership" type="23" />
+                            <attribute id="AmountIncreased" value="2" type="4" />
+                        </node>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="SingleHanded" type="23" />
+                            <attribute id="AmountIncreased" value="2" type="4" />
+                        </node>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="Loremaster" type="23" />
+                            <attribute id="AmountIncreased" value="1" type="4" />
+                        </node>
+                    </children>
+                </node>
+                <node id="AttributeChanges">
+                    <children>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="2" type="4" />
+                            <attribute id="Attribute" value="FIN" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="6" type="4" />
+                            <attribute id="Attribute" value="INT" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="5" type="4" />
+                            <attribute id="Attribute" value="CON" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="1" type="4" />
+                            <attribute id="Attribute" value="MEM" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="1" type="4" />
+                            <attribute id="Attribute" value="WIT" type="23" />
+                        </node>
+                    </children>
+                </node>
+                <node id="TalentsAdded">
+                    <children>
+                        <node id="TalentAdded">
+                            <attribute id="Talent" value="AnimalEmpathy" type="23" />
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

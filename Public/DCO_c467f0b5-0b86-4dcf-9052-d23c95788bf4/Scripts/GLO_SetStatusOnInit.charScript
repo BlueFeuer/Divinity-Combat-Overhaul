@@ -1,0 +1,120 @@
+INIT
+CHARACTER:__Me
+EXTERN STATUS:%StatusOnInit=DRUNK
+EXTERN STATUS:%AdditionalStatus=null
+EXTERN INT:%ForceStatusOnInit=1
+EXTERN INT:%StatusReApplyOnRemove=0
+EXTERN STRING:%ReactToStatusRemoveAD=null
+INT:%SetStatus=1
+
+EXTERN INT:%ignoreDialog = 1
+EXTERN INT:%ignoreCombat = 1
+
+
+EVENTS
+EVENT SetStatusOnInit
+ON
+	OnInit()
+ACTIONS
+	// Blue workaround.
+	IF "c1"
+		IsEqual(%StatusOnInit, WEAK)
+	THEN
+		Set(%StatusOnInit,PERMAWEAK)
+	ENDIF
+	IF "c1"
+		IsEqual(%StatusOnInit, DRUNK)
+	THEN
+		Set(%StatusOnInit,PERMADRUNK)
+	ENDIF
+	IF "c1"
+		IsEqual(%StatusOnInit, BLIND)
+	THEN
+		Set(%StatusOnInit,PERMANENT_BLIND)
+	ENDIF
+	IF "!c1&!c2&(c3|!c4)&c5"
+		IsEqual(%StatusOnInit, null)
+		CharacterHasStatus(__Me,%StatusOnInit)
+		IsEqual(%AdditionalStatus,null)		
+		CharacterHasStatus(__Me, %AdditionalStatus)
+		IsEqual(%SetStatus, 1)
+	THEN
+		CharacterApplyStatus(__Me,%StatusOnInit,-1,%ForceStatusOnInit)
+	ENDIF
+	
+EVENT RemoveStatusOnCombat
+ON
+	OnEnteredCombat(__Me,_)
+ACTIONS
+	IF "c1&c2"
+		CharacterHasStatus(__Me,%StatusOnInit)
+		IsEqual(%ignoreCombat,0)
+	THEN
+		CharacterRemoveStatus(__Me,%StatusOnInit)
+	ENDIF
+
+EVENT OnStatusRemoved
+ON
+	OnCharacterStatusRemoved(__Me,%StatusOnInit)
+ACTIONS
+	IF "c1&c2"
+		IsEqual(%StatusReApplyOnRemove,1)
+		IsEqual(%SetStatus, 1)
+	THEN
+		StartTimer("StatusReapplyDelay",0.5,-1)
+	ENDIF	
+
+EVENT OnAdditionalStatusApplied_RemoveStatusOnInit
+VARS
+	STATUS: _AdditionalStatus
+ON
+	OnCharacterStatusApplied(__Me,_AdditionalStatus)
+ACTIONS
+	IF "!c1&c2"
+		IsEqual(%AdditionalStatus,null)
+		IsEqual(%AdditionalStatus,_AdditionalStatus)
+	THEN
+		DebugText(__Me,"Additional Status Applied!")
+		CharacterRemoveStatus(__Me,%StatusOnInit)
+	ENDIF
+
+EVENT OnAdditionalStatusWearsOff_ReapplyStatusOnInit
+VARS
+	STATUS: _AdditionalStatus
+ON
+	OnCharacterStatusRemoved(__Me,_AdditionalStatus)
+ACTIONS
+	IF "!c1&c2&c3"
+		IsEqual(%AdditionalStatus,null)
+		IsEqual(%AdditionalStatus,_AdditionalStatus)
+		IsEqual(%SetStatus, 1)
+	THEN
+		DebugText(__Me,"Additional Status Removed!")
+		CharacterApplyStatus(__Me,%StatusOnInit)
+	ENDIF		
+
+EVENT FrameDelayForReapply
+ON
+	OnTimer("StatusReapplyDelay")
+ACTIONS
+	IF "c1"
+		CharacterHasStatus(__Me,%StatusOnInit)
+	THEN
+		StopTimer("StatusReapplyDelay")
+	ELSE
+		IF "(c1|!c2)&(c3|!c4)"
+			IsEqual(%ignoreDialog,1)
+			IsInDialog(__Me)
+			IsEqual(%ignoreCombat,1)
+			IsInCombat(__Me)
+		THEN
+			CharacterApplyStatus(__Me,%StatusOnInit,-1,%ForceStatusOnInit)
+			IF "!c1"
+				IsEqual(%ReactToStatusRemoveAD,null)
+			THEN
+				DialogStart(_,%ReactToStatusRemoveAD,__Me)
+			ENDIF
+		ENDIF
+	ENDIF
+		
+		

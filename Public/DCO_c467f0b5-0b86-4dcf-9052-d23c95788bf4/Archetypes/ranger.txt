@@ -1,0 +1,5 @@
+USING ranged
+
+// Rangers care less about how many are targetting their enemies
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE				0.80
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE		0.60

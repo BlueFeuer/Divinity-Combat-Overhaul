@@ -1,0 +1,260 @@
+EVENTS
+
+// Generated script. Temporarily disabled.
+/*
+EVENT Blue_CCreation_Subrace_Fire //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Fire) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Fire)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Fire) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Fire) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Fire) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Frost //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Frost) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Frost)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Frost) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Frost) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Frost) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Lightning //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Lightning) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Lightning)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Lightning) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Lightning) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Lightning) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Poison //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Poison) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Poison)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Poison) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Poison) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Poison) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Acid //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Acid) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Acid)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Acid) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Acid) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Acid) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Plague //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Plague) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Plague)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Plague) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Plague) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Plague) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_PoisonUnd //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_PoisonUnd) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_PoisonUnd)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_PoisonUnd) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_PoisonUnd) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_PoisonUnd) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Death //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Death) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Death)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Death) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Death) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Death) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Vitriol //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Vitriol) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Vitriol)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Vitriol) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Vitriol) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Vitriol) //~~
+        ENDIF
+
+
+EVENT Blue_CCreation_Subrace_Putrid //~~
+VARS
+        SKILL:_Skill
+        CHARACTER:_Character
+ON
+        OnSkillActivated(_Character, Blue_CCreation_Subrace_Putrid) //~~
+ACTIONS
+        IF "c1"
+                CharacterInCreation(_Character, _)
+        THEN
+                IF "c1&B2&!c3"
+                        GetVar(_Skill, _Character, "CurrentSubrace")
+                        CharacterHasSkill(_Character, _Skill)
+                        IsEqual(_Skill, Blue_CCreation_Subrace_Putrid)
+                THEN
+                        CharacterRemoveSkill(_Character, _Skill)
+                        CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Putrid) //~~
+                        CharacterAddSkill(_Character, Blue_CCreation_Subrace_Putrid) //~~
+                ENDIF
+                SetVar(_Character, "CurrentSubrace", SKILL:Blue_CCreation_Subrace_Putrid) //~~
+        ENDIF
+
+*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	MANUAL ABILITY CHECKS.
+	
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	
+	
+//Generic event - Can be used for character creation and granting Specialist skills.
+/*
+EVENT Blue_Generic_Correcter
+VARS
+	CHARACTER:_Character
+ON
+	OnCharacterEvent(_Character, "Generic_Correcter")
+ACTIONS
+	IF "c1"
+		CharacterHasSkill(_Character, Blue_CCreation_Subrace_Putrid)
+	THEN
+		CharacterRemoveSkill(_Character, Blue_CCreation_Subrace_Putrid)
+		SetTag(_Character, "Tag_Blue_CCreation_Subrace_Putrid")
+	ENDIF
+*/
+	
+	
+	

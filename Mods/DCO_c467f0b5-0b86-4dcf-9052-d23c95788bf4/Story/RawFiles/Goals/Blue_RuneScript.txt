@@ -1,0 +1,1744 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+// Arbiter timer
+IF
+GameStarted(_Level, _)
+THEN
+IterateParties("Blue_ArbiterTrigger2");
+//Arbiter Timer handles player stats, and in combat triggers extra checks to the current turn holder.
+TimerCancel("Blue_ArbiterTimer");
+TimerLaunch("Blue_ArbiterTimer", 250);
+//Combat Timer triggers checks to every character currently in combat.
+TimerCancel("Blue_ArbiterCombatTimer");
+TimerLaunch("Blue_ArbiterCombatTimer", 300);
+
+IF
+TimerFinished("Blue_ArbiterTimer")
+THEN
+IterateParties("Blue_ArbiterTrigger");
+TimerLaunch("Blue_ArbiterTimer", 250);
+
+IF
+TimerFinished("Blue_ArbiterTimer")
+AND
+DB_CombatCharacters(_Character, _Int)
+THEN
+SetStoryEvent(_Character, "Blue_ArbiterTurnTrigger");
+
+IF
+TimerFinished("Blue_ArbiterCombatTimer")
+THEN
+TimerLaunch("Blue_ArbiterCombatTimer", 300);
+
+// Combat event should trigger roughly every 4 seconds and when forced via a tag
+QRY
+QRY_Blue_GetCombatCheck((CHARACTERGUID)_Character)
+AND
+IsTagged(_Character, "Blue_ForceEnableArbiter", 1)
+THEN
+DB_NOOP(1);
+
+QRY
+QRY_Blue_GetCombatCheck((CHARACTERGUID)_Character)
+AND
+Random(100, _Rand)
+AND
+_Rand < 7
+THEN
+DB_NOOP(1);
+
+IF
+TimerFinished("Blue_ArbiterCombatTimer")
+AND
+DB_CombatCharacters(_Character, _Int)
+AND
+QRY_Blue_GetCombatCheck(_Character)
+THEN
+SetStoryEvent(_Character, "Blue_ArbiterCombatTrigger");
+
+
+//Game Init stuff:
+IF
+CharacterCharacterEvent(_Character, _Character, "BlueHideHydrosophist")
+THEN
+CharacterLockAbility(_Character, "WaterSpecialist");
+//CharacterLockAbility(_Character, "Polymorph");
+CharacterLockAbility(_Character, "RogueLore");
+CharacterLockAbility(_Character, "Ranged");
+
+//Source mastery behavior script hook:
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_SourceMastery_Hide")
+THEN
+CharacterLockAbility(_Character, "Polymorph");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_SourceMastery_Show")
+THEN
+CharacterUnlockAbility(_Character, "Polymorph");
+
+
+//Talent stuff (most of these are unused hooks for behavior script if I need them):
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Quest_TradeSecrets")
+THEN
+CharacterAddTalent(_Character, "Quest_TradeSecrets");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Quest_TradeSecrets")
+THEN
+CharacterRemoveTalent(_Character, "Quest_TradeSecrets");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Beastmaster")
+THEN
+CharacterAddTalent(_Character, "Beastmaster");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Beastmaster")
+THEN
+CharacterRemoveTalent(_Character, "Beastmaster");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Assassin")
+THEN
+CharacterAddTalent(_Character, "Backstab");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Assassin")
+THEN
+CharacterRemoveTalent(_Character, "Backstab");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Mack")
+THEN
+CharacterAddTalent(_Character, "RogueLoreDaggerAPBonus");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Mack")
+THEN
+CharacterRemoveTalent(_Character, "RogueLoreDaggerAPBonus");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Dress")
+THEN
+CharacterAddTalent(_Character, "InventoryAccess");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Dress")
+THEN
+CharacterRemoveTalent(_Character, "InventoryAccess");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Courageous")
+THEN
+CharacterAddTalent(_Character, "Courageous");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Courageous")
+THEN
+CharacterRemoveTalent(_Character, "Courageous");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_PetPal")
+THEN
+CharacterAddTalent(_Character, "AnimalEmpathy");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_PetPal")
+THEN
+CharacterRemoveTalent(_Character, "AnimalEmpathy");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Add_Sidewinder")
+THEN
+CharacterAddTalent(_Character, "Flanking");
+
+IF
+CharacterCharacterEvent(_Character, _Character, "Blue_Talent_Remove_Sidewinder")
+THEN
+CharacterRemoveTalent(_Character, "Flanking");
+
+//Behavior script hooks:
+IF
+CharacterLockedTalent(_Character, _Talent)
+AND
+StringConcatenate("Talent_Removed_", _Talent, _String)
+THEN
+//ShowNotification(_Character, _Talent);
+SetStoryEvent(_Character, _String);
+
+IF
+CharacterUnlockedTalent(_Character, _Talent)
+AND
+StringConcatenate("Talent_Added_", _Talent, _String)
+THEN
+//ShowNotification(_Character, _Talent);
+SetStoryEvent(_Character, _String);
+
+IF
+CharacterUsedItem(_Character, _Item)
+THEN
+CharacterItemSetEvent(_Character, _Item, "Blue_CharacterUsedItem");
+
+IF
+CharacterStoppedUsingItem(_Character, _Item)
+THEN
+CharacterItemSetEvent(_Character, _Item, "Blue_CharacterUnusedItem");
+
+IF
+CharacterBaseAbilityChanged(_Character, _Ability, _, _)
+THEN
+SetStoryEvent(_Character, _Ability);
+
+IF
+StoryEvent(_Item, "Blue_GetItemOwner")
+AND
+ItemGetOwner((ITEMGUID)_Item, _Character)
+THEN
+CharacterItemSetEvent(_Character, _Item, "Blue_ReturnItemOwner");
+
+IF
+CharacterLeveledUp(_Character)
+THEN
+SetStoryEvent(_Character, "Blue_CharacterLeveledUp");
+
+//Behavior script rune hooks:
+IF
+CharacterItemEvent(_Character, _Item, "TestClearRunes")
+AND
+QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+CharacterItemSetEvent(_Character, _Item, "TestClearRunes1");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestClearRunes")
+AND
+QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+CharacterItemSetEvent(_Character, _Item, "TestClearRunes0");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestClearRunes1")
+AND
+ItemRemoveRune(_Character, _Item, 1, _Rune1)
+THEN
+CharacterItemSetEvent(_Character, _Item, "IGNORETHIS");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestClearRunes0")
+AND
+ItemRemoveRune(_Character, _Item, 0, _Rune1)
+THEN
+CharacterItemSetEvent(_Character, _Item, "IGNORETHIS");
+
+IF
+CharacterItemEvent(_Character, _Item, "ClearRune0")
+AND
+ItemRemoveRune(_Character, _Item, 0, _Rune1)
+THEN
+CharacterItemSetEvent(_Character, _Item, "IGNORETHIS");
+
+IF
+CharacterItemEvent(_Character, _Item, "ClearRune1")
+AND
+ItemRemoveRune(_Character, _Item, 1, _Rune1)
+THEN
+CharacterItemSetEvent(_Character, _Item, "IGNORETHIS");
+
+IF
+CharacterItemEvent(_Character, _Item, "DeleteRemovedRunes")
+THEN
+ItemRemove(_Item);
+
+IF
+CharacterItemEvent(_Character, _Item, "TestCheckEquipR")
+AND
+CharacterGetEquippedItem(_Character, "Weapon", _ItemR)
+THEN
+CharacterItemSetEvent(_Character, (ITEMGUID)_ItemR, "TestSendEquipR");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestCheckEquipL")
+AND
+CharacterGetEquippedItem(_Character, "Shield", _ItemL)
+THEN
+CharacterItemSetEvent(_Character, (ITEMGUID)_ItemL, "TestSendEquipL");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestCheckNREquipR")
+AND
+CharacterGetEquippedItem(_Character, "Weapon", _ItemR)
+THEN
+CharacterItemSetEvent(_Character, (ITEMGUID)_ItemR, "TestSendNREquipR");
+
+IF
+CharacterItemEvent(_Character, _Item, "TestCheckNREquipL")
+AND
+CharacterGetEquippedItem(_Character, "Shield", _ItemL)
+THEN
+CharacterItemSetEvent(_Character, (ITEMGUID)_ItemL, "TestSendNREquipL");
+
+QRY
+QRY_Blue_CheckIfRuneIsThere((ITEMGUID)_Item, (INTEGER)_Slot)
+AND
+ItemGetRuneItemTemplate(_Item, _Slot, _Template)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Generic_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Generic_9b1d466e-73c8-4855-adec-39772917ba80", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_Generic_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Generic_9b1d466e-73c8-4855-adec-39772917ba80", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB00_4fa86457-ffc6-4372-af46-d5000697913d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB01_b9c64115-6192-44bd-a6dc-3f1e01f86bd1", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB02_8fe7fd16-8cac-43f4-b361-988ee3a20c91", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB03_4ed5f29f-1d63-4fe4-b2b6-6fc51a4ecba0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB04_9173ffba-3c1f-4e4f-94e7-cc33c21e241e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB05_71ce7cc1-c661-4648-8bee-ef2ff3cb7551", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB06_d8e57ef5-c28f-4927-8c3f-3bbacc2b4abc", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB07_4742a253-0dda-45f6-a1f5-923a4c59db22", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB08_29643a7c-a0f6-4752-8f4c-94907f6ff168", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB09_072401e9-ef73-4c0e-9978-6fc0f8175a8d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CB10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CB10_e2001e67-cd13-4199-ac9c-05cb5db70250", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot00_ae083f71-1c04-41bf-aa3a-4c4bfd7926a3", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot01_42629faa-eded-4f4c-a6d6-9b5342a3f7e2", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot02_86722b61-a2bc-4061-8af0-7fd01f152e08", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot03_452c3ac5-ea32-41af-8c09-b9cb4f2d2edb", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot04_02cc37db-9422-45a8-8990-b44f175a55c3", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot05_71a4a081-8055-4b49-9d74-b05747a3d210", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot06_717191dd-4ff3-4dba-92a2-b08c0ede150b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot07_37149bd6-b905-40cc-9f09-fad0fdf5560d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot08_28f6d9ef-32dd-463d-8f01-ac898a5441b9", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot09_c3818c38-f8ad-4bcf-9065-e9fc5fd0eee3", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPinningShot10_5f87897b-bce3-4c9a-87c0-aa1ef5aee71b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye00_a29ab41b-6c10-4b56-bd38-b7bb20f941f5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye01_3a593068-d711-4d81-82ae-5eb0e8c62abb", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye02_b4c220ff-d941-49ab-96c0-02e597313e26", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye03_7c8cbad8-eed2-4165-8681-3649cfbf4e41", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye04_1ec43c5e-8f1c-4ea4-ab40-5e682931de40", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye05_c726a4f3-f8ba-4990-8f9b-8f1589cb2812", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye06_29ee5472-31fb-413e-9a13-1bed2fd7735a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye07_912ce9a0-a346-436f-9dc7-166b999c5f14", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye08_1b1ab4ff-06c3-4687-a13c-6a9d1545eca4", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye09_6bb0d3cc-0fcf-4a04-96be-e54c312cb2d6", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBBullseye10_3d665972-6c3a-4545-9db2-bbf8c64d10ff", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision00_0f1ba407-e238-411e-a776-96522ddcb8ca", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision01_19416f31-e68b-4844-bc5a-4d57bb136dd0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision02_9b6c661e-eed3-454d-90fe-bcef32888976", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision03_b8f199a0-03fd-4890-9463-d2f9b48d88a9", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision04_e0f46eed-5b75-4f99-9f5d-21932b4bf754", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision05_9b3c5518-59e3-4cc8-91d4-47b4d85c78b7", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision06_a2b2bf7b-206c-4874-9b2d-978f6cedc07a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision07_06511954-34a7-458f-9bb1-f7cc8b00afee", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision08_83caedf8-4043-4dc9-8c4d-37a2f5485c93", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision09_94bf032f-abb6-4968-a4cf-df6dd8fd1342", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPrecision10_1e75d967-91b2-44cf-a33c-fc495db208c0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower00_bbfbbe81-3b5a-4edb-83cb-12f63ff69b1f", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower01_ee99b932-21be-427f-8363-70921f1ecd7f", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower02_586f3b86-9dff-460b-82c0-47838d0647c1", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower03_e162aa08-3fbb-4731-96ac-de491a1a8adf", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower04_db39d6c3-d09c-4960-9baf-c1d60024eef8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower05_84746f74-0e5c-4fa0-ab9a-63f7822beccd", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower06_01d7ef8c-c443-44ec-8fbd-b10c3b7bf88b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower07_2c3f3337-0fd2-4b61-b245-95da408468b7", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower08_2393a2cb-5eca-4fb9-97c4-644205b38a18", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower09_9bba0168-4814-413e-b37b-ce899bb6fdce", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_CBPower10_189e1204-5c5d-4948-ba3f-90b1c9ad880a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow00_f215198e-dcd5-4809-83f1-3b7337602abe", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow01_091aabde-8edf-4117-88fb-c24bb6b3a386", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow02_107bb3d3-4701-4a12-85ba-521d42b6873c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow03_58855aef-e055-4cd3-89d2-18d9edc0c3f0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow04_3bc0d7f6-dfaf-469d-9cfb-4240ebcf3abf", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow05_a478e1ac-2138-4b62-ad4b-a4a08a1dcf2c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow06_be5ae2c2-1e75-4eed-b8d9-1196849ad022", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow07_051fd640-2d98-4f12-87da-38379803d6ba", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow08_94a423c2-79df-4465-a3c0-f46d4c7b8586", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow09_034e0495-570d-4233-baee-d7df2078284d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Bow10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Bow10_80d3ceab-5d4f-4578-b8d6-0de9d365fe7c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot00_92372fb6-255b-4915-a731-4f59657b3261", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot01_cc939d12-fc72-4d3f-8ad3-ff2f5e7bd79d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot02_a562a1e2-a747-4868-823e-4a797d5e9d9b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot03_fb099072-eafc-478d-8c93-b099359900fc", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot04_6b0894d3-4822-4269-a536-e9f9f517fd3d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot05_c889396d-09cc-486c-9a10-25fd6f43949e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot06_d66f0b3c-8764-4821-96e5-ac1ab9d3a0ab", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot07_232441c3-190a-4246-b1ec-96a2a4597f6f", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot08_2e7553f4-db01-4949-b193-99a5b168cb6a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot09_e6ee78b2-8018-4dc0-80d4-aa90f9c586a5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPinningShot10_970dff24-ebe1-4d79-a984-1fa35a754130", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye00_417276f8-ce8f-48db-93ff-27b30db34064", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye01_85eeeb81-ddfc-459b-be7a-0dbe6fe5cc26", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye02_3dbfa2d7-f78a-4c36-b596-1afeea79d1f5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye03_03a716b2-8af1-4ed3-bf9e-6ea3e5e5c8e8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye04_f8c403c8-67f0-431c-bc9b-fa6d35a5da93", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye05_64e69073-7c17-4250-ba40-08ad2b5684e8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye06_b04a0730-7bac-4897-901e-a62da10c924a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye07_50831928-8a0f-4a0b-9d57-5117f6149471", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye08_ca931397-94c3-4d46-b0a6-142be9a86a71", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye09_078cb44a-85e7-44ba-b028-ff04acb380fd", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowBullseye10_1ceb2921-e01a-43b7-a21d-72c44eb06ce6", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision00_6a87cf90-e9a3-4a12-80cd-8a66a960fb7d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision01_df94336b-57db-42c2-b652-4cd04aa85256", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision02_f71f2fd4-0840-4d48-afb7-ffaab6598004", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision03_8b3a0356-8ce0-4127-8a6b-4aa67cbd250f", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision04_0099b64f-7974-452f-bd0c-ca8363fa8b55", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision05_0d43070f-6537-4f53-844d-f826e6656d8d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision06_805988bf-3946-4b87-bb00-6d606bf1793e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision07_8ea67f88-92e1-4e6c-bcdc-5845dd0ee9c2", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision08_60925a88-af7f-49a9-b364-7a9b54c2d28b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision09_0205e656-0d09-4060-9541-c0b895ab2c33", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPrecision10_8c9a13e1-75f4-49d7-b7ff-8578b093ad6c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower00_ec612f74-c4a5-4cdb-a4db-4746414cca53", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower01_8807f5ee-9d4b-4b0f-9bce-a4b58d9e90cc", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower02_f6340147-5244-40c2-ac0a-29322c7a8752", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower03_8c2f521f-1737-41c6-a206-ec5780595dd5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower04_1f0f90a2-bc6f-4de4-997b-20bc3089688f", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower05_2688d433-e4c2-45bc-b92c-3714159bc1f8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower06_d870c117-e090-4d82-be5f-778d678e748b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower07_04e2a1d6-02e9-40f0-8363-74e8b3a5f97e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower08_57d69f40-fb83-4bb1-a4bd-18efc5cfd54c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower09_d165d2dd-717f-4682-9ab2-0bcc896bcf32", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_BowPower10_f59ee87f-4935-4e72-b6cb-8571cb3ea31e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded00_096bed2b-39b1-4a7f-86a8-5f5e750809bd", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded01_1b972d3e-66ef-4f3a-b820-9c60a3b3586c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded02_be40dafc-edcd-4e63-9893-89d7a5bf4e0a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded03_24e137dc-dc7c-4908-a1eb-1f8cb9db0436", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded04_b20b818d-25db-4ca1-abfd-2c53d45c4ba0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded05_b1df6caa-8d45-4297-b1c8-bfc0ee65e9d6", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded06_df0b2f6b-3396-4cc0-8402-88f39c884341", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded07_c5cfabd5-1625-4502-812d-320fd3805fe0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded08_81a317a7-771c-4d54-bb48-48bebb5d1785", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded09_60c6d81b-2a7b-4f97-9d20-daa0110b2fc0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Twohanded10_e59ad0a8-c2e1-4c9d-8fd1-4efc22867951", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded00_6b24d27b-221c-44fb-92a2-bb39449ea0ed", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded01_5b201aeb-443b-478f-ba1d-7486bab29361", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded02_a713ab9c-cd88-45b5-9c22-c13aebfc3dbb", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded03_7b87a4e5-2d3a-4d36-ae42-5553eef1180c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded04_bf333f75-1c95-4e92-aacf-8d0f206727aa", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded05_4b608961-316e-46d7-93f3-bbc31f31f999", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded06_fd9f021e-ef8d-4751-b433-24c7bbe2c6e2", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded07_f402339d-f154-4ddb-b1f7-a9cedf93c5cf", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded08_66732022-b9d6-4187-adc5-7217aefdce7e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded09_0817411a-dfca-4710-8758-edbaf35ed4ec", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Singlehanded10_a8c82f74-18b6-4eda-8e1d-68a66cb9daa6", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand00_7af5378c-e9e7-494f-9008-296ec0f9ae88", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand01_c06b4bc1-1032-43e9-82a5-0f4e9358f580", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand02_b847fa3f-19fc-47a7-a20d-352d3bf74dcb", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand03_929cc882-8a7f-4cfc-8a42-ee72909b90e3", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand04_fc14f263-6243-4194-86f1-3f867a4c9790", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand05_1a42f7e6-9eb0-491c-b418-c6e05723a49b", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand06_35b5cbb5-e929-418f-8de0-ac70b54d8a23", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand07_81a2538c-b098-4c5e-9387-04c6ea43f9d1", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand08_858f32e2-980b-478a-be24-d61a0817393d", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand09_0af8f10a-c5c6-43ba-8078-d2d92aa949c8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingMainHand10_d1f66358-a5cc-4259-945e-1a073a1771f3", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand00_f97f6296-0455-4d12-b9e6-11c3011a99e5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand01_da8fb46f-bb8f-4965-8f57-952b59e62e90", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand02_d99dcbf8-a3f2-4067-92c3-e0f9b555d0d4", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand03_8782dedc-b7a4-4d54-8d2d-b9af9b7bc308", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand04_489ae5d4-3c29-4cb6-993e-3d063aee5b00", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand05_d941d9e7-70b8-4a16-b001-e0f22c8f32fd", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand06_e0c0e6a5-19d7-4c87-b5a1-50777be716d5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand07_8be88128-d70e-4b75-ae24-2fad4d97be14", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand08_fd887d6e-c571-4fe8-99b2-43ed5712b9d6", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand09_3dce2884-47a7-4d62-9bc6-8250bd8348e1", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_DualwieldingOffHand10_7897581c-b001-4246-ae79-b12ba0954610", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand00_ced61bce-9f19-4d0e-9d02-e024c3d15be2", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand01_ebfd419e-e1d9-4656-a01e-bece3d8390d8", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand02_8848fcaf-c8dd-44fc-8c02-1bfa8d76abe0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand03_39190596-f2b5-4311-bba9-a7755bc85b94", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand04_b96230d8-6c16-4a2c-8a32-884a80f6feb7", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand05_9c555c97-7370-4d0f-818b-099566e40dd0", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand06_161de457-9a41-4de5-9a57-f00669b067ad", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand07_3ed5ef4f-06f2-485e-b47d-ffbfc76c7a85", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand08_5947f11b-e96e-430d-ac6b-406afd0e0b19", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand09_af6b805d-1890-41b1-b3a5-a4d57ba1c624", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Wand10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Wand10_ae7ce17a-0905-49d5-a36c-a4e71e317397", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff00_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff00_4d9d13ad-5f3b-414e-84e2-ea1bf42a7f43", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff01_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff01_521c610a-599e-499a-adfa-29add72b9c4a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff02_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff02_9a35b826-a4fa-4763-a3b2-1abae6229b8e", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff03_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff03_2f2f685f-20b2-41e0-a799-564e848a299c", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff04_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff04_4ded7527-706a-4a6d-8c26-adb9c0817ec1", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff05_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff05_c5f14b73-0a0c-4551-9201-c757cda3066a", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff06_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff06_949e572b-69e3-458a-8a86-8a5ceaafeaea", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff07_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff07_8fe4214f-ea4b-49bb-8fae-3324d01315c5", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff08_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff08_2189ffd5-dbc9-4106-b7b4-9d0122f16e70", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff09_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff09_c3620ed7-8d73-4c04-b5e3-2b9eeeba0709", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot0_Staff10_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 0)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot0_Staff10_e1abcb3a-2899-40db-8ca1-700db6cdd814", 0);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_FireArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_FireArrow_16bc8966-2627-41c6-b7c9-0a696c9d3326", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_ExplosiveArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_ExplosiveArrow_71338848-6a2c-49de-a0d7-ec89679c37fa", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_FreezingArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_FreezingArrow_4db5032d-1f9a-4f54-874e-45d1506a2779", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_WaterArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_WaterArrow_d67e8c89-d602-46c9-8c91-13db431fcdf8", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_BlessedWaterArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_BlessedWaterArrow_803d79c8-db23-4747-92ca-f3a524df961d", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_CursedFireArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_CursedFireArrow_c6e9940c-8996-4440-ac65-fa649bd92053", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_SlowdownArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_SlowdownArrow_1b156f84-07a0-4a32-9c9d-341a5c1ce430", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_StunningArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_StunningArrow_830a6899-5fd5-49ae-9a42-83a135689622", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_SteamCloudArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_SteamCloudArrow_6cccc770-5eb0-4540-8a01-2eada0f4a311", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_SmokescreenArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_SmokescreenArrow_9d80be55-e8ae-4d51-bb2d-c9503b3897c5", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_StaticCloudArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_StaticCloudArrow_8bd966b4-1c6e-4102-a7ee-f74515f1d9cd", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_VoodooStaticCloudArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_VoodooStaticCloudArrow_d74c1554-a5e4-4b99-841b-228bbce1f268", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_SilverArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_SilverArrow_ba688ffc-1ea9-41e7-9213-9907e6ca96ac", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_BarbedArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_BarbedArrow_5589e34e-4bb4-42d5-b823-6d93fe568025", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_KnockoutArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_KnockoutArrow_6546f4be-0e5e-4401-9ffe-b82d3abf535a", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_PoisonCloudArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_PoisonCloudArrow_68edaa6d-9577-4ebe-949f-6ee9c5a8747f", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_CharmingArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_CharmingArrow_02cca7cb-cd3e-4488-9aee-f1a0ed0204a2", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_PoisonArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_PoisonArrow_99c63469-0e32-4f3a-bb74-de29acbbd985", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_AcidArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_AcidArrow_88ef4679-47ba-4b63-8950-e26101ad066a", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_DebuffArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_DebuffArrow_9bfdf34f-737a-4829-bbf9-c0298f446e34", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_VampiricArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_VampiricArrow_c91f7907-65e5-471a-b524-f4c704e2e16c", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_CursingArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_CursingArrow_04b98582-73bf-450e-be9e-9a9df8d1bc99", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_BlessingArrow_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_BlessingArrow_43be8870-ec57-47f0-bd4f-a0eff818a242", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_MartialStance_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_MartialStance_414186e7-edf1-4c64-a25c-2adbc2e94719", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_MartialStanceOffhand_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_MartialStanceOffhand_bb0fa7be-a06a-4f20-9a18-e17813801289", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_WrathStance_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_WrathStance_ed548985-20bf-4dde-a8df-6b0ad21e14b1", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_WrathStanceOffhand_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_WrathStanceOffhand_fb146308-b3a9-43fe-baa6-c3a5022dabc9", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_CleavingStance_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_CleavingStance_c1495170-c1c1-4d10-b876-5341a4ac1526", 1);
+
+IF
+CharacterItemEvent(_Character, _Item, "Blue_BuffRunes_Slot1_CleavingStanceOffhand_Trigger")
+AND
+NOT QRY_Blue_CheckIfRuneIsThere(_Item, 1)
+THEN
+ItemInsertRune(_Character, _Item, "Blue_BuffRunes_Slot1_Rune_CleavingStanceOffhand_9643f155-3ba5-48af-82e9-ce2a7a143f6d", 1);
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "DOS2ModWrapper"

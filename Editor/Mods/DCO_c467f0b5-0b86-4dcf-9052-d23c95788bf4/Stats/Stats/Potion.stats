@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="48e63fff-81e0-42bb-ac51-39f5904b97be">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Stats_Blessed" />
+        <field name="Act" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Act" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+        <field name="FireResistance" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="EarthResistance" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="WaterResistance" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="AirResistance" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="PoisonResistance" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Duration" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="StatusIcon" type="StringStatObjectFieldDefinition" value="statIcons_Blessed" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Stats_Unconscious" />
+        <field name="Act" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Act" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+        <field name="Sight" type="IntegerStatObjectFieldDefinition" value="-10000" />
+        <field name="MovementSpeedBoost" type="IntegerStatObjectFieldDefinition" value="-100" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="-100" />
+        <field name="APRecovery" type="IntegerStatObjectFieldDefinition" value="-2" />
+        <field name="Armor" type="IntegerStatObjectFieldDefinition" value="-1000" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="-1000" />
+        <field name="MagicArmor" type="IntegerStatObjectFieldDefinition" value="-1000" />
+        <field name="MagicArmorBoost" type="IntegerStatObjectFieldDefinition" value="-1000" />
+        <field name="Duration" type="IntegerStatObjectFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Stats_HolyFire" />
+        <field name="Act" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Act" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+        <field name="FireResistance" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Duration" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="10;2;53" enumeration_type_name="AttributeFlags" />
+        <field name="StatusIcon" type="StringStatObjectFieldDefinition" value="statIcons_HolyFire" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

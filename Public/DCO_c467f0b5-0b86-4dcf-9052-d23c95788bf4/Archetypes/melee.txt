@@ -1,0 +1,28 @@
+// Melee characters love killing 
+MULTIPLIER_KILL_ENEMY 						3.00
+
+// Melee characters don't care about neutrals
+MULTIPLIER_SCORE_ON_NEUTRAL					0.00
+
+// Melee characters don't care about allies
+MULTIPLIER_SCORE_ON_ALLY					0.00
+
+// Melee characters prefer new targets!
+MULTIPLIER_TARGET_MY_ENEMY					1.20
+MULTIPLIER_TARGET_MY_HOSTILE				0.50
+
+// Melee care about hostile count
+MULTIPLIER_TARGET_HOSTILE_COUNT_ONE			1.00
+MULTIPLIER_TARGET_HOSTILE_COUNT_TWO_OR_MORE	1.00
+
+// Melee characters dont't care much stench or flanking
+MULTIPLIER_ENDPOS_STENCH					0.95
+MULTIPLIER_ENDPOS_FLANKED					0.01
+MULTIPLIER_ENDPOS_ENEMIES_NEARBY				-0.10 //BlueOverride
+
+// Melee characters loves contact boosts
+MULTIPLIER_CONTACT_BOOST					1.00
+
+FALLBACK_ALLIES_NEARBY						1.00
+FALLBACK_ENEMIES_NEARBY						0.00
+FALLBACK_WANTED_ENEMY_DISTANCE				5.00

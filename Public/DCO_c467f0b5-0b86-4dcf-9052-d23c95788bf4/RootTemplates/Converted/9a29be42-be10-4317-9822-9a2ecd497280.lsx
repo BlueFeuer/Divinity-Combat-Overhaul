@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="9a29be42-be10-4317-9822-9a2ecd497280" type="22" />
+					<attribute id="Name" value="Blue_Summons_Reference2" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="character" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="0c9ddbf6-0b5b-41ea-8c30-9cdbd3c87582" type="22" />
+					<attribute id="PhysicsTemplate" value="15754a50-ccbd-4c14-9d0c-69e9b0a88456" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="Incarnate" type="28" handle="h3e385c90g91c5g4f38g932cg87ea0c9c3d17" />
+					<attribute id="Icon" value="Portrait_Summon_Incarnate_A" type="22" />
+					<attribute id="Stats" value="Summon_Incarnate_Character" type="22" />
+					<attribute id="SkillSet" value="Summon_Incarnate" type="22" />
+					<attribute id="Equipment" value="Summon_Incarnate_Equip" type="22" />
+					<attribute id="WalkSpeed" value="2" type="6" />
+					<attribute id="ClimbAttachSpeed" value="8.57" type="6" />
+					<attribute id="ClimbLoopSpeed" value="4.5" type="6" />
+					<attribute id="ClimbDetachSpeed" value="2.84" type="6" />
+					<attribute id="RunSpeed" value="3.75" type="6" />
+					<attribute id="HitFX" value="RS3_FX_GP_Combat_Hit_Blood_01_Small" type="22" />
+					<attribute id="BloodSurfaceType" value="SurfaceBlood" type="22" />
+					<attribute id="ExplodedResourceID" value="36bb4f77-4ea4-4741-a64c-3e9565b1438b" type="22" />
+					<attribute id="ExplosionFX" value="RS3_FX_GP_Combat_CorpseExplosion_Blood_01_Small" type="22" />
+					<attribute id="CanOpenDoors" value="False" type="19" />
+					<attribute id="InfluenceTreasureLevel" value="False" type="19" />
+					<attribute id="Random" value="9223372036854775808" type="24" />
+					<attribute id="RagdollTemplate" value="054cb571-3104-4c7e-9bc1-7bc095101555" type="22" />
+					<attribute id="Alignment" value="Good NPC" type="22" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" value="SUMMON" type="22" />
+								</node>
+								<node id="Tag">
+									<attribute id="Object" value="INCARNATE_S" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="2" type="1" />
+							<attribute id="Min" value="-0.376378 0.00100085 -1.06986" type="12" />
+							<attribute id="Max" value="0.376378 1.14233 1.07821" type="12" />
+							<attribute id="Radius" value="0.26" type="6" />
+							<attribute id="Height" value="1.8" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="hd7b5625fgac24g454fgbdbbgc04b07d020a1" />
+						</node>
+						<node id="OnDeathActions" />
+						<node id="SkillList" />
+						<node id="ItemList" />
+						<node id="Scripts">
+							<children>
+								<node id="Script">
+									<attribute id="UUID" value="5bc80992-a7f6-4da6-83e2-3d276384d8f7" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="AiHint" type="22" />
+													<attribute id="Type" value="4" type="4" />
+													<attribute id="Value" value="0xbaadf00d" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="Archetype" type="22" />
+													<attribute id="Type" value="30" type="4" />
+													<attribute id="Value" value="base" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="FleeFromDangerousSurface" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="StayInAiHints" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanChickenFlee" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanCower" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanFleeWhileCowering" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CombatFallbackAD" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Treasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="TradeTreasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterLyingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterSittingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterDeadPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="FootStepInfos">
+							<children>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Left" type="23" />
+									<attribute id="FootPrintEffectName" value="RS3_FX_GP_Footsteps_Small_L" type="23" />
+									<attribute id="FootSmearEffectName" value="RS3_FX_GP_Footsmear_Small_L" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Dummy_L_Foot_01" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+								<node id="FootStepInfo">
+									<attribute id="Name" value="Footstep_Right" type="23" />
+									<attribute id="FootPrintEffectName" value="RS3_FX_GP_Footsteps_Small_R" type="23" />
+									<attribute id="FootSmearEffectName" value="RS3_FX_GP_Footsmear_Small_R" type="23" />
+									<attribute id="FootSlideEffectName" value="" type="23" />
+									<attribute id="FootHearingEffectName" value="" type="23" />
+									<attribute id="FootBoneName" value="Dummy_R_Foot_01" type="22" />
+									<attribute id="FootSoundEventName" value="Movement" type="22" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

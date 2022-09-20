@@ -1,0 +1,1502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="3" minor="6" revision="1" build="0" />
+	<region id="TranslatedStringKeys">
+		<node id="root">
+			<children>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Character is immune to further Charm attempts." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Immunity_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -5% Accuracy, -5% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Accuracy, -10% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Accuracy, -20% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character is Charmed and their allegiances reversed.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Charmed_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Accuracy, -5% Deflection.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -10% Accuracy, -10% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Accuracy, -20% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character is Charmed and their allegiances reversed.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Charmed_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Accuracy, -5% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Accuracy, -10% Deflection.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -20% Accuracy, -20% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character is Charmed and their allegiances reversed.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Charmed_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Accuracy, -5% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Accuracy, -10% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Accuracy, -20% Deflection.&lt;br&gt;&lt;/font&gt;Tier IV (8): Character is Charmed and their allegiances reversed." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Charmed_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -5% Piercing Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -15% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -20% Piercing Resistance.&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BLEEDING_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Piercing Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -10% Piercing Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -15% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -20% Piercing Resistance.&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BLEEDING_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Piercing Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -15% Piercing Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -20% Piercing Resistance.&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BLEEDING_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -5% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -10% Piercing Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -15% Piercing Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): -20% Piercing Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_BLEEDING_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -1 AP, -10% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 AP, -20% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 AP, -30% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -5 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Slowed_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 AP, -10% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -2 AP, -20% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 AP, -30% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -5 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Slowed_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 AP, -10% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 AP, -20% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -3 AP, -30% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -5 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Slowed_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 AP, -10% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 AP, -20% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 AP, -30% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier IV (8): -5 AP, -40% Deflection, +200% Movement Speed Reduction." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Slowed_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Damage, -10% Mundane Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Damage, -20% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -1 AP, -20% Damage, -1 Grit, -30% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -2 AP, -30% Damage, -2 Grit, -45% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Diseased_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Damage, -10% Mundane Resistances.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -1 AP, -15% Damage, -20% Mundane Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -1 AP, -20% Damage, -1 Grit, -30% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -2 AP, -30% Damage, -2 Grit, -45% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Diseased_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Damage, -10% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Damage, -20% Mundane Resistances.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -1 AP, -20% Damage, -1 Grit, -30% Mundane Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -2 AP, -30% Damage, -2 Grit, -45% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Diseased_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Damage, -10% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Damage, -20% Mundane Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -1 AP, -20% Damage, -1 Grit, -30% Mundane Resistances.&lt;br&gt;&lt;/font&gt;Tier IV (8): -2 AP, -30% Damage, -2 Grit, -45% Mundane Resistances.&lt;br&gt;&lt;/font&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Diseased_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -15% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -25% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -100% Deflection, -100% Movement.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Crippled_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -15% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -1 AP, -25% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -100% Deflection, -100% Movement.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Crippled_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -15% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -25% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -2 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -100% Deflection, -100% Movement.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Crippled_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -15% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -25% Deflection, +100% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -40% Deflection, +200% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier IV (8): -3 AP, -100% Deflection, -100% Movement." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Crippled_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Deflection, +20% Movement Speed Reduction, -10% Water Resistance, +10% Fire Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -20% Deflection, +30% Movement Speed Reduction, -15% Water Resistance, +15% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -30% Deflection, +50% Movement Speed Reduction, -20% Water Resistance, +20% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -50% Deflection, +80% Movement Speed Reduction, -30% Water Resistance, +30% Fire Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Chilled_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction, -10% Water Resistance, +10% Fire Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -1 AP, -20% Deflection, +30% Movement Speed Reduction, -15% Water Resistance, +15% Fire Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -30% Deflection, +50% Movement Speed Reduction, -20% Water Resistance, +20% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -50% Deflection, +80% Movement Speed Reduction, -30% Water Resistance, +30% Fire Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Chilled_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction, -10% Water Resistance, +10% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -20% Deflection, +30% Movement Speed Reduction, -15% Water Resistance, +15% Fire Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -2 AP, -30% Deflection, +50% Movement Speed Reduction, -20% Water Resistance, +20% Fire Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -3 AP, -50% Deflection, +80% Movement Speed Reduction, -30% Water Resistance, +30% Fire Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Chilled_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction, -10% Water Resistance, +10% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -20% Deflection, +30% Movement Speed Reduction, -15% Water Resistance, +15% Fire Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -2 AP, -30% Deflection, +50% Movement Speed Reduction, -20% Water Resistance, +20% Fire Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): -3 AP, -50% Deflection, +80% Movement Speed Reduction, -30% Water Resistance, +30% Fire Resistance." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Chilled_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -20% Damage.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -40% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -60% Damage.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Weak_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Damage.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -30% Damage.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -40% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -60% Damage.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Weak_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Damage.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -40% Damage.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -60% Damage.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Weak_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -40% Damage.&lt;br&gt;&lt;/font&gt;Tier IV (8): -60% Damage." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Weak_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): Character looks a bit sickly.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Character can no longer restore health.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character takes 100% of Healing as Physical Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character takes 100% of Healing as Physical Damage, -25% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Decaying_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character feels a bit sickly.&lt;br&gt;&lt;/font&gt;Tier II (2-3): Character can no longer restore health.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character takes 100% of Healing as Physical Damage.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character takes 100% of Healing as Physical Damage, -25% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Decaying_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character feels a bit sickly.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Character can no longer restore health.&lt;br&gt;&lt;/font&gt;Tier III (4-7): Character takes 100% of Healing as Physical Damage.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character takes 100% of Healing as Physical Damage, -25% Mundane Resistances.&lt;br&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Decaying_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character feels a bit sickly.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Character can no longer restore health.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character takes 100% of Healing as Physical Damage.&lt;br&gt;&lt;/font&gt;Tier IV (8): Character takes 100% of Healing as Physical Damage, -25% Mundane Resistances.&lt;br&gt;&lt;/font&gt;Mundane Resistances include Bludgeoning, Piercing, and Physical.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Decaying_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -30% Armor Rating, -10% Bludgeoning Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -40% Armor Rating, -20% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -60% Armor Rating, -30% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -90% Armor Rating, -40% Bludgeoning Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Acid_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -30% Armor Rating, -10% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -40% Armor Rating, -20% Bludgeoning Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -60% Armor Rating, -30% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -90% Armor Rating, -40% Bludgeoning Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Acid_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -30% Armor Rating, -10% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -40% Armor Rating, -20% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -60% Armor Rating, -30% Bludgeoning Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -90% Armor Rating, -40% Bludgeoning Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Acid_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -30% Armor Rating, -10% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -40% Armor Rating, -20% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -60% Armor Rating, -30% Bludgeoning Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): -90% Armor Rating, -40% Bludgeoning Resistance." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Acid_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -20% Accuracy.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Accuracy.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -50% Accuracy, -1 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot Attack, -2 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Atrophy_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -30% Accuracy.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -50% Accuracy, -1 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot Attack, -2 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Atrophy_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Accuracy.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -50% Accuracy, -1 AP.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot Attack, -2 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Atrophy_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -30% Accuracy.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -50% Accuracy, -1 AP.&lt;br&gt;&lt;/font&gt;Tier IV (8): Cannot Attack, -2 AP." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Atrophy_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Deflection, -3 Maximum AP, +20% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Deflection, -5 Maximum AP, +30% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Deflection, -9 Maximum AP, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection. Immune to many effects.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Petrified_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, -3 Maximum AP, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -20% Deflection, -4 Maximum AP, +30% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Deflection, -6 Maximum AP, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection. Immune to many effects.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Petrified_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, -3 Maximum AP, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Deflection, -4 Maximum AP, +30% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -30% Deflection, -6 Maximum AP, +50% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection. Immune to many effects.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Petrified_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, -3 Maximum AP, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Deflection, -4 Maximum AP, +30% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Deflection, -6 Maximum AP, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier IV (8): Miss Turn, -100% Deflection. Immune to many effects." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Petrified_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Accuracy, -20% Deflection, -1m Range. Enemies outside of 11m cannot be seen.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -25% Deflection, -2m Range. Enemies outside of 8m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -30% Deflection, Range limited to 5m. Enemies outside of 6m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -35% Deflection, Range limited to 5m. Enemies outside of 3m cannot be seen.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Blind_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -20% Deflection, -1m Range. Enemies outside of 11m cannot be seen.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -20% Accuracy, -25% Deflection, -2m Range. Enemies outside of 8m cannot be seen.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -30% Deflection, Range limited to 5m. Enemies outside of 6m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -35% Deflection, Range limited to 5m. Enemies outside of 3m cannot be seen.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Blind_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -20% Deflection, -1m Range. Enemies outside of 11m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -25% Deflection, -2m Range. Enemies outside of 8m cannot be seen.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -30% Accuracy, -30% Deflection, Range limited to 5m. Enemies outside of 6m cannot be seen.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -35% Deflection, Range limited to 5m. Enemies outside of 3m cannot be seen.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Blind_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -20% Deflection, -1m Range. Enemies outside of 11m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -25% Deflection, -2m Range. Enemies outside of 8m cannot be seen.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -30% Deflection, Range limited to 5m. Enemies outside of 6m cannot be seen.&lt;br&gt;&lt;/font&gt;Tier IV (8): -40% Accuracy, -35% Deflection, Range limited to 5m. Enemies outside of 3m cannot be seen." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Blind_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): 5m Minimum Range, -20% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): 7m Minimum Range, -30% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): 11m Minimum Range, -40% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character cannot be controlled and will run away. -100% Deflection.&lt;br&gt;Character will run away in fear until they are the minimum range away from enemies.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fear_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): 5m Minimum Range, -20% Deflection.&lt;br&gt;&lt;/font&gt;Tier II (2-3): 7m Minimum Range, -30% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): 11m Minimum Range, -40% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character cannot be controlled and will run away. -100% Deflection.&lt;br&gt;Character will run away in fear until they are the minimum range away from enemies.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fear_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): 5m Minimum Range, -20% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): 7m Minimum Range, -30% Deflection.&lt;br&gt;&lt;/font&gt;Tier III (4-7): 11m Minimum Range, -40% Deflection.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character cannot be controlled and will run away. -100% Deflection.&lt;br&gt;Character will run away in fear until they are the minimum range away from enemies.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fear_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): 5m Minimum Range, -20% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): 7m Minimum Range, -30% Deflection.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): 11m Minimum Range, -40% Deflection.&lt;br&gt;&lt;/font&gt;Tier IV (8): Character cannot be controlled and will run away. -100% Deflection.&lt;br&gt;&lt;/font&gt;Character will run away in fear until they are the minimum range away from enemies.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fear_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -20% Accuracy, -20% Deflection, +15% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -25% Accuracy, -1 AP, -30% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -2 AP, -40% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection.&lt;/font&gt;&lt;br&gt;Staggered lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Staggered_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy, -20% Deflection, +15% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -25% Accuracy, -1 AP, -30% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -2 AP, -40% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection.&lt;/font&gt;&lt;br&gt;Staggered lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Staggered_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy, -20% Deflection, +15% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -25% Accuracy, -1 AP, -30% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -30% Accuracy, -2 AP, -40% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection.&lt;/font&gt;&lt;br&gt;Staggered lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Staggered_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -20% Accuracy, -20% Deflection, +15% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -25% Accuracy, -1 AP, -30% Deflection, +25% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -2 AP, -40% Deflection, +50% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier IV (8): Miss turn, -100% Deflection.&lt;br&gt;Staggered lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Staggered_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): Casting skills worsens this status.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot cast skills. Duration reduced to 1 turn.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Muted_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;Tier II (2-3): Casting skills worsens this status.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot cast skills. Duration reduced to 1 turn.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Muted_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;Tier III (4-7): Casting skills worsens this status.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Cannot cast skills. Duration reduced to 1 turn.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Muted_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Casting skills worsens this status.&lt;br&gt;&lt;/font&gt;Tier IV (8): Cannot cast skills. Duration reduced to 1 turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Muted_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Fire Resistance, +10% Water Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Fire Resistance, +15% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Fire Damage, -30% Fire Resistance, +20% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Fire Damage, -40% Fire Resistance, +30% Water Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Burning_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire Resistance, +10% Water Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -15% Fire Resistance, +15% Water Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Fire Damage, -30% Fire Resistance, +20% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Fire Damage, -40% Fire Resistance, +30% Water Resistance.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Burning_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire Resistance, +10% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Fire Resistance, +15% Water Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): Fire Damage, -30% Fire Resistance, +20% Water Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Fire Damage, -40% Fire Resistance, +30% Water Resistance.&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Burning_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire Resistance, +10% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Fire Resistance, +15% Water Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Fire Damage, -30% Fire Resistance, +20% Water Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): Fire Damage, -40% Fire Resistance, +30% Water Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Burning_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Poison Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25% Poison Resistance,&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Poisoned_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Poison Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -15% Poison Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25% Poison Resistance,&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Poisoned_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Poison Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -20% Poison Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25% Poison Resistance,&lt;/font&gt;&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Poisoned_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -15% Poison Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -20% Poison Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): -25% Poison Resistance,&lt;br&gt;&lt;font color='#AB9D93'&gt;Dealing [1] per turn. Damage goes up with tier.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Poisoned_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -1 Aptitude, -1 AP, -25% Deflection, -10% Air Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Aptitude, -2 AP, -35% Deflection, -15% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 Aptitude, -3 AP, -50% Deflection, -20% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection, -25% Air Resistance.&lt;/font&gt;&lt;br&gt;Shocked lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shocked_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Aptitude, -1 AP, -25% Deflection, -10% Air Resistance.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -2 Aptitude, -2 AP, -35% Deflection, -15% Air Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 Aptitude, -3 AP, -50% Deflection, -20% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection, -25% Air Resistance.&lt;/font&gt;&lt;br&gt;Shocked lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shocked_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Aptitude, -1 AP, -25% Deflection, -10% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Aptitude, -2 AP, -35% Deflection, -15% Air Resistance.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -4 Aptitude, -3 AP, -50% Deflection, -20% Air Resistance.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss Turn, -100% Deflection, -25% Air Resistance.&lt;/font&gt;&lt;br&gt;Shocked lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shocked_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Aptitude, -1 AP, -25% Deflection, -10% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Aptitude, -2 AP, -35% Deflection, -15% Air Resistance.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 Aptitude, -3 AP, -50% Deflection, -20% Air Resistance.&lt;br&gt;&lt;/font&gt;Tier IV (8): Miss Turn, -100% Deflection, -25% Air Resistance.&lt;br&gt;Shocked lasts one turn." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Shocked_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Deflection, +20% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Deflection, +35% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 AP, -40% Deflection, +80% Movement Speed Reduction, -1 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection, -1 Willpower.&lt;br&gt;Damage taken causes this status to reduce in Strength by 2.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sleeping_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -1 AP, -15% Deflection, +35% Movement Speed Reduction.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 AP, -40% Deflection, +80% Movement Speed Reduction, -1 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection, -1 Willpower.&lt;br&gt;Damage taken causes this status to reduce in Strength by 2.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sleeping_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Deflection, +35% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -4 AP, -40% Deflection, +80% Movement Speed Reduction, -1 Willpower.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Miss turn, -100% Deflection, -1 Willpower.&lt;br&gt;Damage taken causes this status to reduce in Strength by 2.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sleeping_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Deflection, +20% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -1 AP, -15% Deflection, +35% Movement Speed Reduction.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -4 AP, -40% Deflection, +80% Movement Speed Reduction, -1 Willpower.&lt;br&gt;&lt;/font&gt;Tier IV (8): Miss turn, -100% Deflection, -1 Willpower.&lt;br&gt;&lt;/font&gt;Damage taken causes this status to reduce in Strength by 2.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sleeping_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -50% Fire, Water, Air, and Poison resistances.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LoweredResistances_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -20% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -50% Fire, Water, Air, and Poison resistances.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LoweredResistances_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -30% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -50% Fire, Water, Air, and Poison resistances.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LoweredResistances_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Fire, Water, Air, and Poison resistances.&lt;br&gt;&lt;/font&gt;Tier IV (8): -50% Fire, Water, Air, and Poison resistances." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_LoweredResistances_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -1 Willpower.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Willpower.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DrainWillpower_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Willpower.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -2 Willpower.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Willpower.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DrainWillpower_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Willpower.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -3 Willpower.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Willpower.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DrainWillpower_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Willpower.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Willpower.&lt;br&gt;&lt;/font&gt;Tier IV (8): -4 Willpower." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_DrainWillpower_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -1 Grit.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Grit.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sundered_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Grit.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -2 Grit.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Grit.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sundered_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Grit.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -3 Grit.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -4 Grit.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sundered_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -1 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -2 Grit.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -3 Grit.&lt;br&gt;&lt;/font&gt;Tier IV (8): -4 Grit." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Sundered_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -3 Aptitude.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -5 Aptitude, All Actions take +1 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -8 Aptitude, All Actions take +2 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25 Aptitude, -1 Willpower, All Actions take +3 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Hebetudinous_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -3 Aptitude.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -5 Aptitude, All Actions take +1 AP.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -8 Aptitude, All Actions take +2 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25 Aptitude, -1 Willpower, All Actions take +3 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Hebetudinous_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -3 Aptitude.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -5 Aptitude, All Actions take +1 AP.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -8 Aptitude, All Actions take +2 AP.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -25 Aptitude, -1 Willpower, All Actions take +3 AP.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Hebetudinous_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -3 Aptitude.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -5 Aptitude, All Actions take +1 AP.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -8 Aptitude, All Actions take +2 AP.&lt;br&gt;&lt;/font&gt;Tier IV (8): -25 Aptitude, -1 Willpower, All Actions take +3 AP." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Hebetudinous_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): Character doesn't know where they're going.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Where is this guy going?&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character seems like they could hit anyone.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character doesn't know friend from foe.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Mad_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character doesn't know where they're going.&lt;br&gt;&lt;/font&gt;Tier II (2-3): Where is this guy going?&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character seems like they could hit anyone.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character doesn't know friend from foe.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Mad_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character doesn't know where they're going.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Where is this guy going?&lt;br&gt;&lt;/font&gt;Tier III (4-7): Character seems like they could hit anyone.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): Character doesn't know friend from foe.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Mad_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): Character doesn't know where they're going.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): Where is this guy going?&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): Character seems like they could hit anyone.&lt;br&gt;&lt;/font&gt;Tier IV (8): Character doesn't know friend from foe." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Mad_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Tier I (1): -10% Accuracy, -1 AP, -1 Aptitude, -20% Crit Chance, -1 Grit and Willpower, -10% All Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -2 AP, -2 Aptitude, -40% Crit Chance, -2 Grit and Willpower, -20% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -3 AP, -3 Aptitude, -60% Crit Chance, -3 Grit and Willpower, -30% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -4 AP, -5 Aptitude, -100% Crit Chance, -4 Grit and Willpower, -50% All Resistances.&lt;br&gt;All Resistances includes Air, Fire, Water, Poison, Bludgeoning, Physical, and Piercing.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SoulSap_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -1 AP, -1 Aptitude, -20% Crit Chance, -1 Grit and Willpower, -10% All Resistances.&lt;br&gt;&lt;/font&gt;Tier II (2-3): -20% Accuracy, -2 AP, -2 Aptitude, -40% Crit Chance, -2 Grit and Willpower, -20% All Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -3 AP, -3 Aptitude, -60% Crit Chance, -3 Grit and Willpower, -30% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -4 AP, -5 Aptitude, -100% Crit Chance, -4 Grit and Willpower, -50% All Resistances.&lt;br&gt;All Resistances includes Air, Fire, Water, Poison, Bludgeoning, Physical, and Piercing.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SoulSap_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -1 AP, -1 Aptitude, -20% Crit Chance, -1 Grit and Willpower, -10% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -2 AP, -2 Aptitude, -40% Crit Chance, -2 Grit and Willpower, -20% All Resistances.&lt;br&gt;&lt;/font&gt;Tier III (4-7): -30% Accuracy, -3 AP, -3 Aptitude, -60% Crit Chance, -3 Grit and Willpower, -30% All Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;Tier IV (8): -40% Accuracy, -4 AP, -5 Aptitude, -100% Crit Chance, -4 Grit and Willpower, -50% All Resistances.&lt;br&gt;All Resistances includes Air, Fire, Water, Poison, Bludgeoning, Physical, and Piercing.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SoulSap_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="&lt;font color='#AB9D93'&gt;Tier I (1): -10% Accuracy, -1 AP, -1 Aptitude, -20% Crit Chance, -1 Grit and Willpower, -10% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier II (2-3): -20% Accuracy, -2 AP, -2 Aptitude, -40% Crit Chance, -2 Grit and Willpower, -20% All Resistances.&lt;br&gt;&lt;/font&gt;&lt;font color='#AB9D93'&gt;Tier III (4-7): -30% Accuracy, -3 AP, -3 Aptitude, -60% Crit Chance, -3 Grit and Willpower, -30% All Resistances.&lt;br&gt;&lt;/font&gt;Tier IV (8): -40% Accuracy, -4 AP, -5 Aptitude, -100% Crit Chance, -4 Grit and Willpower, -50% All Resistances.&lt;br&gt;&lt;font color='#AB9D93'&gt;All Resistances includes Air, Fire, Water, Poison, Bludgeoning, Physical, and Piercing.&lt;/font&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_SoulSap_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides Armor and protection from Acid, Bleeding, Burning, Decaying, Staggered, Petrified, and Sundered." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fortified_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 25% elemental resistance and protection from Slowed, Petrified, Stunned, Lowered Resistances, Chilled, Burning, Petrified, and Muted." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_MagicShell_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Increases base armor and provides 25% Armor Rating, Bludgeoning, and Piercing Resistance, and protection from Chilled, Staggered, Shocked, Fear, and Mad." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Bolster_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 50% Poison resistance and protection from Poisoned, Diseased, Decaying, and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Antidote_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 4 Aptitude, 1 Willpower, and protection from Blind, Sleeping, Drain Willpower, Fear, Mad, and Torpid." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_ClearMinded_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus 4 Aptitude, 20% Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides bonus Aptitude, Damage, Accuracy, and protection from Blind, Crippled, Diseased, Sleeping, and Bleeding." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Rested_Description_P" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_A" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_B" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_C" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_D" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_E" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_F" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_I" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_H" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_G" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_J" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_K" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_L" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_M" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_N" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_O" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Provides 30% Damage, 30% Might Effectiveness, and protection from Weak and Atrophy." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Strong_Description_P" type="22" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

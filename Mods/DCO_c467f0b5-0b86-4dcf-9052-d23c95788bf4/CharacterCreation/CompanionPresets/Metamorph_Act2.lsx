@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1387205254" />
+    <version major="1" minor="3" revision="0" build="0" />
+    <region id="CharacterCreationClass">
+        <node id="root">
+            <attribute id="ClassDescription" value="|DreamWarrior class description|" handle="hce473d2ag1a22g4ebag9052gcbe2d204a0b7" type="28" />
+			<attribute id="ClassLongDescription" value="|DreamWarrior class long description|" handle="h2c2ec4aag80c7g48caga3dcg565a0ae4525b" type="28" />
+            <attribute id="ClassName" value="Adept Metamorph" handle="hceffc3e9g055eg450fgae1bg3e8ead05609c" type="28" />
+            <attribute id="ClassType" value="Metamorph_Act2" type="22" />
+            <attribute id="SkillSet" value="Class_Metamorph_Act2" type="22" />
+            <attribute id="Voice" value="2" type="5" />
+			<attribute id="Icon" value="1" type="5" />
+		
+            <attribute id="NumStartingCombatAbilityPoints" value="3" type="4" />
+            <attribute id="NumStartingCivilAbilityPoints" value="0" type="4" />
+            <attribute id="NumStartingAttributePoints" value="5" type="4" />
+            <attribute id="NumStartingTalentPoints" value="2" type="4" />
+			
+			<attribute id="Price" value="200" type="4" />
+			<attribute id="AreStatsWeighted" value="1" type="19" />
+			
+            <children>
+                <node id="EquipmentProperties">
+                    <children>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Human" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Humans" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Dwarf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Dwarves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Elf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Elves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Lizard" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Lizards" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Human" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Humans" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Dwarf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Dwarves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Elf" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Elves" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                        <node id="EquipmentProperty">
+                            <attribute id="RaceName" value="Undead_Lizard" type="22" />
+                            <attribute id="PreviewEquipmentSet" value="Class_Metamorph_Lizards" type="22" />
+                            <attribute id="StartingEquipmentSet" value="Class_Metamorph_Act2" type="22" />
+                        </node>
+                    </children>
+                </node>
+                <node id="AbilityChanges">
+                    <children>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="Polymorph" type="23" />
+                            <attribute id="AmountIncreased" value="4" type="4" />
+                        </node>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="TwoHanded" type="23" />
+                            <attribute id="AmountIncreased" value="4" type="4" />
+                        </node>
+                        <node id="AbilityChange">
+                            <attribute id="Ability" value="Persuasion" type="23" />
+                            <attribute id="AmountIncreased" value="1" type="4" />
+                        </node>
+                    </children>
+                </node>
+                <node id="AttributeChanges">
+                    <children>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="2" type="4" />
+                            <attribute id="Attribute" value="STR" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="7" type="4" />
+                            <attribute id="Attribute" value="FIN" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="1" type="4" />
+                            <attribute id="Attribute" value="INT" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="3" type="4" />
+                            <attribute id="Attribute" value="CON" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="2" type="4" />
+                            <attribute id="Attribute" value="MEM" type="23" />
+                        </node>
+                        <node id="AttributeChange">
+                            <attribute id="AmountIncreased" value="4" type="4" />
+                            <attribute id="Attribute" value="WIT" type="23" />
+                        </node>
+                    </children>
+                </node>
+                <node id="TalentsAdded">
+                    <children>
+                        <node id="TalentAdded">
+                            <attribute id="Talent" value="AttackOfOpportunity" type="23" />
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

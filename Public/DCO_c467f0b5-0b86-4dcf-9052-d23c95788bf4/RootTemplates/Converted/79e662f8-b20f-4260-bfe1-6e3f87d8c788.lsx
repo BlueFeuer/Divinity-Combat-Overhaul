@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="4" revision="0" build="1" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="79e662f8-b20f-4260-bfe1-6e3f87d8c788" type="22" />
+					<attribute id="Name" value="Blue_Dummy_HorridWiltingTarget" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="character" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="ec69a0be-43d2-4935-9965-40b6669cd85b" type="22" />
+					<attribute id="PhysicsTemplate" value="31fd1148-ac0c-4418-8e63-8e7fa2ed946a" type="22" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="DisplayName" value="Bones Totem" type="28" handle="h6c91c6edg4ffdg484cg9c0cg24bfccc7cbfd" />
+					<attribute id="Icon" value="Portrait_Summons_Ward_Bones" type="22" />
+					<attribute id="Stats" value="Summon_Ward_Bone" type="22" />
+					<attribute id="Equipment" value="Summon_Totem_Bone_Equip" type="22" />
+					<attribute id="WalkSpeed" value="2" type="6" />
+					<attribute id="ClimbAttachSpeed" value="4" type="6" />
+					<attribute id="ClimbLoopSpeed" value="4" type="6" />
+					<attribute id="ClimbDetachSpeed" value="2.44" type="6" />
+					<attribute id="RunSpeed" value="3.75" type="6" />
+					<attribute id="CanClimbLadders" value="False" type="19" />
+					<attribute id="HitFX" value="RS3_FX_GP_Combat_Hit_Blood_01_Medium" type="22" />
+					<attribute id="SpotSneakers" value="False" type="19" />
+					<attribute id="BloodSurfaceType" value="SurfaceNone" type="22" />
+					<attribute id="ExplodedResourceID" value="86dbac7e-841d-4ad9-968d-80115fc2875a" type="22" />
+					<attribute id="CanOpenDoors" value="False" type="19" />
+					<attribute id="InfluenceTreasureLevel" value="False" type="19" />
+					<attribute id="CanBeTeleported" value="False" type="19" />
+					<attribute id="Random" value="9223372036854775808" type="24" />
+					<attribute id="Alignment" value="Good NPC" type="22" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" value="Elemental" type="22" />
+								</node>
+								<node id="Tag">
+									<attribute id="Object" value="TOTEM" type="22" />
+								</node>
+								<node id="Tag">
+									<attribute id="Object" value="SUMMON" type="22" />
+								</node>
+								<node id="Tag">
+									<attribute id="Object" value="AI_UNPREFERRED_TARGET" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="2" type="1" />
+							<attribute id="Min" value="-0.979189 -0.0333595 -0.729335" type="12" />
+							<attribute id="Max" value="0.979189 2.58082 1.09114" type="12" />
+							<attribute id="Radius" value="0.26" type="6" />
+							<attribute id="Height" value="1.8" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="-1" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="" type="28" handle="hfeccb8bbgf99fg4028gb187g607c18c2cbaa" />
+						</node>
+						<node id="OnDeathActions">
+							<children>
+								<node id="Action">
+									<attribute id="ActionType" value="5" type="4" />
+									<children>
+										<node id="Attributes">
+											<attribute id="visualDestruction" value="b0baf38b-48c0-41d0-b745-4ac6750236d2" type="22" />
+											<attribute id="ExplodeFX" value="" type="22" />
+											<attribute id="templateAfterDestruction" value="" type="22" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="SkillList" />
+						<node id="ItemList" />
+						<node id="Scripts">
+							<children>
+								<node id="Script">
+									<attribute id="UUID" value="5bc80992-a7f6-4da6-83e2-3d276384d8f7" type="22" />
+									<children>
+										<node id="Parameters">
+											<children>
+												<node id="Parameter">
+													<attribute id="MapKey" value="AiHint" type="22" />
+													<attribute id="Type" value="4" type="4" />
+													<attribute id="Value" value="0xbaadf00d" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="Archetype" type="22" />
+													<attribute id="Type" value="30" type="4" />
+													<attribute id="Value" value="base" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="FleeFromDangerousSurface" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="HardcoreOnly" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="StayInAiHints" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="0" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanChickenFlee" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanCower" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CanFleeWhileCowering" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+												<node id="Parameter">
+													<attribute id="MapKey" value="bool_CombatFallbackAD" type="22" />
+													<attribute id="Type" value="1" type="4" />
+													<attribute id="Value" value="1" type="23" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Treasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="TradeTreasures">
+							<attribute id="TreasureItem" value="Empty" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterDeadPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterLyingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="PickingPhysicsTemplates">
+							<attribute id="MapKey" value="CharacterSittingPicking" type="22" />
+							<attribute id="MapValue" value="" type="22" />
+						</node>
+						<node id="FootStepInfos" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

@@ -1,0 +1,42 @@
+new equipment "Blue_Summon_Equip_CrawlingHorror"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_CrawlingHorror"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_FireSlug"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_FireSlug"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_FireDragon"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_FireDragon"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_WindWolf"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_WindWolf"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_Spriggan"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_Spriggan"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_ClaySentinel"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_ClaySentinel"
+add equipmentgroup
+add equipment entry "NoShield"
+
+new equipment "Blue_Summon_Equip_DivineHammer"
+add equipmentgroup
+add equipment entry "Blue_Summon_Weapon_DivineHammer"
+add equipmentgroup
+add equipment entry "NoShield"
+

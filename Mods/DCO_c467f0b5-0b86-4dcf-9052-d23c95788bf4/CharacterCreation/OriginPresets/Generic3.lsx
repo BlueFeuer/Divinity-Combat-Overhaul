@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1387205254" />
+    <version major="1" minor="3" revision="0" build="0" />
+    <region id="CharacterCreationManager">
+        <node id="root">
+            <children>
+                <node id="OriginDesc">
+                	<attribute id="OriginDisplayName" value="Custom" handle="he058b2afgcdf2g4c7ag939dga65bcfc0fad6" type="28" />
+                    <attribute id="OriginName" value="Generic3" type="22" />
+                	<attribute id="OriginDescription" value="Your past is history. All that matters is your present in Fort Joy. A Sourcerer in a land ravaged by Source, you await the cure promised by the Divine Order." handle="h5a614f15gea57g42d5gb7b0g29cff46fdf7c" type="28" />
+                	<attribute id="OriginLongDescription" value="Very long descritpion goes here." handle="h032adcc1gd80cg4b81g8658g689437b36e4d" type="28" />
+                    <attribute id="CharacterUUID" value="41a06985-7851-4c29-8a78-398ccb313f39" type="22" />
+                    <attribute id="UserCanAlterTags" value="1" type="19" />
+                    <attribute id="SkillSet" value="Avatar_Generic" type="22" />
+
+                	<children>
+                		<node id="SupportedGenders">
+                			<children>
+                				<node id="Gender">
+                                    <attribute id="Gender" value="Female" type="23" />
+                                </node>
+                                <node id="Gender">
+                                    <attribute id="Gender" value="Male" type="23" />
+                                </node>
+                			</children>
+                		</node>
+
+                		<node id="SupportedRaces">
+                			<children>
+                				<node id="SupportedRaces">
+                                    <attribute id="Object" value="Human" type="22" />
+                                </node>
+                                <node id="SupportedRaces">
+                                    <attribute id="Object" value="Dwarf" type="22" />
+                                </node>
+                                <node id="SupportedRaces">
+                                    <attribute id="Object" value="Lizard" type="22" />
+                                </node>
+                                <node id="SupportedRaces">
+                                    <attribute id="Object" value="Elf" type="22" />
+                                </node>
+								<node id="SupportedRaces">
+                                    <attribute id="Object" value="Undead_Human" type="22" />
+                                </node>
+								<node id="SupportedRaces">
+                                    <attribute id="Object" value="Undead_Dwarf" type="22" />
+                                </node>
+								<node id="SupportedRaces">
+                                    <attribute id="Object" value="Undead_Lizard" type="22" />
+                                </node>
+								<node id="SupportedRaces">
+                                    <attribute id="Object" value="Undead_Elf" type="22" />
+                                </node>				
+                			</children>
+                		</node>
+                	</children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

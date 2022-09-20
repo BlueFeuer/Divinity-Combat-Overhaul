@@ -1,0 +1,404 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+DB_DrudenaeTemplates("CON_Herb_Drudanae_B_88acb65e-8c89-4c25-99a7-ce80a22c4642");
+DB_DrudenaeTemplates("CON_Herb_Drudanae_A_84ce1dfa-12b1-4b37-8907-aa7301f1edbf");
+
+DB_AddAttributeBookTemplate("BOOK_Skill_StatPoints_28b2ff38-74dd-494a-8a34-9020ecca47b1");
+
+DB_HarvestablePlant("PLANT_Blackroot_2ddf7fc1-4602-40f7-b6e0-781c9ff7472a","PLANT_Blackroot_Empty_c58f967e-85d0-4931-a8de-d16ccdf82864","QUEST_Blackroot_843689bf-6498-45ac-98ba-b375bdbbb189",300000); //Black root: 5 minutes
+
+DB_ChapterFlags(1,"DOS2_CHAPTER1_FortJoy");
+DB_ChapterFlags(2,"DOS2_CHAPTER2_Swamps");
+DB_ChapterFlags(3,"DOS2_CHAPTER3_LadyVengeancePreDallis");
+DB_ChapterFlags(4,"DOS2_CHAPTER4_LadyVengeancePostHOE");
+DB_ChapterFlags(5,"DOS2_CHAPTER5_ReapersCoast");
+//DB_ChapterFlags(6,"DOS2_CHAPTER6_LadyVengeanceToCOS");
+DB_ChapterFlags(6,"DOS2_CHAPTER6_Island");
+DB_ChapterFlags(7,"DOS2_CHAPTER7_COS");
+DB_ChapterFlags(8,"DOS2_CHAPTER8_LadyVengeanceToArx");
+DB_ChapterFlags(9,"DOS2_CHAPTER9_Arx");
+DB_ChapterFlags(10,"DOS2_CHAPTER10_Crypt");
+
+DB_OriginIntroductions("Sebille","Sebille_Presentation","Sebille_Presentation_Music","Sebille_Presentation_SFX");
+DB_OriginIntroductions("Lohse","Lohse_Presentation","Lohse_Presentation_Music","Lohse_Presentation_SFX");
+DB_OriginIntroductions("RedPrince","RedPrince_Presentation","RedPrince_Presentation_Music","RedPrince_Presentation_SFX");
+DB_OriginIntroductions("Ifan","Ifan_Presentation","Ifan_Presentation_Music","Ifan_Presentation_SFX");
+DB_OriginIntroductions("Fane","Undead_Presentation","Undead_Presentation_Music","Undead_Presentation_SFX");
+DB_OriginIntroductions("Beast","Beast_Presentation","Beast_Presentation_Music","Beast_Presentation_SFX");
+
+DB_SourceFountains((ITEMGUID)NULL_00000000-0000-0000-0000-000000000000,(TRIGGERGUID)NULL_00000000-0000-0000-0000-000000000000);
+
+DB_GLO_StatusInfluenceFlag("ARX_TheEighth_Punish_LizardPrincess");
+DB_GLO_StatusInfluenceFlag("ARX_TheEighth_Punish_Deathfog");
+DB_GLO_StatusInfluenceFlag("GLO_PilgrimSetBless");
+KBSECTION
+//REGION Skill / Attribute Add Items
+IF
+CharacterUsedItemTemplate((CHARACTERGUID)_Player,_Template,_Item)
+AND
+DB_AddAttributeBookTemplate(_Template)
+THEN
+ItemRemove(_Item);
+CharacterAddAttributePoint(_Player,1);
+PlayEffect(_Player,"RS3_FX_GP_Status_LevelUp_01");
+//END_REGION
+
+//REGION Source Skill tracking
+IF
+SkillAdded(_Player,"Target_SourceVampirism",_)
+THEN
+ObjectSetFlag(_Player,"GLO_HasSourceVampirism");
+
+IF
+SkillAdded(_Player,"Shout_SpiritVision",_)
+THEN
+ObjectSetFlag(_Player,"GLO_HasSpiritVision");
+
+IF
+SkillAdded(_Player,"Target_Curse",_)
+THEN
+ObjectSetFlag(_Player,"GLO_HasCurse");
+//END_REGION
+
+//REGION Max Source Points Initializing
+IF
+CharacterCreationFinished((CHARACTERGUID)NULL_00000000-0000-0000-0000-000000000000)
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_MaxSourcePointsInited(_Player);
+CharacterOverrideMaxSourcePoints(_Player,1);
+
+IF
+RegionStarted(_)
+AND
+DB_InCharacterCreation(0)
+AND
+DB_IsPlayer(_Player)
+AND
+NOT DB_MaxSourcePointsInited(_Player)
+THEN
+DB_MaxSourcePointsInited(_Player);
+CharacterOverrideMaxSourcePoints(_Player,1);
+//END_REGION
+
+//REGION Plants
+IF
+CharacterUsedItemTemplate(_Player,_PlantTemplateFull,_Plant)
+AND
+DB_HarvestablePlant(_PlantTemplateFull,_PlantTemplateEmpty,_FruitTemplate,_RegenTimer)
+AND
+GetPosition(_Plant,_X,_Y,_Z)
+AND
+CreateItemTemplateAtPosition(_PlantTemplateEmpty,_X,_Y,_Z,_EmptyPlant)
+THEN
+ItemRemove(_Plant);
+ItemTemplateAddTo(_FruitTemplate,_Player,1);
+ProcObjectTimer(_EmptyPlant,"PlantRegenerates",_RegenTimer);
+
+IF
+CharacterUsedItemTemplate(_Player,_PlantTemplateEmpty,_Plant)
+AND
+DB_HarvestablePlant(_PlantTemplateFull,_PlantTemplateEmpty,_FruitTemplate,_RegenTimer)
+THEN
+Proc_StartDialog(1,"GLO_PlantAlreadyHarvested",_Player);
+
+
+PROC
+ProcObjectTimerFinished(_Plant,"PlantRegenerates")
+AND
+GetTemplate(_Plant,_PlantTemplateEmpty)
+AND
+DB_HarvestablePlant(_PlantTemplateFull,_PlantTemplateEmpty,_FruitTemplate,_RegenTimer)
+AND
+GetPosition(_Plant,_X,_Y,_Z)
+AND
+CreateItemTemplateAtPosition(_PlantTemplateFull,_X,_Y,_Z,_)
+THEN
+ItemRemove((ITEMGUID)_Plant);
+PlayEffectAtPosition("RS3_FX_GP_ScriptedEvent_Teleport_GenericSmoke_01",_X,_Y,_Z);
+//END_REGION
+
+//REGION Chapters - Pipeline
+IF
+DB_Chapter(_Player,_Chapter)
+AND
+DB_HighestChapter(_Player,_OldChapter)
+AND
+_Chapter > _OldChapter
+AND
+DB_ChapterFlags(_Chapter,_Event)
+AND
+DB_ChapterFlags(_OldChapter,_OldEvent)
+THEN
+NOT DB_HighestChapter(_Player,_OldChapter);
+DB_HighestChapter(_Player,_Chapter);
+ObjectSetFlag(_Player,_Event);
+ObjectClearFlag(_Player,_OldEvent);
+
+IF
+DB_IsPlayer(_Player)
+AND
+NOT DB_Chapter(_Player,_)
+AND
+DB_ChapterFlags(1,_Event)
+THEN
+DB_HighestChapter(_Player,1);
+DB_Chapter(_Player,1);
+ObjectSetFlag(_Player,_Event);
+
+PROC
+PROC_GLO_PartyMembers_RecruiteeAvatarBond((CHARACTERGUID)_Companion,(CHARACTERGUID)_Avatar)
+AND
+DB_Chapter(_Avatar,_Chapter)
+THEN
+DB_Chapter(_Companion,_Chapter);
+//END_REGION
+
+//REGION Chapters - Transitions
+IF
+CharacterEnteredTrigger((CHARACTERGUID)_Player,TRIGGERGUID_S_FTJ_DallisEventAutoEnd_Poly_c66c0ceb-84d0-42f2-af77-854d178a58d5)
+THEN
+DB_Chapter(_Player,2);
+
+IF
+GlobalFlagSet("FTJ_LV_SetUp")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,3);
+
+IF
+GlobalFlagSet("FTJ_LV_StartHoELevel")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,4);
+
+IF
+RegionStarted("RC_Main")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,5);
+
+IF
+RegionStarted("CoS_Main")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,6);
+
+IF
+ObjectFlagSet("QuestUpdate_CoS_Academy_Start", _Player, _)
+THEN
+DB_Chapter(_Player,7);
+
+IF
+GlobalFlagSet("CoS_AfterArenaOfTheOne")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,8);
+
+IF
+RegionStarted("ARX_Main")
+AND
+DB_IsPlayer(_Player)
+THEN
+DB_Chapter(_Player,9);
+//END_REGION
+
+//REGION remove triggers from old region since we never go back
+PROC
+ProcRegionEnded((STRING)_Region)
+AND
+DB_PlayerTriggers(_Region,_Trigger)
+THEN
+NOT DB_PlayerTriggers(_Region,_Trigger);
+
+//END_REGION
+
+
+PROC
+PROC_GLO_PartyMembers_Add((CHARACTERGUID)_Origin,(CHARACTERGUID)_)
+THEN
+NOT DB_DoNotFace(_Origin);
+
+
+//REGION Source Fountains
+IF
+CharacterUsedItem(_Player,(ITEMGUID)_Fountain)
+AND
+DB_SourceFountains(_Fountain,_Trigger)
+THEN
+PlayEffect(_Fountain,"RS3_FX_Items_Attachments_SourceFountain_Stream_01","Dummy_FX_01");
+ItemSetCanInteract(_Fountain,0);
+ProcObjectTimer(_Fountain,"GEN_SourceFountain_Reactivate",4000);
+SetStoryEvent(_Player, "Blue_SourceFountain_Used");
+//ProcObjectTimer(_Trigger,"GEN_SourceFountain_CreatePuddle",400);
+
+PROC
+ProcObjectTimerFinished((TRIGGERGUID)_Trigger,"GEN_SourceFountain_CreatePuddle")
+THEN
+CreateSurface(_Trigger,"SurfaceSource",1.0,0.0);
+
+PROC
+ProcObjectTimerFinished((ITEMGUID)_Fountain,"GEN_SourceFountain_Reactivate")
+THEN
+ItemSetCanInteract(_Fountain,1);
+
+IF
+CharacterUsedItem(_Player,(ITEMGUID)_Fountain)
+AND
+DB_SourceFountains((ITEMGUID)_Fountain,_)
+AND
+DB_CurrentLevel("FJ_FortJoy_Main")
+AND
+QueryOnlyOnce("FTJ_SW_VB_SawSourcePuddle")
+THEN
+StartVoiceBark("FTJ_SW_VB_SawSourcePuddle",_Player);
+//END_REGION
+
+//REGION Fix for bad companion fixation.
+//This is a fix for an unexplainable companionblocker bug.
+//http://gojira:8082/browse/DOSTWO-23803
+//Somehow the GLO_Sebille_Avatar wasn't set on anyone, so she couldn't be recruited anymore
+PROC
+Proc_DialogFlagSetup(_RecruitementDialog,_Companion,_Player)
+AND
+DB_OriginRecruitmentDialog((CHARACTERGUID)_Companion,_RecruitementDialog)
+AND
+DB_Companion_FixatedFlag(_Companion,_Event)
+AND
+NOT Query_AvatarWithCharFlag(_Event)
+AND
+DB_Avatars((CHARACTERGUID)_Player)
+THEN
+ObjectSetFlag(_Player,_Event);
+
+QRY
+Query_AvatarWithCharFlag((STRING)_Event)
+AND
+DB_Avatars(_Player)
+AND
+ObjectGetFlag(_Player,_Event,1)
+THEN
+DB_NoOp(1);
+//END_REGION
+
+//REGION crime savegame fix
+
+IF
+SavegameLoaded(_,_,_,_)
+THEN
+ProcSavegameClearStuckAssaultDBs();
+
+PROC
+ProcSavegameClearStuckAssaultDBs()
+AND
+DB_Crime_Assault(_CrimeID,_Criminal,_Victim)
+AND
+ObjectExists(_Victim,1)
+AND
+ObjectIsOnStage(_Victim,0)
+THEN
+ProcClearAssaultDBForCrime(_CrimeID);
+
+PROC
+ProcSavegameClearStuckAssaultDBs()
+AND
+DB_Crime_Assault(_CrimeID,_Criminal,_Victim)
+AND
+ObjectExists(_Victim,0)
+THEN
+ProcClearAssaultDBForCrime(_CrimeID);
+
+PROC
+ProcSavegameClearStuckAssaultDBs()
+AND
+DB_Crime_PlayerAttacked(_Crime,_Criminal,_Victim)
+AND
+NOT DB_AttackTimer(_Crime,_)
+AND
+NOT DB_CombatCharacters(_Victim,_)
+AND
+NOT CrimeGetType(_Crime,_)
+THEN
+NOT DB_Crime_PlayerAttacked(_Crime,_Criminal,_Victim);
+
+//END_REGION
+
+//REGION Status
+
+IF
+CharacterStatusRemoved(_Char,"COW",_)
+AND
+HasActiveStatus(_Char,"SMELLY",1)
+THEN
+RemoveStatus(_Char,"SMELLY");
+
+
+IF
+CharacterResurrected(_Player)
+AND
+DB_ARX_PoB_IsPure(_Player)
+AND
+HasActiveStatus(_Player,"PURE",0)
+THEN
+ApplyStatus(_Player,"PURE",-1.0,1);
+
+//END_REGION
+
+//REGION  Status Influences
+IF
+SavegameLoaded(_Major,_Minor,_Rev,_Build)
+AND
+QRY_VersionIsOlderThan(_Major,_Minor,_Rev,_Build, 3, 6, 1, 0)
+THEN
+DB_GLO_StatusInfluenceFlag("ARX_TheEighth_Punish_LizardPrincess");
+DB_GLO_StatusInfluenceFlag("ARX_TheEighth_Punish_Deathfog");
+DB_GLO_StatusInfluenceFlag("GLO_PilgrimSetBless");
+
+IF
+SavegameLoaded(_Major,_Minor,_Rev,_Build)
+AND
+QRY_VersionIsOlderThan(_Major,_Minor,_Rev,_Build, 3, 6, 1, 0)
+AND
+DB_JoinedParty(_Char)
+AND
+DB_GLO_StatusInfluenceFlag(_Flag)
+AND
+ObjectGetFlag(_Char, _Flag, 1)
+THEN
+ObjectClearFlag(_Char, _Flag, 0);
+// Don't immediately set the flag again, because it may be in DB_SharedObjectFlags(),
+// and then the rules for ObjectFlagCleared and ObjectFlagSet in __AAA_FirstGoal will
+// trigger an infinite loop (because they will constantly set/clear eachother's flags)
+DB_GLO_StatusInfluenceFlagSetOnCleared(_Char, _Flag);
+
+IF
+RegionStarted(_)
+AND
+DB_JoinedParty(_Char)
+AND
+DB_GLO_StatusInfluenceFlag(_Flag)
+AND
+ObjectGetFlag(_Char, _Flag, 1)
+THEN
+ObjectClearFlag(_Char, _Flag, 0);
+DB_GLO_StatusInfluenceFlagSetOnCleared(_Char, _Flag);
+
+IF
+ObjectFlagCleared(_Flag, (CHARACTERGUID)_Char, 0)
+AND
+DB_GLO_StatusInfluenceFlagSetOnCleared(_Char, _Flag)
+THEN
+NOT DB_GLO_StatusInfluenceFlagSetOnCleared(_Char, _Flag);
+ObjectSetFlag(_Char, _Flag, 0);
+//END_REGION
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "DOS2ModWrapper"

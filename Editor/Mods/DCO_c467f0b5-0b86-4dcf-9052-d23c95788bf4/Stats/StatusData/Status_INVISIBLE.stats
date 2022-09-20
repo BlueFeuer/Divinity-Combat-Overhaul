@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="47014da6-a81c-40a9-9f3c-4a74b6ddc574">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="INVISIBLE" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Invisible" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="Character is invisible." />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_WalkShadow" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_ChameleonSkin_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SoundStart" type="StringStatObjectFieldDefinition" value="Status_Tex_Invisible_Start" />
+        <field name="SoundLoop" type="StringStatObjectFieldDefinition" value="Status_Tex_Invisible_Loop" />
+        <field name="SoundStop" type="StringStatObjectFieldDefinition" value="Status_Tex_Invisible_Stop" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Invisible" />
+        <field name="StackId" type="StringStatObjectFieldDefinition" value="Stack_Invisible" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

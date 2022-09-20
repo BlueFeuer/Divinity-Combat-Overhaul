@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="05f87e82-499d-4e0b-8dd7-859b8b3e5beb">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SLEEPING" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Sleeping" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character cannot move or cast spells. This status can be broken by damage. Cured by Clear-Minded, Enraged.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Sleeping" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="22" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Sleeping_01:Dummy_OverheadFX" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="36" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Sleeping" />
+        <field name="FreezeTime" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FROZEN" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Frozen" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character is frozen like an icicle. Cured by Magic Shell, Bless.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Frozen" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="23" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Frozen_01" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_Frozen_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialFadeAmount" type="IntegerStatObjectFieldDefinition" value="3000" />
+        <field name="MaterialParameters" type="StringStatObjectFieldDefinition" value="freezeDirection:SourceDirection" />
+        <field name="SoundStart" type="StringStatObjectFieldDefinition" value="Status_Tex_Frozen_Start" />
+        <field name="SoundLoop" type="StringStatObjectFieldDefinition" value="Status_Tex_Frozen_Loop" />
+        <field name="SoundStop" type="StringStatObjectFieldDefinition" value="Status_Tex_Frozen_Stop" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Frozen" />
+        <field name="FreezeTime" type="IntegerStatObjectFieldDefinition" value="3000" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="PETRIFIED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Petrified" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character is turned to stone. Cured by Magic Shell, Bless.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Petrified" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="21" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Petrified_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialFadeAmount" type="IntegerStatObjectFieldDefinition" value="3000" />
+        <field name="MaterialParameters" type="StringStatObjectFieldDefinition" value="CharacterHeight:Height" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="20" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Petrified" />
+        <field name="FreezeTime" type="IntegerStatObjectFieldDefinition" value="3000" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="STUNNED" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="InitiateCombat" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Stunned" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="|Character is paralyzed by electric shock. Cured by Magic Shell, Bless.|" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="statIcons_Stunned" />
+        <field name="FormatColor" type="EnumerationStatObjectFieldDefinition" value="22" enumeration_type_name="FormatStringColor" />
+        <field name="StatusEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Stunned_01:Dummy_OverheadFX" />
+        <field name="StatusEffectOverrideForItems" type="StringStatObjectFieldDefinition" value="RS3_FX_GP_Status_Item_Stunned_01" />
+        <field name="MaterialType" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="MaterialType" />
+        <field name="MaterialApplyBody" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyArmor" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyWeapon" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="MaterialApplyNormalMap" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="SavingThrow" type="EnumerationStatObjectFieldDefinition" value="34" enumeration_type_name="SavingThrow" />
+        <field name="ImmuneFlag" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="AttributeFlag" />
+        <field name="StatsId" type="StringStatObjectFieldDefinition" value="Stats_Stunned" />
+        <field name="FreezeTime" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

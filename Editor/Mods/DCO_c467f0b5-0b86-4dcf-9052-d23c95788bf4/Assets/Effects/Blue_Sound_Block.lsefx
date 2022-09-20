@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<effect version="0.0" effectversion="1.0.0" id="00000000-0000-0000-0000-000000000000">
+  <phases />
+  <colors />
+  <trackgroups>
+    <trackgroup name="New Track Group">
+      <ids>
+        <id value="1" />
+      </ids>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None">
+        <component class="Sound" start="0" end="4" instancename="d53999b2-07b1-4ff7-af4c-4a3978238130">
+          <properties>
+            <property id="ef1d7d1e-02b6-4548-80d9-5ef2fbcda237">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="Sound" />
+              </data>
+            </property>
+            <property id="035b5248-d0ca-44b7-853f-3acb84110e67">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0,4" />
+              </data>
+            </property>
+            <property id="d44a643d-e831-4fc6-b8ab-c13e52162f34">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0" />
+              </data>
+            </property>
+            <property id="d9c8f8f4-03ef-4a81-afcc-9979213be536">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="Proj_Arrow_Silver_Impact &lt;36cd117e-8c21-4903-871a-781fe2f851c9&gt;" />
+              </data>
+            </property>
+            <property id="83f4fce2-68bb-41eb-b2fe-9082b8fc9147">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="" />
+              </data>
+            </property>
+            <property id="d719a367-01a3-44b3-a94d-830503c01095">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="-1" />
+              </data>
+            </property>
+            <propertygroup id="b0a797d2-2b6c-4b5a-aedd-3de04515350b" name="Property Group" collapsed="False" />
+          </properties>
+          <modules>
+            <module id="286df729-035e-4bb8-a210-c836ddbbbacc" muted="False" index="0" />
+          </modules>
+        </component>
+      </track>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None">
+        <component class="BoundingSphere" start="0" end="4" instancename="145cd716-1252-40f8-9443-2a73ccb10c59">
+          <properties>
+            <property id="ef1d7d1e-02b6-4548-80d9-5ef2fbcda237">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="BoundingSphere" />
+              </data>
+            </property>
+            <property id="035b5248-d0ca-44b7-853f-3acb84110e67">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0,4" />
+              </data>
+            </property>
+            <property id="c1115291-39d1-43a2-8259-31c2ef4dbd93">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="0,0,0" />
+              </data>
+            </property>
+            <property id="ba2ee0f9-d369-4d36-bd63-30d4c8c46a0a">
+              <data>
+                <datum platform="00000000-0000-0000-0000-000000000000" lod="00000000-0000-0000-0000-000000000000" value="5" />
+              </data>
+            </property>
+            <propertygroup id="27162865-50a0-4a4d-9f45-519f586db013" name="Property Group" collapsed="False" />
+          </properties>
+          <modules>
+            <module id="286df729-035e-4bb8-a210-c836ddbbbacc" muted="False" index="0" />
+          </modules>
+        </component>
+      </track>
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+      <track name="Track" muted="False" locked="False" mutestateoverride="None" />
+    </trackgroup>
+  </trackgroups>
+</effect>

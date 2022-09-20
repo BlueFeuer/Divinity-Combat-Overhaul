@@ -1,0 +1,181 @@
+key "SkillAbilityPhysicalDamageBoostPerPoint","0"
+
+key "SkillAbilityWaterDamageBoostPerPoint","0"
+
+key "SkillAbilityPoisonAndEarthDamageBoostPerPoint","0"
+
+key "SkillAbilityFireDamageBoostPerPoint","0"
+
+key "SkillAbilityAirDamageBoostPerPoint","0"
+
+key "SkillAbilityHighGroundBonusPerPoint","0"
+
+key "SkillAbilityVitalityRestoredPerPoint","1"
+
+key "SkillAbilityArmorRestoredPerPoint","1"
+
+key "LivingArmorHealPercentage","0"
+
+key "AbilityPerseveranceArmorPerPoint","0"
+
+key "SkillAbilityLifeStealPerPoint","0"
+
+key "CharacterBaseMemoryCapacity","4"
+
+key "CharacterBaseMemoryCapacityGrowth","1.5"
+
+key "TalentAttributePointsBonus","3"
+
+key "CivilAbilityLevelGrowth","999"
+
+key "AttributeSoftCap","35"
+
+key "CombatAbilityLevelGrowth","1"
+
+key "CharacterAttributePointsPerMemoryCapacity","2"
+
+key "VitalityExponentialGrowth","1.07"
+
+key "VitalityStartingAmount","125"
+
+key "FirstVitalityLeapLevel","8"
+
+key "FirstVitalityLeapGrowth","1.07"
+
+key "SecondVitalityLeapLevel","13"
+
+key "SecondVitalityLeapGrowth","1.07"
+
+key "ThirdVitalityLeapLevel","16"
+
+key "ThirdVitalityLeapGrowth","1.07"
+
+key "FourthVitalityLeapLevel","19"
+
+key "FourthVitalityLeapGrowth","1.07"
+
+key "VitalityToDamageRatio","12"
+
+key "VitalityToDamageRatioGrowth","0.6"
+
+key "VitalityLinearGrowth","25"
+
+key "DualWieldingDamagePenalty","1.0"
+
+key "DualWieldingAPPenalty","2"
+
+key "DecayingTouchDamageModifier","1.0"
+
+key "CombatAbilityReflectionBonus","0"
+
+key "DamageBoostFromAttribute","0.0"
+
+key "CriticalBonusFromWits","0"
+
+key "PriceBarterCoefficient","0"
+
+key "AttributeLevelGrowth","2"
+
+key "CombatAbilityDamageBonus","0"
+
+key "CombatAbilityAccuracyBonus","0"
+
+key "CombatAbilityDodgingBonus","0"
+
+key "CombatAbilityCritBonus","0"
+
+key "CombatAbilityCritMultiplierBonus","0"
+
+key "PersuasionAttitudeBonusPerPoint","3"
+
+key "VitalityBoostFromAttribute","0.07"
+
+key "AttributeCharCreationBonus","5"
+
+key "LeadershipRange","0"
+
+key "LeadershipAllResBonus","0"
+
+key "LeadershipDodgingBonus","0"
+
+key "SkillAbilityCritMultiplierPerPoint","0"
+
+key "SkillAbilityMovementSpeedPerPoint","0"
+
+key "AttributeBoostGrowth","1.0"
+
+key "AttributeGrowthDamp","0.7"
+
+key "HighGroundRangeMultiplier","1"
+
+key "HighGroundBaseDamageBonus","0.2"
+
+key "InitiativeBonusFromWits","0"
+
+key "ArmorToVitalityRatio","0.078"
+
+key "ArmorUpperBodyPercentage","0.53"
+
+key "ArmorHeadPercentage","0.16"
+
+key "ArmorHandsPercentage","0.16"
+
+key "ArmorFeetPercentage","0.16"
+
+key "ArmorLowerBodyPercentage","0.32"
+
+key "ArmorAmuletPercentage","0.0"
+
+key "ArmorRingPercentage","0.0"
+
+key "ArmorBeltPercentage","0.1"
+
+key "ExpectedConGrowthForArmorCalculation","0"
+
+key "ExpectedDamageBoostFromSkillAbilityPerLevel","0.02"
+
+key "ExpectedDamageBoostFromAttributePerLevel","0.01"
+
+key "ExpectedDamageBoostFromWeaponAbilityPerLevel","0.01"
+
+key "MonsterDamageBoostPerLevel","0.2"
+
+key "PickpocketGoldValuePerPoint","200"
+
+key "TalentCombatAbilityPointsBonus","3"
+
+key "TalentCivilAbilityPointsBonus","0"
+
+key "BlindRangePenalty","4"
+
+key "TorturerDamageStatusTurnIncrease","0"
+
+key "TalentResistDeathVitalityPercentage","1"
+
+key "TalentPerfectionistAccuracyBonus","0"
+
+key "TalentPerfectionistCriticalChanceBonus","0"
+
+key "TalentExecutionerActionPointBonus","1"
+
+key "TalentViolentMagicCriticalChancePercent","100"
+
+key "TalentQuickStepPartialApBonus","1"
+
+key "TalentWhatARushThreshold","66"
+
+key "Flanked penalty","0"
+
+key "LoneWolfMaxAPBonus","2"
+
+key "LoneWolfAPBonus","2"
+
+key "LoneWolfMagicArmorBoostPercentage","0"
+
+key "LoneWolfArmorBoostPercentage","25"
+
+key "LoneWolfVitalityBoostPercentage","25"
+
+key "UnstableDamagePercentage","50"
+
+	

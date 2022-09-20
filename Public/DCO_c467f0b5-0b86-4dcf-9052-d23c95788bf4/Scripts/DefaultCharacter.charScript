@@ -1,0 +1,847 @@
+#INCLUDE Base
+INIT
+	USING SHARED Base
+	CHARACTER:__Me
+	CHARACTER:%DialogLookAtChar=null
+	FLOAT3:%PeaceReturnPosition=null
+	EXTERN INT:%bool_CanCower=1
+	EXTERN INT:%bool_CanFleeWhileCowering=1
+	EXTERN INT:%bool_CombatFallbackAD=1
+	INT:%EvaluateScores=0
+	EXTERN FIXEDSTRING:%AiHint=null
+	EXTERN INT:%StayInAiHints=0
+	EXTERN ARCHETYPE:%Archetype=base
+	INT:%InvisibleDialog=0
+	INT:%CanUseMeleeAttack=1
+	INT:%TookDamage=0
+	LIST<TRIGGER>:%AIHintTriggers
+	INT:%OnInitOnlyOnce = 0
+	INT:%FallbackInstanceId = null
+	INT:%VisibleCharactersInCombat = 0
+EVENTS
+
+EVENT CrimeSensibleActionFallback
+VARS
+	CHARACTER:_Criminal1
+	CHARACTER:_Criminal2
+	CHARACTER:_Criminal3
+	CHARACTER:_Criminal4
+	INT:_CrimeID
+	FIXEDSTRING:_CrimeVar
+ON
+	OnCrimeSensibleAction(_,_CrimeID,_,_,_Criminal1,_Criminal2,_Criminal3,_Criminal4,_)
+ACTIONS
+	IF "!c1"
+		GetVar(_CrimeVar,__Me,"PreviousSensibleAction")
+	THEN
+		ConfrontationDone(_CrimeID,__Me,_Criminal1,_Criminal2,_Criminal3,_Criminal4)
+	ENDIF
+
+EVENT InitChar
+ON
+	OnInit()
+ACTIONS
+	IF "!c1"
+		IsEqual(%Archetype,null)
+	THEN
+		CharacterSetArchetype(__Me,%Archetype)
+		Set(%Archetype,null)
+	ENDIF
+
+	IF "c1"
+		IsEqual(%OnInitOnlyOnce,0)
+	THEN
+		IF "c1|c2|c3|c4|c5"
+			IsTagged(__Me,"MAGISTER")
+			IsTagged(__Me,"PALADIN")
+			IsTagged(__Me,"GUARD")
+			IsTagged(__Me,"NOT_MESSING_AROUND")
+			IsTagged(__Me,"BADASSCIVILIAN")
+		THEN
+			Set(%bool_CanCower,0)
+			Set(%bool_CanFleeWhileCowering,0)
+		ENDIF
+		Set(%OnInitOnlyOnce,1)
+	ENDIF
+
+EVENT StartCombatFetchPos
+ON
+	OnEnteredCombat(__Me, _)
+ACTIONS
+	CharacterSetEnemy(__Me,null)
+	//DisplayCombatInfoText(__Me, "TestStupid1", 5)
+	IF "c1"
+		IsEqual(%PeaceReturnPosition,null)
+	THEN
+		//DisplayCombatInfoText(__Me, "TestStupid2", 5)
+		GetPosition(__Me,%PeaceReturnPosition)
+		CharacterForceUpdate(1)
+	ENDIF
+	IF "c1"
+		CharacterHasStatus(__Me,SITTING)
+	THEN
+		CharacterRemoveStatus(__Me,SITTING)
+	ENDIF
+
+EVENT ReturnToPosOnCombatEnded
+ON
+	OnLeftCombat(__Me, _)
+ACTIONS
+	IF "c1|c2|c3"
+		CharacterIsInParty(__Me)
+		CharacterIsDead(__Me)
+		IsInGameMasterMode()
+	THEN
+		CharacterEvent(__Me,"ClearPeaceReturn")
+	ELIF "!c1"
+		HasFlag(__Me, "GLO_BlockRegenAfterCombat")
+	THEN
+		StartTimer("Regen", 3.0, 0)
+	ENDIF
+
+EVENT PreventRegenOnFightReenter
+ON
+	OnEnteredCombat(__Me, _)
+ACTIONS
+	StopTimer("Regen")
+
+EVENT Update
+ON
+	OnTimer("Regen")
+ACTIONS
+	IF "!c1&!c2"
+		IsInCombat(__Me)
+		HasFlag(__Me, "GLO_BlockRegenAfterCombat")
+	THEN
+		SetHealth(__Me,1)
+	ENDIF
+
+EVENT RestoreHealth
+ON
+	OnCharacterFlagCleared("GLO_BlockRegenAfterCombat",__Me)
+ACTIONS
+	StartTimer("Regen", 0.0, 0)
+
+EVENT StoryOverridePeaceReturn
+ON
+	OnStoryOverride()
+	OnCharacterOffStageChanged(__Me, _)
+	OnCharacterEvent(__Me,"ClearPeaceReturn")
+ACTIONS
+	//DisplayCombatInfoText(__Me, "TestStupid3", 5)
+	IF "!c1"
+		IsEqual(%PeaceReturnPosition,null)
+	THEN
+		//DisplayCombatInfoText(__Me, "TestStupid4", 5)
+		Set(%PeaceReturnPosition,null)
+		Interrupt("ReturnToPeacePosition")
+		CharacterForceUpdate(0)
+	ENDIF
+
+EVENT StartEvaluateScore
+ON
+	OnFunction("StartEvaluateScore")
+ACTIONS
+	IF "c1&c2&!c3"
+		IsEqual(%EvaluateScores,0)
+		IsInActiveTurn(__Me)
+		CharacterAiIsCalculating()
+	THEN
+		IF "!c1&!c2&!c3&!c4"
+			IsTagged(__Me, "GOD_ICON")
+			CharacterHasStatus(__Me, GALVANISED)
+			CharacterHasStatus(__Me, INVULNERABLE)
+			CharacterHasStatus(__Me, STORY_ENCHAINED)
+		THEN
+			IF "!c1"
+				CharacterIsInParty(__Me)
+			THEN
+				IterateCharactersInCombat(__Me, "Blue_StartEvaluateScoreIterate")
+			ENDIF
+			IF "c1"
+				IsTagged(__Me, "Blue_Opportunist_AI_Flag")
+			THEN
+				//ExplodeAt(__Me, Blue_Explosion_Opportunist_AI_Flag, -1, __Me)
+				CharacterApplyStatus(__Me, Blue_Opportunist_AI, 0)
+			ELIF "!c1&c2"
+				IsTagged(__Me, "Blue_Opportunist_AI_Flag")
+				CharacterHasStatus(__Me, Blue_Opportunist_AI)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Opportunist_AI_Remove, 0)
+			ENDIF
+		ENDIF
+		Set(%EvaluateScores,1)
+		CharacterAiCalculate()
+		//StartTimer("Blue_StartEvaluateScore", 0.05, 0)
+	ENDIF
+/*
+EVENT StartEvaluateScoreDelay
+ON
+	OnTimer("Blue_StartEvaluateScore")
+ACTIONS
+	IF "c1&c2&!c3"
+		IsEqual(%EvaluateScores,0)
+		IsInActiveTurn(__Me)
+		CharacterAiIsCalculating()
+	THEN
+		Set(%EvaluateScores,1)
+		CharacterAiCalculate()
+	ENDIF
+*/
+EVENT StartEvaluateScoreIterate
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_StartEvaluateScoreIterate")
+ACTIONS
+	IF "!c1"
+		CharacterHasStatus(_Character, Blue_AICalculationStats_Other)
+	THEN
+		CharacterApplyStatus(_Character, Blue_AICalculationStats_Other, -2)
+		IF "c1&!c2"
+			CharacterHasStatus(_Character, Blue_Talent_Guerilla)
+			CharacterHasStatus(_Character, Blue_Talent_Guerilla_AI)
+		THEN
+			CharacterApplyStatus(_Character, Blue_Talent_Guerilla_AI, -2)
+		ENDIF
+	ENDIF
+	
+EVENT CalculationAIDone
+ON
+	OnFinishCalculationAi()
+ACTIONS
+	IF "!c1&!c2&!c3&!c4"
+		IsTagged(__Me, "GOD_ICON")
+		CharacterHasStatus(__Me, GALVANISED)
+		CharacterHasStatus(__Me, INVULNERABLE)
+		CharacterHasStatus(__Me, STORY_ENCHAINED)
+	THEN
+		//StartTimer("Blue_StopEvaluateScore", 0.04, 0)
+		IF "c1"
+			CharacterHasStatus(__Me, Blue_Opportunist_AI)
+		THEN
+			CharacterApplyStatus(__Me, Blue_Opportunist_AI_Remove, 0)
+		ENDIF
+		IterateCharactersInCombat(__Me, "Blue_StopEvaluateScoreIterate")
+	ENDIF
+	Set(%EvaluateScores,0)
+
+EVENT StopEvaluateScore
+ON
+	OnFunction("StopEvaluateScore")
+ACTIONS
+	IF "c1"
+		IsEqual(%EvaluateScores,1)
+	THEN
+		IF "!c1&!c2&!c3&!c4"
+			IsTagged(__Me, "GOD_ICON")
+			CharacterHasStatus(__Me, GALVANISED)
+			CharacterHasStatus(__Me, INVULNERABLE)
+			CharacterHasStatus(__Me, STORY_ENCHAINED)
+		THEN
+			//StartTimer("Blue_StopEvaluateScore", 0.04, 0)
+			IF "c1"
+				CharacterHasStatus(__Me, Blue_Opportunist_AI)
+			THEN
+				CharacterApplyStatus(__Me, Blue_Opportunist_AI_Remove, 0)
+			ENDIF
+			IterateCharactersInCombat(__Me, "Blue_StopEvaluateScoreIterate")
+		ENDIF
+		Set(%EvaluateScores,0)
+		CharacterAiStopCalculate()
+	ENDIF
+/*
+EVENT StopEvaluateScoreDelay
+ON
+	OnTimer("Blue_StopEvaluateScore")
+ACTIONS
+	IF "c1"
+		CharacterHasStatus(__Me, Blue_Opportunist_AI)
+	THEN
+		CharacterApplyStatus(__Me, Blue_Opportunist_AI_Remove, 0)
+	ENDIF
+	IterateCharactersInCombat(__Me, "Blue_StopEvaluateScoreIterate")
+*/
+EVENT StopEvaluateScoreIterate
+VARS
+	CHARACTER:_Character
+ON
+	OnIterateCharacter(_Character, "Blue_StopEvaluateScoreIterate")
+ACTIONS
+	CharacterApplyStatus(_Character, Blue_AICalculationStats_Other_Remove, 0)
+	IF "c1"
+		CharacterHasStatus(_Character, Blue_Talent_Guerilla_AI)
+	THEN
+		CharacterApplyStatus(_Character, Blue_Talent_Guerilla_AI_Remove, 0)
+	ENDIF
+
+EVENT ForceNewEnemyWhenCharmed
+ON
+	OnCharacterStatusApplied(__Me,CHARMED)
+ACTIONS
+	CharacterSetEnemy(__Me,null)
+
+EVENT EvaluateTargets
+ON
+	OnTurn(__Me, _)
+ACTIONS
+	CallFunction("StartEvaluateScore")
+
+EVENT OnTurnEnd
+ON
+	OnTurnEnded(__Me, _)
+	OnLeftCombat(__Me, _)
+ACTIONS
+	CallFunction("StopEvaluateScore")
+	Set(%TookDamage, 0)
+
+EVENT StartedInvisibleTurn
+ON
+	OnTurn(__Me, _)
+ACTIONS
+	IF "c1"
+		CharacterHasStatus(__Me, INVISIBLE)
+	THEN
+		Set(%InvisibleDialog, 0)
+		IterateParty("GLO_InvisibleTurnStart", Lowest, Distance)
+	ENDIF
+
+EVENT IteratePlayersWhileInvisible
+VARS
+CHARACTER:_Player
+ON
+	OnIterateCharacter(_Player, "GLO_InvisibleTurnStart")
+ACTIONS
+	IF "c1&c2&!c3&!c4&c5&!c6&!c7&c8&!c9&!c10&!c11&!c12&!c13&!c14&!c15&!c16&!c17&!c18&!c19&!c20&!c21"
+		IsInCombatWith(_Player, __Me)			//c1
+		CharacterIsEnemy(_Player, __Me)			//c2
+		CharacterIsDead(_Player,0)				//!c3
+		IsInDialog(_Player)						//!c4
+		IsEqual(%InvisibleDialog, 0)			//c5
+		CharacterHasStatus(_Player, INVISIBLE)	//!c6
+		CharacterHasStatus(_Player, SNEAKING)	//!c7
+		CharacterIsInParty(_Player)				//c8
+		CharacterIsSummon(_Player)				//!c9
+		CharacterIsPolymorphInteractionDisabled(_Player) //!c10
+		CharacterIsPartyFollower(_Player)		//!c11
+		CharacterHasStatus(_Player, KNOCKED_DOWN) //!c12
+		CharacterHasStatus(_Player, FROZEN) //!c13
+		CharacterHasStatus(_Player, PETRIFIED) //!c14
+		CharacterHasStatus(_Player, STUNNED) //!c15
+		CharacterHasStatus(_Player, SLEEPING) //!c16
+		CharacterHasStatus(_Player, Blue_InvisibleWhite) //!c17
+		CharacterHasStatus(_Player, Blue_InvisibleOrange) //!c18
+		CharacterHasStatus(_Player, Blue_InvisibleBlue) //!c19
+		CharacterHasStatus(_Player, Blue_InvisibleBlind) //!c20
+		CharacterHasStatus(_Player, Blue_Talent_Guerilla) //!c21
+	THEN
+		Set(%InvisibleDialog, 1)
+		DialogStart(_, "CMB_AD_Comment_InvisibleEnemyTurn", _Player)
+	ENDIF
+
+EVENT ReceivedDamage
+VARS
+	CHARACTER:_Source
+ON
+	OnDamage(_, _, _Source, _)
+ACTIONS
+	IF "!c1"
+		IsEqual(__Me, _Source)
+	THEN
+		Add(%TookDamage, 1)
+	ENDIF
+
+EVENT FallbackDialogDone
+ON
+	OnAutomatedDialogEnded(_,%FallbackInstanceId)
+	OnTimer("FallbackDialogTimer")
+ACTIONS
+	Set(%FallbackInstanceId,null)
+	StopTimer("FallbackDialogTimer")
+	EndTurn(__Me)
+	
+EVENT FindVisibleCharactersInCombat
+VARS
+	CHARACTER:_Char
+ON
+	OnIterateCharacter(_Char, "FindVisibleCharactersInCombat")
+ACTIONS
+	IF "!c1&c2&!c3"
+		IsEqual(_Char, __Me)
+		CharacterIsEnemy(__Me, _Char)
+		CharacterHasStatus(_Char, INVISIBLE)
+	THEN
+		Add(%VisibleCharactersInCombat, 1)
+	ENDIF
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BEHAVIOUR
+REACTION CowerIfNeutralSeeCombat,20000
+VARS
+CHARACTER:_Char
+USAGE PEACE
+VARS
+	FLOAT:_Range
+	FLOAT:_Dist
+	// when changing these conditions, be sure to duplicate them to CowerIfNeutralSeeCombat_End
+CHECK "c1&!c2&c3&!c4&!c5&c6&!c7&!c8"
+	IsEqual(%bool_CanCower,1)
+	CharacterIsInParty(__Me)
+	CharacterGetSightRange(_Range,__Me)
+	IsTagged(__Me,"SILENTMONK")
+	IsTagged(__Me,"GHOST")
+	CharacterGet(_Char,__Me,_Range,Lowest,Distance,null,null,COMBAT,null,__Me)
+	IsInArena(_Char)
+	IsTagged(_Char,"IGNORESEENCOMBAT")
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest1", 5)
+	SetPriority("CowerIfNeutralSeeCombat_End",20000)
+	IF "c1&c2&(c3|c4)"
+		IsEqual(%bool_CanFleeWhileCowering,1)
+		GetDistance(_Dist,__Me,_Char)
+		IsLessThen(_Dist,10.0)
+		IsInDangerousSurface(__Me)
+	THEN
+		CharacterFleeFrom(All,10.0)
+	ENDIF
+	CharacterPlayAnimation("cower",0)
+
+REACTION CowerIfNeutralSeeCombat_End,0
+VARS
+CHARACTER:_Char
+USAGE PEACE
+VARS
+	FLOAT:_Range
+	FLOAT:_Dist
+	// this reaction has same checks as CowerIfNeutralSeeCombat, except that CharacterGet function is negated
+	// this reaction is turned on when combat ends, stops the looping cower animation and then turns itself off
+CHECK "c1&!c2&c3&!c4&!c5&!c6&(c7|(!c8&!c9))"
+	IsEqual(%bool_CanCower,1)
+	CharacterIsInParty(__Me)
+	CharacterGetSightRange(_Range,__Me)
+	IsTagged(__Me,"SILENTMONK")
+	IsTagged(__Me,"GHOST")
+	CharacterGet(_Char,__Me,_Range,Lowest,Distance,null,null,COMBAT,null,__Me)
+	IsEqual(_Char,null)
+	IsInArena(_Char)
+	IsTagged(_Char,"IGNORESEENCOMBAT")
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest2", 5)
+	CharacterStopAnimation()
+	SetPriority("CowerIfNeutralSeeCombat_End",0)
+
+REACTION ReturnToPeacePosition,15000
+VARS
+	FIXEDSTRING:_Text
+	STRING:_Str
+USAGE PEACE
+CHECK "!c1"
+	IsEqual(%PeaceReturnPosition,null)
+ACTIONS
+	//Print(_Str, "Peace pos: [1]", %PeaceReturnPosition)
+	//Cast(_Text, _Str)
+	//DisplayCombatInfoText(__Me, _Text, FLOAT:5)
+	//DisplayCombatInfoText(__Me, "Testerest3", 5)
+	//Blue here. Normally there wouldn't be a third condition here.
+	//But I'm writing this comment to complain into the void as this took 4 hours to debug.
+	//For some reason, %PeaceReturnPosition was getting set to {0;0;0} somewhere along the way when a character was created.
+	//This issue could be fixed by..
+	//By commenting out COMPLETELY IRRELEVANT portions of script that were NEVER RUN.
+	//Those portions of script being roughly ~half of the REACTIONs in BlueCharacterAddonBase.charScript.
+	//No, it didn't matter which ones.
+	//Anyways. /endrant I guess, the third condition that makes sure it's not {0;0;0} is my hotfix.
+	IF "(!c1|c2)&!c3"
+		IsInDangerousSurface(%PeaceReturnPosition,__Me)
+		FindPosition(%PeaceReturnPosition,__Me,1,0,0,10,0,__Me,-1,-1,-1,-1,null,0,%PeaceReturnPosition)
+		IsEqual(%PeaceReturnPosition, {0.000000;0.000000;0.000000})
+	THEN
+		//DisplayCombatInfoText(__Me, "IHateThis", 5)
+		CharacterMoveTo(%PeaceReturnPosition,1,1,1,0)
+	ENDIF
+	CharacterEvent(__Me,"ClearPeaceReturn")
+INTERRUPT
+ACTIONS
+	Reset()
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/// Combat AI
+REACTION Combat_AI_Waiting,60 //Waiting while the AI is still calculating or for the fallback dialog to end.
+USAGE COMBAT
+CHECK "c1|!c2"
+	CharacterAiIsCalculating()
+	IsEqual(%FallbackInstanceId,null)
+ACTIONS
+	Sleep(0.1)
+
+REACTION Combat_AI_SaveActionPoints,50
+USAGE COMBAT
+VARS
+	FLOAT3:_TargetPosition
+	FLOAT3:_EndPosition
+CHECK "c1"
+	CharacterAiFetchSaveActionPointsCommand(_TargetPosition,_EndPosition)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest4", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[CANNOT DO WHAT I WOULD WANT TO DO, WILL SAVE AP FOR NEXT TURN]")
+	CharacterAiMove(_TargetPosition, null, null, _EndPosition)
+	IF "!c1"
+		CharacterHasStatus(__Me, INVISIBLE)
+	THEN
+		CharacterPlayEffect(__Me, "RS3_FX_UI_Icon_SkipTurn_01", "Dummy_OverheadFX")
+	ENDIF
+	Sleep(0.5)
+	EndTurn(__Me)
+INTERRUPT
+ON
+	OnMovementFailed(_)
+ACTIONS
+	DebugText(__Me,"MOVE FAILED saving action points")
+INTERRUPT
+ACTIONS
+	Reset()
+	CallFunction("StartEvaluateScore")
+
+REACTION Combat_AI_Fallback,50
+USAGE COMBAT
+VARS
+	FLOAT3:_TargetPosition
+	FLOAT3:_LookAtPosition
+CHECK "c1"
+	CharacterAiFetchFallbackCommand(_TargetPosition,_LookAtPosition)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest5", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[GOING TO MOVE TO BETTER POSITION]")
+	CharacterAiMove(_TargetPosition, null, null)
+	CharacterLookAt(_LookAtPosition)
+	IF "c1&!c2&c3&!c4&!c5"
+		IsVisible(__Me)
+		CharacterHasStatus(__Me,"INVISIBLE")
+		IsEqual(%bool_CombatFallbackAD,1)
+		IsInGameMasterMode()
+		IsInArena(__Me)
+	THEN
+		StartTimer("FallbackDialogTimer",2.0,0)
+		DialogStart(%FallbackInstanceId,"CMB_AD_CombatFallback",__Me)
+	ELSE
+		Sleep(1.0)
+		EndTurn(__Me)
+	ENDIF
+INTERRUPT
+ON
+	OnMovementFailed(_)
+ACTIONS
+	DebugText(__Me,"MOVE FAILED going to better position")
+INTERRUPT
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest6", 5)
+	Reset()	
+	IF "c1"
+		IsEqual(%FallbackInstanceId,null)
+	THEN
+		StopTimer("FallbackDialogTimer")
+		CallFunction("StartEvaluateScore")
+	ENDIF
+
+REACTION Combat_AI_Attack,50
+USAGE COMBAT
+VARS
+	FLOAT3:_EndPosition
+	FLOAT3:_TargetPos
+	CHARACTER:_TargetCharacter
+	ITEM:_TargetItem
+CHECK "c1"
+	CharacterAiFetchAttackCommand(_EndPosition,_TargetPos,_TargetCharacter,_TargetItem)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest7", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[GOING TO ATTACK]")
+	CharacterAiMove(_EndPosition, _TargetCharacter, _TargetItem)
+	IF "!c1"
+		IsEqual(_TargetPos,null)
+	THEN
+		CharacterAttackWithoutMove(_TargetPos)
+	ELIF "!c1"
+		IsEqual(_TargetCharacter,null)
+	THEN
+		CharacterAttackWithoutMove(_TargetCharacter)
+	ELIF "!c1"
+		IsEqual(_TargetItem,null)
+	THEN
+		CharacterAttackWithoutMove(_TargetItem)
+	ENDIF
+	CallFunction("StartEvaluateScore")
+INTERRUPT
+ON
+	OnMovementFailed(_)
+ACTIONS
+	DebugText(__Me,"MOVE FAILED attacking [1],[2],[3]",_TargetCharacter,_TargetItem,_TargetPos)
+INTERRUPT
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest8", 5)
+	Reset()
+	CallFunction("StartEvaluateScore")
+
+REACTION Combat_AI_Consume,50
+USAGE COMBAT
+VARS
+	ITEM:_Item
+CHECK "c1"
+	CharacterAiFetchConsumeCommand(_Item)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest9", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[GOING TO CONSUME [1]",_Item)
+	IF "c1"
+		CharacterCanUseItemInInventory(__Me, _Item, 1)
+	THEN
+		CharacterUseItem(_Item)
+		Sleep(2)
+	ELIF "c1"
+		CharacterCanUseItemInInventory(__Me, _Item, 0)
+	THEN
+		Sleep(0.5)
+		IF "!c1"
+			CharacterHasStatus(__Me, INVISIBLE)
+		THEN
+			CharacterPlayEffect(__Me, "RS3_FX_UI_Icon_SkipTurn_01", "Dummy_OverheadFX")
+		ENDIF
+		Sleep(0.5)
+		EndTurn(__Me)
+		Goto(End)
+	ENDIF
+	CallFunction("StartEvaluateScore")
+INTERRUPT
+ACTIONS
+	Reset()
+	CallFunction("StartEvaluateScore")
+
+REACTION Combat_AI_CastSkill,50
+USAGE COMBAT
+VARS
+	SKILL:_Skill
+	ITEM:_SkillItem
+	FLOAT3:_EndPosition
+	FLOAT3:_TargetPos1
+	CHARACTER:_TargetCharacter1
+	ITEM:_TargetItem1
+	FLOAT3:_TargetPos2
+	CHARACTER:_TargetCharacter2
+	ITEM:_TargetItem2
+CHECK "c1"
+	CharacterAiFetchSkillCommand(_Skill,_SkillItem,_EndPosition,_TargetPos1,_TargetCharacter1,_TargetItem1,_TargetPos2,_TargetCharacter2,_TargetItem2)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest10", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[GOING TO CAST [1] from [2]",_Skill,_SkillItem)
+	CharacterAiMove(_EndPosition, _TargetCharacter1, _TargetItem1)
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Check if we can still cast the skill
+	IF "!c1"
+		CharacterCanCast(__Me,_Skill,_SkillItem)
+	THEN
+		Sleep(0.5)
+		IF "!c1&c2"
+			IsEqual(_TargetCharacter1,null)
+			CanSee(__Me,_TargetCharacter1)
+		THEN
+			CharacterLookAt(_TargetCharacter1)
+		ELIF "!c1"
+			IsEqual(_TargetItem1,null)
+		THEN
+			CharacterLookAt(_TargetItem1)
+		ELIF "!c1"
+			IsEqual(_TargetPos1,null)
+		THEN
+			CharacterLookAt(_TargetPos1)
+		ENDIF
+
+		IF "!c1"
+			CharacterHasStatus(__Me, INVISIBLE)
+		THEN
+			CharacterPlayEffect(__Me, "RS3_FX_UI_Icon_SkipTurn_01", "Dummy_OverheadFX")
+		ENDIF
+		Sleep(0.5)
+		EndTurn(__Me)
+		Goto(End)
+	ENDIF
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Cast the Skill
+	IF "!c1"
+		IsEqual(_TargetPos1,null)
+	THEN
+		IF "!c1"
+			IsEqual(_TargetPos2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetPos1,_TargetPos2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetCharacter2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetPos1,_TargetCharacter2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetItem2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetPos1,_TargetItem2,_SkillItem)
+		ELSE
+			CharacterUseSkill(_Skill,_TargetPos1,CHARACTER:null,_SkillItem)
+		ENDIF
+	ELIF "!c1"
+		IsEqual(_TargetCharacter1,null)
+	THEN
+		IF "!c1"
+			IsEqual(_TargetPos2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetCharacter1,_TargetPos2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetCharacter2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetCharacter1,_TargetCharacter2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetItem2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetCharacter1,_TargetItem2,_SkillItem)
+		ELSE
+			CharacterUseSkill(_Skill,_TargetCharacter1,CHARACTER:null,_SkillItem)
+		ENDIF
+	ELIF "!c1"
+		IsEqual(_TargetItem1,null)
+	THEN
+		IF "!c1"
+			IsEqual(_TargetPos2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetItem1,_TargetPos2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetCharacter2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetItem1,_TargetCharacter2,_SkillItem)
+		ELIF "!c1"
+			IsEqual(_TargetItem2,null)
+		THEN
+			CharacterUseSkill(_Skill,_TargetItem1,_TargetItem2,_SkillItem)
+		ELSE
+			CharacterUseSkill(_Skill,_TargetItem1,CHARACTER:null,_SkillItem)
+		ENDIF
+	ENDIF
+	CallFunction("StartEvaluateScore")
+INTERRUPT
+ON
+	OnMovementFailed(_)
+ACTIONS
+	DebugText(__Me,"MOVE FAILED casting [1] on [2],[3],[4]",_Skill,_TargetCharacter1,_TargetItem1,_TargetPos1)
+INTERRUPT
+ACTIONS
+	Reset()
+	CallFunction("StartEvaluateScore")
+
+REACTION Combat_AI_MoveSkill,49
+USAGE COMBAT
+VARS
+	SKILL:_Skill
+	ITEM:_SkillItem
+	FLOAT3:_TargetPos
+CHECK "c1"
+	CharacterAiFetchMoveSkillCommand(_Skill,_SkillItem,_TargetPos)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest11", 5)
+	CallFunction("StopEvaluateScore")
+	DebugText(__Me,"[GOING TO GET IN POSITION: [1] from [2]",_Skill,_SkillItem)
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Check if we can still cast the skill
+	IF "!c1"
+		CharacterCanCast(__Me,_Skill,_SkillItem)
+	THEN
+		Sleep(0.5)
+		CharacterLookAt(_TargetPos)
+		IF "!c1"
+			CharacterHasStatus(__Me, INVISIBLE)
+		THEN
+			CharacterPlayEffect(__Me, "RS3_FX_UI_Icon_SkipTurn_01", "Dummy_OverheadFX")
+		ENDIF
+		Sleep(0.5)
+		EndTurn(__Me)
+		Goto(End)
+	ENDIF
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Cast the Skill
+	IF "c1"
+		IsTeleportationSkill(_Skill)
+	THEN
+		CharacterUseSkill(_Skill,__Me,_TargetPos,_SkillItem)
+	ELSE
+		CharacterUseSkill(_Skill,_TargetPos,CHARACTER:null,_SkillItem)
+	ENDIF
+	CharacterAiFinishMoveSkill()
+INTERRUPT
+ACTIONS
+	Reset()
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/// Fallbacks
+
+REACTION Combat_MoveOutOfSurfaces, 5
+USAGE COMBAT
+CHECK "(c1|c2)&!c3&!c4&c5"
+	IsInSurface(__Me,SurfaceOil)
+	IsInDangerousSurface(__Me)		
+	CharacterIsFloating(__Me)
+	CharacterHasStatus(__Me,ETHEREAL_SOLES)
+	CharacterCanMove(__Me)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest12", 5)
+	CallFunction("StopEvaluateScore")
+	IF "c1"
+		IsInSurface(__Me,SurfaceOil)
+	THEN
+		CharacterFleeFromSurface(SurfaceOil)
+	ELIF "c1"
+		IsInDangerousSurface(__Me)
+	THEN
+		CharacterFleeFromDangerousSurface()
+	ENDIF
+	CallFunction("StartEvaluateScore")
+INTERRUPT
+ON
+	OnException()
+	OnMovementFailed(_)
+ACTIONS
+	DelayReaction("Combat_MoveOutOfSurfaces",6)
+
+REACTION CowerIfNeutralInCombat,3
+VARS
+CHARACTER:_Char
+USAGE COMBAT
+CHECK "!c1"
+	CharacterGet(_,__Me,50,Random,null,Enemy,null,COMBAT,null)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest13", 5)
+	Set(%VisibleCharactersInCombat, 0)
+	IterateCharactersInCombat(__Me, "FindVisibleCharactersInCombat")
+	// Enemies might all be invisible
+	IF "!c1"
+		IsEqual(%VisibleCharactersInCombat, 0)
+	THEN
+		CharacterPlayAnimation("cower",0,0)
+	ENDIF
+	Sleep(1)
+	EndTurn(__Me)
+INTERRUPT
+ACTIONS
+	Reset()
+
+REACTION AutomatedDialog_Interrupt, 1700
+USAGE PEACE
+CHECK "c1&!c2"
+	IsInDialog(__Me)
+	CharacterIsInParty(__Me)
+ACTIONS
+	//DisplayCombatInfoText(__Me, "Testerest14", 5)
+	IF "!c1"
+		IsEqual(%DialogLookAtChar,null)
+	THEN
+		CharacterLookAt(%DialogLookAtChar,0)
+	ENDIF
+	Sleep(0.25)
+INTERRUPT
+ACTIONS
+	Set(%DialogLookAtChar,null)

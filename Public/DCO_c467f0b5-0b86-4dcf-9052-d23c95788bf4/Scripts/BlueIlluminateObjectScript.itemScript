@@ -1,0 +1,197 @@
+INIT
+	ITEM:__Me
+BEHAVIOUR
+
+
+
+REACTION BlueIlluminateClearSurfaceBloodCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceBloodCloudElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudElectrifiedCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceBloodCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceBloodElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodElectrifiedCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceBloodFrozenCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodFrozenCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceFireCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceFireCloudCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceFireCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceFireCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceOilCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceOilCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfacePoisonCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfacePoisonCloudCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfacePoisonCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfacePoisonCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceSmokeCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceSmokeCloudCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceWaterCloudCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceWaterCloudElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudElectrifiedCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:1, 1.0)
+
+REACTION BlueIlluminateClearSurfaceWaterCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceWaterElectrifiedCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterElectrifiedCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceWaterFrozenCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterFrozenCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+
+REACTION BlueIlluminateClearSurfaceWebCursed, 1000
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "c1"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWebCursed)
+	ACTIONS
+		RemoveSurfaceLayerAt(_Vtarget, INT:0, 0.9)
+		
+REACTION BlueIlluminateClearSurfaceDestroyObject, 100
+VARS
+	FLOAT3:_Vtarget
+USAGE ALL
+	CHECK "!c1&!c2&!c3&!c4&!c5&!c6&!c7&!c8&!c9&!c10&!c11&!c12&!c13&!c14&!c15&!c16&!c17"
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCloudElectrifiedCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodElectrifiedCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceBloodFrozenCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceFireCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceFireCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceOilCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfacePoisonCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfacePoisonCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceSmokeCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCloudElectrifiedCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterElectrifiedCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWaterFrozenCursed)
+		FindSurface(_Vtarget, __Me, FLOAT:0, FLOAT:4.5, SurfaceWebCursed)
+	ACTIONS
+		ItemDestroy(__Me)
+		
+EVENTS
+
+EVENT BlueIlluminateGetCasterDoExplosion
+VARS
+	CHARACTER:_Owner
+ON
+	OnItemStatus(__Me, Blue_IlluminateCast)
+ACTIONS
+	IF "c1"
+		ItemGetStatusSourceCharacter(__Me, PRETIER, _Owner)
+	THEN
+		ExplodeAt(__Me, Blue_Explosion_Illuminate, -1, _Owner)
+	ENDIF

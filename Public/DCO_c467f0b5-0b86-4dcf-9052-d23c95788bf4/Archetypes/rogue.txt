@@ -1,0 +1,5 @@
+USING melee
+
+// Rogue doesn't care about stench or flanking
+MULTIPLIER_ENDPOS_STENCH					0.90
+MULTIPLIER_ENDPOS_FLANKED					0.00

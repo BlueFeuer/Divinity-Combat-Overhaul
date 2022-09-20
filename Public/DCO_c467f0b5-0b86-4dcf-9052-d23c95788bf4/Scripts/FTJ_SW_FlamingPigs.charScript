@@ -1,0 +1,163 @@
+#INCLUDE State_Manager
+INIT
+	CHARACTER:__Me
+	CHARACTER:%TargetPlayer
+	USING State_Manager
+	FLOAT3:%GuardPoint
+	INT:%InitOneShot=0
+	EXTERN TRIGGER:%WanderTrigger=null
+	INT:%CuredOfCurse=0
+
+BEHAVIOUR
+
+REACTION State_LookForPlayer,0
+VARS
+	FLOAT:_Dist
+	FLOAT:_Sight
+	INT:_RND=0
+USAGE PEACE
+ACTIONS
+	IF "c1"
+		CharacterGetSightRange(_Sight,__Me)
+	THEN
+		IterateCharactersNear(__Me,_Sight,"FTJ_FindAvailablePlayer",Lowest,Distance)
+		GetRandom(_RND,1,2,3)
+		//Chance to Wander
+		IF "c1"
+			IsEqual(_RND,1)
+		THEN
+			CharacterWander(%WanderTrigger,1.0)
+		ELIF "c1&c2"
+			GetDistance(_Dist,__Me,%GuardPoint)
+			IsGreaterThen(_Dist,1.2)
+		THEN
+			CharacterMoveTo(%GuardPoint,1)
+		ENDIF
+		//Chance to do AD
+		GetRandom(_RND,1,2,3,4,5)
+		IF "c1"
+			IsEqual(_RND,1)
+		THEN
+			DialogStart(_,"FTJ_SW_AD_FlamingPigs",__Me)
+		ENDIF
+		IterateCharactersNear(__Me,_Sight,"FTJ_FindAvailablePlayer",Lowest,Distance)
+	ENDIF
+
+REACTION State_FleeFromPlayer,0
+USAGE PEACE
+VARS
+CHECK "!c1"
+	HasGlobalFlag("FTJ_SW_FlamingPigsPacified")
+ACTIONS
+	CharacterLookAt(%TargetPlayer,0,10)
+	DialogStart(_,"FTJ_SW_AD_FlamingPigs",__Me)
+	CharacterFleeFrom(Player,12.0)
+	CharacterWander(FLOAT:5.0,4.0,1)
+	Set(%currentState,"State_LookForPlayer")
+
+REACTION State_FleeFromPlayerOnAttack,0
+USAGE PEACE
+VARS
+ACTIONS
+	CharacterLookAt(%TargetPlayer,0,10)
+	DialogStart(_,"FTJ_SW_AD_FlamingPigs",__Me)
+	CharacterFleeFrom(Player,12.0)
+	CharacterWander(FLOAT:5.0,4.0,1)
+	Set(%currentState,"State_LookForPlayer")
+
+REACTION State_PigLeave,0
+USAGE PEACE
+ACTIONS
+	DebugText(__Me,"State Reached")
+	Sleep(1.0)
+	CharacterEvent(__Me,"GEN_CharacterDisableAllCrimesBeforeDisappear")
+	CharacterDisappear(1,1)
+
+
+EVENTS
+EVENT SetStatusOnInit
+ON
+	OnInit()
+ACTIONS
+	IF "!c1"
+		CharacterHasStatus(__Me,PERMANENT_NECROFIRE)
+	THEN
+		SetPriority("AutomatedDialog_Interrupt",0)
+		CharacterApplyStatus(__Me,PERMANENT_NECROFIRE,-1,1)
+	ENDIF
+
+EVENT OnInitStorePos
+VARS
+FLOAT3:_F3
+ON
+	OnInit()
+ACTIONS
+	IF "c1"
+		IsEqual(%InitOneShot,0)
+	THEN
+		GetPosition(__Me,_F3)
+		Set(%GuardPoint,_F3)
+	ENDIF
+
+EVENT OnBlessed
+ON
+	OnCharacterStatusApplied(__Me,BLESSED)
+	OnCharacterStatusApplied(__Me,Blue_BLESSED)
+	OnCharacterStatusApplied(__Me,HOLY_FIRE)
+ACTIONS
+	IF "c1"
+		IsEqual(%CuredOfCurse,0)
+	THEN
+		Set(%CuredOfCurse,1)
+		CharacterRemoveStatus(__Me, PERMANENT_NECROFIRE)
+		CharacterRemoveStatus(__Me,BURNING)
+		CharacterApplyStatus(__Me,BLESSED,-1,1)
+		CharacterApplyStatus(__Me,IMMUNE_TO_BURNING,-1,1)
+		CharacterApplyStatus(__Me,IMMUNE_TO_POISONING,-1,1)
+		DebugText(__Me,"Event Reached")
+		SetPriority("State_PigLeave",10000)
+	ENDIF
+
+EVENT AttackedByPlayer
+VARS
+	CHARACTER:_Player
+ON
+	OnDamage(_,_,_Player,_)
+ACTIONS
+	IF "!c1&c2"
+		IsEqual(_Player,null)
+		CharacterIsPlayer(_Player)
+	THEN
+		Set(%TargetPlayer,_Player)
+		Set(%currentState,"State_FleeFromPlayerOnAttack")
+	ENDIF
+
+EVENT OnPacified
+ON
+	OnGlobalFlagSet("FTJ_SW_FlamingPigsPacified")
+ACTIONS
+	Set(%currentState,"State_LookForPlayer")
+
+
+EVENT IteratorForTargetPlayer
+VARS
+	CHARACTER:_Char
+	FLOAT:_Dist
+ON
+	OnIterateCharacter(_Char,"FTJ_FindAvailablePlayer")
+ACTIONS
+	IF "!c1&c2&!c3&!c4&!c5&!c6&!c7&!c8&c9&!c10"
+		IsEqual(_Char,__Me)							//!c1
+		CharacterIsPlayer(_Char)					//c2
+		CharacterIsDead(_Char,0)					//!c3
+		IsInCombat(_Char)							//!c4
+		IsInDialog(_Char)							//!c5
+		CharacterIsSummon(_Char)					//!c6
+		CharacterIsPolymorphInteractionDisabled(_Char) //!c7
+		CharacterIsPartyFollower(_Char)				//!c8
+		CanSee(__Me,_Char)							//c9
+		IsEqual(%currentState,"State_Leave")		//!c10
+	THEN
+		Set(%TargetPlayer,_Char)
+		Set(%currentState,"State_FleeFromPlayer")
+	ENDIF

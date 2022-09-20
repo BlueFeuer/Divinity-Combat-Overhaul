@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="ec8e5086-0ef6-4151-b3d4-a3bdbd25bbd6">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="Shields" />
+        <field name="ModifierType" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ModifierType" />
+        <field name="Act" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Act" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Constitution 12" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="90" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="60" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="DurabilityDegradeSpeed" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="Qualifier" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="60" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="5000" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Slot" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Itemslot" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Poison" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Piercing" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Physical" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Shout_RecoverArmour" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="InventoryTabs" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="DefaultGray" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="ComboCategory" type="StringStatObjectFieldDefinition" value="Shield" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Magical_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="13" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Magical_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="11" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_All_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Magical" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="9" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_All_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_All" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Special_Block_Shield_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="17" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Special_Block_Shield_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Special_Block_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Initiative_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="8" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Initiative" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="4" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Initiative_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="6" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_PainReflection" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="PainReflection" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Leadership" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="Leadership" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Perseverance" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="Perseverance" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="NoShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ModifierType" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ModifierType" />
+        <field name="Act" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="Act" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Constitution 0" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="DurabilityDegradeSpeed" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="Qualifier" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Slot" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="Itemslot" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Poison" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Piercing" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="Physical" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+        <field name="ComboCategory" type="StringStatObjectFieldDefinition" value="ShieldMetal" />
+        <field name="ObjectCategory" type="StringStatObjectFieldDefinition" value="Shield" />
+        <field name="MinAmount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="MaxAmount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Priority" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="MinLevel" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_CraftedShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_CraftedShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_UNIQUE_WithermooreShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WithermooreShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="ActPart" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="280" />
+        <field name="ExtraProperties" type="StringStatObjectFieldDefinition" value="_Vitality_ShieldBoost" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="13" enumeration_type_name="AttributeFlags" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Wood_Shield_A_Round_Shield_CHEAT" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="15" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="ComboCategory" type="StringStatObjectFieldDefinition" value="ShieldWood" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Arena_Shield_A" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="10" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Toy_WoodenShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Toy_WoodenShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="3000" />
+        <field name="MinAmount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="MaxAmount" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Priority" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="MinLevel" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Magister_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_CharacterCreationShields" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Cleric_Shield_Lizards" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Cleric_Shield_Lizards" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Cleric_Shield_Elves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Cleric_Shield_Elves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Cleric_Shield_Dwarves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Cleric_Shield_Dwarves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Cleric_Shield_Humans" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Cleric_Shield_Humans" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Lizards" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Lizards" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Elves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Elves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Dwarves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Dwarves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Humans" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Conjurer_Shield_Humans" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Fighter_Shield_Lizards" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Fighter_Shield_Lizards" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Fighter_Shield_Elves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Fighter_Shield_Elves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Fighter_Shield_Dwarves" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Fighter_Shield_Dwarves" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_Fighter_Shield_Humans" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Fighter_Shield_Humans" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_SpecificEnemyShields" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shield_GEN_Bodyguard" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shield_GEN_Human_A" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shield_GEN_Human_B" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_HumanShield_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shield_GEN_Dwarven_A" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Shield_GEN_Dwarven_B" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_GEN_Magister_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Durability" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+        <field name="ObjectCategory" type="StringStatObjectFieldDefinition" value="Shield" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="ModifierType" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ModifierType" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_1" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="9" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_2" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="13" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_3" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="11" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Physical" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Physical_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Armour_Physical_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_4" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_5" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_6" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Armor Defense Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Constitution" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Constitution_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="18" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Constitution_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Strength" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Strength_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="18" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Strength_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Intelligence" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="IntelligenceBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Intelligence_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="18" />
+        <field name="IntelligenceBoost" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Primary_Intelligence_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="IntelligenceBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Air_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Air:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Earth_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Earth:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Fire_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Fire:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Physical_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Physical:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Piercing_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Piercing:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Water_Damage" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="12" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="15::Water:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Air_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Air:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Earth_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Earth:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Fire_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Fire:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Physical_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Physical:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Piercing_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Piercing:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Water_Damage_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="14" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="30::Water:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Air_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Air:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Earth_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Earth:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Fire_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Fire:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Physical_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Physical:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Piercing_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Piercing:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Reflect_As_Water_Damage_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="16" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="40::Water:melee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Air" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Air_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Air_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Earth" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Earth_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Earth_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Fire" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Fire_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Fire_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Poison" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Poison" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Poison_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Poison" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Poison_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Poison" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Water" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Water_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Resistance_Water_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Accuracy" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Dodge" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Dodge_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="6" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Dodge_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="9" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="4" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_MovementSpeed" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_MovementSpeed_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="40" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_MovementSpeed_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="30" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Vitality" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="VitalityBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Vitality_Large" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="VitalityBoost" type="IntegerStatObjectFieldDefinition" value="20" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_Vitality_Medium" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="VitalityBoost" type="IntegerStatObjectFieldDefinition" value="15" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_BurnContact" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="24" enumeration_type_name="AttributeFlags" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_PoisonContact" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="26" enumeration_type_name="AttributeFlags" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Secondary_ChillContact" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="27" enumeration_type_name="AttributeFlags" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Skill_BouncingShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Projectile_BouncingShield" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_Boost_Shield_Skill_Taunt" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Shout_Taunt" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="REFERENCE SHIELDS" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_ReferenceShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_ReferenceShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+        <field name="ComboCategory" type="StringStatObjectFieldDefinition" value="ShieldWood" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="PC SHIELDS" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_0" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="70" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="HumansBowCommon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FTJ_MagisterCarin_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="FTJ_MagisterCarin_Shield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="100" />
+        <field name="Luck" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FTJ_Knaap_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="FTJ_Knaap_Shield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="240" />
+        <field name="SingleHanded" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Perseverance" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RC_DW_Unique_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="EMPTY" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="9" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="240" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+        <field name="SingleHanded" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Polymorph" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="10::Physical:melee" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RC_GY_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="EMPTY" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="11" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="210" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+        <field name="PainReflection" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="20::Physical:melee" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_UNIQUE_CrabShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_UNIQUE_CrabShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="16" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="250" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+        <field name="PainReflection" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RC_MIL_UNIQUE_LogRewardShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="EMPTY" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="250" />
+        <field name="Perseverance" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="WarriorLore" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="Malachite" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_UNIQUE_ARX_KemmsShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_UNIQUE_ARX_KemmsShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="19" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="15" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="350" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="15" enumeration_type_name="Penalty Qualifier" />
+        <field name="Perseverance" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="ExtraProperties" type="StringStatObjectFieldDefinition" value="Self:OnEquip:DEFLECTING" />
+        <field name="Flags" type="EnumerationListStatObjectFieldDefinition" value="54" enumeration_type_name="AttributeFlags" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_UNIQUE_ARX_WarriorsShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="EMPTY" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="18" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="300" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Air" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Water" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Earth" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+        <field name="SingleHanded" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Perseverance" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="10::Physical:melee" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WPN_UNIQUE_ARX_TheOneShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="EMPTY" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="20" enumeration_type_name="ActPart" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="30" />
+        <field name="Magic Armor Value" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="20" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="400" />
+        <field name="Movement" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Initiative" type="IntegerStatObjectFieldDefinition" value="6" />
+        <field name="StrengthBoost" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="Penalty Qualifier" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+        <field name="SingleHanded" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="WarriorLore" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="Polymorph" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="DodgeBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Reflection" type="StringStatObjectFieldDefinition" value="10::Physical:melee" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Target_StripResistance" />
+        <field name="ExtraProperties" type="StringStatObjectFieldDefinition" value="Self:OnEquip:DEATH_WISH" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="NPC SHIELDS" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_FTJ_Magister_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="HumansBowCommon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_FTJ_Paladin_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Paladin_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_FTJ_Seeker_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Fighter_Shield_Humans" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_FTJ_Magister_Shield_Gold" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="HumansBowUncommon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_RC_Magister_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+        <field name="ItemColor" type="StringStatObjectFieldDefinition" value="HumansBowCommon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_RC_Paladin_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Paladin_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_RC_Dwarves_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Dwarves_Shield_A" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_RC_Lizards_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Lizards_Shield_B" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_RC_Elves_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Elves_Shield_A" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Weight" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Fire" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="InventoryTab" type="EnumerationStatObjectFieldDefinition" value="7" enumeration_type_name="InventoryTabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_Toy_WoodenShield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Toy_WoodenShield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Target_NULLSKILL" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_BlackRingShield_A" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Humans_Blackring_Shield_A" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_BlackRingShield_B" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Humans_Blackring_Shield_B" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_Magister_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Magister_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="16" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_Paladin_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Shield_Paladin_01" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="16" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_ARX_Dwarves_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Dwarves_Shield_A" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="16" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_EG_Braccus_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="WPN_Humans_Braccus_Shield" />
+        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="20" enumeration_type_name="ActPart" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="_UNI_Dallis_Stage2_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="UNI_Dallis_Stage2_Shield" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="UNI_Dallis_Stage2_Shield" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Shields" />
+        <field name="ItemGroup" type="StringStatObjectFieldDefinition" value="UNI_Dallis_Stage2_Shield" />
+        <field name="ArmorBoost" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Blocking" type="IntegerStatObjectFieldDefinition" value="10" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="380" />
+        <field name="IntelligenceBoost" type="EnumerationStatObjectFieldDefinition" value="13" enumeration_type_name="Penalty Qualifier" />
+        <field name="ConstitutionBoost" type="EnumerationStatObjectFieldDefinition" value="14" enumeration_type_name="Penalty Qualifier" />
+        <field name="WitsBoost" type="EnumerationStatObjectFieldDefinition" value="12" enumeration_type_name="Penalty Qualifier" />
+        <field name="Skills" type="StringStatObjectFieldDefinition" value="Shout_BlindingRadiance" />
+        <field name="RuneSlots" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="RuneSlots_V1" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="New_Stat_7" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_BOOSTS_Shield" />
+        <field name="Value" type="IntegerStatObjectFieldDefinition" value="8" />
+        <field name="PainReflection" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="AccuracyBoost" type="IntegerStatObjectFieldDefinition" value="5" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

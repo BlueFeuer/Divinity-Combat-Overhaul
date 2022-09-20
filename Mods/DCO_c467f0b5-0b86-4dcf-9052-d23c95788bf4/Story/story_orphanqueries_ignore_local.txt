@@ -1,0 +1,8 @@
+DB_ArmourSets_Helper_TimerEquip 4
+LaunchProjectileFromCharacterInCone 4
+DB_ArmourSets_UpgradedSet 1
+DB_ArmourSets_UpgradedPieces 1
+DB_ArmourSets_Helper_TimerWholeDevArmour 2
+TransformKeepIcon 5
+LaunchProjectileFromCharacterInCone 4
+CharacterSetVisualElement 3

@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="c8098738-31ec-4912-8b57-eefd0673fc3e">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ExtraStatPoints" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Level 8" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Bigger and Better" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ExtraSkillPoints" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Level 8" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="All Skilled Up" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Flanking" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="WarriorLore 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Sidewinder; Removes Flanking penalty" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="AttackOfOpportunity" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="SingleHanded 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Opportunist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistDead" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Comeback Kid" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Carry" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Packmule; +100 CarryWeight" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Durability" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="My Precious; Does nothing" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="AnimalEmpathy" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Pet Pal" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Escapist" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Escapist" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="SingleHanded 8" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="StandYourGround" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Stand Your Ground; Knockdown Immunity" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SurpriseAttack" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Guerilla" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="LightStep" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Light Stepper; +2 Wits for Traps" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResurrectToFullHealth" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="DualWielding 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Morning Person" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Scientist" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Scientist; +1 Crafting/Blacksmithing" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Raistlin" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Level 8" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Glass Cannon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="MrKnowItAll" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Know-It-All; -20 Attitude, +1 Int" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WhatARush" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="What A Rush" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FaroutDude" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Far Out Man" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Leech" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Leech" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!TALENT_Unstable" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ElementalAffinity" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Elemental Affinity" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FiveStarRestaurant" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Five Star Diner" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Bully" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Bully; +50% Damage to Slowed/Crippled/KnockedDown" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ElementalRanger" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Elemental Ranger" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="LightningRod" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="AirSpecialist 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Lightning Rod; Stun Immunity" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Politician" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Politician; +2 Pers, -1 Int" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WeatherProof" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="EarthSpecialist 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Weather Proof" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="LoneWolf" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Lone Wolf" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Zombie" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Undead" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Demon" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Polymorph 1;!TALENT_IceKing" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Demon" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="IceKing" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Perseverance 1;!TALENT_Demon" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Ice King" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Courageous" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!TALENT_Escapist" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Courageous; Fear Immunity, cannot flee" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="GoldenMage" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Voluble Mage; Silence Immunity" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WalkItOff" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Walk It Off" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FolkDancer" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Sneaking 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Speedcreeper; Normal speed while sneaking" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="SpillNoBlood" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="SingleHanded 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Anaconda; +10% Crushing damage" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Stench" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Level 8" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Stench" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WarriorLoreNaturalArmor" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="WarriorLore 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Thick Skin; +5+(1*point) armor" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WarriorLoreNaturalHealth" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="WarriorLore 3" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Picture of Health; +3% Vit per point" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WarriorLoreNaturalResistance" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="WarriorLore 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Weather the Storms; +3% Resistance per point" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WarriorLoreGrenadeRange" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!TALENT_ViolentMagic;!TALENT_Torturer" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Slingshot" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RangerLoreArrowRecover" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Arrow Recovery" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RangerLoreEvasionBonus" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RangerLore 4" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Sidestep; +10 Dodge" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RangerLoreRangedAPBonus" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RangerLore 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Quickdraw; +1 Bow/CB Range" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Sight" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RangerLore 2" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Hyperopia; Invert chance to hit at range" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="NoAttackOfOpportunity" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Duck Duck Goose" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RogueLoreDaggerAPBonus" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RogueLore 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Mack The Knife; -1 AP cost for Daggers" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RogueLoreDaggerBackStab" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Backstabber; Allows backstabs" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RogueLoreMovementBonus" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RogueLore 2" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="SwiftFooted; +10% movement" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RogueLoreHoldResistance" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RogueLore 5" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Headstrong; +20% res to Frzn/Stun/Ptrif/Knkdwn" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="RogueLoreGrenadePrecision" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="RogueLore 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Pinpoint; Grenades not miss" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ExtraWandCharge" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Wand 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Magician; +1 Wand Use (does nothing)" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DualWieldingBlock" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="DualWielding 1" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="???" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="BeastMaster" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="Summoning 2" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Beast Master; Allows 2 summons" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Executioner" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Executioner" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="QuickStep" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="The Pawn" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Backstab" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Assassin; Does naught" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Trade" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Trader's Tongue; Unused?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Lockpick" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Cat Burglar; Unused?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChanceToHitRanged" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Marksman; Unused?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChanceToHitMelee" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Gladiator; Unused?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Damage" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Warlord; +10% Damage?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ActionPoints" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="FleetFooted; +1 max AP?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ActionPoints2" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Rosy-cheeked; +1 max AP?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Criticals" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Killer Instincts; +5% CC?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="IncreasedArmor" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Indestructible; +7% Phys Armor?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistFear" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Breveheart; +25% Fear Resist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistKnockdown" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Stand Your Ground; +25% Knockdown Resist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistStun" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Lightning Rod; +25% Stun Resist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistPoison" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Mithridates; +25 Poisoned Resist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ResistSilence" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Silver-tongued; +25% Silence Resist" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ItemMovement" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Spook; Improves telekinesis?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ItemCreation" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Tinkerer; Improves crafting?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Throwing" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="???" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Repair" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Grease Monkey; unused?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ExpGain" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Quick Witted; +10% Exp Gain?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Awareness" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Sixth Sense; +trap wits?" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Vitality" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="???" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="FireSpells" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Pyromaniac; +1 Pyro" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="WaterSpells" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Rainman; +1 Hydro" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="AirSpells" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Tempest; +1 Aero" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="EarthSpells" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Geomancer; +1 Geo" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Charm" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Prince Charming; Charm during dialog" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Intimidate" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Intimidator; improves intimidate" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Reason" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Rhetorician; improves reason" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Luck" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Fortune's Favourite; improves luck" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Initiative" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Leader Of The Pack; +5 initiative at combat start" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="InventoryAccess" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Dress Rehersal; -1 AP cost for equip" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="AvoidDetection" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Pussyfooter; i dunno" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Kickstarter" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Kickstarter; Find secrets or something" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ViolentMagic" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!TALENT_Torturer;!TALENT_WarriorLoreGrenadeRange" />
+        <field name="Comment" type="CommentStatObjectFieldDefinition" value="Savage Sortilege; hopefully" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Perfectionist" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="FireSpecialist 5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Torturer" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="SingleHanded 2;!TALENT_ViolentMagic;!TALENT_WarriorLoreGrenadeRange" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="DualWieldingDodging" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="SingleHanded 5" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="LivingArmor" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="Unstable" />
+        <field name="Requirements" type="StringStatObjectFieldDefinition" value="!TALENT_Leech" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<header version="2" time="0" />
+	<version major="54" minor="1" revision="0" build="0" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" value="f59ee87f-4935-4e72-b6cb-8571cb3ea31e" type="22" />
+					<attribute id="Name" value="Blue_BuffRunes_Slot0_Rune_BowPower10" type="23" />
+					<attribute id="LevelName" value="" type="22" />
+					<attribute id="Type" value="item" type="22" />
+					<attribute id="Flag" value="0" type="4" />
+					<attribute id="GroupID" value="0" type="5" />
+					<attribute id="VisualTemplate" value="2615c21e-913a-4d20-beea-31fbde077e14" type="22" />
+					<attribute id="PhysicsTemplate" value="702803e4-c62a-4c2b-bb6f-d902d194bb46" type="22" />
+					<attribute id="CastShadow" value="False" type="19" />
+					<attribute id="RecieveDecal" value="False" type="19" />
+					<attribute id="Scale" value="1" type="6" />
+					<attribute id="HasGameplayValue" value="False" type="19" />
+					<attribute id="CameraOffset" value="0 0 0" type="12" />
+					<attribute id="Icon" value="BlueIcon_PowerStance" type="22" />
+					<attribute id="Stats" value="Blue_BuffRunes_Slot0_BowPower10" type="22" />
+					<attribute id="CanBePickedUp" value="True" type="19" />
+					<attribute id="CanBeMoved" value="True" type="19" />
+					<attribute id="CoverAmount" value="0" type="1" />
+					<attribute id="CanShootThrough" value="True" type="19" />
+					<attribute id="WalkThrough" value="True" type="19" />
+					<attribute id="Tooltip" value="2" type="1" />
+					<attribute id="maxStackAmount" value="100" type="4" />
+					<attribute id="BloodSurfaceType" value="SurfaceNone" type="22" />
+					<attribute id="MeshProxy" value="" type="22" />
+					<children>
+						<node id="Tags">
+							<children>
+								<node id="Tag">
+									<attribute id="Object" value="Utility" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers" />
+							</children>
+						</node>
+						<node id="AIBounds">
+							<attribute id="AIType" value="1" type="1" />
+							<attribute id="Min" value="-0.0749738 0 -0.15" type="12" />
+							<attribute id="Max" value="0.0749738 0.08 0.15" type="12" />
+							<attribute id="Radius" value="0.086199" type="6" />
+							<attribute id="Height" value="0.08" type="6" />
+						</node>
+						<node id="GameMaster">
+							<attribute id="GameMasterSpawnSection" value="13" type="4" />
+							<attribute id="GameMasterSpawnSubSection" value="Runes" type="28" handle="he05fa2d1gd77cg4dedgacafg12a70105bdf3" />
+						</node>
+						<node id="OnUsePeaceActions" />
+						<node id="OnDestroyActions" />
+						<node id="Equipment" />
+						<node id="InventoryList">
+							<children>
+								<node id="Inventorys">
+									<attribute id="InventoryItem" value="Empty" type="22" />
+								</node>
+							</children>
+						</node>
+						<node id="Scripts" />
+						<node id="ItemList" />
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
