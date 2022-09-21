@@ -2151,6 +2151,9 @@ VARS
 	STATUS:_Result
 ON 
 	FetchItemApplyStatusData(_Item, WARM)
+	FetchItemApplyStatusData(_Item, ApplyBurningA)
+	FetchItemApplyStatusData(_Item, ApplyBurningB)
+	FetchItemApplyStatusData(_Item, ApplyBurningC)
 ACTIONS
 	Set(_Result,WARM)
 	ListClear(_RemoveList)
@@ -2186,14 +2189,11 @@ VARS
 	STATUS:_Result
 ON 
 	FetchItemApplyStatusData(_Item, BURNING)
-	FetchItemApplyStatusData(_Item, BurningA)
-	FetchItemApplyStatusData(_Item, BurningB)
-	FetchItemApplyStatusData(_Item, BurningC)
-	FetchItemApplyStatusData(_Item, BurningD)
-	FetchItemApplyStatusData(_Item, BurningE)
-	FetchItemApplyStatusData(_Item, BurningF)
-	FetchItemApplyStatusData(_Item, BurningG)
-	FetchItemApplyStatusData(_Item, BurningH)
+	FetchItemApplyStatusData(_Item, ApplyBurningD)
+	FetchItemApplyStatusData(_Item, ApplyBurningE)
+	FetchItemApplyStatusData(_Item, ApplyBurningF)
+	FetchItemApplyStatusData(_Item, ApplyBurningG)
+	FetchItemApplyStatusData(_Item, ApplyBurningH)
 ACTIONS
 	Set(_Result,BURNING)
 	ListClear(_RemoveList)
@@ -2314,14 +2314,14 @@ VARS
 	INT:_Turns
 ON 
 	FetchItemApplyStatusData(_Item, CHILLED)
-	FetchItemApplyStatusData(_Item, ChilledA)
-	FetchItemApplyStatusData(_Item, ChilledB)
-	FetchItemApplyStatusData(_Item, ChilledC)
-	FetchItemApplyStatusData(_Item, ChilledD)
-	FetchItemApplyStatusData(_Item, ChilledE)
-	FetchItemApplyStatusData(_Item, ChilledF)
-	FetchItemApplyStatusData(_Item, ChilledG)
-	FetchItemApplyStatusData(_Item, ChilledH)
+	FetchItemApplyStatusData(_Item, ApplyChilledA)
+	FetchItemApplyStatusData(_Item, ApplyChilledB)
+	FetchItemApplyStatusData(_Item, ApplyChilledC)
+	FetchItemApplyStatusData(_Item, ApplyChilledD)
+	FetchItemApplyStatusData(_Item, ApplyChilledE)
+	FetchItemApplyStatusData(_Item, ApplyChilledF)
+	FetchItemApplyStatusData(_Item, ApplyChilledG)
+	FetchItemApplyStatusData(_Item, ApplyChilledH)
 ACTIONS
 	Set(_Result,CHILLED)
 	Set(_Turns,null)
@@ -2390,6 +2390,7 @@ VARS
 	LIST<STATUS>:_RemoveList
 	STATUS:_Result
 ON 
+	FetchItemApplyStatusData(_Item, Blue_BLESSED)
 	FetchItemApplyStatusData(_Item, BLESSED)
 ACTIONS
 	Set(_Result,BLESSED)
@@ -2476,6 +2477,14 @@ VARS
 	INT:_Turns
 ON 
 	FetchItemApplyStatusData(_Item, SHOCKED)
+	FetchItemApplyStatusData(_Item, ApplyShockedA)
+	FetchItemApplyStatusData(_Item, ApplyShockedB)
+	FetchItemApplyStatusData(_Item, ApplyShockedC)
+	FetchItemApplyStatusData(_Item, ApplyShockedD)
+	FetchItemApplyStatusData(_Item, ApplyShockedE)
+	FetchItemApplyStatusData(_Item, ApplyShockedF)
+	FetchItemApplyStatusData(_Item, ApplyShockedG)
+	FetchItemApplyStatusData(_Item, ApplyShockedH)
 ACTIONS
 	Set(_Result,SHOCKED)
 	Set(_Turns,null)
