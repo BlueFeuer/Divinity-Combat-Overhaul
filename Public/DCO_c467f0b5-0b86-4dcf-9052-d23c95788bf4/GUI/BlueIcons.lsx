@@ -818,6 +818,13 @@
                     <attribute id="V2" value="0.531128" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.343872" type="6" />
+                    <attribute id="U2" value="0.359253" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.484497" type="6" />
                     <attribute id="U2" value="0.499878" type="6" />
@@ -1313,6 +1320,13 @@
                     <attribute id="U2" value="0.453003" type="6" />
                     <attribute id="V1" value="0.0313721" type="6" />
                     <attribute id="V2" value="0.0467529" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.359497" type="6" />
+                    <attribute id="U2" value="0.374878" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="BlueIcon_HorridWiltingE" type="22" />
@@ -3772,6 +3786,13 @@
                     <attribute id="V2" value="0.765503" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="C2_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.125122" type="6" />
+                    <attribute id="U2" value="0.140503" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="C2_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.953247" type="6" />
                     <attribute id="U2" value="0.968628" type="6" />
@@ -4225,6 +4246,13 @@
                     <attribute id="U2" value="0.874878" type="6" />
                     <attribute id="V1" value="0.109497" type="6" />
                     <attribute id="V2" value="0.124878" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="C2_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.140747" type="6" />
+                    <attribute id="U2" value="0.156128" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="C2_BlueIcon_HorridWiltingE" type="22" />
@@ -6474,6 +6502,13 @@
                     <attribute id="V2" value="0.437378" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="C2_SO_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.156372" type="6" />
+                    <attribute id="U2" value="0.171753" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="C2_SO_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.296997" type="6" />
                     <attribute id="U2" value="0.312378" type="6" />
@@ -6913,6 +6948,13 @@
                     <attribute id="U2" value="0.218628" type="6" />
                     <attribute id="V1" value="0.203247" type="6" />
                     <attribute id="V2" value="0.218628" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="C2_SO_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.171997" type="6" />
+                    <attribute id="U2" value="0.187378" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="C2_SO_BlueIcon_HorridWiltingE" type="22" />
@@ -9162,6 +9204,13 @@
                     <attribute id="V2" value="0.781128" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="C3_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.187622" type="6" />
+                    <attribute id="U2" value="0.203003" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="C3_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.640747" type="6" />
                     <attribute id="U2" value="0.656128" type="6" />
@@ -9615,6 +9664,13 @@
                     <attribute id="U2" value="0.562378" type="6" />
                     <attribute id="V1" value="0.281372" type="6" />
                     <attribute id="V2" value="0.296753" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="C3_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.203247" type="6" />
+                    <attribute id="U2" value="0.218628" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="C3_BlueIcon_HorridWiltingE" type="22" />
@@ -11864,6 +11920,13 @@
                     <attribute id="V2" value="0.437378" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="C3_SO_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.218872" type="6" />
+                    <attribute id="U2" value="0.234253" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="C3_SO_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.984497" type="6" />
                     <attribute id="U2" value="0.999878" type="6" />
@@ -12303,6 +12366,13 @@
                     <attribute id="U2" value="0.906128" type="6" />
                     <attribute id="V1" value="0.359497" type="6" />
                     <attribute id="V2" value="0.374878" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="C3_SO_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.234497" type="6" />
+                    <attribute id="U2" value="0.249878" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="C3_SO_BlueIcon_HorridWiltingE" type="22" />
@@ -14552,6 +14622,13 @@
                     <attribute id="V2" value="0.796753" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="IO_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.250122" type="6" />
+                    <attribute id="U2" value="0.265503" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="IO_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.0782471" type="6" />
                     <attribute id="U2" value="0.0936279" type="6" />
@@ -14998,6 +15075,13 @@
                     <attribute id="U2" value="0.999878" type="6" />
                     <attribute id="V1" value="0.453247" type="6" />
                     <attribute id="V2" value="0.468628" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="IO_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.265747" type="6" />
+                    <attribute id="U2" value="0.281128" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="IO_BlueIcon_HorridWiltingE" type="22" />
@@ -17282,6 +17366,13 @@
                     <attribute id="V2" value="0.796753" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="RO_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.281372" type="6" />
+                    <attribute id="U2" value="0.296753" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="RO_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.0157471" type="6" />
                     <attribute id="U2" value="0.0311279" type="6" />
@@ -17735,6 +17826,13 @@
                     <attribute id="U2" value="0.937378" type="6" />
                     <attribute id="V1" value="0.609497" type="6" />
                     <attribute id="V2" value="0.624878" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="RO_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.296997" type="6" />
+                    <attribute id="U2" value="0.312378" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="RO_BlueIcon_HorridWiltingE" type="22" />
@@ -19984,6 +20082,13 @@
                     <attribute id="V2" value="0.796753" type="6" />
                 </node>
                 <node id="IconUV">
+                    <attribute id="MapKey" value="SO_BlueIcon_DivineLightD" type="22" />
+                    <attribute id="U1" value="0.312622" type="6" />
+                    <attribute id="U2" value="0.328003" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
+                </node>
+                <node id="IconUV">
                     <attribute id="MapKey" value="SO_BlueIcon_DivineShield" type="22" />
                     <attribute id="U1" value="0.359497" type="6" />
                     <attribute id="U2" value="0.374878" type="6" />
@@ -20437,6 +20542,13 @@
                     <attribute id="U2" value="0.281128" type="6" />
                     <attribute id="V1" value="0.703247" type="6" />
                     <attribute id="V2" value="0.718628" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="SO_BlueIcon_HolyBoltC" type="22" />
+                    <attribute id="U1" value="0.328247" type="6" />
+                    <attribute id="U2" value="0.343628" type="6" />
+                    <attribute id="V1" value="0.562622" type="6" />
+                    <attribute id="V2" value="0.578003" type="6" />
                 </node>
                 <node id="IconUV">
                     <attribute id="MapKey" value="SO_BlueIcon_HorridWiltingE" type="22" />

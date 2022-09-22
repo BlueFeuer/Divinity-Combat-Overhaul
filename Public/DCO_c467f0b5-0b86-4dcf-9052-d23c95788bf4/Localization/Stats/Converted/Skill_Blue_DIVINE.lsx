@@ -6,6 +6,27 @@
 		<node id="root">
 			<children>
 				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immaterial Light" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fracture_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Immaterial Light (Empowered)" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fracture_DisplayName_Empowered" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="The caster surrounds the targets in a disruptive light that shatters armor, saps their defenses, and harms the unprotected. Deals [1] and lowers Grit and Willpower by 1, and Armor by 10%.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 8&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Fracture_Description" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
 					<attribute id="Content" value="Telestic Bolt" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
@@ -41,32 +62,18 @@
 					<attribute id="UUID" value="Blue_Cleanse_DisplayName_Empowered" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Heal the target if they are an ally for [1] and reduce all Willpower-save tiered statuses by 1, or damage enemies for [2] if they are an enemy.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Heal the target if they are an ally for [1], or damage enemies for [2] if they are an enemy, increased by 50% against undead or decaying targets.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 3, 5&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />
 					<attribute id="UUID" value="Blue_Cleanse_Description" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Effect changes depending on whether the target is an enemy or ally." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Effect changes depending on whether the target is an enemy or ally&lt;br&gt;Damage increased vs Undead" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />
-					<attribute id="UUID" value="Blue_Potion_CleanseEnemy" type="22" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Effect changes depending on whether the target is an enemy or ally." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
-					<attribute id="ExtraData" value="" type="23" />
-					<attribute id="Speaker" value="" type="22" />
-					<attribute id="Stub" value="True" type="19" />
-					<attribute id="UUID" value="Blue_Potion_CleanseExplode" type="22" />
-				</node>
-				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Effect changes depending on whether the target is an enemy or ally." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
-					<attribute id="ExtraData" value="" type="23" />
-					<attribute id="Speaker" value="" type="22" />
-					<attribute id="Stub" value="True" type="19" />
-					<attribute id="UUID" value="Blue_Potion_CleanseAlly" type="22" />
+					<attribute id="UUID" value="BlueStatus_CleanseExplode_DisplayName" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Content" value="Damage increased vs Undead&lt;br&gt;Tiered status strength is increased by Aptitude." type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
@@ -153,7 +160,7 @@
 					<attribute id="UUID" value="Blue_Safeguard_DisplayName_Empowered" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Give the target [1], increased by 100% for every nearby ally. Cannot target the caster.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Give the target [1], increased by 100% for every nearby ally. Cannot target the caster.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 4&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />
@@ -174,7 +181,7 @@
 					<attribute id="UUID" value="Blue_Intertwine_DisplayName_Empowered" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Twine yourself to the target. Any damage taken is split evenly between the two of you. Any healing or armor received by either is copied to the other.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Twine yourself to the target. 50% of the healing received by either the caster or target is copied to the other.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 2&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />
@@ -321,7 +328,7 @@
 					<attribute id="UUID" value="Blue_Smite_DisplayName_Empowered" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Put forth the fear of God into your target. Deal [1] and apply low Fear.&lt;br&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Strike the target with a bolt of light. Deal [1] and attempt to lower resistances. Damage increased by 50% and status strength by 1 against undead or decaying targets.&lt;br&gt;&lt;br&gt;&lt;font color='#48B70F'&gt;Charge Unlocked: 5, 7&lt;/font&gt;&lt;br&gt;&lt;font color='#47E6CB'&gt;Empowerment Cost: 1&lt;/font&gt;&lt;br&gt;" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />

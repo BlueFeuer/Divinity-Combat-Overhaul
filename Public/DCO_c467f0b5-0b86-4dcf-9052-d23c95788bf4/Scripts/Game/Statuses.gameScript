@@ -308,7 +308,18 @@ ACTIONS
 	*/
 	ENDIF
 	RETURN(_RemoveList,_Result,_Turns)
+
+
+
+EVENT CharacterSetDisarmed_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, DISARMED)
+ACTIONS
+	SetTag(_Character, "Disarmed_AI_IgnoreTag")
 	
+
 EVENT CharacterSetDisarmed
 VARS
 	CHARACTER:_Character
@@ -320,12 +331,29 @@ ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
 	IF "c1"
-		IsTagged(_Character, "Blue_AtrophyAnimTag")
+		IsTagged(_Character, "Disarmed_AI_IgnoreTag")
 	THEN
-		Set(_Result, DISARMED)
-		ClearTag(_Character, "Blue_AtrophyAnimTag")
+		ClearTag(_Character, "Disarmed_AI_IgnoreTag")
+		IF "c1"
+			IsTagged(_Character, "Blue_AtrophyAnimTag")
+		THEN
+			Set(_Result, DISARMED)
+			ClearTag(_Character, "Blue_AtrophyAnimTag")
+		ELSE
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyAtrophyD, -2)
+			CharacterApplyStatus(_Character, POSTIER, -2)
+		ENDIF
 	ENDIF
 	RETURN(_RemoveList,_Result,null)
+	
+EVENT CharacterSetWeak_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, WEAK)
+ACTIONS
+	SetTag(_Character, "Weak_AI_IgnoreTag")
 	
 EVENT CharacterSetWeak
 VARS
@@ -338,10 +366,28 @@ ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
 	IF "c1"
-		IsTagged(_Character, "Blue_WeakAnimTag")
+		IsTagged(_Character, "Weak_AI_IgnoreTag")
 	THEN
-		Set(_Result, WEAK)
-		ClearTag(_Character, "Blue_WeakAnimTag")
+		ClearTag(_Character, "Weak_AI_IgnoreTag")
+		IF "c1"
+			IsTagged(_Character, "Blue_WeakAnimTag")
+		THEN
+			Set(_Result, WEAK)
+			ClearTag(_Character, "Blue_WeakAnimTag")
+		ELSE
+			IF "c1|c2|c3|c4|c5|c6"
+				CharacterHasStatus(_Character, WeakC)
+				CharacterHasStatus(_Character, WeakD)
+				CharacterHasStatus(_Character, WeakE)
+				CharacterHasStatus(_Character, WeakF)
+				CharacterHasStatus(_Character, WeakG)
+				CharacterHasStatus(_Character, WeakH)
+			THEN
+				CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+				CharacterApplyStatus(_Character, ApplyWeakD, -2)
+				CharacterApplyStatus(_Character, POSTIER, -2)
+			ENDIF
+		ENDIF
 	ENDIF
 	RETURN(_RemoveList,_Result,null)
 	
@@ -361,72 +407,52 @@ ACTIONS
 	THEN
 		Set(_Result, CHILLED)
 		ClearTag(_Character, "Blue_ChilledAnimTag")
+	ELSE
+		Set(_Result,ChilledB)
+		Set(_Turns,null)
+		IF "c1|c2|c3|c4|c5|c6|c7|c8"
+			CharacterHasStatus(_Character, ChilledB)
+			CharacterHasStatus(_Character, ChilledC)
+			CharacterHasStatus(_Character, ChilledD)
+			CharacterHasStatus(_Character, ChilledE)
+			CharacterHasStatus(_Character, ChilledF)
+			CharacterHasStatus(_Character, ChilledG)
+			CharacterHasStatus(_Character, ChilledH)
+			CharacterHasStatus(_Character, FROZEN)
+		THEN
+			Set(_Result,null)
+		ENDIF
+		IF "c1|c2|c3|c4|c5|c6|c7|c8|c9|c10"
+			CharacterHasStatus(_Character, BurningA)
+			CharacterHasStatus(_Character, BurningB)
+			CharacterHasStatus(_Character, BurningC)
+			CharacterHasStatus(_Character, BurningD)
+			CharacterHasStatus(_Character, BurningE)
+			CharacterHasStatus(_Character, BurningF)
+			CharacterHasStatus(_Character, BurningG)
+			CharacterHasStatus(_Character, BurningH)
+			CharacterHasStatus(_Character, BURNING)
+			CharacterHasStatus(_Character, WARM)
+		THEN
+			ListAdd(_RemoveList,BurningA)
+			ListAdd(_RemoveList,BurningB)
+			ListAdd(_RemoveList,BurningC)
+			ListAdd(_RemoveList,BurningD)
+			ListAdd(_RemoveList,BurningE)
+			ListAdd(_RemoveList,BurningF)
+			ListAdd(_RemoveList,BurningG)
+			ListAdd(_RemoveList,BurningH)
+			ListAdd(_RemoveList,BURNING)
+			ListAdd(_RemoveList, WARM)
+			Set(_Result,null)
+		ELIF "c1|c2|c3"
+			CharacterHasStatus(_Character, FROZEN)
+			CharacterHasStatus(_Character, NECROFIRE)
+			CharacterHasStatus(_Character, HOLY_FIRE)
+		THEN		
+			Set(_Result,null)
+		ENDIF
 	ENDIF
-	/*
-	Set(_Turns,null)
-	IF "c1|c2|c3|c4|c5|c6"
-		CharacterHasStatus(_Character, ChilledD)
-		CharacterHasStatus(_Character, ChilledE)
-		CharacterHasStatus(_Character, ChilledF)
-		CharacterHasStatus(_Character, ChilledG)
-		CharacterHasStatus(_Character, ChilledH)
-		CharacterHasStatus(_Character, FROZEN)
-	THEN
-		Set(_Result,null)
-	ELIF "c1"
-		CharacterHasStatus(_Character, HOLY_FIRE)
-	THEN
-		ListAdd(_RemoveList, HOLY_FIRE)
-		Set(_Result, null)
-	ENDIF
-	
-	IF "c1|c2|c3|c4|c5|c6|c7|c8|c9"
-		CharacterHasStatus(_Character, BurningA)
-		CharacterHasStatus(_Character, BurningB)
-		CharacterHasStatus(_Character, BurningC)
-		CharacterHasStatus(_Character, BurningD)
-		CharacterHasStatus(_Character, BurningE)
-		CharacterHasStatus(_Character, BurningF)
-		CharacterHasStatus(_Character, BurningG)
-		CharacterHasStatus(_Character, BurningH)
-		CharacterHasStatus(_Character, BURNING)
-	THEN
-		ListAdd(_RemoveList,BurningA)
-		ListAdd(_RemoveList,BurningB)
-		ListAdd(_RemoveList,BurningC)
-		ListAdd(_RemoveList,BurningD)
-		ListAdd(_RemoveList,BurningE)
-		ListAdd(_RemoveList,BurningF)
-		ListAdd(_RemoveList,BurningG)
-		ListAdd(_RemoveList,BurningH)
-		ListAdd(_RemoveList,BURNING)
-		Set(_Result,null)
-	ELIF "c1"
-		CharacterHasStatus(_Character, HOLY_FIRE)
-	THEN
-		ListAdd(_RemoveList, HOLY_FIRE)
-		Set(_Result, null)
-	ELIF "c1"
-		CharacterHasStatus(_Character, WARM)
-	THEN
-		ListAdd(_RemoveList, WARM)		
-		Set(_Result,null)
-	ELIF "c1|c2"
-		CharacterHasStatus(_Character, CHILLED)
-		CharacterHasStatus(_Character, WET)
-	THEN
-		ListAdd(_RemoveList, CHILLED)
-		ListAdd(_RemoveList, WET)
-		Set(_Result, FROZEN)
-		Set(_Turns,1)
-	ELIF "c1|c2|c3"
-		CharacterHasStatus(_Character, FROZEN)
-		CharacterHasStatus(_Character, NECROFIRE)
-		CharacterHasStatus(_Character, HOLY_FIRE)
-	THEN		
-		Set(_Result,null)
-	ENDIF
-	*/
 	RETURN(_RemoveList,_Result,null)
 	
 EVENT CharacterSetFrozen
@@ -468,6 +494,46 @@ ACTIONS
 	//Set(_Result,null)
 	Set(_Result,PETRIFIED)
 	ListClear(_RemoveList)
+	IF "c1|c2|c3|c4|c5|c6|c7|c8|c9|c10|c11|c12|c13|c14|c15|c16|c17|c18"
+		CharacterHasStatus(_Character, MagicShellA)
+		CharacterHasStatus(_Character, MagicShellB)
+		CharacterHasStatus(_Character, MagicShellC)
+		CharacterHasStatus(_Character, MagicShellD)
+		CharacterHasStatus(_Character, MagicShellE)
+		CharacterHasStatus(_Character, MagicShellF)
+		CharacterHasStatus(_Character, MagicShellG)
+		CharacterHasStatus(_Character, MagicShellH)
+		CharacterHasStatus(_Character, FortifiedA)
+		CharacterHasStatus(_Character, FortifiedB)
+		CharacterHasStatus(_Character, FortifiedC)
+		CharacterHasStatus(_Character, FortifiedD)
+		CharacterHasStatus(_Character, FortifiedE)
+		CharacterHasStatus(_Character, FortifiedF)
+		CharacterHasStatus(_Character, FortifiedG)
+		CharacterHasStatus(_Character, FortifiedH)
+		CharacterHasStatus(_Character, BLESSED)
+		CharacterHasStatus(_Character, Blue_BLESSED)
+	THEN
+		ListAdd(_RemoveList, MagicShellA)
+		ListAdd(_RemoveList, MagicShellB)
+		ListAdd(_RemoveList, MagicShellC)
+		ListAdd(_RemoveList, MagicShellD)
+		ListAdd(_RemoveList, MagicShellE)
+		ListAdd(_RemoveList, MagicShellF)
+		ListAdd(_RemoveList, MagicShellG)
+		ListAdd(_RemoveList, MagicShellH)
+		ListAdd(_RemoveList, FortifiedA)
+		ListAdd(_RemoveList, FortifiedB)
+		ListAdd(_RemoveList, FortifiedC)
+		ListAdd(_RemoveList, FortifiedD)
+		ListAdd(_RemoveList, FortifiedE)
+		ListAdd(_RemoveList, FortifiedF)
+		ListAdd(_RemoveList, FortifiedG)
+		ListAdd(_RemoveList, FortifiedH)
+		ListAdd(_RemoveList, BLESSED)
+		ListAdd(_RemoveList, Blue_BLESSED)
+		Set(_Result, null)
+	ENDIF
 	/*IF "!c1&!c2&!c3&!c4"
 		CharacterHasStatus(_Character, PetrifiedH)
 		CharacterHasStatus(_Character, STUNNED)
@@ -579,21 +645,19 @@ VARS
 ON 
 	FetchCharacterApplyStatusData(_Character, SHOCKED)
 ACTIONS
-	Set(_Result,null)
+	Set(_Result,ShockedB)
 	ListClear(_RemoveList)
-	/*
-	Set(_Turns,null)
-	IF "c1|c2|c3|c4|c5|c6"
+	IF "c1|c2|c3|c4|c5|c6|c7"
+		CharacterHasStatus(_Character, ShockedB)
+		CharacterHasStatus(_Character, ShockedC)
 		CharacterHasStatus(_Character, ShockedD)
 		CharacterHasStatus(_Character, ShockedE)
 		CharacterHasStatus(_Character, ShockedF)
 		CharacterHasStatus(_Character, ShockedG)
-		CharacterHasStatus(_Character, ShockedH)
 		CharacterHasStatus(_Character, STUNNED)
 	THEN
 		Set(_Result,null)
 	ENDIF
-	*/
 	RETURN(_RemoveList,_Result,null)
 	
 EVENT CharacterSetStunned
@@ -606,6 +670,42 @@ ON
 ACTIONS
 	Set(_Result,STUNNED)
 	ListClear(_RemoveList)
+	IF "c1|c2|c3|c4|c5|c6|c7|c8|c9|c10|c11|c12|c13|c14|c15|c16"
+		CharacterHasStatus(_Character, MagicShellA)
+		CharacterHasStatus(_Character, MagicShellB)
+		CharacterHasStatus(_Character, MagicShellC)
+		CharacterHasStatus(_Character, MagicShellD)
+		CharacterHasStatus(_Character, MagicShellE)
+		CharacterHasStatus(_Character, MagicShellF)
+		CharacterHasStatus(_Character, MagicShellG)
+		CharacterHasStatus(_Character, MagicShellH)
+		CharacterHasStatus(_Character, BolsterA)
+		CharacterHasStatus(_Character, BolsterB)
+		CharacterHasStatus(_Character, BolsterC)
+		CharacterHasStatus(_Character, BolsterD)
+		CharacterHasStatus(_Character, BolsterE)
+		CharacterHasStatus(_Character, BolsterF)
+		CharacterHasStatus(_Character, BolsterG)
+		CharacterHasStatus(_Character, BolsterH)
+	THEN
+		ListAdd(_RemoveList, MagicShellA)
+		ListAdd(_RemoveList, MagicShellB)
+		ListAdd(_RemoveList, MagicShellC)
+		ListAdd(_RemoveList, MagicShellD)
+		ListAdd(_RemoveList, MagicShellE)
+		ListAdd(_RemoveList, MagicShellF)
+		ListAdd(_RemoveList, MagicShellG)
+		ListAdd(_RemoveList, MagicShellH)
+		ListAdd(_RemoveList, BolsterA)
+		ListAdd(_RemoveList, BolsterB)
+		ListAdd(_RemoveList, BolsterC)
+		ListAdd(_RemoveList, BolsterD)
+		ListAdd(_RemoveList, BolsterE)
+		ListAdd(_RemoveList, BolsterF)
+		ListAdd(_RemoveList, BolsterG)
+		ListAdd(_RemoveList, BolsterH)
+		Set(_Result, null)
+	ENDIF
 	/*
 	IF "c1&!c2&!c3&!c4"
 		CharacterHasStatus(_Character, ShockedH)
@@ -844,6 +944,14 @@ ACTIONS
 	//ListAdd(_RemoveList, CRIPPLED)
 	RETURN(_RemoveList,_Result,null)
 	
+EVENT CharacterSetFear_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, CLEAR_MINDED)
+ACTIONS
+	SetTag(_Character, "Fear_AI_IgnoreTag")
+	
 EVENT CharacterSetFeared
 VARS
 	CHARACTER:_Character
@@ -855,10 +963,29 @@ ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
 	IF "c1"
-		IsTagged(_Character, "Blue_FearAnimTag")
+		IsTagged(_Character, "Fear_AI_IgnoreTag")
 	THEN
-		Set(_Result, FEAR)
-		ClearTag(_Character, "Blue_FearAnimTag")
+		ClearTag(_Character, "Fear_AI_IgnoreTag")
+		IF "c1"
+			IsTagged(_Character, "Blue_FearAnimTag")
+		THEN
+			Set(_Result, FEAR)
+			ClearTag(_Character, "Blue_FearAnimTag")
+		ELSE
+			IF "c1|c2|c3|c4|c5|c6|c7"
+				CharacterHasStatus(_Character, FearB)
+				CharacterHasStatus(_Character, FearC)
+				CharacterHasStatus(_Character, FearD)
+				CharacterHasStatus(_Character, FearE)
+				CharacterHasStatus(_Character, FearF)
+				CharacterHasStatus(_Character, FearG)
+				CharacterHasStatus(_Character, FearH)
+			THEN
+				CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+				CharacterApplyStatus(_Character, ApplyFearB, -2)
+				CharacterApplyStatus(_Character, POSTIER, 0)
+			ENDIF
+		ENDIF
 	ENDIF
 	/*
 	IF "c1|c2"
@@ -960,6 +1087,14 @@ ACTIONS
 	ListAdd(_RemoveList, MadF)
 	ListAdd(_RemoveList, MadG)
 	ListAdd(_RemoveList, MadH)
+	ListAdd(_RemoveList, CharmedA)
+	ListAdd(_RemoveList, CharmedB)
+	ListAdd(_RemoveList, CharmedC)
+	ListAdd(_RemoveList, CharmedD)
+	ListAdd(_RemoveList, CharmedE)
+	ListAdd(_RemoveList, CharmedF)
+	ListAdd(_RemoveList, CharmedG)
+	ListAdd(_RemoveList, CharmedH)
 	ListAdd(_RemoveList, MADNESS)
 	ListAdd(_RemoveList, TAUNTED)
 	ListAdd(_RemoveList, Blue_Taunted)
@@ -1058,6 +1193,12 @@ ON
 ACTIONS	
 	Set(_Result,SLEEPING)
 	ListClear(_RemoveList)
+	IF "c1|c2"
+		CharacterHasStatus(_Character, CLEAR_MINDED)
+		CharacterHasStatus(_Character, ENRAGED)
+	THEN
+		Set(_Result,null)
+	ENDIF
 	/*
 	IF "c1"
 		IsTagged(_Character, "Blue_SleepingAnimTag")
@@ -1104,8 +1245,17 @@ ACTIONS
 	ENDIF
 	*/
 	//RETURN(_RemoveList,_Result,null)
-//*/
+*/
 
+EVENT CharacterSetClearMinded_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, CLEAR_MINDED)
+ACTIONS
+	SetTag(_Character, "ClearMinded_AI_IgnoreTag")
+	
+	
 EVENT CharacterSetClearMinded
 VARS
 	CHARACTER:_Character
@@ -1116,6 +1266,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "ClearMinded_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "ClearMinded_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, ClearMindedD)
+			CharacterHasStatus(_Character, ClearMindedE)
+			CharacterHasStatus(_Character, ClearMindedF)
+			CharacterHasStatus(_Character, ClearMindedG)
+			CharacterHasStatus(_Character, ClearMindedH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyClearMindedD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	IF "c1"
 		CharacterHasStatus(_Character, POSSESSED)
@@ -1193,6 +1359,15 @@ ACTIONS
 	RETURN(_RemoveList,_Result,null)
 	
 	
+
+EVENT CharacterSetRested_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, RESTED)
+ACTIONS
+	SetTag(_Character, "Rested_AI_IgnoreTag")
+	
 EVENT CharacterSetRested
 VARS
 	CHARACTER:_Character
@@ -1203,6 +1378,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Rested_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Rested_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, RestedD)
+			CharacterHasStatus(_Character, RestedE)
+			CharacterHasStatus(_Character, RestedF)
+			CharacterHasStatus(_Character, RestedG)
+			CharacterHasStatus(_Character, RestedH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyRestedD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	ListAdd(_RemoveList, MUTED)
 	ListAdd(_RemoveList, BLIND)
@@ -1214,6 +1405,16 @@ ACTIONS
 	*/
 	RETURN(_RemoveList,_Result,null)
 	
+
+EVENT CharacterSetMuted_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, MUTED)
+ACTIONS
+	SetTag(_Character, "Muted_AI_IgnoreTag")
+	
+	
 EVENT CharacterSetMuted
 VARS
 	CHARACTER:_Character
@@ -1224,6 +1425,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Muted_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Muted_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, MutedD)
+			CharacterHasStatus(_Character, MutedE)
+			CharacterHasStatus(_Character, MutedF)
+			CharacterHasStatus(_Character, MutedG)
+			CharacterHasStatus(_Character, MutedH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyMutedD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	IF "c1"
 		CharacterHasStatus(_Character, RESTED)
@@ -1233,6 +1450,17 @@ ACTIONS
 	ENDIF
 	*/
 	RETURN(_RemoveList,_Result,null)
+	
+	
+
+EVENT CharacterSetBlind_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLIND)
+ACTIONS
+	SetTag(_Character, "Blind_AI_IgnoreTag")
+	
 	
 EVENT CharacterSetBlind
 VARS
@@ -1245,10 +1473,27 @@ ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
 	IF "c1"
-		IsTagged(_Character, "Blue_BlindAnimTag")
+		IsTagged(_Character, "Blind_AI_IgnoreTag")
 	THEN
-		Set(_Result, BLIND)
-		ClearTag(_Character, "Blue_BlindAnimTag")
+		ClearTag(_Character, "Blind_AI_IgnoreTag")
+		IF "c1"
+			IsTagged(_Character, "Blue_BlindAnimTag")
+		THEN
+			Set(_Result, BLIND)
+			ClearTag(_Character, "Blue_BlindAnimTag")
+		ELSE
+			IF "!c1&!c2&!c3&!c4&!c5"
+				CharacterHasStatus(_Character, BlindD)
+				CharacterHasStatus(_Character, BlindE)
+				CharacterHasStatus(_Character, BlindF)
+				CharacterHasStatus(_Character, BlindG)
+				CharacterHasStatus(_Character, BlindH)
+			THEN
+				CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+				CharacterApplyStatus(_Character, ApplyBlindD, -2)
+				CharacterApplyStatus(_Character, POSTIER, 0)
+			ENDIF
+		ENDIF
 	ENDIF
 	/*
 	IF "c1"
@@ -1259,6 +1504,14 @@ ACTIONS
 	ENDIF
 	*/
 	RETURN(_RemoveList,_Result,null)
+
+EVENT CharacterSetCrippled_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, CRIPPLED)
+ACTIONS
+	SetTag(_Character, "Crippled_AI_IgnoreTag")
 	
 EVENT CharacterSetCrippled
 VARS
@@ -1271,10 +1524,27 @@ ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
 	IF "c1"
-		IsTagged(_Character, "Blue_CrippledAnimTag")
+		IsTagged(_Character, "Crippled_AI_IgnoreTag")
 	THEN
-		Set(_Result, CRIPPLED)
-		ClearTag(_Character, "Blue_CrippledAnimTag")
+		ClearTag(_Character, "Crippled_AI_IgnoreTag")
+		IF "c1"
+			IsTagged(_Character, "Blue_CrippledAnimTag")
+		THEN
+			Set(_Result, CRIPPLED)
+			ClearTag(_Character, "Blue_CrippledAnimTag")
+		ELSE
+			IF "!c1&!c2&!c3&!c4&!c5"
+				CharacterHasStatus(_Character, CrippledD)
+				CharacterHasStatus(_Character, CrippledE)
+				CharacterHasStatus(_Character, CrippledF)
+				CharacterHasStatus(_Character, CrippledG)
+				CharacterHasStatus(_Character, CrippledH)
+			THEN
+				CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+				CharacterApplyStatus(_Character, ApplyCrippledD, -2)
+				CharacterApplyStatus(_Character, POSTIER, 0)
+			ENDIF
+		ENDIF
 	ENDIF
 	/*
 	IF "c1"
@@ -1332,6 +1602,14 @@ ACTIONS
 	ListAdd(_RemoveList, INFESTED)
 	RETURN(_RemoveList,_Result,null)
 	
+EVENT CharacterSetFortified_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, FORTIFIED)
+ACTIONS
+	SetTag(_Character, "Fortified_AI_IgnoreTag")
+	
 EVENT CharacterSetFortified
 VARS
 	CHARACTER:_Character
@@ -1342,6 +1620,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Fortified_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Fortified_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, FortifiedD)
+			CharacterHasStatus(_Character, FortifiedE)
+			CharacterHasStatus(_Character, FortifiedF)
+			CharacterHasStatus(_Character, FortifiedG)
+			CharacterHasStatus(_Character, FortifiedH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyFortifiedD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	ListAdd(_RemoveList, ACID)
 	ListAdd(_RemoveList, POISONED)
@@ -1353,6 +1647,19 @@ ACTIONS
 	*/
 	RETURN(_RemoveList,_Result,null)
 	
+EVENT CharacterSetAcid_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, ACID)
+ACTIONS
+	SetTag(_Character, "Acid_AI_IgnoreTag")
+	
+	IF "c1"
+		IsTagged(_Character, "Acid_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Acid_AI_IgnoreTag")
+		
 EVENT CharacterSetAcid
 VARS
 	CHARACTER:_Character
@@ -1363,6 +1670,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Acid_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Acid_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, AcidD)
+			CharacterHasStatus(_Character, AcidE)
+			CharacterHasStatus(_Character, AcidF)
+			CharacterHasStatus(_Character, AcidG)
+			CharacterHasStatus(_Character, AcidH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyAcidD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	IF "c1"
 		CharacterHasStatus(_Character, FORTIFIED)
@@ -1372,6 +1695,14 @@ ACTIONS
 	ENDIF
 	*/
 	RETURN(_RemoveList,_Result,null)
+	
+EVENT CharacterSetPoisoned_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, POISONED)
+ACTIONS
+	SetTag(_Character, "Poisoned_AI_IgnoreTag")
 	
 EVENT CharacterSetPoisoned
 VARS
@@ -1383,7 +1714,31 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Poisoned_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Poisoned_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, PoisonedD)
+			CharacterHasStatus(_Character, PoisonedE)
+			CharacterHasStatus(_Character, PoisonedF)
+			CharacterHasStatus(_Character, PoisonedG)
+			CharacterHasStatus(_Character, PoisonedH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyPoisonedD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	RETURN(_RemoveList,_Result,null)
+	
+EVENT CharacterSetBleeding_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, BLEEDING)
+ACTIONS
+	SetTag(_Character, "Bleeding_AI_IgnoreTag")
 	
 EVENT CharacterSetBleeding
 VARS
@@ -1395,6 +1750,22 @@ ON
 ACTIONS	
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "Bleeding_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "Bleeding_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, BleedingD)
+			CharacterHasStatus(_Character, BleedingE)
+			CharacterHasStatus(_Character, BleedingF)
+			CharacterHasStatus(_Character, BleedingG)
+			CharacterHasStatus(_Character, BleedingH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyBleedingD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	IF "c1&c2"	
 		IsTagged(_Character, UNDEAD)
@@ -1662,6 +2033,14 @@ ACTIONS
 	Set(_Result,VOIDHOWL)
 	RETURN(_RemoveList,_Result,null)
 	
+EVENT CharacterSetMagicShell_Ignore
+VARS
+	CHARACTER:_Character
+ON 
+	OnCharacterStatusAttempt(_Character, MAGIC_SHELL)
+ACTIONS
+	SetTag(_Character, "MagicShell_AI_IgnoreTag")
+	
 EVENT CharacterSetMagicShell
 VARS
 	CHARACTER:_Character
@@ -1672,6 +2051,22 @@ ON
 ACTIONS
 	Set(_Result,null)
 	ListClear(_RemoveList)
+	IF "c1"
+		IsTagged(_Character, "MagicShell_AI_IgnoreTag")
+	THEN
+		ClearTag(_Character, "MagicShell_AI_IgnoreTag")
+		IF "!c1&!c2&!c3&!c4&!c5"
+			CharacterHasStatus(_Character, MagicShellD)
+			CharacterHasStatus(_Character, MagicShellE)
+			CharacterHasStatus(_Character, MagicShellF)
+			CharacterHasStatus(_Character, MagicShellG)
+			CharacterHasStatus(_Character, MagicShellH)
+		THEN
+			CharacterApplyStatus(_Character, PRETIERCLEAR, -2)
+			CharacterApplyStatus(_Character, ApplyMagicShellD, -2)
+			CharacterApplyStatus(_Character, POSTIER, 0)
+		ENDIF
+	ENDIF
 	/*
 	ListAdd(_RemoveList, FROZEN)	
 	ListAdd(_RemoveList, STUNNED)		

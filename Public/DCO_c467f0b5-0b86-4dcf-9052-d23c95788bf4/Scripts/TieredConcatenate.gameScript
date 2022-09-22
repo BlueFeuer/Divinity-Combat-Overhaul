@@ -1998,6 +1998,14 @@ ACTIONS
 		ELSE
 			Subtract(_FortifiedUSV, _Strength)
 		ENDIF
+		IF "c1"
+			IsEqual(_MagicShellUSV, null)
+		THEN
+			Set(_MagicShellUSV, _Strength)
+			Multiply(_MagicShellUSV, FLOAT:-1)
+		ELSE
+			Subtract(_MagicShellUSV, _Strength)
+		ENDIF
 	ENDIF
 	
 	//Check if any statuses are applied for Muted.
@@ -4067,6 +4075,14 @@ ACTIONS
 			Add(_MagicShellUSV, _Strength)
 		ENDIF
 		//USV's of opposite statuses. Similar to above, they need to be defined if they are not already.
+		IF "c1"
+			IsEqual(_PetrifiedUSV, null)
+		THEN
+			Set(_PetrifiedUSV, _Strength)
+			Multiply(_PetrifiedUSV, FLOAT:-1)
+		ELSE
+			Subtract(_PetrifiedUSV, _Strength)
+		ENDIF
 		IF "c1"
 			IsEqual(_SlowedUSV, null)
 		THEN

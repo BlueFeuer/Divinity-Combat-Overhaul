@@ -1481,6 +1481,7 @@ ACTIONS
 	ExplodeAt(_Character, Blue_Explosion_CleanseDamage, INT:-1, _Character)
 	ExplodeAt(_Character, Blue_Explosion_CleanseDamage_Undead, INT:-1, _Character)
 
+	
 EVENT BlueEnemyDamageScript_Smite
 VARS
 	CHARACTER:_Character
@@ -6597,9 +6598,11 @@ ACTIONS
 		//TeleportTo(_Character, _Vtarget)
 	ENDIF
 	
+	/*
 EVENT BlueDebugTestingDEAF
 VARS
 	CHARACTER:_Character
+	CHARACTER:_Source
 	STRING:_Str
 	FIXEDSTRING:_Text
 	FLOAT:_TestVal
@@ -6627,7 +6630,7 @@ ACTIONS
 	ELSE
 		CharacterEvent(_Character, Blue_SourceFountain_Used)
 	ENDIF
-
+	*/
 /*
 EVENT BlueRandomPointTest
 VARS
