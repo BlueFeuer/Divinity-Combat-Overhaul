@@ -1,0 +1,2035 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+DB_Dialogs(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "RC_DW_HomelessDwarf");
+TriggerRegisterForCharacter(TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+TriggerRegisterForItems(TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 0);
+SetTag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"AI_IGNORED_TARGET");
+SetTag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"AI_IG_VAN");
+DB_NoForbiddenText(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0);
+// --- Cellar
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_DW_AbandonedHouse_CellarEntrance_Box_57dece8e-ae32-4941-86f9-27f3f8a6bb6b);
+ProcTriggerRegisterForPlayers(S_RC_DW_AbadonedHouse_DwarfEnter_7ef586bc-f39e-4dd4-9b2c-ab9eb23a24a5);
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_DW_SourceLich_FoundPuzzle_Box_593d9972-3294-4ea2-99c5-2a5c450cbdf8);
+
+TriggerRegisterForCharacter(TRIGGERGUID_S_RC_DW_HomelessDwarf_DownstairsBox_22883b92-5361-40b7-a155-abfe2fbe566e, CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+
+Proc_RegisterPartyDecisionDialogOutcomes_Fixed("RC_DW_PDD_KillScholars","RC_DW_KillScholars","RC_DW_SpareScholars","","","");
+
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_11_183db41b-8388-4e9d-ad18-d95c585652f8);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_12_fbd141bf-506a-4c4d-a447-66cc68ac1705);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_13_70ebc08a-d83f-443d-9d06-aa5182964340);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_14_5559cb33-35ce-40e5-82cc-23a63c1a75e6);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_21_288ef218-b985-4320-b0aa-1096341bb7fe);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_22_4f58fa4b-dd24-4eff-910e-23123488a3f8);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_23_943d901a-143a-467b-b2c4-aa9345b47a19);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_24_dd3f1664-6aaa-4baf-9ea5-409e0d869b7e);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_31_a7ac3fed-4548-402b-a8d5-17d45522bc30);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_32_9ec7ab18-e939-427d-96cc-a5abaa7ef470);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_33_859a7757-7d4e-451f-bdb7-d0124c3bb1e0);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_34_95780ed4-4aff-4d64-8cab-dd0aa8b3d71b);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_41_81e90b5e-42b6-4b38-855d-15e07d68671b);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_42_c14a13dd-67c8-4b9a-aa21-06e33c659a33);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_43_647e8ee1-7782-460f-99c8-fa113d34e5e9);
+DB_RC_DW_PressureCounters(ITEMGUID_S_RC_DW_PressurePlateCounter_44_4310b51d-135b-46c2-9a76-f8e98598280a);
+
+DB_RC_DW_AbandonedHouse_Doors((ITEMGUID)ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d);
+DB_RC_DW_AbandonedHouse_Doors(ITEMGUID_S_RC_DW_HatchRoomDoor_36205953-806a-418f-bdbc-57dc1f6e779e);
+
+//REGION Journal
+
+DB_QuestDef_AddEvent("RC_DW_SourceLich","RC_DW_AbandonedHouse_HasKeyEye");
+DB_QuestDef_State("RC_DW_SourceLich", "SkullLock", 1); 
+DB_QuestDef_State("RC_DW_SourceLich", "UnlockedSkull", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "FoundOtherSecret", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "MetLich", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "LichEating", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "LichChild", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "OtherSecret", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "LichChildFirst", 1);
+DB_QuestDef_State("RC_DW_SourceLich", "LichEatingFirst", 1);
+
+DB_QuestDef_UpdateEvent("RC_DW_SourceLich", "SparedLich", "RC_DW_SparedSourceLich");
+DB_QuestDef_UpdateEvent("RC_DW_SourceLich", "FedLichSP", "RC_DW_OfferedSourceLichSP");
+DB_QuestDef_UpdateEvent("RC_DW_SourceLich", "FoundEyeGem", "RC_DW_AbandonedHouse_HasKeyEye");
+DB_QuestDef_UpdateEvent("RC_DW_SourceLich", "FreedLich", "RC_DW_FreedSourceLich");
+
+DB_QuestDef_State("RC_DW_SourceLich", "LichTale");
+DB_QuestDef_State("RC_DW_SourceLich", "FoundPuzzle");
+DB_QuestDef_State("RC_DW_SourceLich", "LichPanel");
+DB_QuestDef_State("RC_DW_SourceLich", "CloseLeftRCLichLoose");
+
+DB_QuestDef_State("RC_DW_SourceLich", "CacheShown", -1);
+DB_QuestDef_State("RC_DW_SourceLich", "KilledLich", -1);
+DB_QuestDef_State("RC_DW_SourceLich", "CloseLeftRCLichLoose", -1);
+DB_QuestDef_State("RC_DW_SourceLich", "CloseLeftRCStillSecret", -1);
+
+DB_DW_SourceLich_CloseLeftRCLich("QuestUpdate_RC_DW_SourceLich_MetLich");
+DB_DW_SourceLich_CloseLeftRCLich("QuestUpdate_RC_DW_SourceLich_LichEatingFirst");
+DB_DW_SourceLich_CloseLeftRCLich("QuestUpdate_RC_DW_SourceLich_LichChildFirst");
+//END_REGION
+
+DB_HasStoryEvent(ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370, "RC_DW_AbandonedHouse_HasKeyEye");
+
+ProcTriggerRegisterForPlayers(S_RC_DW_AbandonedHouseSecretRoom_3a9cdb35-d9f8-4ed5-8470-aef8d2684cda);
+ProcTriggerRegisterForPlayers(S_RC_DW_AbandonedHouse_FoundHouse_b25304c8-9d3f-47e3-967c-13cd61291697);
+
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_1_b49f5f0b-6378-497b-81c2-8d65a5080179);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_10_c1a732c0-1b7d-470c-87ef-adeeae72e037);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_11_d31b4571-c383-4412-ad05-8d9f1e261cb6);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_12_d63afc5d-23d5-4aed-b481-a82a73b93849);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_13_f386b371-45b8-4f00-bd5b-88cd5207e1e8);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_14_a5f13a97-4cc9-4e13-89cf-a45101d87f3e);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_2_ac43785a-9b3b-481b-9e55-0b4b78c30ae4);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_3_68d095be-58e8-42e5-815e-0bba27bc4d14);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_4_783c50be-8cc4-400f-ab0c-1e2e3a8d2d53);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_5_57e69232-14bb-4cd3-9ca8-a814be321a87);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_6_317d6fc4-d17a-4fd7-a325-7051511c5842);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_7_40b672d0-3ca2-4448-a2f2-0610f02958bf);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_8_64763953-76b6-44b0-ba87-27b585a12fb8);
+DB_RC_DW_PressurePlate_Target(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Target_9_b82b30af-88ff-4de0-9460-26ef24148fb4);
+
+DB_RC_DW_SourceLichTargets((CHARACTERGUID)CHARACTERGUID_S_RC_DW_WestGateGuard1_cd0bb886-04c0-42e0-9938-76410f13719d);
+DB_RC_DW_SourceLichTargets((CHARACTERGUID)CHARACTERGUID_S_RC_DW_WestGateGuard2_88aa4c74-82cc-49e2-ae64-f7cf8c0c8083);
+DB_RC_DW_SourceLichTargets(CHARACTERGUID_S_RC_DW_WestGate_SourceHound1_4ce07a7e-a1b0-4748-9f3d-4c5cea6d0c8a);
+DB_RC_DW_SourceLichTargets(CHARACTERGUID_S_RC_DW_WestGate_SourceHound2_923ac0d4-d75b-4774-8339-f1a29cf36023);
+DB_RC_DW_SourceLichTargets(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+CharacterAddSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Projectile_Quest_SourceLichKill");
+
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim1_53ddde01-63d9-4932-9134-7897ff8b3f2a, 0);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim2_4483408f-1f73-41fd-86a5-bd51dcb1f43e, 0);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim3_0ac79a07-7def-4258-9e10-522a0b19624d, 0);
+
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStopSpot", 0);
+
+PROC_LoopEffect("RS3_FX_Environment_Spooke_ShadowCloud",S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25,"DarkCloud","RC_Main","");
+DB_Dialogs(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLich");
+
+DB_RC_DW_SourceLich_FinalCache(ITEMGUID_S_RC_DW_SourceLich_BloodFont_On_ac11b5ce-ae0a-491a-8969-3bedddf84ef9);
+DB_RC_DW_SourceLich_FinalCache(S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437);
+DB_RC_DW_SourceLich_FinalCache(S_RC_DW_SourceLich_Cache_d28fac99-c9fd-43ae-ac31-de02e3c0a7d9);
+
+SetOnStage(S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, 0);
+SetOnStage(S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+DB_Dialogs(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLich_Stronger");
+
+Proc_RegisterPartyDecisionDialogOutcomes_Fixed("RC_DW_PDD_SourceLich", "RC_DW_AttackSourceLich", "RC_DW_LetSourceLichFinish", "", "", "");
+
+DB_NoLowAttitudeDialog(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+
+DB_RC_DW_SourceLichTeleportPoints(1, (TRIGGERGUID)TRIGGERGUID_S_RC_DW_SourceLichTeleport_01_369b02be-c3a5-4ae5-ac4d-9bc4f750f4e9);
+DB_RC_DW_SourceLichTeleportPoints(2, TRIGGERGUID_S_RC_DW_SourceLichTeleport_02_c3bb3aca-44d2-4107-a6cb-ccdd691f0e16);
+DB_RC_DW_SourceLichTeleportPoints(3, TRIGGERGUID_S_RC_DW_SourceLichTeleport_03_d3fc142c-0622-487a-b18c-308088550c94);
+DB_RC_DW_SourceLichTeleportPoints(4, TRIGGERGUID_S_RC_DW_SourceLichTeleport_04_55b07e0b-1102-429e-9186-ea927f65d10d);
+DB_RC_DW_SourceLichTeleportPoints(5, TRIGGERGUID_S_RC_DW_SourceLichTeleport_05_ab24618c-6af2-4135-869d-0c565aed69e0);
+DB_RC_DW_SourceLichTeleportPoints(6, TRIGGERGUID_S_RC_DW_SourceLichTeleport_06_235f7abf-e71c-48ae-a5e8-b0b4f49831ca);
+DB_RC_DW_SourceLichTeleportPoints(7, TRIGGERGUID_S_RC_DW_SourceLichTeleport_07_8c7e2205-d216-4712-814b-4432d2fc019a);
+DB_RC_DW_SourceLichTeleportPoints(8, TRIGGERGUID_S_RC_DW_SourceLichTeleport_08_42daa749-05c7-445b-bc8f-c6050bee9ede);
+DB_RC_DW_SourceLichTeleportPoints(9, TRIGGERGUID_S_RC_DW_SourceLichTeleport_09_a536c534-e91f-4f63-9cf2-2e391e5ed931);
+DB_RC_DW_SourceLichTeleportPoints(10, TRIGGERGUID_S_RC_DW_SourceLichTeleport_10_c7a8e2c1-1a03-4d55-bd5b-3bf242db18b4);
+DB_RC_DW_SourceLichTeleportPoints(11, TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b);
+
+ItemToInventory(ITEMGUID_S_RC_DW_AbandonedHouse_FrontDoorKey_f4368858-761f-4607-a274-49b36f76e862, CHARACTERGUID_S_RC_DW_WC_BossFight_Skeleton_Mordus_d46ade3f-f786-4fcc-975c-361a106f2853);
+
+DB_RC_DW_SourceLichGuards(ITEMGUID_S_RC_DW_LichGuardJar_1_b662952b-ddfb-4263-aef3-7e701b3ccef4, CHARACTERGUID_S_RC_DW_LichGuards_1_bd4a02c1-cfa5-40d9-82ab-b49a8fa34bd8);
+DB_RC_DW_SourceLichGuards(ITEMGUID_S_RC_DW_LichGuardJar_2_f304bf4b-5fc6-4c02-a523-d18455064dab, CHARACTERGUID_S_RC_DW_LichGuards_2_25f65683-0e7f-495a-baca-01bd5e2a589f);
+DB_RC_DW_SourceLichGuards(ITEMGUID_S_RC_DW_LichGuardJar_3_1da067c7-91ff-40b5-b16e-f1ceb37d0e81, CHARACTERGUID_S_RC_DW_LichGuards_3_75858ba9-e7d0-42df-93a2-97626dd982b5);
+DB_RC_DW_SourceLichGuards(ITEMGUID_S_RC_DW_LichGuardJar_4_5f8b556e-6da7-4590-be21-96c44a5e4495, CHARACTERGUID_S_RC_DW_LichGuards_4_d2047c21-749a-4273-bb8f-a9832eb350b0);
+DB_RC_DW_SourceLichGuards(ITEMGUID_S_RC_DW_LichGuardJar_5_5c6cfabb-ab26-406e-abac-e5578b8d04fe, CHARACTERGUID_S_RC_DW_LichGuards_5_87508e7a-19a5-4093-a1f6-24be400faa0a);
+
+SetCanFight(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+
+DB_RC_DW_SourceLichSkeletons(CHARACTERGUID_S_RC_DW_SourceLichVictim1_53ddde01-63d9-4932-9134-7897ff8b3f2a, CHARACTERGUID_S_RC_DW_SourceLichSkeleton1_0448cba5-fd3f-4ff2-9628-84e5f8e3c7b5);
+DB_RC_DW_SourceLichSkeletons(CHARACTERGUID_S_RC_DW_SourceLichVictim2_4483408f-1f73-41fd-86a5-bd51dcb1f43e, CHARACTERGUID_S_RC_DW_SourceLichSkeleton2_6cec283d-932a-43e3-9bd9-97df1d2f7184);
+DB_RC_DW_SourceLichSkeletons(CHARACTERGUID_S_RC_DW_SourceLichVictim3_0ac79a07-7def-4258-9e10-522a0b19624d, CHARACTERGUID_S_RC_DW_SourceLichSkeleton3_8eecf786-3b3e-43fd-9ff7-e9885eed4de8);
+
+DB_RC_DW_SourceLichHears(CHARACTERGUID_S_RC_DW_SourceLich_Heart1_0063421d-8a46-40fb-aa1d-6b930cf0d52c);
+DB_RC_DW_SourceLichHears(CHARACTERGUID_S_RC_DW_SourceLich_Heart2_5e04d98c-474a-47a9-8231-d0c0d9cb1c15);
+DB_RC_DW_SourceLichHears(CHARACTERGUID_S_RC_DW_SourceLich_Heart3_c43a346e-29a5-4f62-be5b-d9935f53a1dc);
+DB_RC_DW_SourceLichHears(CHARACTERGUID_S_RC_DW_SourceLich_Heart4_7f60fdac-dce1-43bf-a402-5b331dd0cee3);
+
+CharacterDisableAllCrimes(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+DB_BlockThreatenedDialog(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+ItemToInventory(ITEMGUID_S_RC_DW_MordusNote_77e74451-9fd9-4a84-a92b-48e9d296cee6, ITEMGUID_S_RC_DW_Mordus_SecretShelf_eaab3d03-ad22-4979-9776-466c23668d42);
+ItemToInventory(ITEMGUID_S_RC_DW_MordusOffice_EscapeNote_1dfec5b6-7c5a-4635-9905-25f703f02d30, ITEMGUID_S_RC_DW_Mordus_SecretShelf_eaab3d03-ad22-4979-9776-466c23668d42);
+
+DB_Dialogs(ITEMGUID_S_RC_DW_MordusShrine_e6e8a6f6-e50d-43d9-9226-247e69ef6a30, "RC_DW_MordusShrine");
+DB_AutoSaveTrigger(TRIGGERGUID_S_RC_DW_Autosave_House_29bbc208-b4cf-41cb-8a2a-e470b0e28ea3);
+DB_GLO_Attribute_Check_AgainstLevel("RC_DW_MordusShrine",1,"Wits","Hard",2,9);
+
+
+
+DB_HasStoryEvent(ITEMGUID_S_RC_DW_MordusNote_77e74451-9fd9-4a84-a92b-48e9d296cee6,"RC_DW_HasMordusNote");
+
+DB_RC_DW_SourceLichSkillBook("RC_DW_GiveNecromancyBook", "RC_DW_SourceLich_Necromancy");
+DB_RC_DW_SourceLichSkillBook("RC_DW_GivePoisonBook", "RC_DW_SourceLich_Earth");
+DB_RC_DW_SourceLichSkillBook("RC_DW_GiveRangerBook", "RC_DW_SourceLich_Ranger");
+DB_RC_DW_SourceLichSkillBook("RC_DW_GiveRogueBook", "RC_DW_SourceLich_Rogue");
+DB_RC_DW_SourceLichSkillBook("RC_DW_GiveWarriorBook", "RC_DW_SourceLich_Warrior");
+DB_RC_DW_SourceLichSkillBook("RC_DW_GiveRandomBook", "RC_DW_SourceLich_Random");
+
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_DW_SourceLichWarning_b97908ea-6c91-45e4-a54f-67c0f26c99e5);
+
+//Lights around Source Lich
+DB_RC_DW_SourceLichLights(ITEMGUID_S_RC_DW_SourceLichLight1_d83dbed3-8bae-4883-9f3f-fd2ac048d8ae);
+DB_RC_DW_SourceLichLights(ITEMGUID_S_RC_DW_SourceLichLight2_85575e25-1c69-4495-b495-421d1086a349);
+DB_RC_DW_SourceLichLights(ITEMGUID_S_RC_DW_SourceLichLight3_7092ea37-1da5-4b1b-bc7e-339c73e16227);
+DB_RC_DW_SourceLichLights(ITEMGUID_S_RC_DW_SourceLichLight4_253d4376-e881-46f9-9933-fdbf4fa1a17b);
+
+//Casual-Only Rat Hint
+SetStoryEvent(CHARACTERGUID_S_RC_DW_AbandonedHouseHintRat_4b092f14-c03d-4ae9-bb3b-dda340534647, "GEN_CheckDifficulty");
+SetStoryEvent(CHARACTERGUID_S_RC_DW_AbandonedHouseHintRat_Ghost_630d3f80-f53d-4beb-a01b-d9abedfab9f6, "GEN_CheckDifficulty");
+DB_Ghosts(CHARACTERGUID_S_RC_DW_AbandonedHouseHintRat_4b092f14-c03d-4ae9-bb3b-dda340534647, CHARACTERGUID_S_RC_DW_AbandonedHouseHintRat_Ghost_630d3f80-f53d-4beb-a01b-d9abedfab9f6, "RC_DW_AbandonedHouseHintRat");
+
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouseLock_MovableEye_32e753c1-3e02-4534-9963-bdb87d9e532c, 0);
+PROC_LoopEffect("RS3_FX_GP_ScriptedEvent_SkullLock_Light_01", ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, "SkullLock_Light", "RC_Main", "");
+CharacterAddSourcePoints(S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87,3);
+
+ProcCharacterDisableCrime(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "IncapacitatedAssault");
+ProcCharacterDisableCrime(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "IncapacitatedAssault");
+ProcCharacterDisableCrime(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "TeleportPlayerDialog");
+
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide1_4eb32aba-1711-4cd3-945d-f4d282394522);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide2_1b613bfe-2e94-4e43-912e-f4b2dc6fc0fd);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide3_8e60ddfa-13bb-4197-91e6-b685b40bd9db);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide4_6751fcb0-a2ef-4846-8ae5-af12b040af7f);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide5_08d0c47d-97a3-4ef0-b184-7dfd021a1b93);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide6_c13774b7-6b5e-4278-a5fb-febc3147fa93);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide7_b660b528-cdd6-4d48-b5ea-d790699bfef6);
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(ITEMGUID_S_RC_DW_AbandonedHouse_Cellar_RockToHide8_220581cf-c1cf-46c3-abfd-7d7c9d547570);
+
+DB_GLO_SourcePointDialog("RC_DW_SourceLich_Jar");
+DB_Dialogs(ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437, "RC_DW_SourceLich_Jar");
+
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_DW_AbandonedHouse_MetLich_4c1a405b-1b97-4635-afc4-802fb775b2a6);
+KBSECTION
+//REGION journal
+IF
+CharacterEnteredTrigger(_Player,TRIGGERGUID_S_RC_DW_SourceLich_FoundPuzzle_Box_593d9972-3294-4ea2-99c5-2a5c450cbdf8)
+THEN
+UserSetFlag(_Player,"QuestUpdate_RC_DW_SourceLich_FoundPuzzle");
+
+PROC
+ProcRegionEnded("RC_Main")
+AND
+DB_IsPlayer(_Player)
+AND
+QuestAccepted(_Player,"RC_DW_SourceLich",1)
+AND
+QRY_DW_SourceLich_CloseLeftRCLich_HasUpdate(_Player)
+THEN
+ObjectSetFlag(_Player,"QuestUpdate_RC_DW_SourceLich_CloseLeftRCLichLoose");
+QuestArchive(_Player,"RC_DW_SourceLich",1);
+
+PROC
+ProcRegionEnded("RC_Main")
+AND
+DB_IsPlayer(_Player)
+AND
+QuestAccepted(_Player,"RC_DW_SourceLich",1)
+AND
+NOT QRY_DW_SourceLich_CloseLeftRCLich_HasUpdate(_Player)
+THEN
+ObjectSetFlag(_Player,"QuestUpdate_RC_DW_SourceLich_CloseLeftRCStillSecret");
+QuestArchive(_Player,"RC_DW_SourceLich",1);
+
+QRY
+QRY_DW_SourceLich_CloseLeftRCLich_HasUpdate((CHARACTERGUID)_Player)
+AND
+DB_DW_SourceLich_CloseLeftRCLich(_Update)
+AND
+UserGetFlag(_Player,_Update,1)
+THEN
+DB_NOOP(1);
+
+//END_REGION
+
+//REGION Hatch Logic
+//Locked hatch must be replaced by a teleporter so AI can reason about getting back down.
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc)
+AND
+NOT QRY_RC_DW_HomelessDwarf_HatchOccupied_Chair()
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 1);
+
+IF
+CharacterDied(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8)
+AND
+NOT QRY_RC_DW_HomelessDwarf_HatchOccupied_Chair()
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 1);
+
+IF
+ItemDestroying(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5)
+AND
+NOT QRY_RC_DW_HomelessDwarf_HatchOccupied_Dwarf()
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 1);
+
+IF
+DB_DestroyedItems(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5)
+AND
+NOT QRY_RC_DW_HomelessDwarf_HatchOccupied_Dwarf()
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 1);
+
+IF
+ItemLeftTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, _)
+AND
+NOT QRY_RC_DW_HomelessDwarf_HatchOccupied_Dwarf()
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 1);
+
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc)
+THEN
+GlobalSetFlag("RC_DW_HomelessDwarfMoved");
+TriggerUnregisterForCharacter(TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+
+IF
+ItemEnteredTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, _)
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 1);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 0);
+
+QRY
+QRY_RC_DW_HomelessDwarf_HatchOccupied_Chair()
+AND
+ObjectIsInTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, 1)
+AND
+NOT DB_DestroyedItems(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5)
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 1);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 0);
+
+QRY
+QRY_RC_DW_HomelessDwarf_HatchOccupied_Dwarf()
+AND
+DB_InRegion(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc)
+AND
+CharacterIsDead(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, 0) 
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 1);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouse_FreedHatch_16092b58-3cbd-4e14-b1a0-02721493636d, 0);
+
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c)
+THEN
+Proc_StartDialog(1, "RC_DW_AD_HatchObstructed" ,_Player);
+
+//END_REGION
+
+//REGION Ground level
+IF
+CharacterStatusRemoved(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING",(CHARACTERGUID)_Player)
+AND
+DB_IsPlayer(_Player)
+THEN
+UserSetFlag(_Player, "RC_DW_MovedHomelessDwarf");
+
+IF
+CharacterStatusRemoved(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING",_)
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "RC_DW_WaitingHatch", 0);
+
+IF
+ItemLeftTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, _Player)
+AND
+_Player != CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8
+AND
+_Player != NULL_00000000-0000-0000-0000-000000000000
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "RC_DW_WaitingHatch", 0);
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING");
+UserSetFlag(_Player, "RC_DW_MovedHomelessDwarf");
+
+IF
+ObjectFlagSet("RC_DW_WaitingHatch", CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, 0)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,"RC_DW_WentDownStairs",  0)
+THEN
+//RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING");
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING");
+ProcCharacterMoveTo(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, ITEMGUID_S_RC_DW_AbandonedHouse_BlockedHatch_07bfa983-28e3-47f7-9d46-346ed797cd4c, 0, "");
+SetVarFixedString(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "currentState", "State_WaitingHatch");
+
+IF
+DialogEnded("RC_DW_HomelessDwarf", _ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+AND
+PartyGetFlag((CHARACTERGUID)_Player, "RC_DW_HomelessDwarf_Welcome", 1)
+AND
+QueryOnlyOnce("RC_DW_VB_HomelessDwarf_Welcome")
+THEN
+StartVoiceBark("RC_DW_VB_HomelessDwarf_Welcome", _Player);
+
+//END_REGION
+
+//REGION Dwarf sleeps while sitting, but not while talking.
+PROC
+PROC_GLOBAL_DialogStartRequested(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, _Player)
+AND
+HasActiveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING", 1)
+THEN
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING");
+
+IF
+DialogEnded("RC_DW_HomelessDwarf", _)
+AND
+HasActiveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING", 1)
+AND
+NOT DB_GlobalFlag("RC_DW_HomelessDwarfConvinced")
+THEN
+ApplyStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING", -1.0, 1);
+
+IF
+GlobalFlagSet("RC_DW_HomelessDwarfConvinced")
+THEN
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING");
+//END_REGION
+
+//REGION Fight with homeless dwarf
+PROC
+Proc_ObjectLeftCombat(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_ID)
+AND
+DB_WasInCombat(_Player, _ID)
+AND
+DB_IsPlayer((CHARACTERGUID)_Player)
+THEN
+SetRelationFactionToPlayers("RC_DW_HomelessDwarf", 0);
+
+PROC
+Proc_ObjectLeftCombat(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_ID)
+AND
+DB_CombatCharacters(_Player,_ID)
+AND
+DB_IsPlayer(_Player)
+THEN
+SetRelationFactionToPlayers("RC_DW_HomelessDwarf", 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "RC_DW_HomelessDwarf_SummonUndead")
+THEN
+Proc_RC_DW_HomelessDwarf_SetupUndead();
+
+PROC
+Proc_RC_DW_HomelessDwarf_SetupUndead()
+AND
+NOT DB_InRegion(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, TRIGGERGUID_S_RC_DW_HomelessDwarf_DownstairsBox_22883b92-5361-40b7-a155-abfe2fbe566e)
+THEN
+Proc_StartDialog(1, "RC_DW_AD_HomelessDwarf_Taunt_Upstairs", CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+
+IF
+CharacterStatusApplied(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "HIT", _Player)
+AND
+HasActiveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "POLYMORPHED", 0)
+AND
+DB_IsPlayer((CHARACTERGUID)_Player)
+AND
+CharacterIsDeadOrFeign(_Player, 0)
+AND
+CharacterCanSee(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, _Player, 1)
+AND
+NOT DB_IgnoreAssault(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8)
+AND
+NOT DB_Crime_PolymorphedIgnoreAssault(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_Player)
+AND
+NOT DB_IsPlayer(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8)
+AND
+NOT DB_CombatCharacters(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_)
+AND
+NOT DB_Crime_Assault(_,_,CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8)
+AND
+CharacterGetHitpointsPercentage(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_Percentage)
+AND
+_Percentage >= 1.0
+THEN
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING");
+ProcCrimeCheckAssailant(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, (CHARACTERGUID)_Player,NULL_00000000-0000-0000-0000-000000000000);
+
+//END_REGION
+
+//REGION Cellar
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_AbandonedHouse_CellarEntrance_Box_57dece8e-ae32-4941-86f9-27f3f8a6bb6b)
+AND
+ObjectGetFlag(_Player, "RC_DW_EnteredAbandonedHouseCellar", 0)
+THEN
+PartySetFlag(_Player, "RC_DW_EnteredAbandonedHouseCellar");
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_AbadonedHouse_DwarfEnter_7ef586bc-f39e-4dd4-9b2c-ab9eb23a24a5)
+AND
+PartyGetFlag(_Player, "RC_DW_HomelessDwarf_Welcome", 0)
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "RC_DW_WentDownStairs", 0);
+DialogRequestStop(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8);
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SITTING");
+RemoveStatus(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "SLEEPING");
+SetVarFixedString(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, "currentState", "State_WaitingDownstairs");
+CharacterSetCanTrade(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, 0);
+
+IF
+StoryEvent(_Player, "RC_DW_FoundDownstairsByDwarf")
+AND
+NOT QRY_StartDialog(0, "RC_DW_HomelessDwarfAmbush", CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8, _Player)
+THEN
+SetRelationFactionToPlayers("RC_DW_HomelessDwarf", 0);
+
+IF
+DialogEnded("RC_DW_HomelessDwarfAmbush", _)
+THEN
+SetRelationFactionToPlayers("RC_DW_HomelessDwarf", 0);
+
+IF
+CharacterUsedItem(_Character, S_RC_DW_AbandonedHouse_CellarStairs_b1371911-b3ce-8e2d-4808-bac76d126170)
+AND
+ObjectIsInTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_AbandonedHouse_BlockedHatchBox_7c4d5c49-89eb-4a25-bb70-d4df8431bbbc, 1)
+AND
+NOT DB_DestroyedItems(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5)
+AND
+QueryOnlyOnce("RC_DW_AbandonedHouse_ThrowChair")
+THEN
+proc_ItemMoveToTrigger(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5, TRIGGERGUID_S_RC_DW_HomelessDwarf_ChairDragToPoint_6ef2650c-e6f1-4f91-8bd2-a442011f4fb4, 9.0, 1.0, 0);
+TimerLaunch("RC_DW_DestroyDwarfChair", 450);
+
+IF
+TimerFinished("RC_DW_DestroyDwarfChair")
+THEN
+ItemDestroy(ITEMGUID_S_RC_DW_HomelessDwarf_Chair_f40942cc-4f77-4dc9-bc8c-5f8bc7ae98e5);
+
+//REGION Dialogue logic scholars
+IF
+StoryEvent(_Player, "RC_DW_SpottedDwarvenScholars")
+AND
+QRY_StartDialog(0, "RC_DW_DwarvenScholars", CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47, _Player)
+THEN
+GlobalSetFlag("RC_DW_DwarvenScholars_Spotted");
+//END_REGION
+
+IF
+GameBookInterfaceClosed(ITEMGUID_S_RC_DW_AbandonedHouse_MordusBook_e187ac3d-1859-4d1b-810a-f75ce8ed9047, _Player)
+THEN
+UserSetFlag(_Player, "RC_DW_AbandonedHouse_ReadMordusBook", 0);
+//END_REGION
+
+//REGION Secret Doors
+IF
+DB_RC_DW_AbandonedHouse_Doors(_Door)
+THEN
+ItemCloseAndLock(_Door, "RC_DW_BUTTONLOCK");
+ItemSetCanInteract(_Door, 0);
+
+IF
+ItemOpened(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d)
+THEN
+GlobalSetFlag("RC_DW_MordusOfficeDoorOpen");
+CharacterSetRelationFactionToFaction("RC_DW_DwarvenScholars", "RC_DW_HomelessDwarf",  100);
+CharacterSetRelationFactionToFaction("RC_DW_HomelessDwarf", "RC_DW_DwarvenScholars",  100);
+SetCanFight(CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, 1);
+SetCanFight(CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47, 1);
+
+IF
+ItemClosed(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d)
+THEN
+GlobalClearFlag("RC_DW_MordusOfficeDoorOpen");
+
+IF
+CharacterItemEvent(_Character, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+AND
+QueryOnlyOnce("RC_DW_AD_AbandonedHouse_1stLever")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_AbandonedHouse_1stLever", _Character);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+THEN
+NOT DB_OnlyOnce("RC_DW_AbandonedHouse_OpenCloseDoor");
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_DW_MordusOffice_EscapeNote_1dfec5b6-7c5a-4635-9905-25f703f02d30)
+THEN
+UserSetFlag(_Player, "RC_DW_AbandonedHouse_KnowButton");
+
+IF
+GlobalFlagSet("RC_DW_OpenMordusOffice")
+THEN
+GlobalClearFlag("RC_DW_OpenMordusOffice");
+ItemUnlockAndOpen(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+AND
+ItemIsOpened(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d, 1)
+AND
+QueryOnlyOnce("RC_DW_AbandonedHouse_OpenCloseDoor")
+THEN
+ItemCloseAndLock(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d, "RC_DW_BUTTONLOCK");
+GlobalClearFlag("RC_DW_MordusOfficeDoorOpen");
+
+IF
+CharacterItemEvent(_, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+AND
+ItemIsClosed(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d, 1)
+AND
+QueryOnlyOnce("RC_DW_AbandonedHouse_OpenCloseDoor")
+THEN
+ItemUnlockAndOpen(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_MordusPressurePlate")
+AND
+GetClosestAlivePlayer(ITEMGUID_S_RC_DW_PressurePlate_MordusOffice_d4c6e221-aed2-474f-9b29-0df4e3f5bba8, _Player, _)
+AND
+ItemIsOpened(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d, 0)
+AND
+QueryOnlyOnce("RC_DW_AD_TrappedMordusOffice")
+THEN
+ProcObjectTimer(_Player, "RC_DW_AD_TrappedMordusOffice", 700);
+
+PROC
+ProcObjectTimerFinished(_Player, "RC_DW_AD_TrappedMordusOffice")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_TrappedMordusOffice", _Player);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_MordusPressurePlate")
+THEN
+ItemCloseAndLock(ITEMGUID_S_RC_DW_MordusOfficeDoor_1eba1fa2-09a2-4474-b046-2397b9ba277d, "RC_DW_BUTTONLOCK");
+GlobalClearFlag("RC_DW_MordusOfficeDoorOpen");
+
+IF
+TextEventSet("RC_DW_AbandonedHouse_RevealHatchDoor")
+THEN
+GlobalSetFlag("RC_DW_AbandonedHouse_RevealHatchDoor");
+
+IF
+GlobalFlagSet("RC_DW_AbandonedHouse_RevealHatchDoor")
+THEN
+ProcSetPerceptionDifficulty(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0,"Easy");
+
+IF
+ItemUnlocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, _, _Item)
+THEN
+GlobalSetFlag("RC_DW_AbanadonedHouse_HatchDoorOpened");
+PlaySound(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0,"SE_RC_DW_AbandonedHouse_SkullLock_InsertGem");
+PlayEffect(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, "RS3_FX_GP_ScriptedEvent_SkullLock_Unlock_01");
+
+IF
+ItemUnlocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, _Character, ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370)
+THEN
+Proc_ShakeCameraForTime(_Character, 500);
+Proc_StartDialog(1, "RC_DW_AD_UnlockedSkullLock", _Character);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouseLock_MovableEye_32e753c1-3e02-4534-9963-bdb87d9e532c, 1);
+SetOnStage(ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370, 0);
+PartySetFlag(_Character,"QuestUpdate_RC_DW_SourceLich_FoundOtherSecret");
+
+IF
+ItemUnlocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, _Character, _Key)
+AND
+GetTemplate(_Key, "TOOL_LockPick_A_06d0eecb-4271-42a7-bd8c-4cbf24927197")
+THEN
+PROC_RC_DW_LockpickedSkullLock(_Character);
+
+IF
+ItemUnlocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, _Character, NULL_00000000-0000-0000-0000-000000000000)
+THEN
+PROC_RC_DW_LockpickedSkullLock(_Character);
+
+PROC
+PROC_RC_DW_LockpickedSkullLock((CHARACTERGUID)_Character)
+THEN
+Proc_ShakeCameraForTime(_Character, 500);
+Proc_StartDialog(1, "RC_DW_AD_LockpickedSkullLock", _Character);
+UnlockAchievement("DOS2_Quest32",_Character); //Bank: You successfully lockpicked the skull lock in Mordus' basement
+PartySetFlag(_Character,"QuestUpdate_RC_DW_SourceLich_UnlockedSkull");
+
+PROC
+PROC_RC_DW_LockpickedSkullLock((CHARACTERGUID)_Character)
+AND
+GetStatString(ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370, "QUEST_LockEye") //Won't be the case for old saves, but I don't want this thing behaving like a regular key.
+THEN
+ItemSetStoryItem(ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370, 0);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+THEN
+DialogRequestStop(CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0);
+DialogRequestStop(CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47);
+CharacterSetReactionPriority(CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, "Flee", 200);
+CharacterSetReactionPriority(CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47, "Flee", 200);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_AbandonedHouse_1stLever_Pulled")
+AND
+QueryOnlyOnce("RC_DW_AD_DwarvenScholars_OpenLock")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_DwarvenScholars_OpenLock", CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47);
+
+IF
+ObjectFlagSet("RC_DW_ReachedCave", CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, _)
+THEN
+DB_Dialogs(CHARACTERGUID_S_RC_DW_DwarvenScholar_01_2555841d-a987-4c92-b87e-93c829e8fed0, "RC_DW_DwarvenScholar1");
+
+IF
+ObjectFlagSet("RC_DW_ReachedCave", CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47, _)
+THEN
+DB_Dialogs(CHARACTERGUID_S_RC_DW_DwarvenScholar_02_f2bd4946-8aba-42be-b70a-b8a6d48fce47, "RC_DW_DwarvenScholar2");
+
+IF
+ItemUnlocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, _, _)
+THEN
+PlayEffect(ITEMGUID_S_RC_DW_HatchRoomDoor_36205953-806a-418f-bdbc-57dc1f6e779e,"RS3_FX_UI_PerceptionReveal_01_NotLooping");
+ItemUnlockAndOpen(ITEMGUID_S_RC_DW_HatchRoomDoor_36205953-806a-418f-bdbc-57dc1f6e779e);
+ItemSetCanInteract(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, 0);
+UnlockSecretRegion(TRIGGERGUID_S_RC_DW_AbandonedHouse_SecretRegion_LadderRoom_ae27d2f7-e65d-4830-8a08-bb079f016780);
+PROC_RC_DW_AbandonedHouse_UnveilSecretRoom();
+
+PROC
+PROC_RC_DW_AbandonedHouse_UnveilSecretRoom()
+AND
+DB_RC_DW_AbandonedHouse_Cellar_RockToHide(_Rock)
+THEN
+PlayEffect(_Rock,"RS3_FX_GP_ScriptedEvent_SecretRegion_RockFade_01");
+ProcObjectTimer(_Rock, "RC_DW_RemoveConcealRock", 900);
+
+PROC
+ProcObjectTimerFinished(_Rock, "RC_DW_RemoveConcealRock")
+THEN
+SetOnStage(_Rock, 0);
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0)
+AND
+ItemIsInUserInventory(ITEMGUID_S_RC_DW_AbandonedHouseLock_KeyEye_fd73c045-cfa1-4c6c-9505-5c0e7f26b370, _Player, 0, 0)
+AND
+ItemIsLocked(ITEMGUID_S_RC_DW_AbandonedHouse_SkullLock_12d0daf9-7124-4ccf-978d-660600ad2df0, 1)
+THEN
+Proc_StartDialog(1, "RC_DW_AD_AbandonedHouse_SkullLock", _Player);
+//END_REGION
+
+//REGION Pressure Plate Puzzle
+IF
+StoryEvent(_, "RC_DW_AbandonedHouse_CounterWrong")
+AND
+NOT QRY_RC_DW_PressurePlate_Unsolved()
+AND
+NOT DB_OnlyOnce("RC_DW_PressurePlate_Solved")
+AND
+DB_RC_DW_PressurePlate_Target(_Item)
+THEN
+SetOnStage(_Item, 0);
+
+IF
+StoryEvent(_, "RC_DW_AbandonedHouse_CounterWrong")
+AND
+NOT QRY_RC_DW_PressurePlate_Unsolved()
+AND
+QueryOnlyOnce("RC_DW_PressurePlate_Solved")
+AND
+GetPosition(ITEMGUID_S_RC_DW_AbandonedHouse_PressurePlatePuzzleLock_5d4f115c-5c8c-4b8b-b0f7-480502515dff, _X, _Y, _Z)
+THEN
+SetStoryEvent(ITEMGUID_S_RC_DW_AbandonedHouse_PressurePlatePuzzleLock_5d4f115c-5c8c-4b8b-b0f7-480502515dff, "PuzzleUnlock");
+SetStoryEvent(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Door_0098e01d-233d-434f-866b-a8b1d0ca59cd, "PuzzleUnlock");
+ItemUnlockAndOpen(S_RC_DW_PressurePlatePuzzle_Door_0098e01d-233d-434f-866b-a8b1d0ca59cd);
+
+
+IF
+StoryEvent(_, "RC_DW_AbandonedHouse_CounterRight")
+AND
+NOT QRY_RC_DW_PressurePlate_Unsolved()
+AND
+NOT DB_OnlyOnce("RC_DW_PressurePlate_Solved")
+AND
+DB_RC_DW_PressurePlate_Target(_Item)
+THEN
+SetOnStage(_Item, 0);
+
+IF
+StoryEvent(_, "RC_DW_AbandonedHouse_CounterRight")
+AND
+NOT QRY_RC_DW_PressurePlate_Unsolved()
+AND
+QueryOnlyOnce("RC_DW_PressurePlate_Solved")
+AND
+GetPosition(ITEMGUID_S_RC_DW_AbandonedHouse_PressurePlatePuzzleLock_5d4f115c-5c8c-4b8b-b0f7-480502515dff, _X, _Y, _Z)
+THEN
+SetStoryEvent(ITEMGUID_S_RC_DW_AbandonedHouse_PressurePlatePuzzleLock_5d4f115c-5c8c-4b8b-b0f7-480502515dff, "PuzzleUnlock");
+SetStoryEvent(ITEMGUID_S_RC_DW_PressurePlatePuzzle_Door_0098e01d-233d-434f-866b-a8b1d0ca59cd, "PuzzleUnlock");
+ItemUnlockAndOpen(S_RC_DW_PressurePlatePuzzle_Door_0098e01d-233d-434f-866b-a8b1d0ca59cd);
+
+QRY
+QRY_RC_DW_PressurePlate_Unsolved()
+AND
+DB_RC_DW_PressureCounters(_Counter)
+AND
+GetVarInteger(_Counter, "State", _State)
+AND
+GetVarInteger(_Counter, "TargetState", _TargetState)
+AND
+_State != _TargetState
+THEN 
+DB_NOOP(1);
+//END_REGION 
+
+//REGION Quest Updates
+IF
+CharacterDestroyedItem(_Player, ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_SourceLich_FreedLich");
+
+IF
+ObjectFlagSet("QuestUpdate_RC_DW_SourceLich_FreedLich",CHARACTERGUID_S_Player_Fane_02a77f1f-872b-49ca-91ab-32098c443beb,_)
+AND
+IsTagged(CHARACTERGUID_S_Player_Fane_02a77f1f-872b-49ca-91ab-32098c443beb,"AVATAR",1)
+THEN
+ObjectSetFlag(CHARACTERGUID_S_Player_Fane_02a77f1f-872b-49ca-91ab-32098c443beb,"QuestUpdate_FTJ_OriginFane_FreedLich");
+
+
+
+IF
+CharacterEnteredTrigger(_Player, S_RC_DW_AbandonedHouse_FoundHouse_b25304c8-9d3f-47e3-967c-13cd61291697)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_DW_CoverTheTracks_AbandonedHouse_Start", 0)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_CoverTheTracks_AbandonedHouse_House_found");
+
+IF
+CharacterKilledBy(CHARACTERGUID_S_RC_DW_Homeless_Dwarf_719eb2eb-5dc8-4ff4-92ea-b4f82587a8d8,_AttackerOwner,_Attacker)
+AND
+DB_IsPlayer(_AttackerOwner)
+THEN
+PartySetFlag(_AttackerOwner, "QuestUpdate_RC_DW_CoverTheTracks_AbandonedHouse_DwarfKeeperKilled");
+
+IF
+CharacterKilledBy(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,_AttackerOwner,_Attacker)
+AND
+DB_IsPlayer(_AttackerOwner)
+THEN
+PartySetFlag(_AttackerOwner, "QuestUpdate_RC_DW_SourceLich_KilledLich");
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _ID)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_CombatCharacters(_Player, _ID)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_SourceLich_KilledLich");
+
+IF
+CharacterKilledBy(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _AttackerOwner, _Attacker)
+AND
+DB_IsPlayer(_AttackerOwner)
+THEN
+PartySetFlag(_AttackerOwner, "QuestUpdate_RC_DW_SourceLich_KilledLich");
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _ID)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_CombatCharacters(_Player, _ID)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_SourceLich_KilledLich");
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_AbandonedHouse_MetLich_4c1a405b-1b97-4635-afc4-802fb775b2a6)
+AND
+HasActiveStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "QUEST_SOURCERACK", 1)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_SourceLich_MetLich");
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_DW_MordusNote_77e74451-9fd9-4a84-a92b-48e9d296cee6)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_DW_CoverTheTracks_AbandonedHouse_NoteRead");
+//END_REGION
+
+//REGION ADs when entering areas.
+
+IF
+ObjectFlagSet("QuestUpdate_RC_DW_CoverTheTracks_AbandonedHouse_Start", _Player, _)
+THEN
+TriggerRegisterForCharacter(S_RC_DW_AD_RiversHouse_113c8902-cb73-42e7-aba9-c45867e2abc1, (CHARACTERGUID)_Player);
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_AD_RiversHouse_113c8902-cb73-42e7-aba9-c45867e2abc1)
+THEN
+TriggerUnregisterForCharacter(TRIGGERGUID_S_RC_DW_AD_RiversHouse_113c8902-cb73-42e7-aba9-c45867e2abc1, _Player);
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_AD_RiversHouse_113c8902-cb73-42e7-aba9-c45867e2abc1)
+AND
+QueryOnlyOnce("RC_DW_AD_RiversHouse")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_RiversHouse", _Player);
+
+//END_REGION
+
+//REGION Source Lich
+
+IF
+DB_RC_DW_SourceLich_FinalCache(_Thing)
+THEN
+SetOnStage(_Thing, 0);
+
+//REGION Freeing Lich
+IF
+CharacterItemEvent(_Player, _, "RC_DW_SourceLichLever")
+AND
+GlobalGetFlag("RC_DW_SourceLichFreed", 0)
+THEN
+GlobalSetFlag("RC_DW_SourceLichFreed");
+//CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "");
+PlayAnimation(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, "Tutorial_Start_01","");
+//ProcObjectTimer(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25,"TUT_TableAnimationFinished",4500);
+PartySetFlag(_Player, "RC_DW_FreedSourceLich");
+PROC_StopLoopEffect(S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, "DarkCloud");
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, 100);
+CharacterSetRelationIndivFactionToIndivFaction(_Player, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 100);
+SetCanFight(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+ItemSetCanInteract(S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, 0);
+ClearTag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"AI_IGNORED_TARGET");
+PlaySound(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "SE_RC_SourceLich_FX_ReleaseLich");
+CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"");
+ApplyStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"TUTORIAL_BED",-1.0,1);
+
+PROC
+ProcObjectTimerFinished(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, "TUT_TableAnimationFinished")
+THEN
+CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"");
+PlayAnimation(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"Lie_Tied_Up_01_End","RC_DW_RemoveLying");
+
+IF
+CharacterStatusRemoved(_Player,"TUTORIAL_BED",_)
+THEN
+RemoveStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "LYING");
+TeleportTo(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, TRIGGERGUID_S_RC_DW_SourceLichDismount_89f21ced-29ff-4f5f-8f83-4c700216f2b9, "", 0);
+CharacterLookFromTrigger(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, TRIGGERGUID_S_RC_DW_SourceLichDismount_89f21ced-29ff-4f5f-8f83-4c700216f2b9, 1);
+
+IF
+CharacterDestroyedItem(_Character, ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+AND
+DB_IsPlayer(_Character)
+AND
+GlobalGetFlag("RC_DW_SourceLichFreed", 0)
+THEN
+GlobalSetFlag("RC_DW_SourceLichFreed");
+PartySetFlag(_Character, "RC_DW_FreedSourceLich");
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Character, 100);
+CharacterSetRelationIndivFactionToIndivFaction(_Character, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 100);
+ClearTag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"AI_IGNORED_TARGET");
+
+IF
+CharacterDestroyedItem(_Character, ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+AND
+DB_IsPlayer(_Character)
+AND
+GlobalGetFlag("RC_DW_SourceLichFreed", 0)
+THEN
+SetCanFight(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+
+IF
+CharacterDestroyedItem(_Character, ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+AND
+NOT DB_IsPlayer(_Character)
+AND
+DB_CombatCharacters(_Character, _ID)
+AND
+DB_CombatCharacters(_Player, _ID)
+AND
+DB_IsPlayer(_Player)
+THEN
+PartySetFlag(_Player, "RC_DW_FreedSourceLich");
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, 100);
+CharacterSetRelationIndivFactionToIndivFaction(_Player, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 100);
+
+IF
+ObjectFlagSet("RC_DW_FreedSourceLich", _Player, _)
+AND
+NOT DB_OnlyOnce("RC_DW_PoisonDartConsole")
+THEN
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, (CHARACTERGUID)_Player, 100);
+CharacterSetRelationIndivFactionToIndivFaction((CHARACTERGUID)_Player, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 100);
+
+IF
+ObjectFlagSet("RC_DW_FreedSourceLich", _Player, _)
+AND
+NOT QRY_RC_DW_SourceLichGuardsAlive()
+AND
+GetDistanceTo(S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, _Dist)
+AND
+_Dist < 40.0
+THEN
+ProcDefineReflectionDialog("RC_DW_RD_ReleasedSourceLich",(CHARACTERGUID)_Player);
+
+IF
+GlobalFlagSet("RC_DW_SourceLichFreed")
+AND
+NOT QRY_RC_DW_SourceLichGuardsAlive()
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+
+IF
+CharacterDestroyedItem(_Character, ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+AND
+GlobalGetFlag("RC_DW_SourceLichFreed", 0)
+THEN
+GlobalSetFlag("RC_DW_SourceLichFreed");
+
+IF
+CharacterStatusApplied(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "LYING", _)
+THEN
+ApplyStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "QUEST_SOURCERACK", -1.0);
+
+IF
+CharacterStatusRemoved(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "LYING",_)
+THEN
+RemoveStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "QUEST_SOURCERACK");
+
+IF
+CharacterStatusRemoved(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "QUEST_SOURCERACK",_)
+THEN
+Proc_StartDialog(1, "RC_DW_AD_SourceLich_Unchained", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+//END_REGION
+
+//REGION Source Lich relocation
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichReappear")
+AND
+GetVarInteger(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "TeleportCounter", _Int)
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+PROC_RC_DW_SourceLichTeleport(_Int);
+
+PROC
+PROC_RC_DW_SourceLichTeleport((INTEGER)_Int)
+AND
+DB_RC_DW_SourceLichTeleportPoints(_Int, _Trigger)
+AND
+NOT QRY_RC_DW_SourceLichTeleport(_Trigger)
+AND
+IntegerSum(_Int, 1, _NewInt)
+THEN
+SetVarInteger(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "TeleportCounter", _NewInt);
+PROC_RC_DW_KillSLTargetsNearTrigger(_Trigger);
+PROC_RC_DW_SourceLichTeleport(_NewInt);
+
+PROC
+PROC_RC_DW_SourceLichTeleport(10)
+THEN
+GlobalSetFlag("RC_DW_SourceLichPassedCheckPoint");
+
+QRY
+QRY_RC_DW_SourceLichTeleport((TRIGGERGUID)_Trigger)
+AND
+GetClosestPlayer(_Trigger, _Player, _Dist)
+AND
+_Dist <= 30.0
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+AND
+GetPosition(_Trigger, _X2, _Y2, _Z2)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.4, _X, _Y, _Z);
+TeleportTo(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Trigger);
+CharacterLookFromTrigger(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Trigger, 1);
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.6, _X2, _Y2, _Z2);
+
+QRY
+QRY_RC_DW_SourceLichTeleport(TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b)
+AND
+GetClosestPlayer(TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b, _Player, _Dist)
+AND
+_Dist > 30.0
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+AND
+GetPosition(TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b, _X2, _Y2, _Z2)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.4, _X, _Y, _Z);
+TeleportTo(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b);
+CharacterLookFromTrigger(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, TRIGGERGUID_S_RC_WH_SourceLichCorpseEatPoint_0c8f3a21-4e3e-4054-8b93-d901e3b3684b, 1);
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.6, _X2, _Y2, _Z2);
+
+PROC
+PROC_RC_DW_KillSLTargetsNearTrigger((TRIGGERGUID)_Trigger)
+AND
+DB_RC_DW_SourceLichTargets(_NPC)
+AND
+GetDistanceTo(_NPC, _Trigger, _Dist)
+AND
+_Dist <= 12.0
+AND
+CharacterIsDead(_NPC, 0)
+THEN
+CharacterDie(_NPC, 1, "DoT");
+CreatePuddle(_NPC, "SurfacePoison", 5, 20, 5, 10, 0.02);
+PROC_RC_DW_SourceLichKilledNPC((CHARACTERGUID)_NPC);
+
+PROC
+PROC_RC_DW_SourceLichTeleport(1)
+THEN
+CharacterSetReactionPriority(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "DestroyConsole", 300);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "DestroyConsole")
+AND
+QueryOnlyOnce("RC_DW_PoisonDartConsole")
+THEN
+PlayEffect(ITEMGUID_S_RC_DW_SourceLichButton_b61dee06-2f7b-415b-8785-fed99681cb36, "RS3_FX_Char_Creatures_Shriker_LightningBolt_Impact_01");
+PlayEffect(ITEMGUID_S_RC_DW_SourceLichButton2_4131c6cd-dabd-4c77-b2f5-70a2b9473d8d, "RS3_FX_Char_Creatures_Shriker_LightningBolt_Impact_01");
+PlayEffect(ITEMGUID_S_RC_DW_SourceLichButton3_ce85e2ba-f89f-49fe-9181-c128a2836b56, "RS3_FX_Char_Creatures_Shriker_LightningBolt_Impact_01");
+PlayEffect(ITEMGUID_S_RC_DW_SourceLichButton4_5fe9579b-98b0-494e-83f5-48495e04f31c, "RS3_FX_Char_Creatures_Shriker_LightningBolt_Impact_01");
+PROC_LoopEffect("RS3_FX_Environment_Smoke_Fire_01", ITEMGUID_S_RC_DW_SourceLichButton2_4131c6cd-dabd-4c77-b2f5-70a2b9473d8d, "", "RC_Main", "");
+PROC_LoopEffect("RS3_FX_Environment_Smoke_Fire_01", ITEMGUID_S_RC_DW_SourceLichButton4_5fe9579b-98b0-494e-83f5-48495e04f31c, "", "RC_Main", "");
+ItemSetCanInteract(ITEMGUID_S_RC_DW_SourceLichButton_b61dee06-2f7b-415b-8785-fed99681cb36, 0);
+ItemSetCanInteract(ITEMGUID_S_RC_DW_SourceLichButton2_4131c6cd-dabd-4c77-b2f5-70a2b9473d8d, 0);
+ItemSetCanInteract(ITEMGUID_S_RC_DW_SourceLichButton3_ce85e2ba-f89f-49fe-9181-c128a2836b56, 0);
+ItemSetCanInteract(ITEMGUID_S_RC_DW_SourceLichButton4_5fe9579b-98b0-494e-83f5-48495e04f31c, 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "DestroyConsole")
+AND
+QueryOnlyOnce("RC_DW_SourceLichChestButton")
+THEN
+PlayEffect(S_RC_DW_SourceLichChest1_199f693d-3c04-478a-b5a5-88ebb5a4a30e, "RS3_FX_GP_ScriptedEvent_Teleport_GenericSmoke_01");
+ItemUnLock(ITEMGUID_S_RC_DW_SourceLichChest1_199f693d-3c04-478a-b5a5-88ebb5a4a30e);
+
+PROC
+PROC_RC_DW_SourceLichTeleport(11)
+THEN
+SetStoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_EatCorpsesStart");
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim1_53ddde01-63d9-4932-9134-7897ff8b3f2a, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim2_4483408f-1f73-41fd-86a5-bd51dcb1f43e, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichVictim3_0ac79a07-7def-4258-9e10-522a0b19624d, 1);
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+CharacterSetImmortal(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+DB_Dialogs(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating");
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 0);
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_DW_SourceLich_EatingBox_6b4e5c0a-9bae-4352-952e-c701860489c7);
+SetVarFloat(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "CheckRadius", 5.0);
+CharacterAddSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Shout_MendMetal");
+CharacterAddSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Shout_ReactiveArmor");
+CharacterAddSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Shout_BoneCage");
+CharacterAddSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Target_WormTremor");
+CharacterLevelUpTo(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 11);
+CharacterEnableAllCrimes(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+
+PROC
+PROC_RC_DW_SourceLichTeleport(11)
+AND
+DB_RC_DW_SourceLichSkeletons(_, _Skeleton)
+THEN
+SetCombatGroupID(_Skeleton, "3b59936e-0e66-45a5-b8ed-f10924fd785d");
+
+IF
+DB_RC_DW_SourceLichSkeletons(_, _Skeleton)
+THEN
+SetOnStage(_Skeleton, 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SummonSkeletons")
+THEN
+CharacterUseSkill(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Shout_Quest_SourceLich_Skeletons", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0, 1);
+TimerLaunch("RC_DW_SourceLich_SummonSkeletons", 3000);
+
+IF
+TimerFinished("RC_DW_SourceLich_SummonSkeletons")
+AND
+DB_RC_DW_SourceLichSkeletons(_Victim, _Skeleton)
+AND
+GetDistanceTo(_Victim, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Dist)
+AND
+_Dist <= 9.0
+THEN
+TeleportTo(_Skeleton, _Victim);
+PlayEffect(_Victim, "RS3_FX_GP_Combat_CorpseExplosion_Blood_01_Medium");
+ApplyStatus(_Victim, "EXPLODE", 0.0);
+CharacterAppearCustom((CHARACTERGUID)_Skeleton, "knockdown_getup", "");
+
+//END_REGION
+IF
+ObjectFlagSet("RC_DW_LetSourceLichEat", _, _)
+THEN
+GlobalSetFlag("RC_DW_SourceLichAllowedToEat");
+
+//REGION Source Lich at the corpse-eating site.
+IF
+CharacterLeftTrigger(_, TRIGGERGUID_S_RC_DW_SourceLich_EatingBox_6b4e5c0a-9bae-4352-952e-c701860489c7)
+AND
+GlobalGetFlag("RC_DW_SourceLichAllowedToEat", 1)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SpareSourceLich", 0)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichDrainSP", 0)
+AND
+NOT DB_InRegion(_, TRIGGERGUID_S_RC_DW_SourceLich_EatingBox_6b4e5c0a-9bae-4352-952e-c701860489c7)
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X, _Y, _Z)
+THEN
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+SetStoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichSpared");
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X, _Y, _Z);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, 1);
+CreatePuddle(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, "SurfaceBlood", 5, 25, 5, 10, 0.02);
+
+IF
+TextEventSet("lich2")
+THEN
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+SetStoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichSpared");
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, 1);
+CreatePuddle(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, "SurfaceBlood", 5, 25, 5, 10, 0.02);
+
+IF
+TextEventSet("lich1")
+THEN
+PROC_RC_DW_SourceLichTeleport(11);
+ClearTag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,"AI_IGNORED_TARGET");
+GlobalSetFlag("RC_DW_SourceLichFreed");
+CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "");
+PROC_StopLoopEffect(S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, "DarkCloud");
+CharacterSetRelationIndivFactionToFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "Hero", 100);
+CharacterSetRelationFactionToIndivFaction("Hero", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 100);
+SetCanFight(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+SetCanJoinCombat(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+ItemSetCanInteract(S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, 0);
+
+IF
+CharacterLeftTrigger(_, TRIGGERGUID_S_RC_DW_SourceLich_EatingBox_6b4e5c0a-9bae-4352-952e-c701860489c7)
+AND
+GlobalGetFlag("RC_DW_SourceLichAllowedToEat", 1)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SpareSourceLich", 0)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichDrainSP", 0)
+AND
+NOT DB_InRegion(_, TRIGGERGUID_S_RC_DW_SourceLich_EatingBox_6b4e5c0a-9bae-4352-952e-c701860489c7)
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0)
+AND
+DB_RC_DW_SourceLichSkeletons(_Victim, _Skeleton)
+THEN
+ApplyStatus(_Victim, "EXPLODE", 1.0);
+CharacterDie((CHARACTERGUID)_Skeleton, 1, "DoT");
+
+IF
+StoryEvent(_Player, "RC_DW_SourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 0)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichDying", 0)
+AND
+PartyGetFlag((CHARACTERGUID)_Player, "RC_DW_FreedSourceLich", 1)
+AND
+NOT DB_OnlyOnce("RC_DW_SourceLichThank")
+AND
+NOT QRY_StartDialog(0, "RC_DW_SourceLichThank", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player)
+THEN
+ObjectClearFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+
+IF
+DialogStarted("RC_DW_SourceLichThank", _)
+THEN
+DB_OnlyOnce("RC_DW_SourceLichThank");
+
+IF
+StoryEvent(_Player, "RC_DW_SourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 0)
+AND
+PartyGetFlag((CHARACTERGUID)_Player, "RC_DW_FreedSourceLich", 0)
+THEN
+ObjectClearFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+
+IF
+StoryEvent(_Player, "RC_DW_SourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 1)
+AND
+CharacterIsEnemy(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, (CHARACTERGUID)_Player, 0)
+THEN
+Proc_StartDialog(0, "RC_DW_SourceLichEating", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player);
+
+IF
+StoryEvent(_Player, "RC_DW_SourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichDying", 1)
+AND
+CharacterIsInCombat((CHARACTERGUID)_Player, 0)
+AND
+CharacterIsEnemy(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, (CHARACTERGUID)_Player, 0)
+THEN
+Proc_StartDialog(0, "RC_DW_SourceLichBeg", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player);
+
+IF
+DialogStarted("RC_DW_SourceLichEating", _ID)
+THEN
+ObjectClearFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStopSpot", 0);
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStopSpot", 0);
+
+IF
+ObjectFlagSet("RC_DW_SourceLichDying", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _)
+THEN
+ProcCharacterDisableAllCrimes(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "knockdown_loop");
+
+IF
+DialogEnded("RC_DW_SourceLichBeg", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SpareSourceLich", 1)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X2, _Y2, _Z2)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X, _Y, _Z);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X2, _Y2, _Z2);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, 1);
+CreatePuddle(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, "SurfaceBlood", 5, 25, 5, 10, 0.02);
+
+IF
+DialogEnded("RC_DW_SourceLichEating", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichDrainSP", 1)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X2, _Y2, _Z2)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X, _Y, _Z);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X2, _Y2, _Z2);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1);
+
+IF
+DialogEnded("RC_DW_SourceLichBeg", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SpareSourceLich", 1)
+AND
+DB_RC_DW_SourceLichSkeletons(_Victim, _Skeleton)
+THEN
+CharacterDie((CHARACTERGUID)_Skeleton, 1, "DoT");
+
+IF
+DialogEnded("RC_DW_SourceLichBeg", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_KillSourceLich", 1)
+THEN
+CharacterSetAnimationOverride(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "");
+CharacterSetImmortal(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+SetStoryNpc(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+CharacterDie(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1, "DoT");
+
+IF
+DialogEnded("RC_DW_SourceLichBeg", _Inst)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_KillSourceLich", 1)
+AND
+DB_DialogPlayers(_Inst,_Player,_)
+THEN
+ObjectSetFlag(_Player,"GLO_PathOfBlood_MurderedInnocent");
+
+
+IF
+DialogEnded("RC_DW_SourceLichBeg", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SpareSourceLich", 1)
+AND
+DB_IsPlayer(_Player)
+THEN
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _Player, 50);
+CharacterSetRelationIndivFactionToIndivFaction(_Player, CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 50);
+
+PROC
+Proc_DialogFlagSetup("RC_DW_SourceLichEating", _, _Player)
+THEN
+ObjectClearFlag(_Player, "RC_DW_HasSourcePoint", 0);
+
+PROC
+Proc_DialogFlagSetup("RC_DW_SourceLichEating", _, _Player)
+AND
+CharacterGetSourcePoints((CHARACTERGUID)_Player, _SP)
+AND
+_SP > 0
+THEN
+ObjectSetFlag(_Player, "RC_DW_HasSourcePoint", 0);
+
+IF
+ObjectFlagSet("RC_DW_SourceLichDrainSP", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+THEN
+CharacterAddSourcePoints((CHARACTERGUID)_Player, -1);
+CharacterAddSourcePoints(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1);
+PlayAnimation(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "skill_cast_beam_soul_01_cast", "");
+PlayBeamEffect(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, "RS3_FX_Skills_Soul_Cast_Beam_Soul_Beam_01", "Dummy_R_HandFX", "Dummy_BodyFX");
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichDrainSP", _ID);
+
+//END_REGION
+IF
+StoryEvent(_Player, "RC_DW_StrongerSourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichDrainSP", 0)
+THEN
+Proc_StartDialog(0, "RC_DW_SourceLich_Stronger", CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _Player);
+
+IF
+StoryEvent(_Player, "RC_DW_StrongerSourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichDrainSP", 1)
+AND
+PartyGetFlag((CHARACTERGUID)_Player, "RC_DW_OfferedSourceLichSP", 1)
+THEN
+Proc_StartDialog(0, "RC_DW_SourceLich_Stronger", CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _Player);
+
+IF
+StoryEvent(_Player, "RC_DW_StrongerSourceLichSpot")
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichDrainSP", 1)
+AND
+PartyGetFlag((CHARACTERGUID)_Player, "RC_DW_OfferedSourceLichSP", 0)
+THEN
+ObjectClearFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichStartSpot", 0);
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichStartSpot", 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SummonCache")
+AND
+DB_RC_DW_SourceLich_FinalCache(_Thing)
+THEN
+SetOnStage(_Thing, 1);
+PlayEffect(_Thing, "RS3_FX_GP_ScriptedEvent_Bloodied_Appear_01");
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SummonCache")
+THEN
+SetOnStage(ITEMGUID_S_RC_DW_SourceLich_BloodFont_Off_af7785a7-3316-48c3-8a06-e98681a087cf, 0);
+ApplyStatus(CHARACTERGUID_S_RC_DW_SourceLichChild_2cff32c3-eb7b-4996-a07b-c01927342155, "EXPLODE", 1.0);
+SetStoryEvent(S_RC_DW_SourceLichAltar_b25f59fb-3b57-4c18-8375-fb1c8c48f266, "S_RC_DW_LichKing_AteChild");
+
+IF
+DialogEnded("RC_DW_SourceLich_Stronger", _ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+AND
+ObjectGetFlag(_Player, "RC_DW_SourceLich_DrawBlood",  1)
+AND
+CharacterGetHitpointsPercentage((CHARACTERGUID)_Player, _Perc)
+AND
+RealSubtract(_Perc, 10.0, _NewPerc)
+THEN
+CharacterSetReactionPriority(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "PickUpPhylactery", 200);
+SetHasDialog(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+CharacterSetHitpointsPercentage(_Player, _NewPerc);
+CreatePuddle(_Player, "SurfaceBlood", 5, 25, 5, 10, 0.02);
+
+IF
+DialogEnded("RC_DW_SourceLich_Stronger", _)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_ShowCache", 1)
+THEN
+CharacterSetReactionPriority(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "PickUpPhylactery", 200);
+SetHasDialog(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_RetrievedJar")
+THEN
+ProcCharacterDisableAllCrimes(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87);
+SetHasDialog(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+Proc_StartDialog(1, "RC_DW_AD_SourceLich_Free", CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87);
+GlobalSetFlag("RC_DW_SourceLichGotJar");
+
+IF
+AutomatedDialogEnded("RC_DW_AD_SourceLich_Free", _)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X, _Y, _Z)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.9, _X, _Y, _Z);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+
+IF
+StoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_FailedToFindJar")
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X, _Y, _Z)
+THEN
+PlayScaledEffectAtPosition("RS3_FX_Char_Creatures_Merman_Jump_Cast_01", 0.7, _X, _Y, _Z);
+SetOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0);
+
+//END_REGION
+
+
+//REGION Reward from Source Lich when it is freed
+IF
+ObjectFlagSet(_Flag, _Player, _)
+AND
+DB_RC_DW_SourceLichSkillBook(_Flag, _Table)
+THEN
+CharacterGiveReward((CHARACTERGUID)_Player, _Table);
+//END_REGION
+
+//REGION Delivering The note
+IF
+ObjectFlagSet("RC_DW_DeliverMordusNote", CHARACTERGUID_S_RC_DW_UnderTavern_DwarfBoss_8e58abc6-1010-4e67-97b2-b9686586e784,  _ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+AND
+QryTakeItemFromMagicPockets(_Player,ITEMGUID_S_RC_DW_MordusNote_77e74451-9fd9-4a84-a92b-48e9d296cee6,CHARACTERGUID_S_RC_DW_UnderTavern_DwarfBoss_8e58abc6-1010-4e67-97b2-b9686586e784)
+THEN
+DB_NOOP(1);
+
+IF
+GameBookInterfaceClosed(ITEMGUID_S_RC_DW_MordusNote_77e74451-9fd9-4a84-a92b-48e9d296cee6, _Player)
+AND
+PartyGetFlag(_Player, "RC_DW_GotDwarfBossAbandonedHouseJob", 1)
+AND
+QueryOnlyOnce("RC_DW_AD_FoundMordusNotes")
+THEN
+CloseUI(_Player, "Inventory");
+Proc_StartDialog(1, "RC_DW_AD_FoundMordusNote", _Player);
+//END_REGION
+
+//REGION Buttons in front of Source Lich
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichLightsButton")
+THEN
+NOT DB_OnlyOnce("RC_DW_SourceLichLightsButton");
+
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichLightsButton")
+AND
+QRY_RC_DW_SourceLichLightOut()
+THEN
+DB_OnlyOnce("RC_DW_SourceLichLightsButton");
+
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichLightsButton")
+AND
+QRY_RC_DW_SourceLichLightOut()
+AND
+DB_RC_DW_SourceLichLights(_Light)
+THEN
+ApplyStatus(_Light, "BURNING", -1.0);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichLightsButton")
+AND
+NOT DB_OnlyOnce("RC_DW_SourceLichLightsButton")
+AND
+NOT QRY_RC_DW_SourceLichLightOut()
+AND
+DB_RC_DW_SourceLichLights(_Light)
+THEN
+RemoveStatus(_Light, "BURNING");
+SetVarInteger(_Light, "IsStatusOn", 0);
+
+QRY
+QRY_RC_DW_SourceLichLightOut()
+AND
+DB_RC_DW_SourceLichLights(_Light)
+AND
+HasActiveStatus(_Light, "BURNING", 0)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichChestButton")
+AND
+QueryOnlyOnce("RC_DW_SourceLichChestButton")
+THEN
+PlayEffect(S_RC_DW_SourceLichChest1_199f693d-3c04-478a-b5a5-88ebb5a4a30e, "RS3_FX_GP_ScriptedEvent_Teleport_GenericSmoke_01");
+ItemUnLock(ITEMGUID_S_RC_DW_SourceLichChest1_199f693d-3c04-478a-b5a5-88ebb5a4a30e);
+//END_REGION
+
+//REGION Source Lich Guards
+IF
+DB_RC_DW_SourceLichGuards(_Pot, _Guard)
+THEN
+PROC_LoopEffect("RS3_FX_GP_Status_Cursed_01", _Pot, "CurseEffect", "RC_Main", "");
+SetOnStage(_Guard, 0);
+
+IF
+CharacterItemEvent(_, _, "RC_DW_SourceLichGuardButton")
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+IF
+ItemReceivedDamage(_Pot)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+IF
+ItemMoved(_Pot)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+
+IF
+CharacterUsedItem(_, _Pot)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+IF
+GlobalFlagSet("RC_DW_SourceLichFreed")
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+AND
+GetPosition(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, _X, _Y, _Z)
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+IF
+ItemDestroying(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+AND
+GetPosition(ITEMGUID_S_RC_DW_SourceRack_1b50ea58-25e1-4fc0-ac5d-18d318396f25, _X, _Y, _Z)
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+PROC
+PROC_RC_DW_SummonSourceLichGuards()
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+THEN
+SetFaction(_Pot, "RC_DW_LichGuards");
+SetCanFight(_Pot, 1);
+SetCanJoinCombat(_Pot, 1);
+
+PROC
+PROC_RC_DW_SummonSourceLichGuards()
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+NOT DB_CombatObjects(_Pot, _)
+AND
+GetClosestAlivePlayer(_Pot, _Player, _Dist)
+AND
+_Dist <= 50
+THEN
+EnterCombat(_Pot, _Player);
+
+PROC
+PROC_RC_DW_SummonSourceLichGuards()
+THEN
+DialogRequestStop(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);
+
+PROC
+ProcBlockPickupOfItem(_Char,_Jar)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+DB_RC_DW_SourceLichGuards(_Jar, _)
+THEN
+DB_CustomPickupItemResponse(_Char,_Jar,0);
+
+PROC
+ProcBlockPickupOfItem(_Char,_Jar)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+DB_RC_DW_SourceLichGuards(_Jar, _)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+PROC
+ProcBlockUseOfItem(_Char,_Jar)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+DB_RC_DW_SourceLichGuards(_Jar, _)
+THEN
+DB_CustomUseItemResponse(_Char,_Jar,0);
+
+PROC
+ProcBlockUseOfItem(_Char,_Jar)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+DB_RC_DW_SourceLichGuards(_Jar, _)
+AND
+QueryOnlyOnce("RC_DW_SummonSourceLichGuards")
+THEN
+PROC_RC_DW_SummonSourceLichGuards();
+
+IF
+StoryEvent(_Guard, "RC_DW_SourceLichGuardAppeared")
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _Guard)
+THEN
+ItemDestroy((ITEMGUID)_Pot);
+
+IF
+CombatStarted(_ID)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+DB_CombatObjects(_Pot, _ID)
+AND
+NOT DB_DestroyedItems(_Pot)
+AND
+QueryOnlyOnce("RC_DW_ForceJarTurn")
+THEN
+JumpToTurn(_Pot);
+
+IF
+ObjectTurnEnded(_Pot)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+THEN
+NOT DB_OnlyOnce("RC_DW_ForceJarTurn");
+
+IF
+ObjectTurnEnded(_Pot)
+AND
+DB_RC_DW_SourceLichGuards(_Pot, _)
+AND
+DB_CombatObjects(_Pot, _ID)
+AND
+DB_RC_DW_SourceLichGuards(_OtherPot, _)
+AND
+_OtherPot != _Pot
+AND
+DB_CombatObjects(_OtherPot, _ID)
+AND
+QueryOnlyOnce("RC_DW_ForceJarTurn")
+THEN
+JumpToTurn(_OtherPot);
+
+QRY
+QRY_RC_DW_SourceLichGuardsAlive()
+AND
+DB_RC_DW_SourceLichGuards(_, _Guard)
+AND
+CharacterIsDead((CHARACTERGUID)_Guard, 0)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterDied(_Guard)
+AND
+DB_RC_DW_SourceLichGuards(_, (CHARACTERGUID)_Guard)
+AND
+NOT QRY_RC_DW_SourceLichGuardsAlive()
+THEN
+GlobalSetFlag("RC_DW_LichGuardsDead");
+
+IF
+CharacterDied(_Guard)
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 1)
+AND
+DB_RC_DW_SourceLichGuards(_, (CHARACTERGUID)_Guard)
+THEN
+SetStoryEvent(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "ClearPeaceReturn");
+
+IF
+CharacterDied(_Guard)
+AND
+DB_RC_DW_SourceLichGuards(_, (CHARACTERGUID)_Guard)
+AND
+GlobalGetFlag("RC_DW_SourceLichFreed", 1)
+AND
+NOT QRY_RC_DW_SourceLichGuardsAlive()
+AND
+GetClosestAlivePlayer(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,_Player,_Dist)
+AND
+_Dist < 40.0
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichStartSpot", 0);
+ProcDefineReflectionDialog("RC_DW_RD_ReleasedSourceLich",_Player);
+
+IF
+DialogStarted("RC_DW_SourceLich_Stronger", _)
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichStopSpot", 0);
+ObjectClearFlag(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_SourceLichStopSpot", 0);
+
+/*IF
+ObjectTurnStarted(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+QRY_RC_DW_SourceLichGuardsAlive()
+AND
+DB_CombatCharacters(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _ID)
+AND
+DB_CombatCharacters(_Character, _ID)
+AND
+DB_RC_DW_SourceLichGuards(_, _Character)
+AND
+QueryOnlyOnce("RC_DW_AD_SourceLichCombat")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_SourceLichCombat", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351);*/
+
+//END_REGION
+
+//REGION Source Lich Elementals
+IF
+DB_RC_DW_SourceLichHears(_Elemental)
+THEN
+SetOnStage(_Elemental, 0);
+
+IF
+ObjectEnteredCombat(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _)
+AND
+GetDistanceTo(ITEMGUID_S_RC_DW_SourceLichAltar_b25f59fb-3b57-4c18-8375-fb1c8c48f266, CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _Dist)
+AND
+_Dist <= 8
+AND
+QueryOnlyOnce("RC_DW_SourceLich_Stronger_Reinforce")
+THEN
+PROC_RC_DW_SourceLich_Stronger_Reinforce();
+ 
+PROC
+PROC_RC_DW_SourceLich_Stronger_Reinforce()
+THEN
+//PlayEffect(ITEMGUID_S_RC_DW_SourceLich_BloodFont_Off_af7785a7-3316-48c3-8a06-e98681a087cf, "RS3_FX_GP_ScriptedEvent_ARX_TheFence_DrawBlood_01");
+PlayEffect(ITEMGUID_S_RC_DW_SourceLich_BloodFont_Off_af7785a7-3316-48c3-8a06-e98681a087cf, "RS3_FX_GP_ScriptedEvent_ARX_LichHeart_Spawn_01_Fountain");
+TimerLaunch("RC_DW_SourceLichReinforceDelay", 500);
+
+IF
+TimerFinished("RC_DW_SourceLichReinforceDelay")
+AND
+DB_RC_DW_SourceLichHears(_Elemental)
+AND
+GetPosition(_Elemental, _X, _Y, _Z)
+THEN
+PlayEffectAtPosition("RS3_FX_GP_ScriptedEvent_ARX_LichHeart_Spawn_01", _X, _Y, _Z);
+CharacterAppear((CHARACTERGUID)_Elemental, 1, "");
+CreateSurface(_Elemental,"SurfaceBlood",1.5,-1.0);
+//END_REGION
+
+//REGION Source Lich Warning
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_DW_SourceLichWarning_b97908ea-6c91-45e4-a54f-67c0f26c99e5)
+AND
+CharacterCanSee(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, 1)
+AND
+HasActiveStatus(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "LYING", 1)
+AND
+QueryOnlyOnce("RC_DW_SourceLichWarning")
+THEN
+Proc_StartDialog(0, "RC_DW_SourceLichWarning", CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player);
+//END_REGION
+
+//REGION AD on death
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 0)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+THEN
+TeleportTo(ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_AD_SourceLichDying", 0);
+PlayScaledEffectAtPosition("RS3_FX_GP_Combat_CorpseExplosion_Bone_01_Medium", 0.8, _X, _Y, _Z);
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 0)
+AND
+DB_IsPlayer(_Player)
+AND
+GetDistanceTo(_Player,CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,_Dist)
+AND
+_Dist <= 12.0
+THEN
+PlayEffect(_Player,"RS3_FX_GP_Combat_CameraShake_A");
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 1)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _X, _Y, _Z)
+THEN
+PlayEffectAtPosition("RS3_FX_GP_Combat_CorpseExplosion_SourceBone_01_Medium", _X, _Y, _Z);
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351)
+AND
+ObjectGetFlag(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, "RC_DW_SourceLichEating", 1)
+AND
+DB_IsPlayer(_Player)
+AND
+GetDistanceTo(_Player,CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,_Dist)
+AND
+_Dist <= 12.0
+THEN
+PlayEffect(_Player,"RS3_FX_GP_Combat_CameraShake_B");
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+GetPosition(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, _X, _Y, _Z)
+THEN
+TeleportTo(ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336, CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, "RC_DW_AD_SourceLich_StrongerDying", 0);
+PlayScaledEffectAtPosition("RS3_FX_GP_Combat_CorpseExplosion_SourceBone_01_Medium", 1.2, _X, _Y, _Z);
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+DB_IsPlayer(_Player)
+AND
+GetDistanceTo(_Player,CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351,_Dist)
+AND
+_Dist <= 12.0
+THEN
+PlayEffect(_Player,"RS3_FX_GP_ScriptedEvent_CameraShake_Intense_01");
+
+IF
+StoryEvent(ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336, "RC_DW_AD_SourceLichDying")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_SourceLichDying", ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336);
+
+IF
+StoryEvent(ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336, "RC_DW_AD_SourceLich_StrongerDying")
+THEN
+Proc_StartDialog(1, "RC_DW_AD_SourceLich_StrongerDying", ITEMGUID_S_RC_DW_SourceLich_KilledHelper_5b9fed8a-5085-42c9-b8a1-06eb66e89336);
+//END_REGION
+
+//REGION DEBUG 
+
+IF
+TextEventSet("SourceLichSkelTest")
+AND
+DB_RC_DW_SourceLichSkeletons(_Victim, _Skeleton)
+THEN
+TeleportTo(_Skeleton, _Victim);
+PlayEffect(_Victim, "RS3_FX_Skills_Totem_Impact_Summon_Decay_02");
+ApplyStatus(_Victim, "EXPLODE", 0.0);
+CharacterAppear((CHARACTERGUID)_Skeleton, 1, "");
+
+IF
+TextEventSet("SourceLichReinforce_Test")
+THEN
+PROC_RC_DW_SourceLich_Stronger_Reinforce();
+//PlayEffect(ITEMGUID_S_RC_DW_SourceLich_BloodFont_Off_af7785a7-3316-48c3-8a06-e98681a087cf, "RS3_FX_GP_ScriptedEvent_ARX_TheFence_DrawBlood_01");
+//PlayEffect(ITEMGUID_S_RC_DW_SourceLich_BloodFont_On_ac11b5ce-ae0a-491a-8969-3bedddf84ef9, "RS3_FX_GP_ScriptedEvent_ARX_TheFence_DrawBlood_01");
+
+//END_REGION
+
+//REGION Block manipulation of jar by Source Lich attacking
+PROC
+ProcBlockPickupOfItem((CHARACTERGUID)_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437)
+AND
+NOT DB_Dead(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+NOT DB_GlobalFlag("RC_DW_SourceLichGotJar")
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+ObjectIsOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1)
+THEN
+DB_CustomPickupItemResponse(_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437,0);
+PROC_RC_DW_SetLichHostileToPlayer(_Char);
+SetRelationFactionToPlayers("RC_DW_SourceLich", 0);
+
+
+PROC
+ProcBlockUseOfItem((CHARACTERGUID)_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437)
+AND
+NOT DB_Dead(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+NOT DB_GlobalFlag("RC_DW_SourceLichGotJar")
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+ObjectIsOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1)
+THEN
+DB_CustomPickupItemResponse(_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437,0);
+PROC_RC_DW_SetLichHostileToPlayer(_Char);
+SetRelationFactionToPlayers("RC_DW_SourceLich", 0);
+
+PROC
+ProcBlockMoveOfItem((CHARACTERGUID)_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437)
+AND
+NOT DB_Dead(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87)
+AND
+NOT DB_GlobalFlag("RC_DW_SourceLichGotJar")
+AND
+CharacterIsInCombat(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 0)
+AND
+CharacterIsPlayer(_Char,1)
+AND
+ObjectIsOnStage(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1)
+THEN
+DB_CustomMoveItemResponse(_Char,ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437,0);
+PROC_RC_DW_SetLichHostileToPlayer(_Char);
+SetRelationFactionToPlayers("RC_DW_SourceLich", 0);
+
+PROC
+PROC_RC_DW_SetLichHostileToPlayer((CHARACTERGUID)_Char)
+AND
+DB_IsPlayer(_Player)
+AND
+CharacterIsInPartyWith(_Player, _Char, 1)
+THEN
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, _Player, 0);
+CharacterSetRelationIndivFactionToIndivFaction(_Player, CHARACTERGUID_S_RC_DW_SourceLich_adf5b715-1e96-4e48-88a7-d68a5b6d0351, 0);
+//END_REGION
+
+//REGION Setup Soul Jar
+IF
+ObjectFlagSet("Absorb_SoulJar", ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437, _)
+THEN
+CharacterDie(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1, "DoT");
+
+IF
+ItemDestroyed(ITEMGUID_S_RC_DW_SourceLich_Jar_86d90342-6351-4e07-b583-cf455f709437)
+THEN
+CharacterDie(CHARACTERGUID_S_RC_DW_SourceLich_Stronger_2c8d84ef-bfd0-4ff7-93fe-b3728d05ee87, 1, "DoT");
+
+//END_REGION
+PROC
+ProcRegionEnded("RC_Main")
+THEN
+GoalCompleted;
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "ReapersCoast"

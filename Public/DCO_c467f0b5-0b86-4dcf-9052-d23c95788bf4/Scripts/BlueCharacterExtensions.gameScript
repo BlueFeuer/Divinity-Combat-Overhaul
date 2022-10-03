@@ -25,19 +25,66 @@ VARS
 ON
 	OnCharacterEvent(_Character, Blue_ArbiterCycle7_Misc)
 ACTIONS
-	//Check ignored tag
+	// Check ignore tag
+	// If vanilla removes the ignore tag while the player is invisible, it needs to be re-added
+	// If vanilla has applied the ignore tag, it needs to not be removed when invisibility is removed
 	IF "c1"
 		IsTagged(_Character, "AI_IGNORED_TARGET")
 	THEN
 		//DisplayCombatInfoText(_Character, "Ignored", 5)
-		IF "!c1&!c2&!c3&!c4&!c5"
-			CharacterHasStatus(_Character, Blue_InvisibleOrange)
-			CharacterHasStatus(_Character, Blue_InvisibleBlue)
-			CharacterHasStatus(_Character, Blue_InvisibleWhite)
-			CharacterHasStatus(_Character, SNEAKING)
-			CharacterHasStatus(_Character, Blue_InvisibleBlind)
+		// Check if DCO ignore tag is applied, clear it if it shouldn't be, and clear ignore tag if vanilla tag isn't also applied
+		IF "c1"
+			IsTagged(_Character, "AI_IG_DCO")
 		THEN
-			ClearTag(_Character, "AI_IGNORED_TARGET")
+			IF "!c1&!c2&!c3&!c4&!c5"
+				CharacterHasStatus(_Character, Blue_InvisibleOrange)
+				CharacterHasStatus(_Character, Blue_InvisibleBlue)
+				CharacterHasStatus(_Character, Blue_InvisibleWhite)
+				CharacterHasStatus(_Character, SNEAKING)
+				CharacterHasStatus(_Character, Blue_InvisibleBlind)
+			THEN
+				ClearTag(_Character, "AI_IG_DCO")
+				IF "!c1"
+					IsTagged(_Character, "AI_IG_VAN")
+				THEN
+					ClearTag(_Character, "AI_IGNORED_TARGET")
+				ENDIF
+			ENDIF
+		ELSE
+			// If the DCO tag wasn't applied when the ignore tag is, assume vanilla applied the ignore tag
+			// If vanilla applies the ignore tag while the character is already ignored under DCO, this will not catch it
+			// But, this is only meant to be a safeguard
+			// Any instance in vanilla where the ignore tag is applied should be adjusted so both the vanilla and ignore tag are applied.
+			// There's only a handful of cases I'm aware of - Most notably RC_DW_WC_TurnBasedAmbush, where the sequence is otherwise non-functional.
+			IF "!c1"
+				IsTagged(_Character, "AI_IG_VAN")
+			THEN
+				SetTag(_Character, "AI_IG_VAN")
+			ENDIF
+		ENDIF
+	ELSE
+		// Ignore tag can only be removed by DCO if the vanilla tag isn't applied
+		// Ergo if ignore tag isn't on the target and the vanilla tag is, the ignore tag was removed by vanilla and the vanilla tag shouldn't be there
+		IF "c1"
+			IsTagged(_Character, "AI_IG_VAN")
+		THEN
+			ClearTag(_Character, "AI_IG_VAN")
+		ENDIF
+		// If the ignore tag was removed but the DCO tag was not, then it was likely vanilla removing it, and the ignore tag needs reapplied
+		IF "c1"
+			IsTagged(_Character, "AI_IG_DCO")
+		THEN
+			IF "!c1&!c2&!c3&!c4&!c5"
+				CharacterHasStatus(_Character, Blue_InvisibleOrange)
+				CharacterHasStatus(_Character, Blue_InvisibleBlue)
+				CharacterHasStatus(_Character, Blue_InvisibleWhite)
+				CharacterHasStatus(_Character, SNEAKING)
+				CharacterHasStatus(_Character, Blue_InvisibleBlind)
+			THEN
+				ClearTag(_Character, "AI_IG_DCO")
+			ELSE
+				SetTag(_Character, "AI_IGNORED_TARGET")
+			ENDIF
 		ENDIF
 	ENDIF
 

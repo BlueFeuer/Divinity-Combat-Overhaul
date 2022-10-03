@@ -1,0 +1,1070 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+//WIKI: https://sites.google.com/a/larian.com/larian-wikisite/home/quest-design-documentation/savingavenging-saheila
+
+PROC_RC_MIL_SetupSaheilaRescue();
+
+SetHasDialog(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, 1);
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+
+DB_HasStoryEvent(ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c, "RC_MIL_HasRoostsHand");
+DB_GiveItemToEventWithClear(ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c,"RC_MIL_GiveRoostsHand");
+
+DB_HasStoryEvent(ITEMGUID_S_RC_MIL_SaheilaRewardSpear_590b4847-e424-45fc-b7b2-a9a2606b6888, "RC_MIL_HasSaheilaRewardSpear");
+DB_GiveItemToEventWithClear(ITEMGUID_S_RC_MIL_SaheilaRewardSpear_590b4847-e424-45fc-b7b2-a9a2606b6888, "RC_MIL_GiveSaheilaRewardSpear");
+
+DB_Dialogs((CHARACTERGUID)S_RC_MIL_LoneWolfM_e6a57615-aee7-46b2-927a-a089ccbfdc22, "RC_MIL_LoneWolf1");
+DB_RC_MIL_LoneWolves((CHARACTERGUID)S_RC_MIL_LizardWolf_3e69ef2b-3fa8-4e26-8117-2fec05c4d9a9, "RC_MIL_LizardWolf", "RC_MIL_AD_LizardWolf_Alert");
+DB_RC_MIL_LoneWolves((CHARACTERGUID)S_RC_MIL_LoneWolfF_cecf1eb8-1ff8-425f-8859-91482edb9eb6, "RC_MIL_LoneWolfF");
+DB_RC_MIL_LoneWolves(S_RC_MIL_DwarfWolf_18352a24-4b55-4fa5-ba9f-e6d347336d6e, "RC_MIL_DwarfWolf", "RC_MIL_AD_DwarfWolf_Alert");
+DB_RC_MIL_LoneWolves(CHARACTERGUID_S_RC_MIL_DwarfWolfM_9e42d7db-c8d3-4ef3-889b-99f78f95d715, "RC_MIL_DwarfWolfM");
+DB_RC_MIL_LoneWolves(CHARACTERGUID_S_RC_MIL_LoneWolf2_49413cc0-7439-48c8-b5fc-375794243b7f, "RC_MIL_LoneWolf2");
+DB_RC_MIL_LoneWolves(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+DB_RC_MIL_LoneWolves((CHARACTERGUID)S_RC_MIL_SharpShooter1_31fc7260-d0d9-4290-a2b1-fcd23c431d61, "RC_MIL_Sharpshooter1");
+DB_RC_MIL_LoneWolves(S_RC_MIL_Sharpshooter2_a0f76bb6-2935-44fd-a66f-13198a10260d, "RC_MIL_Sharpshooter2");
+DB_RC_MIL_LoneWolves(S_RC_MIL_GuardWolf1_dd6de19c-bcce-40d3-b4ce-522a735e4fee, "RC_MIL_LoneWolfGuard");
+DB_RC_MIL_LoneWolves(S_RC_MIL_GuardWolf2_c55778a5-fa1f-484d-86d2-dc625d51ca59, "RC_MIL_GuardWolf2");
+DB_RC_MIL_LoneWolves(S_RC_MIL_RoostGuard2_4edaa723-4a39-4fde-b141-86437550db44, "RC_MIL_RoostGuard2");
+DB_RC_MIL_LoneWolves(CHARACTERGUID_S_RC_MIL_RoostGuard1_d5b28c37-16d0-43cb-bbb4-b67e77905b95, "RC_MIL_RoostGuard1");
+DB_RC_MIL_LoneWolves(CHARACTERGUID_S_RC_MIL_RoostWolf1_a1e74099-ea1d-4a93-b841-78ea1af31cc5, "RC_MIL_RoostWolf1");
+DB_RC_MIL_LoneWolves(CHARACTERGUID_S_RC_MIL_RoostWolf2_eb2ddf7e-bd6a-4f79-bb52-3a09a5011639, "RC_MIL_RoostWolf2");
+
+DB_RC_MIL_TovahsElves((CHARACTERGUID)S_RC_MIL_ElvenRangerF_58613267-ab70-408e-8564-9825d9b5383e);
+DB_RC_MIL_TovahsElves(S_RC_MIL_ElvenRangerM_c1b8a0ea-7df4-4970-8c2a-17a26245d4d9);
+DB_RC_MIL_TovahsElves(S_RC_MIL_ElfShaman_ce67ffa8-7919-4ec3-8440-23ed94b7cf5b);
+DB_RC_MIL_TovahsElves(S_RC_MIL_ElvenTank_21cf95b4-c4a7-4a54-9beb-71a9ba711aba);
+DB_RC_MIL_TovahsElves(CHARACTERGUID_S_RC_MIL_ElvenTank2_55dc1982-2f24-4ece-a592-ad3dda6272cb);
+DB_RC_MIL_TovahsElves(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a);
+
+DB_DeadEvent(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "RC_MIL_TovahDied");
+
+SetOnStage(ITEMGUID_S_RC_MIL_Limb_SaheilaHand_0e4ea506-cf68-4363-a263-fac1640a44b4, 0);
+
+DB_RC_MIL_SaheilaEscapeTriggers((TRIGGERGUID)TRIGGERGUID_S_RC_MIL_SaheilaEscape_Upstairs_263a6dc4-466a-429f-b688-6aa9dd8648a0);
+DB_RC_MIL_SaheilaEscapeTriggers(TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941);
+
+DB_QuestDef_State("RC_MIL_AvengingSaheila","LearnedAvenge", 1);
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila","LearnedAvenge2", "QuestUpdate_RC_MIL_AvengingSaheila_LearnedAvenge");//REMOVED
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila","AteHandNotElf", "RC_MIL_AteRoostsHandNotElf");
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila","AteHandElf", "RC_MIL_AteRoostsHandElf");
+DB_QuestDef_State("RC_MIL_AvengingSaheila","LearnedAvenge_OtherNPC", 1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","ToldKilledSaheila", -1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","GotHand");
+DB_QuestDef_State("RC_MIL_AvengingSaheila","RoostDead");
+DB_QuestDef_State("RC_MIL_AvengingSaheila","TovahDead", -1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","DeliveredHand", -1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","InformedTovah", -1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","CloseLeftRC", -1);
+DB_QuestDef_State("RC_MIL_AvengingSaheila","EnterSawmill");
+
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila", "AgreedAvenge", "RC_MIL_Saheila_AgreedAvenge");
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila", "RoostTrap", "RC_MIL_RoostTrap");
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila", "PersuadedLetHelp", "RC_MIL_Tovah_PersuadedLetHelp");
+DB_QuestDef_UpdateEvent("RC_MIL_AvengingSaheila", "PersuadedLetStay", "RC_MIL_Tovah_PersuadedLetStay");
+
+DB_QuestDef_State("RC_MIL_RescuingSaheila","LearnedRescue", 1);
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila","LearnedRescue2", "QuestUpdate_RC_MIL_RescuingSaheila_LearnedRescue");//REMOVED
+DB_QuestDef_State("RC_MIL_RescuingSaheila","RecruitedSaheila_NoTovah", 1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","RecruitedSaheila");
+DB_QuestDef_State("RC_MIL_RescuingSaheila","LearnedRescue_OtherNPC", 1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","ToldSaheilaDead", -1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","SaheilaAndTovahDead", -1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","SaheilaThanks", -1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","TovahDead");
+DB_QuestDef_State("RC_MIL_RescuingSaheila","CloseLeftRC", -1);
+DB_QuestDef_State("RC_MIL_RescuingSaheila","EnterSawmill");
+Proc_JDF_CreateCustomFlagsDependency("RC_MIL_FoundSaheilaDead","QuestUpdate_RC_MIL_RescuingSaheila_TovahDead","QuestUpdate_RC_MIL_RescuingSaheila_SaheilaAndTovahDead");
+
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "AgreedRescue", "RC_MIL_Saheila_AgreeRescue");
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "RoostTrap", "RC_MIL_RoostTrap");
+DB_QuestDef_AddEvent("RC_MIL_RescuingSaheila", "RC_MIL_RescuedSaheila");
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "RescuedSaheila", "RC_MIL_RescuedSaheila");
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "SaheilaDead", "RC_MIL_FoundSaheilaDead");
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "PersuadedLetHelp", "RC_MIL_Tovah_PersuadedLetHelp");
+DB_QuestDef_UpdateEvent("RC_MIL_RescuingSaheila", "PersuadedLetStay", "RC_MIL_Tovah_PersuadedLetStay");
+
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, CHARACTERGUID_S_GLO_Tovah_Ghost_807a60f7-3caa-4465-af6d-96ca6209c384, "RC_MIL_TovahsGhost");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3,CHARACTERGUID_S_RC_MIL_Roost_Ghost_634eadd1-1fca-419f-8d37-2e5637cad2d3,"RC_MIL_RoostGhost");
+
+/*DB_RC_MIL_LoneWolfGhosts(CHARACTERGUID_S_RC_MIL_RoostHaunt1_76fbcef8-9ac1-49ee-a48b-2a7fc10b2228);
+DB_RC_MIL_LoneWolfGhosts(CHARACTERGUID_S_RC_MIL_RoostHaunt2_6fd27c19-e6de-4236-9cc4-e25729e23037);
+DB_RC_MIL_LoneWolfGhosts(CHARACTERGUID_S_RC_MIL_RoostHaunt3_88291768-f1a2-49c7-82ee-bb4cf2beb7e7);
+DB_RC_MIL_LoneWolfGhosts(CHARACTERGUID_S_RC_MIL_RoostHaunt4_50bb29c7-aa35-419e-8241-7a9bb7eab2b5);*/
+
+/*DB_HauntedNPC(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_RC_MIL_RoostHaunt1_76fbcef8-9ac1-49ee-a48b-2a7fc10b2228);
+DB_HauntedNPC(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_RC_MIL_RoostHaunt2_6fd27c19-e6de-4236-9cc4-e25729e23037);
+DB_HauntedNPC(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_RC_MIL_RoostHaunt3_88291768-f1a2-49c7-82ee-bb4cf2beb7e7);
+DB_HauntedNPC(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_RC_MIL_RoostHaunt4_50bb29c7-aa35-419e-8241-7a9bb7eab2b5);*/
+
+DB_DeadEvent(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost_Dead");
+DB_KilledEvent(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_KilledRoost");
+
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_RoostHaunt1_76fbcef8-9ac1-49ee-a48b-2a7fc10b2228, "RC_MIL_RoostHaunt1");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_RoostHaunt2_6fd27c19-e6de-4236-9cc4-e25729e23037, "RC_MIL_RoostHaunt2");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_RoostHaunt3_88291768-f1a2-49c7-82ee-bb4cf2beb7e7, "RC_MIL_RoostHaunt3");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_RoostHaunt4_50bb29c7-aa35-419e-8241-7a9bb7eab2b5, "RC_MIL_RoostHaunt4");
+
+SetOnStage(S_RC_MIL_SaheilaWand_9a28e81b-2deb-4b05-b22a-12547808061e, 0);
+DB_GLO_CheckSpeakerNumber(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, 20.0);
+
+DB_PossessedItem(ITEMGUID_S_RC_MIL_AncestorTree_MinePuzzle_6ed9c0b8-9768-431d-afd4-e7f86bd61192, ITEMGUID_S_RC_MIL_AncestorTree_MinePuzzle_Ghost_c373bfe3-d1a9-4961-9e40-0a4ea76a0662, "RC_MIL_AncestorTree_MinePuzzle", "RC_MIL_AncestorTree_MinePuzzle_SeeAura");
+
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_DeadElf1_69ae964e-ec02-4561-9347-61e7e62fb396, CHARACTERGUID_S_RC_MIL_DeadElf1_Ghost_fdd51de6-9300-4749-bcc7-7284faa28e43, "RC_MIL_DeadElf1");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_DeadElf2_27021558-559d-4d78-8674-f1d98d758dc6, CHARACTERGUID_S_RC_MIL_DeadElf2_Ghost_0ab6ac6f-a29c-4303-9956-d906e160158d, "RC_MIL_DeadElf2");
+DB_Ghosts(CHARACTERGUID_S_RC_MIL_DeadElf3_cbef7e39-cc55-42cf-9559-3c20e8ff37f6, CHARACTERGUID_S_RC_MIL_DeadElf3_Ghost_fcfb2296-5146-47c7-ba18-22ff14948917, "RC_MIL_DeadElf3");
+
+DB_Dialogs(ITEMGUID_S_RC_MIL_BlackMirror_c9e66bf5-3f62-4235-ae11-03f9f7f71dfb, "RC_MIL_BlackMirror");
+DB_DoNotFace(CHARACTERGUID_S_RC_MIL_RoostWolf1_a1e74099-ea1d-4a93-b841-78ea1af31cc5);
+DB_DoNotFace(CHARACTERGUID_S_RC_MIL_RoostWolf2_eb2ddf7e-bd6a-4f79-bb52-3a09a5011639);
+
+DB_PossessedItem(ITEMGUID_S_RC_MIL_DeerTrophy_13467479-0b44-4287-aee2-b4141d53196f, ITEMGUID_S_RC_MIL_DeerTrophy_Ghost_473be41c-c1b8-4eac-8dc4-993e264b7b32, "RC_MIL_DeerTrophy", "RC_MIL_DeerTrophy_SeeAura");
+ProcCharacterDisableCrime(CHARACTERGUID_S_RC_MIL_LoneWolf1_e6a57615-aee7-46b2-927a-a089ccbfdc22, "Trespassing");
+DB_KilledEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_KilledSaheila");
+
+
+SetOnStage(ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c, 0);
+DB_SeenDeadNPCPartyFlag(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "QuestUpdate_RC_MIL_RescuingSaheila_TovahDead");
+KBSECTION
+//REGION Setup
+
+PROC
+PROC_RC_MIL_SetupSaheilaRescue()
+AND
+NOT DB_Dead(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+TeleportTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaStart_692b443a-acea-4f2c-bb4c-1bda28034199);
+CharacterLevelUpTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 15);
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_BoundRoost");
+SetCanFight(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0);
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "ReturnToCave", 0);
+SetVarInteger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "bool_CanCower", 0);
+ProcCharacterDisableAllCrimes(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+//DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+RemoveStatus(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "SOURCE_MUTED");
+ProcRemoveSourceCollar(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+CharacterAddSourcePoints(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 2);
+SetTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET");
+SetTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IG_VAN");
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_PREFERRED_TARGET");
+DB_RC_MIL_LoneWolves(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_RoostWithSaheila");
+//DB_Dialogs(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RoostWithSaheila");
+
+PROC
+PROC_RC_MIL_SetupSaheilaRescue()
+AND
+DB_Dead(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+GlobalSetFlag("RC_MIL_SaheilaDeadAtMillStart");
+SetOnStage(ITEMGUID_RC_MIL_SaheilaContract_b48d8e64-7a33-4bdf-811e-e4882ca68164, 0);
+SetVarFixedString(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "currentState", "State_Waiting");
+DB_Dialogs(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+
+IF
+TextEventSet("RC_MIL_SaheilaDied")
+THEN
+GlobalSetFlag("RC_MIL_SaheilaDeadAtMillStart");
+//END_REGION
+
+//REGION Avenging Saheila
+IF
+ObjectFlagSet("RC_MIL_EatRoostsCorpse", S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, (CHARACTERGUID)_Player)
+THEN
+ItemRemove(S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c);
+PlayAnimation(S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "use_eat", "");
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c)
+AND
+IsTagged(_Player, "ELF", 1)
+THEN
+PartySetFlag(_Player, "RC_MIL_AteRoostsHandElf", 0);
+
+IF
+CharacterUsedItem(_Player, ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c)
+AND
+IsTagged(_Player, "ELF", 0)
+THEN
+PartySetFlag(_Player, "RC_MIL_AteRoostsHandNotElf", 0);
+
+IF
+CharacterDying(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3)
+AND
+GlobalGetFlag("RC_MIL_SaheilaDeadAtMillStart", 1) 
+THEN
+SetOnStage(ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c, 1);
+ItemToInventory(ITEMGUID_S_RC_MIL_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c, CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3);
+
+IF
+CharacterEnteredTrigger(_Player,TRIGGERGUID_S_RC_MIL_MillEnterTrigger3_83f23314-c2ab-4aed-8682-7dcef5b630d0)
+AND
+DB_IsPlayer(_Player)
+THEN
+PartySetFlag(_Player,"QuestUpdate_RC_MIL_AvengingSaheila_EnterSawmill");
+PartySetFlag(_Player,"QuestUpdate_RC_MIL_RescuingSaheila_EnterSawmill");
+
+//END_REGION
+
+//REGION Rescuing Saheila
+
+IF
+CharacterDied(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3)
+THEN
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+
+//REGION Saheila dies upstairs (i.e. with Roost present)
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SawmillUpstairsArea_55c162ac-48b6-4266-b1f3-804c042605e0, 1)
+THEN
+GlobalSetFlag("RC_MIL_SaheilaDiedCaptive");
+//END_REGION
+
+//REGION Saheila stops being related 
+PROC
+Proc_ObjectLeftCombat(_Characer, _ID)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _ID)
+AND
+IsTagged(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET", 1)
+AND
+NOT QRY_RC_MIL_SaheilaInCombatWithAlly()
+THEN
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET");
+
+QRY
+QRY_RC_MIL_SaheilaInCombatWithAlly()
+AND
+DB_CombatCharacters(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _ID)
+AND
+DB_CombatCharacters(_Character, _ID)
+AND
+CharacterIsEnemy(_Character, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0)
+THEN
+DB_NOOP(0);
+
+//END_REGION
+
+//REGION Trying to interact with Saheila
+IF
+CharacterUsedSkillOnTarget(_, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _, _, _)
+AND
+GlobalGetFlag("RC_MIL_SaheilaFreed", 0)
+THEN
+GlobalSetFlag("RC_MIL_SawmillAlert");
+//END_REGION
+
+//REGION NPC reactions to Saheila escaping.
+IF
+ObjectFlagSet("RC_MIL_FreeSaheila", _Player, _ID)
+THEN
+DB_RC_MIL_FreeSaheilaDialog(_ID);
+
+IF
+DialogEnded(_, _ID)
+AND
+DB_RC_MIL_FreeSaheilaDialog(_ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+THEN
+GlobalSetFlag("RC_MIL_SawmillAlert");
+ObjectSetFlag(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_FocusSaheila", 0);
+
+//END_REGION
+
+//REGION Escorting Saheila out
+/*IF
+CharacterDied(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3)
+THEN
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET");*/
+
+IF
+GlobalFlagSet("RC_MIL_ToldRoostCameForSaheila")
+THEN
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET");
+
+IF
+DialogEnded(_, _ID)
+AND
+DB_RC_MIL_FreeSaheilaDialog(_ID)
+AND
+NOT DB_OnlyOnce("RC_MIL_FreeSaheila")
+AND
+NOT QRY_RC_MIL_TovahElfAlive()
+THEN
+Proc_StartDialog(1, "RC_MIL_AD_SaheilaAnticipateDead", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+
+IF
+DialogEnded(_, _ID)
+AND
+DB_RC_MIL_FreeSaheilaDialog(_ID)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+AND
+QueryOnlyOnce("RC_MIL_FreeSaheila")
+THEN
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, 0);
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_Idle");
+CharacterSetAnimationOverride(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "");
+SetCanFight(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+SetVarInteger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "bool_CanCower", 1);
+ProcCharacterEnableAllCrimes(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+GlobalSetFlag("RC_MIL_SaheilaFreed");
+SetVarFixedString(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "currentState", "State_Waiting");
+SetVarObject(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "ChairUse", ITEMGUID_S_RC_MIL_RoostChairUpstairs_0c6c53f5-3398-43c9-bda6-f371a50e3054);
+RemoveStatus(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "QUEST_TIEDUP");
+SetOnStage(S_RC_MIL_SaheilaWand_9a28e81b-2deb-4b05-b22a-12547808061e, 1);
+ItemToInventory(S_RC_MIL_SaheilaWand_9a28e81b-2deb-4b05-b22a-12547808061e, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+DB_Dialogs(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+PROC_RC_MIL_RecruitedSaheilaUpdate((CHARACTERGUID)_Player);
+
+PROC
+PROC_RC_MIL_RecruitedSaheilaUpdate((CHARACTERGUID)_Player)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila_NoTovah", 0)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila", 0)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_LearnedRescue", 0)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila_NoTovah");
+
+PROC
+PROC_RC_MIL_RecruitedSaheilaUpdate((CHARACTERGUID)_Player)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila_NoTovah", 0)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila", 0)
+AND
+PartyGetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_LearnedRescue", 1)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_MIL_RescuingSaheila_RecruitedSaheila");
+
+IF
+ItemAddedToCharacter(S_RC_MIL_SaheilaWand_9a28e81b-2deb-4b05-b22a-12547808061e, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+CharacterGetEquippedWeapon(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _CurrentWeapon)
+AND
+QueryOnlyOnce("RC_MIL_SaheilaEquipWand")
+THEN
+CharacterUnequipItem(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, (ITEMGUID)_CurrentWeapon);
+CharacterEquipItem(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaWand_9a28e81b-2deb-4b05-b22a-12547808061e);
+
+IF
+DialogEnded(_, _ID)
+AND
+DB_RC_MIL_FreeSaheilaDialog(_ID)
+AND
+NOT DB_RC_MIL_SaheilaRescuer(_)
+AND
+DialogGetInvolvedPlayer(_ID, 1, _Player)
+AND
+GlobalGetFlag("RC_MIL_SaheilaIsAtCamp", 0)
+THEN
+CharacterAddToPlayerCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, (CHARACTERGUID)_Player);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Fallback", 0);//Saheila should not be avoiding surfaces on her own - she just follows meekly.
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Wait", 0);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_MoveBack", 0);
+DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player);
+ObjectClearFlag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RescuerDead", 0);
+
+IF
+CharacterDied(_Player)
+AND
+DB_RC_MIL_SaheilaRescuer(_Player)
+THEN
+NOT DB_RC_MIL_SaheilaRescuer(_Player);
+ObjectClearFlag(_Player, "RC_MIL_FreeSaheila", 0);
+ObjectSetFlag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RescuerDead", 0);
+CharacterRemoveFromPlayerCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Fallback", 3201);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Wait", 3200);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_MoveBack", 3200);
+
+IF
+CharacterEnteredTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941)
+THEN
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_IGNORED_TARGET");
+SetTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_PREFERRED_TARGET");
+
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941)
+THEN
+ClearTag(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "AI_PREFERRED_TARGET");
+
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player)
+THEN
+CharacterRemoveFromPlayerCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Fallback", 3201);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Wait", 3200);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_MoveBack", 3200);
+NOT DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player);
+//END_REGION
+
+//REGION Area from which Saheila needs to escape.
+IF
+DB_RC_MIL_SaheilaEscapeTriggers(_Trigger)
+THEN
+TriggerRegisterForCharacter(_Trigger, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Trigger)
+AND
+DB_RC_MIL_SaheilaEscapeTriggers(_Trigger)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscape_Upstairs_263a6dc4-466a-429f-b688-6aa9dd8648a0, 0)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941, 0)
+AND
+DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player)
+AND
+NOT QRY_SpeakerIsAvailableAndInDialogRange(_Player, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_WaitThank");
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaThankRescuer");
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+PROC_RC_MIL_ResetSaheila_COMREQ_Denied();
+
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Trigger)
+AND
+DB_RC_MIL_SaheilaEscapeTriggers(_Trigger)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscape_Upstairs_263a6dc4-466a-429f-b688-6aa9dd8648a0, 0)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941, 0)
+AND
+DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player)
+AND
+QRY_SpeakerIsAvailableAndInDialogRange(_Player, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+NOT QRY_StartDialog(0, "RC_MIL_SaheilaThankRescuer", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player)
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_WaitThank");
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaThankRescuer");
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+PROC_RC_MIL_ResetSaheila_COMREQ_Denied();
+
+IF
+CharacterLeftTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Trigger)
+AND
+DB_RC_MIL_SaheilaEscapeTriggers(_Trigger)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscape_Upstairs_263a6dc4-466a-429f-b688-6aa9dd8648a0, 0)
+AND
+ObjectIsInTrigger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, TRIGGERGUID_S_RC_MIL_SaheilaEscapedTrigger_218d7d4e-c674-4583-9436-541bbc237941, 0)
+AND
+DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player)
+THEN
+CharacterRemoveFromPlayerCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Fallback", 3201);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_Wait", 3200);
+CharacterSetReactionPriority(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "DangerousSurfaces_MoveBack", 3200);
+PartySetFlag(_Player, "RC_MIL_RescuedSaheila", 0);
+ObjectSetFlag(_Player, "GLO_SetTag_HERO", 0);
+NOT DB_RC_MIL_SaheilaRescuer((CHARACTERGUID)_Player);
+PROC_RC_MIL_ResetSaheila_COMREQ_Denied();
+
+// Saheila was in the Roost dialog, so if the Roost COM has been denied, Saheila is now also in the 
+// DB_OriginMoment_COMREQ_Denied() database. She got a new dialog with a new COM-possibility ->
+// reset
+PROC
+PROC_RC_MIL_ResetSaheila_COMREQ_Denied()
+AND
+DB_Origins(_Origin)
+AND
+DB_OriginMoment_COMREQ_Denied(_Origin, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+NOT DB_OriginMoment_COMREQ_Denied(_Origin, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+//END_REGION
+
+//REGION Saheila thanks the player & goes to the Elves after she has made it out of the Sawmill.
+IF
+StoryEvent(_Player, "RC_MIL_SaheilaThankRescuer")
+THEN
+Proc_StartDialog(0, "RC_MIL_SaheilaThankRescuer", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_NobodyNearSaheila")
+THEN
+PROC_RC_MIL_SaheilaToElves();
+
+IF
+DialogEnded("RC_MIL_SaheilaThankRescuer", _)
+THEN
+PROC_RC_MIL_SaheilaToElves();
+
+PROC
+PROC_RC_MIL_SaheilaToElves()
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+
+PROC
+PROC_RC_MIL_SaheilaToElves()
+AND
+GetDistanceTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, _Dist)
+AND
+_Dist <= 60
+THEN
+ProcCharacterMoveTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, 1, "RC_MIL_SaheilaArrivedCamp");
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0);
+
+PROC
+PROC_RC_MIL_SaheilaToElves()
+AND
+GetDistanceTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, _Dist)
+AND
+_Dist > 60
+AND
+GetPosition(TRIGGERGUID_S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, _X, _Y, _Z)
+AND
+GetPosition(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _X2, _Y2, _Z2)
+AND
+GetAngleTo(_X2, _Z2, _X, _Z, _Angle)
+THEN
+ProcCharacterDisappearOutOfSight(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Angle, 1, "RC_MIL_SaheilaDisappearedTowardsCamp", 0);//TODO: Change to disappear towards the trigger.
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaDisappearedTowardsCamp")
+THEN
+CharacterAppearOutOfSightTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, 0, 0, "RC_MIL_SaheilaAppearedTowardsCamp");
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaAppearedTowardsCamp")
+THEN
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0);
+ProcCharacterMoveTo(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, S_RC_MIL_SaheilaArriveAtCamp_4e978c92-45c2-4ba0-9d97-72d4346ea016, 0, "RC_MIL_SaheilaArrivedCamp");
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaArrivedCamp")
+AND
+CharacterIsDead(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, 0)
+THEN
+DB_OneShotPlayerTrigger(S_RC_MIL_SaheilaTovahGreeting_65178f3e-84ea-4dd6-8b23-aae5260ad029);
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_Idle");
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaArrivedCamp")
+AND
+CharacterIsDead(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, 1)
+THEN
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_ElvenCamp");
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+
+IF
+SavegameLoaded(_Major,_Minor,_Rev,_Build)
+AND
+QRY_VersionIsOlderThan(_Major,_Minor,_Rev,_Build, 3, 6, 1, 0)
+THEN
+PROC_JournalEntries_ClearQuestState("RC_MIL_RescuingSaheila","TovahDead"); //Make the flag no longer close the quest.
+DB_QuestDef_State("RC_MIL_RescuingSaheila","TovahDead");
+DB_SeenDeadNPCPartyFlag(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "QuestUpdate_RC_MIL_RescuingSaheila_TovahDead");
+Proc_JDF_CreateCustomFlagsDependency("RC_MIL_FoundSaheilaDead","QuestUpdate_RC_MIL_RescuingSaheila_TovahDead","QuestUpdate_RC_MIL_RescuingSaheila_SaheilaAndTovahDead");
+
+IF
+SavegameLoaded(_Major,_Minor,_Rev,_Build)
+AND
+QRY_VersionIsOlderThan(_Major,_Minor,_Rev,_Build, 3, 6, 1, 0)
+AND
+DB_GlobalFlag("RC_MIL_SaheilaIsAtCamp")
+AND
+GetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_Idle")
+THEN
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_ElvenCamp");
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaArrivedCamp")
+THEN
+GlobalSetFlag("RC_MIL_SaheilaIsAtCamp");
+SetCombatGroupID(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "f7b5e0c2-abb7-412e-a904-34cfd3837eb8");
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaArrivedCamp")
+AND
+QRY_RC_MIL_TovahElfAlive()
+AND
+GlobalGetFlag("RC_MIL_BurySarias", 1)
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+//DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+DB_RC_MIL_RitualParticipants(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+
+IF
+StoryEvent(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaArrivedCamp")
+AND
+NOT QRY_RC_MIL_TovahElfAlive()
+THEN
+Proc_StartDialog(1, "RC_MIL_AD_SaheilaFindCampDead", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+
+//END_REGION
+
+IF
+GlobalFlagSet("RC_MIL_BurySarias")
+AND
+GlobalGetFlag("RC_MIL_SaheilaIsAtCamp", 1)
+THEN
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1);
+
+//REGION Tovah & Saheila greet each other after Saheila returns. Then they thank the player.
+PROC
+ProcOneShotTriggerEntered(_, S_RC_MIL_SaheilaTovahGreeting_65178f3e-84ea-4dd6-8b23-aae5260ad029)
+THEN
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_ElvenCamp");
+SetHasDialog(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0);
+SetHasDialog(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, 0);
+
+PROC
+PROC_GLOBAL_DialogStartRequested(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player)
+AND
+GlobalGetFlag("RC_MIL_SaheilaIsAtCamp", 1)
+AND
+DB_CurrentLevel("RC_Main")
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaRewardGiven")
+AND
+NOT DB_Dead(S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a)
+THEN
+Proc_StartDialog(0, "RC_MIL_SaheilaTovahReward", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _Player);
+//Proc_StartDialog(0, "RC_MIL_Saheila", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+
+IF
+StoryEvent(_Player, "RC_MIL_SaheilaReward")
+AND
+NOT DB_Dead(S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a)
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaRewardGiven")
+THEN
+Proc_StartDialog(0, "RC_MIL_SaheilaTovahReward", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _Player);
+
+IF
+StoryEvent(_Player, "RC_MIL_SaheilaReward")
+AND
+DB_Dead(S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a)
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaRewardGiven")
+THEN
+Proc_StartDialog(0, "RC_MIL_Saheila", CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+
+PROC
+Proc_DialogFlagSetup("RC_MIL_SaheilaTovahReward", _, _, _)
+THEN
+SetVarInteger(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "TalkedElfCamp", 1);
+
+IF
+DialogEnded("RC_MIL_SaheilaTovahReward", _)
+THEN
+GlobalSetFlag("RC_MIL_SaheilaRewardGiven");
+
+IF
+GlobalFlagSet("RC_MIL_SaheilaRewardGiven")
+THEN 
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a);
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_SaheilaAtCamp");
+DB_Dialogs(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "RC_MIL_TovahSaheilaReturned");
+SetVarFixedString(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "currentState", "State_RC_MIL_Idle");
+
+//END_REGION
+
+//REGION Tovah watches Saheila die.
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _ID)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _ID)
+THEN
+ObjectSetFlag(CHARACTERGUID_S_RC_MIL_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "RC_MIL_LearnedSaheilaDead", 0);
+
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_RC_MIL_TovahsElves((CHARACTERGUID)_Elf)
+AND
+CharacterCanSee(_Elf, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1)
+THEN
+GlobalSetFlag("RC_MIL_ElvesLearnedSaheilaDead");
+
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+GlobalGetFlag("RC_MIL_SaheilaIsAtCamp", 1)
+THEN
+GlobalSetFlag("RC_MIL_ElvesLearnedSaheilaDead");
+
+//ObjectSetFlag(_Elf, "RC_MIL_LearnedSaheilaDead", 0);
+IF
+GlobalFlagSet("RC_MIL_ElvesLEarnedSaheilaDead")
+AND
+NOT DB_Dialogs(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _)
+THEN
+PROC_RemoveDialogFromCharacter(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a);
+DB_Dialogs(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, "RC_MIL_TovahWithSaheila");
+
+IF
+GlobalFlagSet("RC_MIL_ElvesLEarnedSaheilaDead")
+THEN
+SetHasDialog(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, 1);
+//END_REGION
+
+//REGION Player finds Saheila dead.
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _ID)
+AND
+DB_CombatCharacters(_Player, _ID)
+AND
+DB_IsPlayer(_Player)
+THEN
+PartySetFlag(_Player, "RC_MIL_FoundSaheilaDead", 0);
+
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_IsPlayer(_Player)
+AND
+CharacterCanSee(_Player, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 1)
+THEN
+PartySetFlag(_Player, "RC_MIL_FoundSaheilaDead", 0);
+
+IF
+DB_Sees(_Player, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_Dead(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+PartySetFlag(_Player, "RC_MIL_FoundSaheilaDead", 0);
+
+//END_REGION
+
+IF
+CharacterDied(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+AND
+DB_CurrentLevel("RC_Main")
+THEN
+ItemToInventory(ITEMGUID_S_RC_MIL_Limb_SaheilaHand_0e4ea506-cf68-4363-a263-fac1640a44b4, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+SetOnStage(ITEMGUID_S_RC_MIL_Limb_SaheilaHand_0e4ea506-cf68-4363-a263-fac1640a44b4, 1);
+
+IF
+ObjectEnteredCombat(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, _)
+AND
+CharacterIsDead(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0)
+THEN
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, 0);
+CharacterSetRelationIndivFactionToIndivFaction(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, 0);
+//END_REGION
+
+//REGION Both
+
+//REGION Sawmill entering alarm mode
+IF
+DB_RC_MIL_LoneWolves(_Wolf, _Dialog)
+AND
+NOT _Wolf == CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3
+THEN
+DB_Dialogs(_Wolf, _Dialog);
+CharacterSetHitpointsPercentage(_Wolf, 90.0);
+
+IF
+DB_HostileToIndivPlayerAfterDialog(_Player,_Id)
+AND
+DB_DialogNPCs(_Id,_Wolf,_)
+AND
+DB_RC_MIL_LoneWolves((CHARACTERGUID)_Wolf, _)
+THEN
+DB_RC_MIL_AlertDialog(_ID);
+
+IF
+DialogEnded(_,_Id)
+AND
+DB_RC_MIL_AlertDialog(_ID)
+THEN
+GlobalSetFlag("RC_MIL_SawmillAlert");
+
+IF
+ObjectEnteredCombat(_Wolf, _)
+AND
+DB_RC_MIL_LoneWolves((CHARACTERGUID)_Wolf, _)
+THEN
+GlobalSetFlag("RC_MIL_SawmillAlert");
+
+IF
+GlobalFlagSet("RC_MIL_SawmillAlert")
+THEN
+SetRelationFactionToPlayers("RC_MIL_RoostWolves", 0);
+SetRelationFactionToPlayers("RC_MIL_RoostEnlon", 0);
+NOT DB_CheckPoint((CHARACTERGUID)CHARACTERGUID_S_RC_MIL_GuardWolf1_dd6de19c-bcce-40d3-b4ce-522a735e4fee, (CHARACTERGUID)CHARACTERGUID_S_RC_MIL_GuardWolf2_c55778a5-fa1f-484d-86d2-dc625d51ca59, (TRIGGERGUID)TRIGGERGUID_S_RC_MIL_MillEnterTrigger1_9aded9fb-29a1-4f10-8d5d-08990575e4aa, (TRIGGERGUID)TRIGGERGUID_S_RC_MIL_MillEnterTrigger2_aefd1944-dfb4-4099-9285-051a34130d2f, (TRIGGERGUID)TRIGGERGUID_S_RC_MIL_MillEnterTrigger3_83f23314-c2ab-4aed-8682-7dcef5b630d0, "RC_MIL_AllowedInMill");
+//Since the Wolves now attack players on sight, the checkpoint is no longer needed.
+
+IF
+GlobalFlagSet("RC_MIL_SawmillAlert")
+THEN
+PROC_RC_MIL_SawmillAlert();
+
+PROC
+PROC_RC_MIL_SawmillAlert()
+AND
+NOT DB_OnlyOnce("RC_MIL_SawmillAlert")
+AND
+DB_RC_MIL_LoneWolves(_Wolf, _)
+THEN
+PROC_RemoveDialogFromCharacter((CHARACTERGUID)_Wolf);
+
+PROC
+PROC_RC_MIL_SawmillAlert()
+AND
+NOT DB_OnlyOnce("RC_MIL_SawmillAlert")
+AND
+DB_RC_MIL_LoneWolves(_Wolf, _, _AD)
+AND
+CharacterIsInCombat(_Wolf, 0)
+THEN
+Proc_StartDialog(1, _AD, _Wolf);
+
+PROC
+PROC_RC_MIL_SawmillAlert()
+THEN
+DB_OnlyOnce("RC_MIL_SawmillAlert");
+
+//Some of the NPCs have ADs.
+IF
+DB_RC_MIL_LoneWolves(_Wolf, _Dialog, _)
+THEN
+DB_RC_MIL_LoneWolves(_Wolf, _Dialog);
+//END_REGION
+
+//REGION Keeping track of the living Elves.
+QRY
+QRY_RC_MIL_TovahElfAlive()
+AND
+DB_RC_MIL_TovahsElves(_Elf)
+AND
+CharacterIsDead((CHARACTERGUID)_Elf, 0)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterDied(_Elf)
+AND
+DB_RC_MIL_TovahsElves(_Elf)
+AND
+NOT QRY_RC_MIL_TovahElfAlive()
+THEN
+GlobalSetFlag("RC_MIL_TovahElvesExterminated");
+NOT DB_CheckPoint(CHARACTERGUID_S_RC_MIL_ElvenRangerM_c1b8a0ea-7df4-4970-8c2a-17a26245d4d9, CHARACTERGUID_S_RC_MIL_ElvenRangerF_58613267-ab70-408e-8564-9825d9b5383e, TRIGGERGUID_S_RC_MIL_CampEnterTrigger1_5c35a415-fb69-45a8-9458-7c6c28fa33ef, TRIGGERGUID_S_RC_MIL_CampEnterTrigger2_b77c6d80-a371-4105-9ad9-35f6d96d0746, TRIGGERGUID_S_RC_MIL_CampEnterTrigger4_99eafee0-9fe4-4d21-93eb-107123a61925, "RC_MIL_AllowedInCamp");
+ProcRemoveDBTrespassTrigger(TRIGGERGUID_S_RC_MIL_CampEnterTrigger3_99eafee0-9fe4-4d21-93eb-107123a61925,(TRIGGERGUID)NULL_00000000-0000-0000-0000-000000000000);
+ProcTriggerUnregisterForPlayers(TRIGGERGUID_S_RC_MIL_CampEnterTrigger3_99eafee0-9fe4-4d21-93eb-107123a61925);
+
+//END_REGION
+
+//REGION Getting attacks by Roost
+
+IF 
+ObjectEnteredCombat(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3,_) 
+AND 
+QueryOnlyOnce("RC_MIL_CombatSave_Roost") 
+THEN 
+AutoSave();
+
+IF
+ObjectFlagSet("RC_MIL_Roost_Attack", (CHARACTERGUID)_Player, _ID)
+THEN
+DB_RC_MIL_FreeSaheilaDialog(_ID, _Player);
+
+IF
+DialogEnded(_, _ID)
+AND
+DB_RC_MIL_FreeSaheilaDialog(_ID, _Player)
+THEN
+ProcSetFactionHostileToIndivPlayer("RC_MIL_RoostWolves", _Player);
+//END_REGION
+
+//REGION Roost addresses player
+IF
+GlobalFlagSet("RC_MIL_SaheilaDiedCaptive")
+AND
+DB_Dialogs(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RoostWithSaheila")
+THEN
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3);
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+DB_Dialogs(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+
+IF
+GlobalFlagSet("RC_MIL_SaheilaFreed")
+AND
+DB_Dialogs(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RoostWithSaheila")
+THEN
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3);
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+DB_Dialogs(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+
+IF
+CharacterDied(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3)
+AND
+DB_Dialogs(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_RoostWithSaheila")
+THEN
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3);
+ProcRemoveAllDialogEntriesForSpeaker(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+DB_Dialogs(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, "RC_MIL_Saheila");
+DB_Dialogs(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost");
+
+QRY
+QRY_RC_MIL_Roost_IncludeSaheilaInDialogue()
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaDeadAtMillStart")
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaDiedCaptive")
+AND
+NOT DB_GlobalFlag("RC_MIL_SaheilaFreed")
+THEN
+DB_NOOP(0);
+
+IF
+StoryEvent(_Player, "RC_MIL_RoostSpot")
+//AND
+//NOT QRY_RC_MIL_RoostAddressesIfan(_Player)
+AND
+DB_RC_MIL_LoneWolves(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_RoostWithSaheila")
+AND
+NOT QRY_RC_MIL_Roost_IncludeSaheilaInDialogue()
+THEN
+Proc_StartDialog(0, "RC_MIL_Roost", CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, _Player);
+
+IF
+StoryEvent(_Player, "RC_MIL_RoostSpot")
+//AND
+//NOT QRY_RC_MIL_RoostAddressesIfan(_Player)
+AND
+DB_RC_MIL_LoneWolves(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_RoostWithSaheila")
+AND
+QRY_RC_MIL_Roost_IncludeSaheilaInDialogue()
+THEN
+Proc_StartDialog(0, "RC_MIL_RoostWithSaheila", CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0, _Player);
+
+IF
+StoryEvent(_Player, "RC_MIL_RoostSpot")
+AND
+DB_RC_MIL_LoneWolves(S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, "RC_MIL_Roost")
+THEN
+Proc_StartDialog(0, "RC_MIL_Roost", CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3, _Player);
+
+IF
+ObjectFlagSet("GLO_AddStatus_Slowed",CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3,_)
+THEN
+CharacterMoveTo(CHARACTERGUID_S_Player_Ifan_ad9a3327-4456-42a7-9bf4-7ad60cc9e54f,CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3,1,"",1);
+ApplyStatus(CHARACTERGUID_S_RC_MIL_Roost_6fffadfe-b2a8-4e12-a664-ba84c0b0a3a3,"SLOWED",-1.0,1);
+//END_REGION
+
+//REGION Killing Tovah & Saheila
+IF
+CharacterKilledBy(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a,_AttackerOwner,_Attacker)
+AND
+DB_IsPlayer(_AttackerOwner)
+THEN
+PartySetFlag(_AttackerOwner, "RC_MIL_KilledTovah");
+
+IF
+CharacterDying(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a)
+AND
+DB_CombatCharacters(CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, _ID)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_CombatCharacters(_Player, _ID)
+AND
+CharacterIsEnemy(_Player, CHARACTERGUID_S_GLO_Tovah_69c31947-b004-44aa-b856-2a9a96ff218a, 1)
+THEN
+PartySetFlag(_Player, "RC_MIL_KilledTovah");
+//END_REGION
+
+//END_REGION
+
+//REGION Journal logic.
+IF
+ItemAddedToCharacter(ITEMGUID_S_RC_MIL_Limb_RoostsHand_1e27bc49-b3c1-4edc-8f05-fb484f8ddb6c,_Player)
+AND
+DB_IsPlayer(_Player)
+THEN
+PartySetFlag(_Player, "QuestUpdate_RC_MIL_AvengingSaheila_GotHand");
+//END_REGION
+
+IF
+TextEventSet("RC_MIL_SawmillAlert")
+THEN
+GlobalSetFlag("RC_MIL_SawmillAlert");
+
+IF
+ObjectFlagSet("RC_MIL_AncestorTree_MinePuzzle_Floating", _Player, _)
+THEN
+ObjectClearFlag(_Player, "RC_MIL_AncestorTree_MinePuzzle_Floating", 0);
+ApplyStatus(_Player, "FLOATING", 10.0);
+
+IF
+ObjectFlagSet("RC_MIL_AncestorTree_MinePuzzle_JudyMapMarker", (CHARACTERGUID)_Player, _)
+THEN
+ShowMapMarker(_Player, "RC_MIL_JudyMapmarker", 1);
+
+IF
+ObjectFlagSet("RC_MIL_AncestorTree_MinePuzzle_Negative", (CHARACTERGUID)_Player, _)
+AND
+GetPosition(_Player, _X, _Y, _Z)
+THEN
+PlayEffectAtPosition("RS3_FX_Char_Ghosts_Teleport_out_01", _X, _Y, _Z);
+PlayEffect(TRIGGERGUID_S_RC_MIL_AncestorTree_MinePuzzle_Trigger_a36e1c21-2b2f-449e-982c-dbc01dd9179e, "RS3_FX_Char_Ghosts_Teleport_out_01");
+TeleportTo(_Player, TRIGGERGUID_S_RC_MIL_AncestorTree_MinePuzzle_Trigger_a36e1c21-2b2f-449e-982c-dbc01dd9179e);
+
+IF
+DialogEnded("RC_MIL_BlackMirror", _ID)
+AND
+DB_DialogPlayers(_ID, _Player, 1)
+AND
+QueryOnlyOnce("RC_MIL_CORE_RD_WhoCanTrust")
+THEN
+ProcDefineReflectionDialog("RC_MIL_CORE_RD_WhoCanTrust", (CHARACTERGUID)_Player);
+
+
+//REGION Achievement - Sawmill - DOS2_Quest34
+
+IF
+ObjectEnteredCombat(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0,_)
+AND
+DB_RC_MIL_SaheilaRescuer(_)
+THEN
+GlobalSetFlag("RC_MIL_Achievement_Sawmill_Failed");
+
+//END_REGION
+
+//REGION Finding Saheilas corpse
+IF
+CharacterDied(CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0)
+THEN
+TeleportTo(TRIGGERGUID_S_RC_MIL_FoundSaheilaDeadTrigger_647416bc-b569-4a2b-9eb0-08cefef12c1c, CHARACTERGUID_S_GLO_Saheila_fcacdf08-b05f-4333-b0e0-ddf29c13d8e0);
+ProcTriggerRegisterForPlayers(TRIGGERGUID_S_RC_MIL_FoundSaheilaDeadTrigger_647416bc-b569-4a2b-9eb0-08cefef12c1c);
+
+IF
+CharacterEnteredTrigger(_Player, TRIGGERGUID_S_RC_MIL_FoundSaheilaDeadTrigger_647416bc-b569-4a2b-9eb0-08cefef12c1c)
+THEN 
+PartySetFlag(_Player, "RC_MIL_FoundSaheilaDead", 0);
+//END_REGION
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "ReapersCoast"

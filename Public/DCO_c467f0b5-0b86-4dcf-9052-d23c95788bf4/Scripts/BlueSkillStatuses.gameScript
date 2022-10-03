@@ -6757,6 +6757,7 @@ ON
 	OnCharacterStatusApplied(_Character, SNEAKING)
 	OnCharacterStatusApplied(_Character, Blue_InvisibleBlind)
 ACTIONS
+	SetTag(_Character, "AI_IG_DCO")
 	SetTag(_Character, "AI_IGNORED_TARGET")
 	
 EVENT BlueIgnoreRemoveInvisibleOnBlue
@@ -6782,7 +6783,8 @@ ON
 	OnCharacterStatusApplied(_Character, Blue_InvisibleWhite)
 ACTIONS
 	SetTag(_Character, "IgnoreInvisibleCastWhite")
-	
+
+/*
 EVENT BlueRemoveAIIGnoredTagOnInvisibleBlue
 VARS
 	CHARACTER:_Character
@@ -6857,6 +6859,7 @@ ACTIONS
 	THEN
 		ClearTag(_Character, "AI_IGNORED_TARGET")
 	ENDIF
+*/
 	
 EVENT BlueRemoveInvisibilityOnWetBlue
 VARS

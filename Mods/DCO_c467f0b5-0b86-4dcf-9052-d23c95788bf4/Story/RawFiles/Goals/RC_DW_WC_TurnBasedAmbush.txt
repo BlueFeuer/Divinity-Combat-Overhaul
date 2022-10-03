@@ -1,0 +1,949 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+DB_RC_DW_WC_AmbushTargetBox((TRIGGERGUID)S_RC_DW_WC_AmbushTeleportPoint_01_dca6a05f-c62b-49fd-9e88-e388dbff3e08,(TRIGGERGUID)S_RC_DW_WC_AmbushTeleportBox_01_1259835f-b0db-43dd-9110-4ea0b38b1fa4);
+DB_RC_DW_WC_AmbushTargetBox((TRIGGERGUID)S_RC_DW_WC_AmbushTeleportPoint_02_f1750d4d-adcb-4b90-a4d9-de012b01472e,(TRIGGERGUID)S_RC_DW_WC_AmbushTeleportBox_02_be58d275-c504-4687-ae73-f268b7521135);
+DB_RC_DW_WC_AmbushTargetBox((TRIGGERGUID)S_RC_DW_WC_AmbushTeleportPoint_03_3da431af-3aa0-449a-be40-ae2a4a60b3ed,(TRIGGERGUID)S_RC_DW_WC_AmbushTeleportBox_03_cb20cf8b-5b41-40f5-a0dc-54688af105d8);
+DB_RC_DW_WC_AmbushTargetBox((TRIGGERGUID)S_RC_DW_WC_AmbushTeleportPoint_04_8eba76ec-465e-4c47-9592-5603af6c8179,(TRIGGERGUID)S_RC_DW_WC_AmbushTeleportBox_04_f7bfd9ec-6e68-4f3a-b8e6-53b14be3a4c6);
+
+DB_RC_DW_WC_AmbushUnburrowingHelper((CHARACTERGUID)S_RC_DW_WC_AmbushInsect_01_2a1d57f6-22e7-4f2c-86f2-108f7cec8c55,(ITEMGUID)S_RC_DW_WC_AmbushInsect_Helper_01_43c2ffd3-96fb-4bd4-9435-33cf12e44b16);
+DB_RC_DW_WC_AmbushUnburrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_02_956fb712-0f40-47b5-836e-34e9d56df7e5,ITEMGUID_S_RC_DW_WC_AmbushInsect_Helper_02_c433b805-6818-4375-9781-4a22bae9f57a);
+DB_RC_DW_WC_AmbushUnburrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_03_eeb1f75e-f413-4c40-8d69-8a085146134e,ITEMGUID_S_RC_DW_WC_AmbushInsect_Helper_03_f01614a6-0543-4639-bd26-3cbe41f0e2a8);
+DB_RC_DW_WC_AmbushUnburrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_04_adab8bc2-7aaa-4f9b-92ab-f04964695ed2,ITEMGUID_S_RC_DW_WC_AmbushInsect_Helper_04_2f67f87d-5826-4f27-b5ea-ce130bfdf29c);
+
+DB_RC_DW_WC_AmbushBurrowingHelper((CHARACTERGUID)S_RC_DW_WC_AmbushInsect_01_2a1d57f6-22e7-4f2c-86f2-108f7cec8c55,(ITEMGUID)S_RC_DW_WC_AmbushInsect_BurrowHelper_01_e8e6fb87-125b-4cee-a59b-8babc97274c8);
+DB_RC_DW_WC_AmbushBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_02_956fb712-0f40-47b5-836e-34e9d56df7e5,S_RC_DW_WC_AmbushInsect_BurrowHelper_02_7b2da4b5-dd0a-4ed3-928f-9636a47aeb83);
+DB_RC_DW_WC_AmbushBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_03_eeb1f75e-f413-4c40-8d69-8a085146134e,S_RC_DW_WC_AmbushInsect_BurrowHelper_03_e9a80050-c572-4b67-a3a3-9819d210ae22);
+DB_RC_DW_WC_AmbushBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_04_adab8bc2-7aaa-4f9b-92ab-f04964695ed2,S_RC_DW_WC_AmbushInsect_BurrowHelper_04_ca2deaf3-aee9-4aec-9f51-6116dab897d4);
+
+DB_RC_DW_WC_AmbushFinalBurrowingHelper((CHARACTERGUID)S_RC_DW_WC_AmbushInsect_01_2a1d57f6-22e7-4f2c-86f2-108f7cec8c55,(ITEMGUID)ITEMGUID_S_RC_DW_WC_AmbushInsect_FinalBurrowHelper_01_e5fa3b09-7013-46b4-9547-8178a373d33f);
+DB_RC_DW_WC_AmbushFinalBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_02_956fb712-0f40-47b5-836e-34e9d56df7e5,ITEMGUID_S_RC_DW_WC_AmbushInsect_FinalBurrowHelper_02_3409b0d3-9bdc-48d0-928b-fe83f564987f);
+DB_RC_DW_WC_AmbushFinalBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_03_eeb1f75e-f413-4c40-8d69-8a085146134e,ITEMGUID_S_RC_DW_WC_AmbushInsect_FinalBurrowHelper_03_9c2770c2-1fd8-4682-9ba1-6c772a655245);
+DB_RC_DW_WC_AmbushFinalBurrowingHelper(CHARACTERGUID_S_RC_DW_WC_AmbushInsect_04_adab8bc2-7aaa-4f9b-92ab-f04964695ed2,ITEMGUID_S_RC_DW_WC_AmbushInsect_FinalBurrowHelper_04_da53feb3-70de-4783-8aa0-dde575399eda);
+
+
+ProcDeclareCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+ProcDecreaseCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+KBSECTION
+//REGION AI Ignore tags when incapacitated
+IF
+CharacterStatusApplied(_Player,_Status,_)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_RC_DW_WC_AmbushPair(_,_Player)
+AND
+NOT DB_RC_DW_WC_Incapacitated(_Player)
+AND
+CharacterIsIncapacitated(_Player,1)
+AND
+IsTagged(_Player,"AI_IGNORED_TARGET",0)
+THEN
+DB_RC_DW_WC_Incapacitated(_Player);
+SetTag(_Player,"AI_IGNORED_TARGET");
+SetTag(_Player,"AI_IG_VAN");
+
+IF
+CharacterStatusRemoved(_Player,_Status,_)
+AND
+DB_RC_DW_WC_Incapacitated(_Player)
+AND
+CharacterIsIncapacitated(_Player,0)
+THEN
+ClearTag(_Player,"AI_IGNORED_TARGET");
+//END_REGION
+
+//REGION The abduction fight
+
+PROC
+PROC_RC_DW_WC_MaybeSpawnAmbushInsectForPlayer((CHARACTERGUID)_Player)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_Insect,_)
+AND
+NOT DB_RC_DW_WC_AmbushPair(_,_Player)
+AND
+NOT DB_RC_DW_WC_AmbushPair(_Insect,_)
+AND
+DB_RC_DW_WC_AmbushUnburrowingHelper(_Insect,_Helper)
+THEN
+DB_RC_DW_WC_AmbushPair(_Insect,_Player);
+SetVarObject(_Insect,"Abductee",_Player);
+ProcObjectTimer(_Insect,"RC_DW_WC_FailedToEnterCombat",10000);
+PROC_RC_DW_WC_BurrowGiantInsect((CHARACTERGUID)_Insect,(ITEMGUID)_Helper,"RC_DW_WC_InsectSpawn","Unburrow");
+Proc_ShakeCameraForTime(_Player,1000);
+
+// Enter insect spawn box
+IF
+CharacterEnteredTrigger(_Player,TRIGGERGUID_S_RC_DW_WC_AmbushSpawn_Box_1fce5bfd-e7dd-4a78-9f18-831efd30a19e)
+AND
+DB_IsPlayer(_Player)
+AND
+GlobalGetFlag("RC_DW_WC_BossElderIsDead",0)
+AND
+GlobalGetFlag("RC_DW_WC_BossFight_BossFlee",0)
+THEN
+PROC_RC_DW_WC_MaybeSpawnAmbushInsectForPlayer(_Player);
+
+// Join existing combat with ambushing insects
+IF
+ObjectEnteredCombat((CHARACTERGUID)_Player,_CombatID)
+AND
+NOT DB_RC_DW_WC_AmbushSpawnOnlyOne(1)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_)
+AND
+DB_CombatCharacters(_Insect,_CombatID)
+AND
+DB_IsPlayer(_Player)
+AND
+NOT DB_RC_DW_WC_AmbushPair(_,_Player)
+THEN
+DB_RC_DW_WC_AmbushSpawnOnlyOne(1);
+PROC_RC_DW_WC_MaybeSpawnAmbushInsectForPlayer(_Player);
+
+IF
+ObjectEnteredCombat((CHARACTERGUID)_Player,_CombatID)
+AND
+DB_RC_DW_WC_AmbushSpawnOnlyOne(1)
+THEN
+NOT DB_RC_DW_WC_AmbushSpawnOnlyOne(1);
+
+IF
+StoryEvent(_Insect,"RC_DW_WC_InsectSpawn")
+AND
+DB_IsPlayer(_Player)
+AND
+CharacterCanSee(_Player,_Insect,1)
+THEN
+ObjectSetFlag(_Player,"RC_DW_WC_SawInsectSpawn");
+
+//REGION Ambush failure
+// Detach/unfreeze if the player was already grabbed
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player)
+THEN
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer(_Insect,_Player,1);
+
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player)
+AND
+DB_RC_DW_WC_AmbushBurrowingHelper(_Insect,_EffectHelper)
+THEN
+PROC_RC_DW_WC_BurrowGiantInsect(_Insect,_EffectHelper,"RC_DW_WC_BurrowBecauseAmbushFailed","Burrow");
+NOT DB_RC_DW_WC_AmbushPair(_Insect,_Player);
+
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player)
+AND
+DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID)
+THEN
+NOT DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID);
+
+//REGION Cleanup if abductee dies/goes missing
+// Can still be resurrected -> we'll come back
+IF
+StoryEvent((CHARACTERGUID)_Insect,"RC_DW_WC_AbducteeDied")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer(_Insect,_Player);
+
+IF
+StoryEvent((CHARACTERGUID)_Insect,"RC_DW_WC_AbducteeMissing")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer(_Insect,_Player);
+
+//REGION Cleanup if ambush insect dies
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectDead((CHARACTERGUID)_Player,(CHARACTERGUID)_Insect)
+AND
+DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID)
+THEN
+NOT DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID);
+
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectDead((CHARACTERGUID)_Player,(CHARACTERGUID)_Insect)
+AND
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+THEN
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer(_Insect,_Player,1);
+TeleportTo(_Player,_Insect,"",0);
+ApplyStatus(_Player,"KNOCKED_DOWN",1.0,1);
+
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectDead((CHARACTERGUID)_Player,(CHARACTERGUID)_Insect)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_Insect,_Destination)
+THEN
+NOT DB_RC_DW_WC_AmbushAttackInsect(_Insect,_Destination);
+NOT DB_RC_DW_WC_AmbushPair(_Insect,_Player);
+PROC_RC_DW_WC_MaybeSpawnAmbushInsectForPlayer(_Player);
+
+IF
+StoryEvent((CHARACTERGUID)_Insect,"RC_DW_WC_AbductorDied")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectDead(_Player,_Insect);
+
+//END_REGION
+
+//REGION Cleanup if insect gets incapacitated
+IF
+TextEventSet("wc_ambushknockdown")
+AND
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+THEN
+ApplyStatus(_Insect,"KNOCKED_DOWN",1.0,-1);
+
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectIncapacitated((CHARACTERGUID)_Player,(CHARACTERGUID)_Insect)
+AND
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+THEN
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer(_Insect,_Player,1);
+TeleportTo(_Player,_Insect,"",0);
+PlayAnimation(_Player,"knockdown_getup");
+
+IF
+StoryEvent((CHARACTERGUID)_Insect,"RC_DW_WC_AbductorIncapacitated")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectIncapacitated(_Player,_Insect);
+//END_REGION
+
+//REGION Abort because either the ambushing insect or the player for which it was spawned did not enter combat
+
+//REGION Initial spawning of insects and players/insects joining combat
+QRY
+QRY_RC_DW_WC_Ambush_OnlyOnePartnerInCombat((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player)
+AND
+DB_CombatCharacters(_Insect,_CombatID)
+AND
+NOT DB_CombatCharacters(_Player,_CombatID)
+THEN
+DB_NOOP(1);
+
+QRY
+QRY_RC_DW_WC_Ambush_OnlyOnePartnerInCombat((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player)
+AND
+DB_CombatCharacters(_Player,_CombatID)
+AND
+NOT DB_CombatCharacters(_Insect,_CombatID)
+THEN
+DB_NOOP(1);
+
+// Both player and insect in same combat -> success
+IF
+CombatStarted(_CombatID)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+DB_CombatCharacters(_Insect,_CombatID)
+AND
+DB_CombatCharacters(_Player,_CombatID)
+THEN
+ProcObjectTimerCancel(_Insect,"RC_DW_WC_FailedToEnterCombat");
+DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID);
+
+// Only insect or only player in combat -> failure
+IF
+CombatStarted(_CombatID)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+// Only a problem if the insect isn't abducting the player
+NOT DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+AND
+QRY_RC_DW_WC_Ambush_OnlyOnePartnerInCombat(_Insect,_Player)
+THEN
+ProcObjectTimerCancel(_Insect,"RC_DW_WC_FailedToEnterCombat");
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer(_Insect,_Player);
+
+IF
+ObjectLeftCombat((CHARACTERGUID)_,_ID)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+// Only a problem if the insect isn't abducting the player
+NOT DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+AND
+QRY_RC_DW_WC_Ambush_OnlyOnePartnerInCombat(_Insect,_Player)
+THEN
+ProcObjectTimerCancel(_Insect,"RC_DW_WC_FailedToEnterCombat");
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer(_Insect,_Player);
+//END_REGION //Initial spawning of insects and players/insects joining combat
+
+//REGION An extra player joined the combat afterwards and we spawned an insect for them -> no CombatStarted event
+IF
+ObjectReadyInCombat((CHARACTERGUID)_Insect,_CombatID)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+DB_CombatCharacters(_Player,_CombatID)
+THEN
+DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_CombatID);
+ProcObjectTimerCancel(_Insect,"RC_DW_WC_FailedToEnterCombat");
+
+//END_REGION //An extra player joins the combat afterwards -> no combat started event
+
+//Insect didn't manage to join the combat for some reason -> burrow
+PROC
+ProcObjectTimerFinished(_Insect,"RC_DW_WC_FailedToEnterCombat")
+AND
+DB_RC_DW_WC_AmbushPair((CHARACTERGUID)_Insect,_Player)
+AND
+NOT DB_RC_DW_WC_AmbushSucces((CHARACTERGUID)_Insect,_Player,_)
+THEN
+PROC_RC_DW_WC_AmbushFailed_ResetInsectForPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player);
+
+//END_REGION //Abort because either the ambushing insect or the player for which it was spawned did not enter combat
+
+//END_REGION
+
+
+// For different voice barks
+PROC
+PROC_RC_DW_WC_RecordCaptureWitnesses((CHARACTERGUID)_Insect)
+AND
+DB_IsPlayer(_Player)
+AND
+CharacterCanSee(_Player,_Insect,1)
+THEN
+ObjectSetFlag(_Player,"RC_DW_WC_SawInsectAbduction");
+
+// For different voice barks
+IF
+DB_RC_DW_WC_AmbushSucces(_Insect,_Player,_)
+THEN
+ObjectSetFlag(_Player,"RC_DW_WC_BeingAbducted");
+
+// Voicebark when grabbed
+// This even is thrown right before the animation starts in the behaviour script.
+// Wait a little bit before yelling "it's grabbing me", because otherwise the
+// PC seems clairvoyant (the voicebark will start slightly before the insect
+// actually lunges)
+IF
+StoryEvent((CHARACTERGUID)_Player,"RC_DW_WC_Ambush_GrabVoiceBark")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+CharacterLookAt(_Player,_Insect,1);
+ProcObjectTimer(_Player,"RC_DW_WC_Ambush_GrabVoiceBarkTimer",100);
+
+PROC
+ProcObjectTimerFinished(_Player,"RC_DW_WC_Ambush_GrabVoiceBarkTimer")
+THEN
+Proc_StartDialog(1,"RC_DW_WC_AD_DuringCapture",_Player);
+
+// Insect lunge animation has finished, insect in contact with the player
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_Contact")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+IsTagged(_Player,"AI_IGNORED_TARGET",0)
+THEN
+// Tag grabbed player so he won't be attacked by other insects
+SetTag(_Player,"AI_IGNORED_TARGET");
+SetTag(_Player,"AI_IG_VAN");
+
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_Contact")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+// Ensure the ignored target tag won't be removed when the incapacitated status runs out
+NOT DB_RC_DW_WC_Incapacitated(_Player);
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect);
+ApplyStatus(_Insect,"CARRYCOCOON",-1.0,1);
+CharacterSetDetached(_Player,1);
+// Prevent "attacks of opportunity" by the grabbed character while the insect moves
+CharacterFreeze(_Player);
+// We got a support save where somehow managed to flee while being cocooned -> block fleeing
+DB_BlockWaypointUsage(_Player);
+// Give time to VB to finish
+EndTurn(_Insect);
+// Finish the grab animation
+SetScriptframe(_Insect,"FinishGrab");
+
+IF
+TextEventSet("wc_removestatus")
+AND
+DB_IsPlayer(_Player)
+THEN
+RemoveStatus(_Player,"FROZEN");
+RemoveStatus(_Player,"STUNNED");
+RemoveStatus(_Player,"SLEEPING");
+RemoveStatus(_Player,"PETRIFIED");
+RemoveStatus(_Player,"KNOCKED_DOWN");
+
+PROC
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player,(INTEGER)_bool_Unfreeze)
+AND
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+THEN
+NOT DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect);
+RemoveStatus(_Insect,"CARRYCOCOON");
+SetVarInteger(_Insect,"bool_Grabbed",0);
+CharacterSetDetached(_Player,0);
+CreateSurface(_Player,"SurfaceWeb",1.5,1.0);
+ClearTag(_Player,"AI_IGNORED_TARGET");
+
+PROC
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer((CHARACTERGUID)_Insect,(CHARACTERGUID)_Player,1)
+THEN
+CharacterUnfreeze(_Player);
+NOT DB_BlockWaypointUsage(_Player);
+
+// Insect is digging in
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_Pull")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,(CHARACTERGUID)_Player)
+THEN
+SetFaction(_Insect,"Neutral");
+SetCanJoinCombat(_Insect,0);
+PROC_RC_DW_WC_RecordCaptureWitnesses((CHARACTERGUID)_Insect);
+DialogRequestStop(_Player);
+CharacterPurgeQueue((CHARACTERGUID)_Player);
+RemoveStatus(_Player,"RESTED");
+CharacterDetachFromGroup(_Player);
+Proc_ShakeCameraForTime(_Player,4000);
+DB_RC_DW_WC_AmbushLeavingCombat(_Insect);
+
+IF
+ObjectLeftCombat((CHARACTERGUID)_Insect,_)
+AND
+DB_RC_DW_WC_AmbushLeavingCombat(_Insect)
+THEN
+// Wait till end of sheath animation
+ProcObjectTimer(_Insect,"RC_DW_WC_EndOfSheatheAnimation",2000);
+
+PROC
+ProcObjectTimerFinished(_Insect,"RC_DW_WC_EndOfSheatheAnimation")
+AND
+DB_RC_DW_WC_AmbushLeavingCombat((CHARACTERGUID)_Insect)
+AND
+DB_RC_DW_WC_AmbushBurrowingHelper((CHARACTERGUID)_Insect,_Helper)
+THEN
+NOT DB_RC_DW_WC_AmbushLeavingCombat((CHARACTERGUID)_Insect);
+PROC_RC_DW_WC_BurrowGiantInsect((CHARACTERGUID)_Insect,_Helper,"DB_RC_DW_WC_Ambush_Grabbed","Burrow");
+
+
+// Dug in -> teleport to destination
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_Grabbed")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_Insect,_Destination)
+AND
+DB_RC_DW_WC_AmbushTargetBox(_Destination,_DestinationBox)
+AND
+DB_RC_DW_WC_AmbushUnburrowingHelper(_Insect,_Helper)
+THEN
+TeleportTo(_Insect,_Destination);
+TeleportTo(_Player,_Destination);
+ObjectSetFlag(_Player,"QuestUpdate_RC_DW_WC_AtaraxianLair_GotDraggedUnderground");
+DB_RC_DW_WC_AtaraxianLair_GotDraggedUnderground(_Player);
+ObjectClearFlag(_Player,"RC_DW_WC_BeingAbducted",0);
+ObjectSetFlag(_Player,"RC_DW_WC_HaveBeenAbductedBefore");
+// For voicebark after leaving the destination (in case no other player met yet)
+TriggerRegisterForCharacter(_DestinationBox,_Player);
+PROC_RC_DW_WC_BurrowGiantInsect(_Insect,_Helper,"DB_RC_DW_WC_Ambush_AtDestination","Unburrow");
+
+
+// At destination -> detach player from insect and reburrow insect
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_AtDestination")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+NOT DB_RC_DW_WC_Ambush_Pull_Done(_Insect);
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer(_Insect,_Player,0);
+TeleportTo(_Player,_Insect,"RC_DW_WC_AmbushPlayerAtDestinationWithInsect",0);
+
+// Remove from combat if not removed by game
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_AtDestination")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+CharacterIsInCombat(_Player,1)
+THEN
+LeaveCombat(_Player);
+
+
+IF
+StoryEvent((CHARACTERGUID)_Player,"RC_DW_WC_AmbushPlayerAtDestinationWithInsect")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+// Use the 
+DB_RC_DW_WC_AmbushFinalBurrowingHelper(_Insect,_EffectHelper)
+THEN
+CharacterSetAnimationOverride(_Player,"knockdown_loop");
+PROC_RC_DW_WC_BurrowGiantInsect((CHARACTERGUID)_Insect,_EffectHelper,"DB_RC_DW_WC_Ambush_FinalBurrow","Burrow");
+DB_RC_DW_WC_AmbushArrivedAtDestination(_Player);
+
+// Insect burrowed at destination -> let player get up after 2 seconds (reorientation)
+IF
+StoryEvent((CHARACTERGUID)_Insect,"DB_RC_DW_WC_Ambush_FinalBurrow")
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_Insect,_Destination)
+THEN
+NOT DB_RC_DW_WC_AmbushPair(_Insect,_Player);
+NOT DB_RC_DW_WC_AmbushAttackInsect(_Insect,_Destination);
+ProcObjectTimer(_Player,"RC_DW_WC_Ambush_GetUp",2000);
+PROC_RC_DW_WC_CheckIfAllAmbushInsectsGone();
+
+// Only define the autosave trigger for the hatchery now, so the saving
+// does not cause a hickup during the dropping off/digging in animation
+PROC
+ProcObjectTimerFinished(_,"RC_DW_WC_Ambush_GetUp")
+AND
+QueryOnlyOnce("RC_DW_WC_Ambush_GetUp_AutoSave")
+THEN
+DB_AutoSaveTrigger(TRIGGERGUID_S_RC_DW_WC_Autosave_Lookout_1e063737-a814-4597-811e-7fecb9baf40b);
+
+QRY
+QRY_RC_DW_WC_AmbushAttackInsectsLeft()
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_,_)
+THEN
+DB_NOOP(1);
+
+PROC
+PROC_RC_DW_WC_CheckIfAllAmbushInsectsGone()
+AND
+NOT QRY_RC_DW_WC_AmbushAttackInsectsLeft()
+THEN
+GlobalSetFlag("RC_DW_WC_AllAmbushInsectsGone");
+
+PROC
+ProcObjectTimerFinished((CHARACTERGUID)_Player,"RC_DW_WC_Ambush_GetUp")
+THEN
+CharacterSetAnimationOverride(_Player,"");
+CharacterUnfreeze(_Player);
+NOT DB_BlockWaypointUsage(_Player);
+PlayAnimation(_Player,"knockdown_getup");
+PROC_RC_DW_WC_Ambush_AfterKidnap(_Player);
+//END_REGION
+
+//REGION Exiting initial ambush teleport area before meeting anyone else
+IF
+CharacterLeftTrigger(_Player,_Trigger)
+AND
+DB_RC_DW_WC_AmbushTargetBox(_,_Trigger)
+THEN
+TriggerUnregisterForCharacter(_Trigger,_Player);
+PROC_RC_DW_WC_MaybeExitAbductionAreaAD(_Player,_Trigger);
+
+// Only play AD if no one else met yet
+PROC
+PROC_RC_DW_WC_MaybeExitAbductionAreaAD((CHARACTERGUID)_Player,(TRIGGERGUID)_Trigger)
+AND
+NOT DB_RC_DW_WC_Found(_,_Player)
+AND
+NOT DB_RC_DW_WC_Found(_Player,_)
+THEN
+Proc_StartDialog(1,"RC_DW_WC_AD_ExitAbductionArea",_Player);
+
+//END_REGION
+
+
+//REGION Reunion voice bark support
+
+//REGION debug
+IF
+TextEventSet("wc_meetup")
+AND
+DB_RC_DW_WC_DebugPlayerTeleported(_Player,_Trigger)
+THEN
+NOT DB_RC_DW_WC_DebugPlayerTeleported(_Player,_Trigger);
+
+IF
+TextEventSet("wc_meetup")
+AND
+DB_RC_DW_WC_Found(_Player,_OtherPlayer)
+THEN
+NOT DB_RC_DW_WC_Found(_Player,_OtherPlayer);
+
+IF
+TextEventSet("wc_meetup")
+AND
+DB_RC_DW_WC_AmbushArrivedAtDestination(_Player)
+THEN
+NOT DB_RC_DW_WC_AmbushArrivedAtDestination(_Player);
+NOT DB_RC_DW_WC_AtaraxianLair_GotDraggedUnderground(_Player);
+
+IF
+TextEventSet("wc_meetup")
+AND
+DB_IsPlayer(_Player)
+THEN
+ObjectClearFlag(_Player,"RC_DW_WC_Ambush_MetFriendAfter",0);
+
+IF
+TextEventSet("wc_meetup")
+THEN
+ProcDeclareCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+PROC_RC_DW_WC_DebugClearPlayersLeftToFind(0);
+NOT DB_OnlyOnce("RC_DW_WC_CountPlayers");
+
+PROC
+PROC_RC_DW_WC_DebugClearPlayersLeftToFind((INTEGER)_Count)
+AND
+_Count <= 3
+AND
+IntegertoString(_Count,_CountStr)
+AND
+StringConcatenate("RC_DW_WC_Ambush_PlayerLeftToFind_",_CountStr,_FlagName)
+AND
+IntegerSum(_Count,1,_NewCount)
+THEN
+GlobalClearFlag(_FlagName);
+PROC_RC_DW_WC_DebugClearPlayersLeftToFind(_NewCount);
+
+IF
+TextEventSet("wc_meetup")
+AND
+DB_IsPlayer(_Player)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_,_Trigger)
+AND
+NOT DB_RC_DW_WC_DebugPlayerTeleported(_Player,_)
+AND
+NOT DB_RC_DW_WC_DebugPlayerTeleported(_,_Trigger)
+THEN
+DB_RC_DW_WC_DebugPlayerTeleported((CHARACTERGUID)_Player,(TRIGGERGUID)_Trigger);
+DB_RC_DW_WC_AtaraxianLair_GotDraggedUnderground(_Player);
+DB_RC_DW_WC_AmbushArrivedAtDestination(_Player);
+TeleportTo(_Player,_Trigger);
+PROC_RC_DW_WC_Ambush_AfterKidnap(_Player);
+//END_REGION
+
+
+// every time we encounter someone else from the party in the Wrecker Cave,
+// we'll have a voice bark
+// (always look for all other players rather than only
+//  for players that were abducted, as the characters know
+//  the size of their party regardless and they'll want
+//  everyone to participate in the Mordus fight)
+PROC
+PROC_RC_DW_WC_Ambush_AfterKidnap((CHARACTERGUID)_Player)
+AND
+_Other.DB_IsPlayer()
+AND
+_Other!=_Player
+THEN
+GlobalSetFlag("RC_DW_WC_Ambush_MultiplePC");
+
+PROC
+PROC_RC_DW_WC_Ambush_AfterKidnap((CHARACTERGUID)_Player)
+THEN
+StartVoiceBark("RC_DW_WC_VB_AfterKidnap",_Player);
+
+PROC
+PROC_RC_DW_WC_Ambush_AfterKidnap((CHARACTERGUID)_Player)
+AND
+QueryOnlyOnce("RC_DW_WC_CountPlayers")
+THEN
+PROC_RC_DW_WC_CountPlayers();
+
+PROC
+PROC_RC_DW_WC_CountPlayers()
+AND
+DB_IsPlayer(_Player)
+THEN
+ProcIncreaseCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+
+PROC
+PROC_RC_DW_WC_CountPlayers()
+THEN
+// If there are 4 players, from the perspective of any of them, only 3 others are to be found.
+// Regardless of in what order you meet up (1->2->3->4, or 1->2; 3->4; (1,2)->(3,4), there is
+// always one meetup less than there are players until everyone has met everyone (as long as
+// we count each meetup as one, rather than as the number of players that has not yet met anyone)
+ProcDecreaseCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+
+//REGION Tracking meetups after abduction
+
+// Start looking for other players once the first player has been abducted
+IF
+CharacterSawCharacter(_Player,_OtherPC)
+AND
+DB_RC_DW_WC_AmbushArrivedAtDestination(_)
+AND
+DB_RC_DW_WC_AtaraxianLair_GotDraggedUnderground(_Player)
+AND
+DB_IsPlayer(_OtherPC)
+AND
+NOT DB_RC_DW_WC_Found(_OtherPC,_Player)
+AND
+GlobalGetFlag("RC_DW_WC_BossElderIsDead",0)
+AND
+GlobalGetFlag("RC_DW_WC_BossFight_BossFlee",0)
+AND
+QRY_SpeakerIsAvailableAndInDialogRange(_Player,_OtherPC)
+AND
+QRY_SpeakerIsAvailable(_Player,0)
+THEN
+DB_RC_DW_WC_Found(_Player,_OtherPC);
+DB_RC_DW_WC_Found(_OtherPC,_Player);
+PROC_RC_DW_WC_Ambush_MarkFoundPlayers(_Player,_OtherPC);
+PROC_RC_DW_WC_Ambush_CheckNumPlayerLeft(_Player,_OtherPC);
+
+PROC
+PROC_RC_DW_WC_Ambush_MarkFoundPlayers((CHARACTERGUID)_Player,(CHARACTERGUID)_OtherPC)
+AND
+DB_RC_DW_WC_Found(_OtherPC,_OtherPC2)
+THEN
+DB_RC_DW_WC_Found(_OtherPC2,_Player);
+DB_RC_DW_WC_Found(_Player,_OtherPC2);
+
+PROC
+PROC_RC_DW_WC_Ambush_MarkFoundPlayers((CHARACTERGUID)_Player,(CHARACTERGUID)_OtherPC)
+AND
+DB_RC_DW_WC_Found(_Player,_OtherPC2)
+THEN
+DB_RC_DW_WC_Found(_OtherPC2,_OtherPC);
+DB_RC_DW_WC_Found(_OtherPC,_OtherPC2);
+
+// Ensure we count correctly if the players meet two by two
+// rather than sequentially (we still want to only give the
+// final dialog when everyone has met everyone, even if not
+// at the same time)
+PROC
+PROC_RC_DW_WC_Ambush_CheckNumPlayerLeft((CHARACTERGUID)_Player,(CHARACTERGUID)_OtherPlayer)
+AND
+ObjectGetFlag(_Player,"RC_DW_WC_Ambush_MetFriendAfter",0)
+THEN
+ProcDecreaseCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+ObjectSetFlag(_Player,"RC_DW_WC_Ambush_MetFriendAfter");
+DB_RC_DW_WC_Ambush_Counted_MetFriendAfter(1);
+
+PROC
+PROC_RC_DW_WC_Ambush_CheckNumPlayerLeft((CHARACTERGUID)_Player,(CHARACTERGUID)_OtherPlayer)
+AND 
+NOT DB_RC_DW_WC_Ambush_Counted_MetFriendAfter(1) 
+AND
+ObjectGetFlag(_OtherPlayer,"RC_DW_WC_Ambush_MetFriendAfter",0)
+THEN
+ProcDecreaseCounter("RC_DW_WC_Ambush_NumPlayerToFind");
+ObjectSetFlag(_OtherPlayer,"RC_DW_WC_Ambush_MetFriendAfter");
+
+PROC
+PROC_RC_DW_WC_Ambush_CheckNumPlayerLeft((CHARACTERGUID)_Player,(CHARACTERGUID)_OtherPlayer)
+AND
+DB_GlobalCounter("RC_DW_WC_Ambush_NumPlayerToFind",_Count)
+AND
+IntegertoString(_Count,_StrNum)
+AND
+StringConcatenate("RC_DW_WC_Ambush_PlayerLeftToFind_",_StrNum,_Flag)
+THEN
+NOT DB_RC_DW_WC_Ambush_Counted_MetFriendAfter(1);
+GlobalSetFlag(_Flag);
+DB_RC_DW_WC_VB_AfterKidnapReunion(_Flag);
+Proc_StartDialog(1,"RC_DW_WC_VB_AfterKidnapReunion",_Player,_OtherPlayer);
+// Don't unset the flag here, or the dialog will not see it;
+// we'll unset it once everyone has met
+// GlobalClearFlag(_Flag);
+//END_REGION
+
+//REGION Clean up looking for players and voice barks
+// Stop looking when the last abducted player left the caves
+QRY
+QRY_RC_DW_WC_Ambush_AbductedPlayerLeftInCave()
+AND
+DB_InRegion(_Player,TRIGGERGUID_S_RC_DW_WreckersCave_Box_759f16fa-f59d-4686-b052-b598f2f2410a)
+AND
+DB_RC_DW_WC_AmbushArrivedAtDestination(_Player)
+THEN
+DB_NOOP(1);
+
+IF
+CharacterLeftTrigger(_Player,TRIGGERGUID_S_RC_DW_WreckersCave_Box_759f16fa-f59d-4686-b052-b598f2f2410a)
+AND
+NOT QRY_RC_DW_WC_Ambush_AbductedPlayerLeftInCave()
+THEN
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers();
+
+// Also stop looking when everyone has met everyone
+// (but only after the last dialog has ended/failed,
+//  since it relies on the flags still being set)
+IF
+AutomatedDialogEnded("RC_DW_WC_VB_AfterKidnapReunion",_)
+AND
+GlobalGetFlag("RC_DW_WC_Ambush_PlayerLeftToFind_0",1)
+THEN
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers();
+
+IF
+AutomatedDialogRequestFailed("RC_DW_WC_VB_AfterKidnapReunion",_)
+AND
+GlobalGetFlag("RC_DW_WC_Ambush_PlayerLeftToFind_0",1)
+THEN
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers();
+
+// Also stop looking once the elder is dead or has fled
+IF
+GlobalFlagSet("RC_DW_WC_BossElderIsDead")
+THEN
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers();
+
+IF
+GlobalFlagSet("RC_DW_WC_BossFight_BossFlee")
+THEN
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers();
+
+PROC
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers()
+AND
+DB_RC_DW_WC_VB_AfterKidnapReunion(_GlobalEvent)
+THEN
+NOT DB_RC_DW_WC_VB_AfterKidnapReunion(_GlobalEvent);
+GlobalClearFlag(_GlobalEvent);
+
+// ... and also unset the character flags used for voice barks during the abduction
+PROC
+PROC_RC_DW_WC_Ambush_StopLookingForPlayers()
+AND
+DB_IsPlayer(_Player)
+THEN
+ObjectClearFlag(_Player,"RC_DW_WC_HaveBeenAbductedBefore",0);
+ObjectClearFlag(_Player,"RC_DW_WC_BeingAbducted",0);
+ObjectClearFlag(_Player,"RC_DW_WC_SawInsectAbduction",0);
+//END_REGION
+//END_REGION
+
+//REGION VB for characters left behind (if any) after an ambush fight
+IF
+ObjectEnteredCombat((CHARACTERGUID)_Insect,_Id)
+AND
+DB_RC_DW_WC_AmbushPair(_Insect,_Player)
+THEN
+DB_RC_DW_WC_AmbushCombat(_Id);
+
+IF
+DB_RC_DW_WC_AmbushArrivedAtDestination(_Player)
+AND
+DB_RC_DW_WC_AmbushCombat(_Id)
+AND
+DB_CombatCharacters(_Player,_Id)
+THEN
+DB_RC_DW_WC_AmbushPlayerAbductedInCombat(_Player,_Id);
+
+// In case a player participated in the ambush combat, fled it, and
+// then got involved in another combat before the ambush combat finished,
+// they won't trigger this because DB_WasInCombat() for this combat will
+// have been cleared -- but that's fine, in that case they are not really
+// involved in this scene anymore anyway.
+//
+// Still not perfect though: if someone flees the combat before it ends but
+// saw an abduction, another person is abducted and the third person stayed
+// in the combat till the end (and defeated his kidnapper(s)), ideally this
+// last person should say the voice bark but that's not guaranteed now (it
+// could also be the one that fled)
+IF
+CombatEnded(_Id)
+AND
+DB_RC_DW_WC_AmbushCombat(_Id)
+AND
+NOT DB_RC_DW_WC_AmbushAfterKidnapLeftBehindVBStarted(_Id)
+AND
+DB_IsPlayer(_Player)
+AND
+DB_WasInCombat(_Player,_Combat)
+AND
+NOT DB_RC_DW_WC_AmbushPlayerAbductedInCombat((CHARACTERGUID)_Player,_Id)
+// Safety in case a player fled the combat before anyone got abducted
+AND
+ObjectGetFlag(_Player,"RC_DW_WC_SawInsectAbduction",1)
+THEN
+DB_RC_DW_WC_AmbushAfterKidnapLeftBehindVBStarted(_Id);
+StartVoiceBark("RC_DW_WC_VB_AfterAbductionLeftBehind",(CHARACTERGUID)_Player);
+
+IF
+CombatEnded(_Id)
+AND
+DB_RC_DW_WC_AmbushCombat(_Id)
+THEN
+PROC_RC_DW_WC_CleanUpAmbushCombatInfo(_Id);
+
+PROC
+PROC_RC_DW_WC_CleanUpAmbushCombatInfo((INTEGER)_Id)
+THEN
+NOT DB_RC_DW_WC_AmbushCombat(_Id);
+NOT DB_RC_DW_WC_AmbushAfterKidnapLeftBehindVBStarted(_Id);
+
+PROC
+PROC_RC_DW_WC_CleanUpAmbushCombatInfo((INTEGER)_Id)
+AND
+DB_RC_DW_WC_AmbushPlayerAbductedInCombat(_Player,_Id)
+THEN
+NOT DB_RC_DW_WC_AmbushPlayerAbductedInCombat(_Player,_Id);
+
+//END_REGION
+
+//REGION Tunnel from ambush area to cave interior
+// Entrance in ambush area can be discovered/dug up once at least one character has been abducted
+// (the insects unearth the pile under which it is hidden)
+// But: not in case the tunnel was already opened from the other side
+IF
+StoryEvent(_,"DB_RC_DW_WC_Ambush_FinalBurrow")
+AND
+QueryOnlyOnce("RC_WC_TunnelFallbackEntraceShow")
+AND
+// undefined if tunnel has been opened
+DB_BidirShovelPileTunnel("RC_WC_TunnelFallback",_,_,_,_,_,_)
+THEN
+SetOnStage(ITEMGUID_S_RC_WC_PUZ_SandWhitepile_Tunnel_9b191cb5-53cb-4a40-bc54-b5789ca21710,1);
+
+// Insect dies before grabbing a player
+IF
+DB_Dead(_Insect)
+AND
+DB_RC_DW_WC_AmbushAttackInsect(_Insect,_)
+AND
+// undefined if tunnel has been opened
+DB_BidirShovelPileTunnel("RC_WC_TunnelFallback",_,_,_,_,_,_)
+THEN
+SetOnStage(ITEMGUID_S_RC_WC_PUZ_SandWhitepile_Tunnel_9b191cb5-53cb-4a40-bc54-b5789ca21710,1);
+
+// Insect dies while it was holding a player
+PROC
+PROC_RC_DW_WC_AmbushFailed_ResetPlayer_InsectDead((CHARACTERGUID)_Player,(CHARACTERGUID)_Insect)
+AND
+QueryOnlyOnce("RC_WC_TunnelFallbackEntraceShow")
+AND
+// undefined if tunnel has been opened
+DB_BidirShovelPileTunnel("RC_WC_TunnelFallback",_,_,_,_,_,_)
+THEN
+SetOnStage(ITEMGUID_S_RC_WC_PUZ_SandWhitepile_Tunnel_9b191cb5-53cb-4a40-bc54-b5789ca21710,1);
+//END_REGION
+
+//REGION Close on region end
+// Put any players that were being abducted back on stage
+PROC
+ProcRegionEnded("RC_Main")
+AND
+DB_RC_DW_WC_Ambush_PlayerInsectAttached(_Player,_Insect)
+THEN
+PROC_RC_DW_WC_Ambush_DetachIfAttached_InsectPlayer(_Insect,_Player,1);
+
+PROC
+ProcRegionEnded("RC_Main")
+THEN
+GoalCompleted;
+//END_REGION
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "RC_DW_WreckersCave_AmbushBase"

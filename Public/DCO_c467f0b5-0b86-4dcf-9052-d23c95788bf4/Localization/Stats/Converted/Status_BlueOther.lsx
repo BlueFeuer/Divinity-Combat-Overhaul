@@ -7784,11 +7784,18 @@
 					<attribute id="UUID" value="BlueStatus_BLESSED_Description" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
-					<attribute id="Content" value="Blessed" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="Content" value="Lesser Blessing" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
 					<attribute id="ExtraData" value="" type="23" />
 					<attribute id="Speaker" value="" type="22" />
 					<attribute id="Stub" value="True" type="19" />
 					<attribute id="UUID" value="BlueStatus_BLESSED_DisplayName" type="22" />
+				</node>
+				<node id="TranslatedStringKey">
+					<attribute id="Content" value="Lesser Blessing" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />
+					<attribute id="ExtraData" value="" type="23" />
+					<attribute id="Speaker" value="" type="22" />
+					<attribute id="Stub" value="True" type="19" />
+					<attribute id="UUID" value="Blue_Stats_Blessed" type="22" />
 				</node>
 				<node id="TranslatedStringKey">
 					<attribute id="Content" value="Resurrection Fatigue" type="28" handle="ls::TranslatedStringRepository::s_HandleUnknown" />

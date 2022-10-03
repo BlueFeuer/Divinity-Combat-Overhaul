@@ -2089,6 +2089,11 @@ ACTIONS
 	Set(_Result,CURSED)
 	ListClear(_RemoveList)
 	IF "c1"
+		CharacterHasStatus(_Character, Blue_BLESSED)
+	THEN
+		ListAdd(_RemoveList, BLESSED)
+		Set(_Result,null)
+	ELIF "c1"
 		CharacterHasStatus(_Character, BLESSED)
 	THEN
 		ListAdd(_RemoveList, BLESSED)

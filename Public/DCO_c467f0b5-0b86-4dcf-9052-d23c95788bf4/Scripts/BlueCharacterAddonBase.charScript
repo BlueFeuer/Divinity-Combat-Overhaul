@@ -102,9 +102,31 @@ ACTIONS
 		//Players are ALWAYS EVEN
 		//If characters need to be reinitialized after an update, change the numbers.
 		IF "!c1"
-			IsEqual(%Initialized, INT:25)
+			IsEqual(%Initialized, INT:27)
 		THEN
-			Set(%Initialized, INT:25)
+			Set(%Initialized, INT:27)
+			// If upon first initialization a character is tagged as ignored, check if thats by a DCO status or if they just started that way
+			// If they started that way, assume vanilla did it and make it permanent until vanilla clears it
+			// Otherwise, set the DCO tag
+			// Either way, never do it again
+			IF "c1&!c2"
+				IsTagged(__Me, "AI_IGNORED_TARGET")
+				IsTagged(__Me, "AI_IG_INIT")
+			THEN
+				IF "!c1&!c2&!c3&!c4&!c5"
+					CharacterHasStatus(__Me, Blue_InvisibleOrange)
+					CharacterHasStatus(__Me, Blue_InvisibleBlue)
+					CharacterHasStatus(__Me, Blue_InvisibleWhite)
+					CharacterHasStatus(__Me, SNEAKING)
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					SetTag(__Me, "AI_IG_VAN")
+				ELSE
+					SetTag(__Me, "AI_IG_DCO")
+				ENDIF
+			ENDIF
+			SetTag(__Me, "AI_IG_INIT")
+			
 			CharacterEvent(__Me, "GlobalStatsSanityCorrecter")
 			CharacterEvent(__Me, "GlobalConstitutionCorrecter")
 			CharacterEvent(__Me, "GlobalDexterityCorrecter")
@@ -123,9 +145,31 @@ ACTIONS
 		CharacterIsSummon(__Me)
 	THEN
 		IF "!c1"
-			IsEqual(%Initialized, INT:24)
+			IsEqual(%Initialized, INT:26)
 		THEN
-			Set(%Initialized, INT:24)
+			Set(%Initialized, INT:26)
+			// If upon first initialization a character is tagged as ignored, check if thats by a DCO status or if they just started that way
+			// If they started that way, assume vanilla did it and make it permanent until vanilla clears it
+			// Otherwise, set the DCO tag
+			// Either way, never do it again
+			IF "c1&!c2"
+				IsTagged(__Me, "AI_IGNORED_TARGET")
+				IsTagged(__Me, "AI_IG_INIT")
+			THEN
+				IF "!c1&!c2&!c3&!c4&!c5"
+					CharacterHasStatus(__Me, Blue_InvisibleOrange)
+					CharacterHasStatus(__Me, Blue_InvisibleBlue)
+					CharacterHasStatus(__Me, Blue_InvisibleWhite)
+					CharacterHasStatus(__Me, SNEAKING)
+					CharacterHasStatus(__Me, Blue_InvisibleBlind)
+				THEN
+					SetTag(__Me, "AI_IG_VAN")
+				ELSE
+					SetTag(__Me, "AI_IG_DCO")
+				ENDIF
+			ENDIF
+			SetTag(__Me, "AI_IG_INIT")
+			
 			IF "!c1"
 				CharacterInCreation(__Me, _)
 			THEN
